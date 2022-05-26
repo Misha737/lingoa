@@ -37,7 +37,7 @@ class CardBook extends StatelessWidget {
                   height: MediaQuery.of(context).size.height,
                   width: Dimensions.cardBook.widthLeftContainer,
                   decoration: BoxDecoration(
-                    color: ColorsLightTheme.blue,
+                    gradient: ColorsLightTheme.blueGradient,
                     borderRadius:
                         BorderRadius.circular(Dimensions.borderRadius),
                   ),
@@ -49,40 +49,48 @@ class CardBook extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  book.name.getOrCrash(),
-                                  style: TextStyles.headline5
-                                      .copyWith(color: ColorsLightTheme.gray),
-                                ),
-                                Text(
-                                  book.author
-                                      .fold(() => '', (a) => a.getOrCrash()),
-                                  style: TextStyles.headline6
-                                      .copyWith(color: ColorsLightTheme.gray),
-                                ),
-                                const SizedBox(
-                                  height: Dimensions.d8,
-                                ),
-                                Text(
-                                  'Спосіб: ${book.way.name}',
-                                  style: TextStyles.headline6
-                                      .copyWith(color: ColorsLightTheme.gray),
-                                ),
-                              ],
-                            ),
-                            const Text(
-                              '🗺️',
-                              style: TextStyle(fontSize: 26),
-                            ),
-                          ],
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    book.name.getOrCrash(),
+                                    style: TextStyles.headline5.copyWith(
+                                      color: ColorsLightTheme.gray,
+                                    ),
+                                  ),
+                                  Text(
+                                    book.author.fold(
+                                      () => '',
+                                      (a) => a.getOrCrash(),
+                                    ),
+                                    style: TextStyles.headline6.copyWith(
+                                      color: ColorsLightTheme.gray,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: Dimensions.d8,
+                                  ),
+                                  Text(
+                                    'Спосіб: ${book.way.name}',
+                                    style: TextStyles.headline6.copyWith(
+                                      color: ColorsLightTheme.gray,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Text(
+                                '🗺️',
+                                style: TextStyle(fontSize: 26),
+                              ),
+                            ],
+                          ),
                         ),
+                        const SizedBox(width: Dimensions.d4),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.end,

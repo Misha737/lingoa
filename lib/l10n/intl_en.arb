@@ -40,5 +40,7 @@
   "OperationNotAllowed": "Operation not allowed",
   "YouHaveBeenDeniedAccess": "You have been denied access, see lingoa.com/info for details",
   "WeakPassword": "Weak password",
-  "WeCareAbout": "We care about your safety and do not want to be hacked"
+  "WeCareAbout": "We care about your safety and do not want to be hacked",
+  "Library": "Library",
+  "Read": "Read"
 }

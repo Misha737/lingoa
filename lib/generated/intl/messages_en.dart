@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "InvalidEmailAndPasswordCombination":
             MessageLookupByLibrary.simpleMessage(
                 "Email or password was entered incorrectly"),
+        "Library": MessageLookupByLibrary.simpleMessage("Library"),
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NoProfile": MessageLookupByLibrary.simpleMessage("No profile?"),
         "Oops": MessageLookupByLibrary.simpleMessage("Oops"),
@@ -56,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Operation not allowed"),
         "Or": MessageLookupByLibrary.simpleMessage("Or"),
         "Password": MessageLookupByLibrary.simpleMessage("Password"),
+        "Read": MessageLookupByLibrary.simpleMessage("Read"),
         "Register": MessageLookupByLibrary.simpleMessage("Register"),
         "Repeat": MessageLookupByLibrary.simpleMessage("Repeat"),
         "RepeatPassword":

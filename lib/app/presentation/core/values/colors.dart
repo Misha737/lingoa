@@ -14,7 +14,7 @@ class ColorsLightTheme {
       const Color.fromARGB(100, 0, 0, 0).withOpacity(0.1);
   static final Color eclipse = Colors.black.withOpacity(0.6);
 
-  static RadialGradient gold = RadialGradient(
+  static final RadialGradient goldRadial = RadialGradient(
     center: Alignment.topLeft,
     colors: [
       // Colors.red,
@@ -23,5 +23,26 @@ class ColorsLightTheme {
       // Colors.blue,
     ],
     radius: 2.4,
+  );
+  static final LinearGradient gold = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    stops: const [0.4, 0.8],
+    colors: [
+      // Colors.red,
+      const Color(0xFFFFEB85).withOpacity(0.8),
+      const Color(0xFFE7D46F).withOpacity(0.8),
+      // Colors.blue,
+    ],
+  );
+  static const LinearGradient blueGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      // Colors.red,
+      Color(0xFF6D92F0),
+      Color(0xFF3859AD),
+      // Colors.blue,
+    ],
   );
 }

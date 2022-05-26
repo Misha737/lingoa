@@ -17,6 +17,7 @@ class Dimensions {
   static const double miniBorderRadius = 6;
   static const double blurRadius = 4;
   static const double mainHorizontalPadding = 24;
+  static const double opacityText = 0.8;
   static final navigation = _Navigation();
   static final button = _Button();
   static final input = _Input();
@@ -48,6 +49,8 @@ class _Button {
   final double iconSize = 32;
   final double outlinedButtonHorizontal = 24;
   final double outlinedButtonVertical = 12;
+  final double diameterRound = 60;
+  final double iconSizeRound = 40;
 }
 
 class _Input {

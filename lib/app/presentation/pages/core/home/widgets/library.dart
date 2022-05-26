@@ -38,10 +38,20 @@ class LibraryCardsBook extends StatelessWidget {
                     color: ColorsLightTheme.gray,
                   ),
                 ),
-                const Icon(
-                  Icons.filter_alt_outlined,
-                  color: ColorsLightTheme.gray,
-                ),
+                isNotPassed
+                    ? IconButton(
+                        onPressed: () {},
+                        constraints: BoxConstraints(
+                          maxHeight: MediaQuery.of(context).size.height,
+                          maxWidth: MediaQuery.of(context).size.width,
+                        ),
+                        padding: EdgeInsets.zero,
+                        icon: const Icon(
+                          Icons.filter_alt_outlined,
+                          color: ColorsLightTheme.gray,
+                        ),
+                      )
+                    : const SizedBox.shrink(),
               ],
             ),
           ),
@@ -50,17 +60,20 @@ class LibraryCardsBook extends StatelessWidget {
               length,
               (index) => isNotPassed
                   ? CardBook(
+                      // * Тут перевіряти і виводити помилки
                       book: BookBody.empty().copyWith(
                         name: Name('Кобзар'),
                         author: some(Name('Тарас Шевченко')),
                       ),
                     )
+                  // ? const CardBookError(isPassed: false)
                   : CardBookPassed(
                       book: BookBody.empty().copyWith(
                         name: Name('Пригоди на острові'),
                         author: some(Name('Пірат')),
                       ),
                     ),
+              // : const CardBookError(isPassed: true),
             ),
           )
         ],

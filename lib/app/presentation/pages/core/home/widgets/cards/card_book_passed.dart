@@ -39,7 +39,7 @@ class CardBookPassed extends StatelessWidget {
                   height: MediaQuery.of(context).size.height,
                   width: Dimensions.cardBook.widthLeftContainer,
                   decoration: BoxDecoration(
-                    color: ColorsLightTheme.blue,
+                    gradient: ColorsLightTheme.blueGradient,
                     borderRadius:
                         BorderRadius.circular(Dimensions.borderRadius),
                   ),
@@ -58,13 +58,15 @@ class CardBookPassed extends StatelessWidget {
                             Text(
                               book.name.getOrCrash(),
                               style: TextStyles.headline5.copyWith(
-                                color: ColorsLightTheme.gray.withOpacity(0.8),
+                                color: ColorsLightTheme.gray
+                                    .withOpacity(Dimensions.opacityText),
                               ),
                             ),
                             Text(
                               book.author.fold(() => '', (a) => a.getOrCrash()),
                               style: TextStyles.headline6.copyWith(
-                                color: ColorsLightTheme.gray.withOpacity(0.8),
+                                color: ColorsLightTheme.gray
+                                    .withOpacity(Dimensions.opacityText),
                               ),
                             ),
                             const SizedBox(
@@ -73,7 +75,8 @@ class CardBookPassed extends StatelessWidget {
                             Text(
                               'Спосіб: ${book.way.name}',
                               style: TextStyles.headline6.copyWith(
-                                color: ColorsLightTheme.gray.withOpacity(0.8),
+                                color: ColorsLightTheme.gray
+                                    .withOpacity(Dimensions.opacityText),
                               ),
                             ),
                           ],
