@@ -1,0 +1,70 @@
+import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
+import 'package:lingoa/app/domain/book/body.dart';
+import 'package:lingoa/app/domain/core/value_objects.dart';
+import 'package:lingoa/app/presentation/core/values/colors.dart';
+import 'package:lingoa/app/presentation/core/values/dimensions.dart';
+import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/app/presentation/pages/core/home/widgets/cards/card_book.dart';
+
+import 'cards/card_book_passed.dart';
+
+class LibraryCardsBook extends StatelessWidget {
+  const LibraryCardsBook({
+    Key? key,
+    required this.title,
+    required this.isNotPassed,
+    required this.length,
+  }) : super(key: key);
+
+  final String title;
+  final bool isNotPassed;
+  final int length;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: Dimensions.d16),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: Dimensions.d8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  title,
+                  style: TextStyles.headline3.copyWith(
+                    color: ColorsLightTheme.gray,
+                  ),
+                ),
+                const Icon(
+                  Icons.filter_alt_outlined,
+                  color: ColorsLightTheme.gray,
+                ),
+              ],
+            ),
+          ),
+          Column(
+            children: List<Widget>.generate(
+              length,
+              (index) => isNotPassed
+                  ? CardBook(
+                      book: BookBody.empty().copyWith(
+                        name: Name('Кобзар'),
+                        author: some(Name('Тарас Шевченко')),
+                      ),
+                    )
+                  : CardBookPassed(
+                      book: BookBody.empty().copyWith(
+                        name: Name('Пригоди на острові'),
+                        author: some(Name('Пірат')),
+                      ),
+                    ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

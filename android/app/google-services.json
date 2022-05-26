@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "762136492175",
+    "project_id": "lingoa-35d54",
+    "storage_bucket": "lingoa-35d54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762136492175:android:077ad452fbc4ec704bd8fa",
+        "android_client_info": {
+          "package_name": "com.lingoa.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762136492175-dqjts9fkcmqmgp4itacqgq596sarl27k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD51u5prT9s7d0UoVs59hO7p3TN_EVoaIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762136492175-dqjts9fkcmqmgp4itacqgq596sarl27k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
