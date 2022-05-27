@@ -4,6 +4,8 @@ import 'package:lingoa/app/presentation/core/values/styles/widgets/buttons/eleva
 import 'package:lingoa/app/presentation/core/values/styles/widgets/buttons/text_button.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/dialog/dialog.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/input/text_field.dart';
+import 'package:lingoa/app/presentation/core/values/styles/widgets/menu/bottom_sheet.dart';
+import 'package:lingoa/app/presentation/core/values/styles/widgets/menu/popup.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/navigations/app_bar.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/navigations/bottom_navigation_bar.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/progress_indicator/progress_indicator.dart';
@@ -25,6 +27,8 @@ class ThemeApp {
     inputDecorationTheme: TextFieldDecorationTheme.light,
     progressIndicatorTheme: ProgressIndicatorThemeApp.light,
     dialogTheme: DialogThemeApp.light,
+    popupMenuTheme: PopupMenuThemeApp.light,
+    bottomSheetTheme: BottomSheetThemeApp.light,
     colorScheme: ColorScheme.fromSwatch().copyWith(
       primary: ColorsLightTheme.blue,
       secondary: ColorsLightTheme.blue,

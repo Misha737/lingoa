@@ -11,7 +11,7 @@ class ProgressIndicatorApp extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        color: ColorsLightTheme.eclipse,
+        color: ColorsLightTheme.barrier,
         child: const Center(child: CircularProgressIndicator()),
       ),
     );

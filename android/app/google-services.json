@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "762136492175-5olr0mb8l49lh57egqjodfkfq5asfqfj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lingoa.app",
+            "certificate_hash": "d8d42fd56ffaac567d71300b915aa61d3982e933"
+          }
+        },
+        {
           "client_id": "762136492175-dqjts9fkcmqmgp4itacqgq596sarl27k.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "762136492175-dqjts9fkcmqmgp4itacqgq596sarl27k.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "762136492175-ur200ote3mupncr7926b070sq0sbbtav.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lingoa.app"
+              }
             }
           ]
         }

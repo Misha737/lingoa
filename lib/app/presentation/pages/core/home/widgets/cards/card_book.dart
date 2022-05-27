@@ -5,6 +5,7 @@ import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/app/presentation/widgets/menu/popup.dart';
 
 class CardBook extends StatelessWidget {
   const CardBook({
@@ -23,9 +24,15 @@ class CardBook extends StatelessWidget {
         child: InkWell(
           onTap: () {
             log('Book');
+            showModalBottomSheet(
+              context: context,
+              builder: (context) => const Text('data'),
+            );
           },
           onLongPress: () {
             log('Long Book');
+            showGeneralDialog(
+                context: context, pageBuilder: (d, s, a) => const Text('data'));
           },
           borderRadius: BorderRadius.circular(Dimensions.borderRadius),
           child: SizedBox(
@@ -95,14 +102,21 @@ class CardBook extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            IconButton(
-                              padding: EdgeInsets.zero,
-                              constraints: BoxConstraints(
-                                maxHeight: MediaQuery.of(context).size.height,
-                                maxWidth: MediaQuery.of(context).size.width,
-                              ),
-                              icon: const Icon(Icons.more_horiz),
-                              onPressed: () {},
+                            const PopupMenuApp(
+                              items: <PopupMenuEntry<MenuItem>>[
+                                PopupMenuItem<MenuItem>(
+                                  child: Text('Статистика'),
+                                ),
+                                PopupMenuItem<MenuItem>(
+                                  child: Text('Поширити'),
+                                ),
+                                PopupMenuItem<MenuItem>(
+                                  child: Text('Редагувати'),
+                                ),
+                                PopupMenuItem<MenuItem>(
+                                  child: Text('Видалити'),
+                                ),
+                              ],
                             ),
                             Text(
                               '${book.progress}%',

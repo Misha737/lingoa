@@ -12,7 +12,7 @@ class ColorsLightTheme {
   static const Color shadowColorCopy = Color.fromARGB(50, 0, 0, 0);
   static final Color shadowColor =
       const Color.fromARGB(100, 0, 0, 0).withOpacity(0.1);
-  static final Color eclipse = Colors.black.withOpacity(0.6);
+  static final Color barrier = Colors.black.withOpacity(0.6);
 
   static final RadialGradient goldRadial = RadialGradient(
     center: Alignment.topLeft,
