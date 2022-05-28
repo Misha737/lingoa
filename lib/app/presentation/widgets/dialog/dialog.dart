@@ -7,7 +7,7 @@ Future<T?> showDialogApp<T>(
   required String content,
   required List<Widget> actions,
 }) {
-  return showDialog(
+  return showDialog<T?>(
     context: context,
     builder: (context) => AlertDialog(
       title: Text(title),

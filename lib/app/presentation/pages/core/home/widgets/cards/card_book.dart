@@ -5,6 +5,7 @@ import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/app/presentation/widgets/dialog/book_statistics.dart';
 import 'package:lingoa/app/presentation/widgets/menu/popup.dart';
 
 class CardBook extends StatelessWidget {
@@ -28,11 +29,13 @@ class CardBook extends StatelessWidget {
               context: context,
               builder: (context) => const Text('data'),
             );
+            showBookStatistics(context);
           },
           onLongPress: () {
             log('Long Book');
-            showGeneralDialog(
-                context: context, pageBuilder: (d, s, a) => const Text('data'));
+            // showGeneralDialog(
+            //     context: context, pageBuilder: (d, s, a) => const Text('data'));
+            showBookStatistics(context);
           },
           borderRadius: BorderRadius.circular(Dimensions.borderRadius),
           child: SizedBox(
@@ -102,18 +105,22 @@ class CardBook extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            const PopupMenuApp(
-                              items: <PopupMenuEntry<MenuItem>>[
-                                PopupMenuItem<MenuItem>(
+                            PopupMenuApp(
+                              items: (_) => <PopupMenuEntry<int>>[
+                                const PopupMenuItem<int>(
+                                  value: 0,
                                   child: Text('Статистика'),
                                 ),
-                                PopupMenuItem<MenuItem>(
+                                const PopupMenuItem<int>(
+                                  value: 1,
                                   child: Text('Поширити'),
                                 ),
-                                PopupMenuItem<MenuItem>(
+                                const PopupMenuItem<int>(
+                                  value: 2,
                                   child: Text('Редагувати'),
                                 ),
-                                PopupMenuItem<MenuItem>(
+                                const PopupMenuItem<int>(
+                                  value: 3,
                                   child: Text('Видалити'),
                                 ),
                               ],
