@@ -19,7 +19,6 @@ mixin _$Book {
   UniqueId get id => throw _privateConstructorUsedError;
   List<BookContent> get content => throw _privateConstructorUsedError;
   BookBody get body => throw _privateConstructorUsedError;
-  List<BookStatistics> get statistics => throw _privateConstructorUsedError;
   List<BookWords> get words => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -34,7 +33,6 @@ abstract class $BookCopyWith<$Res> {
       {UniqueId id,
       List<BookContent> content,
       BookBody body,
-      List<BookStatistics> statistics,
       List<BookWords> words});
 
   $BookBodyCopyWith<$Res> get body;
@@ -53,7 +51,6 @@ class _$BookCopyWithImpl<$Res> implements $BookCopyWith<$Res> {
     Object? id = freezed,
     Object? content = freezed,
     Object? body = freezed,
-    Object? statistics = freezed,
     Object? words = freezed,
   }) {
     return _then(_value.copyWith(
@@ -69,10 +66,6 @@ class _$BookCopyWithImpl<$Res> implements $BookCopyWith<$Res> {
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as BookBody,
-      statistics: statistics == freezed
-          ? _value.statistics
-          : statistics // ignore: cast_nullable_to_non_nullable
-              as List<BookStatistics>,
       words: words == freezed
           ? _value.words
           : words // ignore: cast_nullable_to_non_nullable
@@ -97,7 +90,6 @@ abstract class _$BookCopyWith<$Res> implements $BookCopyWith<$Res> {
       {UniqueId id,
       List<BookContent> content,
       BookBody body,
-      List<BookStatistics> statistics,
       List<BookWords> words});
 
   @override
@@ -118,7 +110,6 @@ class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
     Object? id = freezed,
     Object? content = freezed,
     Object? body = freezed,
-    Object? statistics = freezed,
     Object? words = freezed,
   }) {
     return _then(_Book(
@@ -134,10 +125,6 @@ class __$BookCopyWithImpl<$Res> extends _$BookCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as BookBody,
-      statistics: statistics == freezed
-          ? _value.statistics
-          : statistics // ignore: cast_nullable_to_non_nullable
-              as List<BookStatistics>,
       words: words == freezed
           ? _value.words
           : words // ignore: cast_nullable_to_non_nullable
@@ -153,10 +140,8 @@ class _$_Book extends _Book {
       {required this.id,
       required final List<BookContent> content,
       required this.body,
-      required final List<BookStatistics> statistics,
       required final List<BookWords> words})
       : _content = content,
-        _statistics = statistics,
         _words = words,
         super._();
 
@@ -171,13 +156,6 @@ class _$_Book extends _Book {
 
   @override
   final BookBody body;
-  final List<BookStatistics> _statistics;
-  @override
-  List<BookStatistics> get statistics {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_statistics);
-  }
-
   final List<BookWords> _words;
   @override
   List<BookWords> get words {
@@ -187,7 +165,7 @@ class _$_Book extends _Book {
 
   @override
   String toString() {
-    return 'Book(id: $id, content: $content, body: $body, statistics: $statistics, words: $words)';
+    return 'Book(id: $id, content: $content, body: $body, words: $words)';
   }
 
   @override
@@ -198,8 +176,6 @@ class _$_Book extends _Book {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.content, content) &&
             const DeepCollectionEquality().equals(other.body, body) &&
-            const DeepCollectionEquality()
-                .equals(other.statistics, statistics) &&
             const DeepCollectionEquality().equals(other.words, words));
   }
 
@@ -209,7 +185,6 @@ class _$_Book extends _Book {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(content),
       const DeepCollectionEquality().hash(body),
-      const DeepCollectionEquality().hash(statistics),
       const DeepCollectionEquality().hash(words));
 
   @JsonKey(ignore: true)
@@ -223,7 +198,6 @@ abstract class _Book extends Book {
       {required final UniqueId id,
       required final List<BookContent> content,
       required final BookBody body,
-      required final List<BookStatistics> statistics,
       required final List<BookWords> words}) = _$_Book;
   const _Book._() : super._();
 
@@ -233,8 +207,6 @@ abstract class _Book extends Book {
   List<BookContent> get content => throw _privateConstructorUsedError;
   @override
   BookBody get body => throw _privateConstructorUsedError;
-  @override
-  List<BookStatistics> get statistics => throw _privateConstructorUsedError;
   @override
   List<BookWords> get words => throw _privateConstructorUsedError;
   @override

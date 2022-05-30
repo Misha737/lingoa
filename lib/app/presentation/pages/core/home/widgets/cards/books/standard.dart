@@ -29,13 +29,12 @@ class CardBook extends StatelessWidget {
               context: context,
               builder: (context) => const Text('data'),
             );
-            showBookStatistics(context);
           },
           onLongPress: () {
             log('Long Book');
-            // showGeneralDialog(
-            //     context: context, pageBuilder: (d, s, a) => const Text('data'));
-            showBookStatistics(context);
+            showGeneralDialog(
+                context: context, pageBuilder: (d, s, a) => const Text('data'));
+            //showBookStatistics(context);
           },
           borderRadius: BorderRadius.circular(Dimensions.borderRadius),
           child: SizedBox(
@@ -106,6 +105,12 @@ class CardBook extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             PopupMenuApp(
+                              onSelected: (value) {
+                                if (value == 0) {
+                                  showBookStatistics(context, book);
+                                  log('message Yes');
+                                }
+                              },
                               items: (_) => <PopupMenuEntry<int>>[
                                 const PopupMenuItem<int>(
                                   value: 0,

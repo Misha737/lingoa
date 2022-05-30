@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/domain/book/content.dart';
-import 'package:lingoa/app/domain/book/statistics.dart';
 import 'package:lingoa/app/domain/book/words.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
 
@@ -15,7 +14,6 @@ abstract class Book implements _$Book {
     required UniqueId id,
     required List<BookContent> content,
     required BookBody body,
-    required List<BookStatistics> statistics,
     required List<BookWords> words,
   }) = _Book;
 }

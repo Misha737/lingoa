@@ -1,13 +1,14 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
+import 'package:lingoa/app/domain/book/statistics.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
-import 'package:lingoa/app/presentation/pages/core/home/widgets/cards/card_book.dart';
 
-import 'cards/card_book_passed.dart';
+import 'cards/books/standard.dart';
+import 'cards/books/passed.dart';
 
 class LibraryCardsBook extends StatelessWidget {
   const LibraryCardsBook({
@@ -62,9 +63,15 @@ class LibraryCardsBook extends StatelessWidget {
                   ? CardBook(
                       // * Тут перевіряти і виводити помилки
                       book: BookBody.empty().copyWith(
-                        name: Name('Кобзар'),
-                        author: some(Name('Тарас Шевченко')),
-                      ),
+                          name: Name('Кобзар'),
+                          author: some(Name('Тарас Шевченко')),
+                          statistics: const [
+                            BookStatistics(
+                                name: 'Прочитано сторінок', value: 30),
+                            BookStatistics(name: 'Вивчено слів', value: 289),
+                            BookStatistics(name: 'Прогрес', value: 16),
+                            BookStatistics(name: 'Пройдено речень', value: 176),
+                          ]),
                     )
                   // ? const CardBookError(isPassed: false)
                   : CardBookPassed(

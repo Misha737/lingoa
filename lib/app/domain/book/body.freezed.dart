@@ -22,6 +22,7 @@ mixin _$BookBody {
   Way get way => throw _privateConstructorUsedError;
   int get progress => throw _privateConstructorUsedError;
   Language get language => throw _privateConstructorUsedError;
+  List<BookStatistics> get statistics => throw _privateConstructorUsedError;
   bool get isRead => throw _privateConstructorUsedError;
   Option<DateTime> get date => throw _privateConstructorUsedError;
 
@@ -41,6 +42,7 @@ abstract class $BookBodyCopyWith<$Res> {
       Way way,
       int progress,
       Language language,
+      List<BookStatistics> statistics,
       bool isRead,
       Option<DateTime> date});
 }
@@ -61,6 +63,7 @@ class _$BookBodyCopyWithImpl<$Res> implements $BookBodyCopyWith<$Res> {
     Object? way = freezed,
     Object? progress = freezed,
     Object? language = freezed,
+    Object? statistics = freezed,
     Object? isRead = freezed,
     Object? date = freezed,
   }) {
@@ -89,6 +92,10 @@ class _$BookBodyCopyWithImpl<$Res> implements $BookBodyCopyWith<$Res> {
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      statistics: statistics == freezed
+          ? _value.statistics
+          : statistics // ignore: cast_nullable_to_non_nullable
+              as List<BookStatistics>,
       isRead: isRead == freezed
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
@@ -113,6 +120,7 @@ abstract class _$BookBodyCopyWith<$Res> implements $BookBodyCopyWith<$Res> {
       Way way,
       int progress,
       Language language,
+      List<BookStatistics> statistics,
       bool isRead,
       Option<DateTime> date});
 }
@@ -134,6 +142,7 @@ class __$BookBodyCopyWithImpl<$Res> extends _$BookBodyCopyWithImpl<$Res>
     Object? way = freezed,
     Object? progress = freezed,
     Object? language = freezed,
+    Object? statistics = freezed,
     Object? isRead = freezed,
     Object? date = freezed,
   }) {
@@ -162,6 +171,10 @@ class __$BookBodyCopyWithImpl<$Res> extends _$BookBodyCopyWithImpl<$Res>
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      statistics: statistics == freezed
+          ? _value.statistics
+          : statistics // ignore: cast_nullable_to_non_nullable
+              as List<BookStatistics>,
       isRead: isRead == freezed
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
@@ -184,9 +197,11 @@ class _$_BookBody extends _BookBody {
       required this.way,
       required this.progress,
       required this.language,
+      required final List<BookStatistics> statistics,
       required this.isRead,
       required this.date})
-      : super._();
+      : _statistics = statistics,
+        super._();
 
   @override
   final UniqueId id;
@@ -200,6 +215,13 @@ class _$_BookBody extends _BookBody {
   final int progress;
   @override
   final Language language;
+  final List<BookStatistics> _statistics;
+  @override
+  List<BookStatistics> get statistics {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_statistics);
+  }
+
   @override
   final bool isRead;
   @override
@@ -207,7 +229,7 @@ class _$_BookBody extends _BookBody {
 
   @override
   String toString() {
-    return 'BookBody(id: $id, name: $name, author: $author, way: $way, progress: $progress, language: $language, isRead: $isRead, date: $date)';
+    return 'BookBody(id: $id, name: $name, author: $author, way: $way, progress: $progress, language: $language, statistics: $statistics, isRead: $isRead, date: $date)';
   }
 
   @override
@@ -221,6 +243,8 @@ class _$_BookBody extends _BookBody {
             const DeepCollectionEquality().equals(other.way, way) &&
             const DeepCollectionEquality().equals(other.progress, progress) &&
             const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality()
+                .equals(other.statistics, statistics) &&
             const DeepCollectionEquality().equals(other.isRead, isRead) &&
             const DeepCollectionEquality().equals(other.date, date));
   }
@@ -234,6 +258,7 @@ class _$_BookBody extends _BookBody {
       const DeepCollectionEquality().hash(way),
       const DeepCollectionEquality().hash(progress),
       const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(statistics),
       const DeepCollectionEquality().hash(isRead),
       const DeepCollectionEquality().hash(date));
 
@@ -251,6 +276,7 @@ abstract class _BookBody extends BookBody {
       required final Way way,
       required final int progress,
       required final Language language,
+      required final List<BookStatistics> statistics,
       required final bool isRead,
       required final Option<DateTime> date}) = _$_BookBody;
   const _BookBody._() : super._();
@@ -267,6 +293,8 @@ abstract class _BookBody extends BookBody {
   int get progress => throw _privateConstructorUsedError;
   @override
   Language get language => throw _privateConstructorUsedError;
+  @override
+  List<BookStatistics> get statistics => throw _privateConstructorUsedError;
   @override
   bool get isRead => throw _privateConstructorUsedError;
   @override

@@ -2,6 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
 
+import 'statistics.dart';
+
 part 'body.freezed.dart';
 
 @freezed
@@ -15,6 +17,7 @@ abstract class BookBody implements _$BookBody {
     required Way way,
     required int progress,
     required Language language,
+    required List<BookStatistics> statistics,
     required bool isRead,
     required Option<DateTime> date,
   }) = _BookBody;
@@ -26,6 +29,7 @@ abstract class BookBody implements _$BookBody {
         way: Way.reading,
         progress: 0,
         language: Language('en'),
+        statistics: [],
         isRead: false,
         date: none(),
       );
