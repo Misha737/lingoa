@@ -61,4 +61,5 @@ class _Input {
 class _CardBook {
   final double height = 144;
   final double widthLeftContainer = 112;
+  final double heightCardStatistics = 64;
 }

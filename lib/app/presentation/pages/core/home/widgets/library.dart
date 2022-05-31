@@ -6,9 +6,8 @@ import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
-
-import 'cards/books/standard.dart';
-import 'cards/books/passed.dart';
+import 'package:lingoa/app/presentation/widgets/cards/books/passed.dart';
+import 'package:lingoa/app/presentation/widgets/cards/books/standard.dart';
 
 class LibraryCardsBook extends StatelessWidget {
   const LibraryCardsBook({
@@ -63,15 +62,16 @@ class LibraryCardsBook extends StatelessWidget {
                   ? CardBook(
                       // * Тут перевіряти і виводити помилки
                       book: BookBody.empty().copyWith(
-                          name: Name('Кобзар'),
-                          author: some(Name('Тарас Шевченко')),
-                          statistics: const [
-                            BookStatistics(
-                                name: 'Прочитано сторінок', value: 30),
-                            BookStatistics(name: 'Вивчено слів', value: 289),
-                            BookStatistics(name: 'Прогрес', value: 16),
-                            BookStatistics(name: 'Пройдено речень', value: 176),
-                          ]),
+                        name: Name('Кобзар'),
+                        author: some(Name('Тарас Шевченко')),
+                        statistics: const [
+                          BookStatistics(name: 'Прочитано сторінок', value: 30),
+                          BookStatistics(name: 'Вивчено слів', value: 289),
+                          BookStatistics(name: 'Прогрес', value: 16),
+                          BookStatistics(name: 'Пройдено речень', value: 176),
+                        ],
+                        date: some(DateTime.now()),
+                      ),
                     )
                   // ? const CardBookError(isPassed: false)
                   : CardBookPassed(

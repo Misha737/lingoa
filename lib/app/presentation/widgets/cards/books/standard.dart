@@ -5,7 +5,7 @@ import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
-import 'package:lingoa/app/presentation/widgets/dialog/book_statistics.dart';
+import 'package:lingoa/app/presentation/widgets/dialog/book_sheet_statistics.dart';
 import 'package:lingoa/app/presentation/widgets/menu/popup.dart';
 
 class CardBook extends StatelessWidget {
