@@ -4,6 +4,7 @@ part 'statistics.freezed.dart';
 
 @freezed
 abstract class BookStatistics implements _$BookStatistics {
+  // * Помісити в GridStatistics (Зробити)
   const BookStatistics._();
 
   const factory BookStatistics({

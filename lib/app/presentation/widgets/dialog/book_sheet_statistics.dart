@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
@@ -79,7 +80,9 @@ Future<T?> showBookStatistics<T extends Object?>(
                       Padding(
                         padding: const EdgeInsets.only(left: Dimensions.d16),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.popRoute();
+                          },
                           iconSize: 36,
                           icon: const Icon(
                             Icons.close_rounded,
@@ -94,5 +97,19 @@ Future<T?> showBookStatistics<T extends Object?>(
             ),
           ],
         ),
+      ),
+      transitionDuration: const Duration(milliseconds: 500),
+      transitionBuilder: (context, animation, secondaryAnimation, child) =>
+          SlideTransition(
+        position: CurvedAnimation(
+          parent: animation,
+          curve: Curves.ease,
+        ).drive(
+          Tween(
+            begin: const Offset(0, -1),
+            end: Offset.zero,
+          ),
+        ),
+        child: child,
       ),
     );

@@ -28,7 +28,7 @@ class TextStyles {
     fontSize: 16,
   );
   static const body3 = TextStyle(
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     fontSize: 14,
   );
   static const button1 = TextStyle(

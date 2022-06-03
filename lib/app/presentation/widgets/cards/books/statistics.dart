@@ -16,11 +16,11 @@ class CardBookStatistics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Dimensions.cardBook.height,
-      width: MediaQuery.of(context).size.width,
+    return Ink(
       decoration: Dimensions.boxDecoration,
-      child: Material(
+      child: SizedBox(
+        height: Dimensions.cardBook.height,
+        width: MediaQuery.of(context).size.width,
         child: Row(
           children: [
             Container(
@@ -39,9 +39,9 @@ class CardBookStatistics extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: Dimensions.d8),
-                      child: Expanded(
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: Dimensions.d8),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
