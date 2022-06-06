@@ -489,6 +489,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Add a book`
+  String get AddBook {
+    return Intl.message(
+      'Add a book',
+      name: 'AddBook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add your favorite book`
+  String get AddBookLike {
+    return Intl.message(
+      'Add your favorite book',
+      name: 'AddBookLike',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

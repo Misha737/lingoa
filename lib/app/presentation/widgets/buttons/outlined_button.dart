@@ -43,11 +43,15 @@ class OutlinedButtonApp extends StatelessWidget {
               ? [
                   Text(
                     label,
+                    style: TextStyles.button2,
                   ),
                   const SizedBox(
                     width: Dimensions.d4,
                   ),
-                  Icon(icon),
+                  Icon(
+                    icon,
+                    size: Dimensions.d20,
+                  ),
                 ]
               : [
                   SizedBox(

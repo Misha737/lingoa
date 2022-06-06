@@ -12,6 +12,7 @@ class Dimensions {
   static const double d16 = 16;
   static const double d20 = 20;
   static const double d24 = 24;
+  static const double d32 = 32;
   static const double elevation = 3;
   static const double borderRadius = 9;
   static const double miniBorderRadius = 6;
@@ -36,6 +37,10 @@ class Dimensions {
     boxShadow: [
       Dimensions.boxShadow,
     ],
+  );
+  static final BoxDecoration boxDecorationBlue = BoxDecoration(
+    color: ColorsLightTheme.blue,
+    borderRadius: BorderRadius.circular(Dimensions.borderRadius),
   );
 }
 

@@ -42,5 +42,7 @@
   "WeakPassword": "Weak password",
   "WeCareAbout": "We care about your safety and do not want to be hacked",
   "Library": "Library",
-  "Read": "Read"
+  "Read": "Read",
+  "AddBook": "Add a book",
+  "AddBookLike": "Add your favorite book"
 }

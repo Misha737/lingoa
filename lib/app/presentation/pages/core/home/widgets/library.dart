@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/domain/book/statistics.dart';
@@ -8,8 +8,9 @@ import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
 import 'package:lingoa/app/presentation/widgets/cards/books/passed.dart';
 import 'package:lingoa/app/presentation/widgets/cards/books/standard.dart';
+import 'package:lingoa/app/presentation/widgets/menu/sheet_menu.dart';
 
-class LibraryCardsBook extends StatelessWidget {
+class LibraryCardsBook extends StatefulWidget {
   const LibraryCardsBook({
     Key? key,
     required this.title,
@@ -20,6 +21,26 @@ class LibraryCardsBook extends StatelessWidget {
   final String title;
   final bool isNotPassed;
   final int length;
+
+  @override
+  State<LibraryCardsBook> createState() => _LibraryCardsBookState();
+}
+
+class _LibraryCardsBookState extends State<LibraryCardsBook> {
+  late int _selectedIndex;
+
+  @override
+  void initState() {
+    _selectedIndex = Dimensions.zero.toInt();
+    super.initState();
+  }
+
+  void _onItemTapped(int newIndex) {
+    setState(() {
+      _selectedIndex = newIndex;
+      // * Tут робити сортовий(В BloC)
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +54,23 @@ class LibraryCardsBook extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  title,
+                  widget.title,
                   style: TextStyles.headline3.copyWith(
                     color: ColorsLightTheme.gray,
                   ),
                 ),
-                isNotPassed
+                widget.isNotPassed
                     ? IconButton(
-                        onPressed: () {},
+                        onPressed: () => showSheetMenu(
+                          context,
+                          itemsName: [
+                            'За алфавітом назви',
+                            'За популярністю',
+                            'За кількість прочитаним',
+                          ],
+                          itemInit: _selectedIndex,
+                          onItemTapped: _onItemTapped,
+                        ),
                         constraints: BoxConstraints(
                           maxHeight: MediaQuery.of(context).size.height,
                           maxWidth: MediaQuery.of(context).size.width,
@@ -57,27 +87,27 @@ class LibraryCardsBook extends StatelessWidget {
           ),
           Column(
             children: List<Widget>.generate(
-              length,
-              (index) => isNotPassed
+              widget.length,
+              (index) => widget.isNotPassed
                   ? CardBook(
                       // * Тут перевіряти і виводити помилки
                       book: BookBody.empty().copyWith(
                         name: Name('Кобзар'),
-                        author: some(Name('Тарас Шевченко')),
+                        author: dartz.some(Name('Тарас Шевченко')),
                         statistics: const [
                           BookStatistics(name: 'Прочитано сторінок', value: 30),
                           BookStatistics(name: 'Вивчено слів', value: 289),
                           BookStatistics(name: 'Прогрес', value: 16),
                           BookStatistics(name: 'Пройдено речень', value: 176),
                         ],
-                        date: some(DateTime.now()),
+                        date: dartz.some(DateTime.now()),
                       ),
                     )
                   // ? const CardBookError(isPassed: false)
                   : CardBookPassed(
                       book: BookBody.empty().copyWith(
                         name: Name('Пригоди на острові'),
-                        author: some(Name('Пірат')),
+                        author: dartz.some(Name('Пірат')),
                       ),
                     ),
               // : const CardBookError(isPassed: true),
