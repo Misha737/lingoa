@@ -44,5 +44,14 @@
   "Library": "Library",
   "Read": "Read",
   "AddBook": "Add a book",
-  "AddBookLike": "Add your favorite book"
+  "AddBookLike": "Add your favorite book",
+  "Way": "Way",
+  "Statistics": "Statistics",
+  "Distribute": "Distribute",
+  "Edit": "Edit",
+  "EDIT": "EDIT",
+  "Remove": "Remove",
+  "YourBook": "Your book",
+  "BookAdded": "Book added",
+  "Response": "Response"
 }

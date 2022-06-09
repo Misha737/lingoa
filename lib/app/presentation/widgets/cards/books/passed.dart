@@ -1,10 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/generated/l10n.dart';
 
 class CardBookPassed extends StatelessWidget {
   const CardBookPassed({
@@ -23,12 +22,8 @@ class CardBookPassed extends StatelessWidget {
           gradient: ColorsLightTheme.gold,
         ),
         child: InkWell(
-          onTap: () {
-            log('Book');
-          },
-          onLongPress: () {
-            log('Long Book');
-          },
+          onTap: () {},
+          onLongPress: () {},
           borderRadius: BorderRadius.circular(Dimensions.borderRadius),
           child: SizedBox(
             height: Dimensions.cardBook.height,
@@ -63,7 +58,7 @@ class CardBookPassed extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              book.author.fold(() => '', (a) => a.getOrCrash()),
+                              book.author.getOrCrash(),
                               style: TextStyles.headline6.copyWith(
                                 color: ColorsLightTheme.gray
                                     .withOpacity(Dimensions.opacityText),
@@ -73,7 +68,7 @@ class CardBookPassed extends StatelessWidget {
                               height: Dimensions.d8,
                             ),
                             Text(
-                              'Спосіб: ${book.way.name}',
+                              '${S().Way}: ${book.way.name}',
                               style: TextStyles.headline6.copyWith(
                                 color: ColorsLightTheme.gray
                                     .withOpacity(Dimensions.opacityText),

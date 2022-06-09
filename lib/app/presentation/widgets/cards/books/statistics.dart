@@ -1,10 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/generated/l10n.dart';
 
 class CardBookStatistics extends StatelessWidget {
   const CardBookStatistics({
@@ -56,16 +55,13 @@ class CardBookStatistics extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  book.author.fold(
-                                    () => '',
-                                    (a) => a.getOrCrash(),
-                                  ),
+                                  book.author.getOrCrash(),
                                   style: TextStyles.headline6.copyWith(
                                     color: ColorsLightTheme.gray,
                                   ),
                                 ),
                                 Text(
-                                  'Спосіб: ${book.way.name}',
+                                  '${S().Way}: ${book.way.name}',
                                   style: TextStyles.headline6.copyWith(
                                     color: ColorsLightTheme.gray,
                                   ),
@@ -78,7 +74,7 @@ class CardBookStatistics extends StatelessWidget {
                             ),
                             TextButton(
                               child: Text(
-                                'РЕДАГУВАТИ',
+                                S().EDIT,
                                 style: TextStyles.headline6.copyWith(
                                   color: ColorsLightTheme.blue,
                                 ),
@@ -99,18 +95,14 @@ class CardBookStatistics extends StatelessWidget {
                           icon: const Icon(
                             Icons.share,
                           ),
-                          onPressed: () {
-                            log('message');
-                          },
+                          onPressed: () {},
                         ),
                         IconButton(
                           padding: EdgeInsets.zero,
                           icon: const Icon(
                             Icons.share,
                           ),
-                          onPressed: () {
-                            log('message');
-                          },
+                          onPressed: () {},
                         ),
                       ],
                     ),

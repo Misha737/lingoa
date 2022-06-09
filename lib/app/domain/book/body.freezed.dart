@@ -18,13 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$BookBody {
   UniqueId get id => throw _privateConstructorUsedError;
   Name get name => throw _privateConstructorUsedError;
-  Option<Name> get author => throw _privateConstructorUsedError;
+  Name get author => throw _privateConstructorUsedError;
   Way get way => throw _privateConstructorUsedError;
-  int get progress => throw _privateConstructorUsedError;
+  double get progress => throw _privateConstructorUsedError; // Від 0 до 1
   Language get language => throw _privateConstructorUsedError;
-  List<BookStatistics> get statistics => throw _privateConstructorUsedError;
   bool get isRead => throw _privateConstructorUsedError;
-  Option<DateTime> get date => throw _privateConstructorUsedError;
+  DateTime get date => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BookBodyCopyWith<BookBody> get copyWith =>
@@ -38,13 +37,12 @@ abstract class $BookBodyCopyWith<$Res> {
   $Res call(
       {UniqueId id,
       Name name,
-      Option<Name> author,
+      Name author,
       Way way,
-      int progress,
+      double progress,
       Language language,
-      List<BookStatistics> statistics,
       bool isRead,
-      Option<DateTime> date});
+      DateTime date});
 }
 
 /// @nodoc
@@ -63,7 +61,6 @@ class _$BookBodyCopyWithImpl<$Res> implements $BookBodyCopyWith<$Res> {
     Object? way = freezed,
     Object? progress = freezed,
     Object? language = freezed,
-    Object? statistics = freezed,
     Object? isRead = freezed,
     Object? date = freezed,
   }) {
@@ -79,7 +76,7 @@ class _$BookBodyCopyWithImpl<$Res> implements $BookBodyCopyWith<$Res> {
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as Option<Name>,
+              as Name,
       way: way == freezed
           ? _value.way
           : way // ignore: cast_nullable_to_non_nullable
@@ -87,15 +84,11 @@ class _$BookBodyCopyWithImpl<$Res> implements $BookBodyCopyWith<$Res> {
       progress: progress == freezed
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
-      statistics: statistics == freezed
-          ? _value.statistics
-          : statistics // ignore: cast_nullable_to_non_nullable
-              as List<BookStatistics>,
       isRead: isRead == freezed
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
@@ -103,7 +96,7 @@ class _$BookBodyCopyWithImpl<$Res> implements $BookBodyCopyWith<$Res> {
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as Option<DateTime>,
+              as DateTime,
     ));
   }
 }
@@ -116,13 +109,12 @@ abstract class _$BookBodyCopyWith<$Res> implements $BookBodyCopyWith<$Res> {
   $Res call(
       {UniqueId id,
       Name name,
-      Option<Name> author,
+      Name author,
       Way way,
-      int progress,
+      double progress,
       Language language,
-      List<BookStatistics> statistics,
       bool isRead,
-      Option<DateTime> date});
+      DateTime date});
 }
 
 /// @nodoc
@@ -142,7 +134,6 @@ class __$BookBodyCopyWithImpl<$Res> extends _$BookBodyCopyWithImpl<$Res>
     Object? way = freezed,
     Object? progress = freezed,
     Object? language = freezed,
-    Object? statistics = freezed,
     Object? isRead = freezed,
     Object? date = freezed,
   }) {
@@ -158,7 +149,7 @@ class __$BookBodyCopyWithImpl<$Res> extends _$BookBodyCopyWithImpl<$Res>
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
-              as Option<Name>,
+              as Name,
       way: way == freezed
           ? _value.way
           : way // ignore: cast_nullable_to_non_nullable
@@ -166,15 +157,11 @@ class __$BookBodyCopyWithImpl<$Res> extends _$BookBodyCopyWithImpl<$Res>
       progress: progress == freezed
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
-      statistics: statistics == freezed
-          ? _value.statistics
-          : statistics // ignore: cast_nullable_to_non_nullable
-              as List<BookStatistics>,
       isRead: isRead == freezed
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
@@ -182,7 +169,7 @@ class __$BookBodyCopyWithImpl<$Res> extends _$BookBodyCopyWithImpl<$Res>
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as Option<DateTime>,
+              as DateTime,
     ));
   }
 }
@@ -197,39 +184,31 @@ class _$_BookBody extends _BookBody {
       required this.way,
       required this.progress,
       required this.language,
-      required final List<BookStatistics> statistics,
       required this.isRead,
       required this.date})
-      : _statistics = statistics,
-        super._();
+      : super._();
 
   @override
   final UniqueId id;
   @override
   final Name name;
   @override
-  final Option<Name> author;
+  final Name author;
   @override
   final Way way;
   @override
-  final int progress;
+  final double progress;
+// Від 0 до 1
   @override
   final Language language;
-  final List<BookStatistics> _statistics;
-  @override
-  List<BookStatistics> get statistics {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_statistics);
-  }
-
   @override
   final bool isRead;
   @override
-  final Option<DateTime> date;
+  final DateTime date;
 
   @override
   String toString() {
-    return 'BookBody(id: $id, name: $name, author: $author, way: $way, progress: $progress, language: $language, statistics: $statistics, isRead: $isRead, date: $date)';
+    return 'BookBody(id: $id, name: $name, author: $author, way: $way, progress: $progress, language: $language, isRead: $isRead, date: $date)';
   }
 
   @override
@@ -243,8 +222,6 @@ class _$_BookBody extends _BookBody {
             const DeepCollectionEquality().equals(other.way, way) &&
             const DeepCollectionEquality().equals(other.progress, progress) &&
             const DeepCollectionEquality().equals(other.language, language) &&
-            const DeepCollectionEquality()
-                .equals(other.statistics, statistics) &&
             const DeepCollectionEquality().equals(other.isRead, isRead) &&
             const DeepCollectionEquality().equals(other.date, date));
   }
@@ -258,7 +235,6 @@ class _$_BookBody extends _BookBody {
       const DeepCollectionEquality().hash(way),
       const DeepCollectionEquality().hash(progress),
       const DeepCollectionEquality().hash(language),
-      const DeepCollectionEquality().hash(statistics),
       const DeepCollectionEquality().hash(isRead),
       const DeepCollectionEquality().hash(date));
 
@@ -272,13 +248,12 @@ abstract class _BookBody extends BookBody {
   const factory _BookBody(
       {required final UniqueId id,
       required final Name name,
-      required final Option<Name> author,
+      required final Name author,
       required final Way way,
-      required final int progress,
+      required final double progress,
       required final Language language,
-      required final List<BookStatistics> statistics,
       required final bool isRead,
-      required final Option<DateTime> date}) = _$_BookBody;
+      required final DateTime date}) = _$_BookBody;
   const _BookBody._() : super._();
 
   @override
@@ -286,19 +261,17 @@ abstract class _BookBody extends BookBody {
   @override
   Name get name => throw _privateConstructorUsedError;
   @override
-  Option<Name> get author => throw _privateConstructorUsedError;
+  Name get author => throw _privateConstructorUsedError;
   @override
   Way get way => throw _privateConstructorUsedError;
   @override
-  int get progress => throw _privateConstructorUsedError;
-  @override
+  double get progress => throw _privateConstructorUsedError;
+  @override // Від 0 до 1
   Language get language => throw _privateConstructorUsedError;
-  @override
-  List<BookStatistics> get statistics => throw _privateConstructorUsedError;
   @override
   bool get isRead => throw _privateConstructorUsedError;
   @override
-  Option<DateTime> get date => throw _privateConstructorUsedError;
+  DateTime get date => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$BookBodyCopyWith<_BookBody> get copyWith =>

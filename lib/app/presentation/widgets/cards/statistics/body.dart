@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lingoa/app/domain/book/statistics.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
@@ -13,7 +12,7 @@ class StatisticsCards extends StatelessWidget {
     required this.title,
   }) : super(key: key);
 
-  final List<BookStatistics> statistics;
+  final Map<String, num> statistics;
   final String title;
 
   @override
@@ -42,7 +41,8 @@ class StatisticsCards extends StatelessWidget {
                   statistics.length,
                   (index) => index % 2 == 0
                       ? StatisticsCard(
-                          statistics: statistics[index],
+                          name: statistics.keys.elementAt(index),
+                          value: statistics.values.elementAt(index),
                           icon: Icons.book_rounded,
                         )
                       : const SizedBox(),
@@ -57,7 +57,8 @@ class StatisticsCards extends StatelessWidget {
                   (index) => index % 2 == 0
                       ? const SizedBox()
                       : StatisticsCard(
-                          statistics: statistics[index],
+                          name: statistics.keys.elementAt(index),
+                          value: statistics.values.elementAt(index),
                           icon: Icons.book_rounded,
                         ),
                 ),

@@ -8,7 +8,8 @@ abstract class BookStatistics implements _$BookStatistics {
   const BookStatistics._();
 
   const factory BookStatistics({
-    required String name,
-    required int value,
+    // required String name,
+    // required num value,
+    required Map<String, num> statistics,
   }) = _BookStatistics;
 }

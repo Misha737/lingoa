@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lingoa/app/domain/book/statistics.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
@@ -7,11 +6,13 @@ import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dar
 class StatisticsCard extends StatelessWidget {
   const StatisticsCard({
     Key? key,
-    required this.statistics,
+    required this.name,
+    required this.value,
     required this.icon,
   }) : super(key: key);
 
-  final BookStatistics statistics;
+  final String name;
+  final num value;
   final IconData icon;
 
   @override
@@ -43,7 +44,7 @@ class StatisticsCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        statistics.value.toString(),
+                        value.toString(),
                         overflow: TextOverflow.ellipsis,
                         style: TextStyles.headline4.copyWith(
                           color: ColorsLightTheme.gray,
@@ -51,7 +52,7 @@ class StatisticsCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        statistics.name,
+                        name,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyles.label2.copyWith(
                           color: ColorsLightTheme.lightMediumGray,

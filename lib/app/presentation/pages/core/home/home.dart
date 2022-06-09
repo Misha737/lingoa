@@ -22,6 +22,7 @@ class HomeBody extends StatelessWidget {
             children: [
               const SearchButton(),
               LibraryCardsBook(
+                // * Переробити клас
                 title: S().Library,
                 isNotPassed: true,
                 length: 5,

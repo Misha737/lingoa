@@ -1,9 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
+import 'package:lingoa/app/domain/book/statistics.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/generated/l10n.dart';
 
 import '../cards/books/statistics.dart';
 import '../cards/statistics/body.dart';
@@ -44,7 +46,7 @@ Future<T?> showBookStatistics<T extends Object?>(
                         child: Column(
                           children: [
                             Text(
-                              'Ваша книга',
+                              S().YourBook,
                               style: TextStyles.headline3.copyWith(
                                 color: ColorsLightTheme.gray,
                                 height: Dimensions.d1,
@@ -58,18 +60,21 @@ Future<T?> showBookStatistics<T extends Object?>(
                               height: Dimensions.d12,
                             ),
                             StatisticsCards(
-                              statistics: book.statistics,
-                              title: 'Статистика',
+                              statistics: const BookStatistics(
+                                statistics: {
+                                  'Прочитано сторінок': 30,
+                                  'Вивчено слів': 30,
+                                  'Прогрес': 30,
+                                  'Пройдено речень': 30,
+                                },
+                              ).statistics,
+                              title: S().Statistics,
                             ),
                             const SizedBox(
                               height: Dimensions.d4,
                             ),
                             Text(
-                              'Книгу додано: ${book.date.fold(
-                                () => '',
-                                (a) =>
-                                    '${a.year.toString()}-${a.month.toString()}-${a.day.toString()} ${a.hour.toString()}:${a.minute.toString()}',
-                              )}',
+                              '${S().BookAdded}: ${book.date.year.toString()}-${book.date.month.toString()}-${book.date.day.toString()} ${book.date.hour.toString()}:${book.date.minute.toString()}',
                               style: TextStyles.body3.copyWith(
                                 color: ColorsLightTheme.gray,
                               ),

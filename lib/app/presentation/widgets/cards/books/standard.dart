@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
@@ -7,6 +5,7 @@ import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
 import 'package:lingoa/app/presentation/widgets/dialog/book_sheet_statistics.dart';
 import 'package:lingoa/app/presentation/widgets/menu/popup.dart';
+import 'package:lingoa/generated/l10n.dart';
 
 class CardBook extends StatelessWidget {
   const CardBook({
@@ -23,18 +22,9 @@ class CardBook extends StatelessWidget {
       child: Ink(
         decoration: Dimensions.boxDecoration,
         child: InkWell(
-          onTap: () {
-            log('Book');
-            showModalBottomSheet(
-              context: context,
-              builder: (context) => const Text('data'),
-            );
-          },
+          onTap: () {},
           onLongPress: () {
-            log('Long Book');
-            showGeneralDialog(
-                context: context, pageBuilder: (d, s, a) => const Text('data'));
-            //showBookStatistics(context);
+            showBookStatistics(context, book); //showBookStatistics(context);
           },
           borderRadius: BorderRadius.circular(Dimensions.borderRadius),
           child: SizedBox(
@@ -73,10 +63,7 @@ class CardBook extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    book.author.fold(
-                                      () => '',
-                                      (a) => a.getOrCrash(),
-                                    ),
+                                    book.author.getOrCrash(),
                                     style: TextStyles.headline6.copyWith(
                                       color: ColorsLightTheme.gray,
                                     ),
@@ -85,7 +72,7 @@ class CardBook extends StatelessWidget {
                                     height: Dimensions.d8,
                                   ),
                                   Text(
-                                    'Спосіб: ${book.way.name}',
+                                    '${S().Way}: ${book.way.name}',
                                     style: TextStyles.headline6.copyWith(
                                       color: ColorsLightTheme.gray,
                                     ),
@@ -93,6 +80,7 @@ class CardBook extends StatelessWidget {
                                 ],
                               ),
                               const Text(
+                                // SvgPicture.assets('assets/language/${book.language}.svg')
                                 '🗺️',
                                 style: TextStyle(fontSize: 26),
                               ),
@@ -108,25 +96,24 @@ class CardBook extends StatelessWidget {
                               onSelected: (value) {
                                 if (value == 0) {
                                   showBookStatistics(context, book);
-                                  log('message Yes');
                                 }
                               },
                               items: (_) => <PopupMenuEntry<int>>[
-                                const PopupMenuItem<int>(
+                                PopupMenuItem<int>(
                                   value: 0,
-                                  child: Text('Статистика'),
+                                  child: Text(S().Statistics),
                                 ),
-                                const PopupMenuItem<int>(
+                                PopupMenuItem<int>(
                                   value: 1,
-                                  child: Text('Поширити'),
+                                  child: Text(S().Distribute),
                                 ),
-                                const PopupMenuItem<int>(
+                                PopupMenuItem<int>(
                                   value: 2,
-                                  child: Text('Редагувати'),
+                                  child: Text(S().Edit),
                                 ),
-                                const PopupMenuItem<int>(
+                                PopupMenuItem<int>(
                                   value: 3,
-                                  child: Text('Видалити'),
+                                  child: Text(S().Remove),
                                 ),
                               ],
                             ),

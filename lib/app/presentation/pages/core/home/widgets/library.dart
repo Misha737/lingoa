@@ -1,7 +1,5 @@
-import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
-import 'package:lingoa/app/domain/book/statistics.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
@@ -93,21 +91,15 @@ class _LibraryCardsBookState extends State<LibraryCardsBook> {
                       // * Тут перевіряти і виводити помилки
                       book: BookBody.empty().copyWith(
                         name: Name('Кобзар'),
-                        author: dartz.some(Name('Тарас Шевченко')),
-                        statistics: const [
-                          BookStatistics(name: 'Прочитано сторінок', value: 30),
-                          BookStatistics(name: 'Вивчено слів', value: 289),
-                          BookStatistics(name: 'Прогрес', value: 16),
-                          BookStatistics(name: 'Пройдено речень', value: 176),
-                        ],
-                        date: dartz.some(DateTime.now()),
+                        author: Name('Тарас Шевченко'),
+                        date: DateTime.now(),
                       ),
                     )
                   // ? const CardBookError(isPassed: false)
                   : CardBookPassed(
                       book: BookBody.empty().copyWith(
                         name: Name('Пригоди на острові'),
-                        author: dartz.some(Name('Пірат')),
+                        author: Name('Пірат'),
                       ),
                     ),
               // : const CardBookError(isPassed: true),

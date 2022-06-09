@@ -16,8 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BookContent {
-  String get nativeTranslate => throw _privateConstructorUsedError;
-  String get learnTranslate => throw _privateConstructorUsedError;
+// required String nativeTranslate,
+// required String learnTranslate,
+  Map<String, String> get content => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BookContentCopyWith<BookContent> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $BookContentCopyWith<$Res> {
   factory $BookContentCopyWith(
           BookContent value, $Res Function(BookContent) then) =
       _$BookContentCopyWithImpl<$Res>;
-  $Res call({String nativeTranslate, String learnTranslate});
+  $Res call({Map<String, String> content});
 }
 
 /// @nodoc
@@ -42,18 +43,13 @@ class _$BookContentCopyWithImpl<$Res> implements $BookContentCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? nativeTranslate = freezed,
-    Object? learnTranslate = freezed,
+    Object? content = freezed,
   }) {
     return _then(_value.copyWith(
-      nativeTranslate: nativeTranslate == freezed
-          ? _value.nativeTranslate
-          : nativeTranslate // ignore: cast_nullable_to_non_nullable
-              as String,
-      learnTranslate: learnTranslate == freezed
-          ? _value.learnTranslate
-          : learnTranslate // ignore: cast_nullable_to_non_nullable
-              as String,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ));
   }
 }
@@ -65,7 +61,7 @@ abstract class _$BookContentCopyWith<$Res>
           _BookContent value, $Res Function(_BookContent) then) =
       __$BookContentCopyWithImpl<$Res>;
   @override
-  $Res call({String nativeTranslate, String learnTranslate});
+  $Res call({Map<String, String> content});
 }
 
 /// @nodoc
@@ -80,18 +76,13 @@ class __$BookContentCopyWithImpl<$Res> extends _$BookContentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? nativeTranslate = freezed,
-    Object? learnTranslate = freezed,
+    Object? content = freezed,
   }) {
     return _then(_BookContent(
-      nativeTranslate: nativeTranslate == freezed
-          ? _value.nativeTranslate
-          : nativeTranslate // ignore: cast_nullable_to_non_nullable
-              as String,
-      learnTranslate: learnTranslate == freezed
-          ? _value.learnTranslate
-          : learnTranslate // ignore: cast_nullable_to_non_nullable
-              as String,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ));
   }
 }
@@ -99,18 +90,24 @@ class __$BookContentCopyWithImpl<$Res> extends _$BookContentCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_BookContent extends _BookContent {
-  const _$_BookContent(
-      {required this.nativeTranslate, required this.learnTranslate})
-      : super._();
+  const _$_BookContent({required final Map<String, String> content})
+      : _content = content,
+        super._();
 
+// required String nativeTranslate,
+// required String learnTranslate,
+  final Map<String, String> _content;
+// required String nativeTranslate,
+// required String learnTranslate,
   @override
-  final String nativeTranslate;
-  @override
-  final String learnTranslate;
+  Map<String, String> get content {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_content);
+  }
 
   @override
   String toString() {
-    return 'BookContent(nativeTranslate: $nativeTranslate, learnTranslate: $learnTranslate)';
+    return 'BookContent(content: $content)';
   }
 
   @override
@@ -118,17 +115,12 @@ class _$_BookContent extends _BookContent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _BookContent &&
-            const DeepCollectionEquality()
-                .equals(other.nativeTranslate, nativeTranslate) &&
-            const DeepCollectionEquality()
-                .equals(other.learnTranslate, learnTranslate));
+            const DeepCollectionEquality().equals(other.content, content));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(nativeTranslate),
-      const DeepCollectionEquality().hash(learnTranslate));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(content));
 
   @JsonKey(ignore: true)
   @override
@@ -137,15 +129,13 @@ class _$_BookContent extends _BookContent {
 }
 
 abstract class _BookContent extends BookContent {
-  const factory _BookContent(
-      {required final String nativeTranslate,
-      required final String learnTranslate}) = _$_BookContent;
+  const factory _BookContent({required final Map<String, String> content}) =
+      _$_BookContent;
   const _BookContent._() : super._();
 
-  @override
-  String get nativeTranslate => throw _privateConstructorUsedError;
-  @override
-  String get learnTranslate => throw _privateConstructorUsedError;
+  @override // required String nativeTranslate,
+// required String learnTranslate,
+  Map<String, String> get content => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$BookContentCopyWith<_BookContent> get copyWith =>

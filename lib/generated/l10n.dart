@@ -509,6 +509,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Way`
+  String get Way {
+    return Intl.message(
+      'Way',
+      name: 'Way',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Statistics`
+  String get Statistics {
+    return Intl.message(
+      'Statistics',
+      name: 'Statistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Distribute`
+  String get Distribute {
+    return Intl.message(
+      'Distribute',
+      name: 'Distribute',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get Edit {
+    return Intl.message(
+      'Edit',
+      name: 'Edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EDIT`
+  String get EDIT {
+    return Intl.message(
+      'EDIT',
+      name: 'EDIT',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove`
+  String get Remove {
+    return Intl.message(
+      'Remove',
+      name: 'Remove',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your book`
+  String get YourBook {
+    return Intl.message(
+      'Your book',
+      name: 'YourBook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book added`
+  String get BookAdded {
+    return Intl.message(
+      'Book added',
+      name: 'BookAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Response`
+  String get Response {
+    return Intl.message(
+      'Response',
+      name: 'Response',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

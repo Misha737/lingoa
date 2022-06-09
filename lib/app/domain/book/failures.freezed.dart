@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$BookFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
     required TResult Function() serverException,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
@@ -25,6 +26,7 @@ mixin _$BookFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
     TResult Function()? serverException,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
@@ -32,6 +34,7 @@ mixin _$BookFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
     TResult Function()? serverException,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
@@ -40,6 +43,7 @@ mixin _$BookFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_ServerException value) serverException,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
@@ -48,6 +52,7 @@ mixin _$BookFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
     TResult Function(_ServerException value)? serverException,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
@@ -55,6 +60,7 @@ mixin _$BookFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
     TResult Function(_ServerException value)? serverException,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
@@ -77,6 +83,123 @@ class _$BookFailureCopyWithImpl<$Res> implements $BookFailureCopyWith<$Res> {
   final BookFailure _value;
   // ignore: unused_field
   final $Res Function(BookFailure) _then;
+}
+
+/// @nodoc
+abstract class _$UnexpectedCopyWith<$Res> {
+  factory _$UnexpectedCopyWith(
+          _Unexpected value, $Res Function(_Unexpected) then) =
+      __$UnexpectedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$UnexpectedCopyWithImpl<$Res> extends _$BookFailureCopyWithImpl<$Res>
+    implements _$UnexpectedCopyWith<$Res> {
+  __$UnexpectedCopyWithImpl(
+      _Unexpected _value, $Res Function(_Unexpected) _then)
+      : super(_value, (v) => _then(v as _Unexpected));
+
+  @override
+  _Unexpected get _value => super._value as _Unexpected;
+}
+
+/// @nodoc
+
+class _$_Unexpected implements _Unexpected {
+  const _$_Unexpected();
+
+  @override
+  String toString() {
+    return 'BookFailure.unexpected()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Unexpected);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() serverException,
+    required TResult Function() insufficientPermissions,
+    required TResult Function() unableToUpdate,
+  }) {
+    return unexpected();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? serverException,
+    TResult Function()? insufficientPermissions,
+    TResult Function()? unableToUpdate,
+  }) {
+    return unexpected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? serverException,
+    TResult Function()? insufficientPermissions,
+    TResult Function()? unableToUpdate,
+    required TResult orElse(),
+  }) {
+    if (unexpected != null) {
+      return unexpected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_ServerException value) serverException,
+    required TResult Function(_InsufficientPermissions value)
+        insufficientPermissions,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+  }) {
+    return unexpected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_ServerException value)? serverException,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+  }) {
+    return unexpected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_ServerException value)? serverException,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    required TResult orElse(),
+  }) {
+    if (unexpected != null) {
+      return unexpected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Unexpected implements BookFailure {
+  const factory _Unexpected() = _$_Unexpected;
 }
 
 /// @nodoc
@@ -120,6 +243,7 @@ class _$_ServerException implements _ServerException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
     required TResult Function() serverException,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
@@ -130,6 +254,7 @@ class _$_ServerException implements _ServerException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
     TResult Function()? serverException,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
@@ -140,6 +265,7 @@ class _$_ServerException implements _ServerException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
     TResult Function()? serverException,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
@@ -154,6 +280,7 @@ class _$_ServerException implements _ServerException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_ServerException value) serverException,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
@@ -165,6 +292,7 @@ class _$_ServerException implements _ServerException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
     TResult Function(_ServerException value)? serverException,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
@@ -175,6 +303,7 @@ class _$_ServerException implements _ServerException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
     TResult Function(_ServerException value)? serverException,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
@@ -233,6 +362,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
     required TResult Function() serverException,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
@@ -243,6 +373,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
     TResult Function()? serverException,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
@@ -253,6 +384,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
     TResult Function()? serverException,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
@@ -267,6 +399,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_ServerException value) serverException,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
@@ -278,6 +411,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
     TResult Function(_ServerException value)? serverException,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
@@ -288,6 +422,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
     TResult Function(_ServerException value)? serverException,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
@@ -345,6 +480,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
     required TResult Function() serverException,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
@@ -355,6 +491,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
     TResult Function()? serverException,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
@@ -365,6 +502,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
     TResult Function()? serverException,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
@@ -379,6 +517,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_ServerException value) serverException,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
@@ -390,6 +529,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
     TResult Function(_ServerException value)? serverException,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
@@ -400,6 +540,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
     TResult Function(_ServerException value)? serverException,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,

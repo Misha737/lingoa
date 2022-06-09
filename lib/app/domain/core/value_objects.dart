@@ -69,6 +69,10 @@ class Name extends ValueObject<String> {
     );
   }
 
+  factory Name.empty(String input) {
+    return Name._(ValueValidator.stringMaxLength(input, maxLength));
+  }
+
   const Name._(this.value);
 }
 
