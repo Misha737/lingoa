@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:lingoa/app/domain/core/failures.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
 
 part 'body.freezed.dart';
@@ -28,6 +30,13 @@ abstract class BookBody implements _$BookBody {
         isRead: false,
         date: DateTime(0),
       );
+
+  Option<ValueFailure<dynamic>> get failureOption {
+    return name.failureOrUnit
+        .andThen(author.failureOrUnit)
+        .andThen(language.failureOrUnit)
+        .fold((f) => some(f), (_) => none());
+  }
 }
 
 enum Way {

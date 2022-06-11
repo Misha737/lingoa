@@ -14,7 +14,7 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import 'app/application/auth/bloc.dart' as _i11;
 import 'app/application/auth/form/bloc.dart' as _i12;
-import 'app/application/library/book/controller/bloc.dart' as _i13;
+import 'app/application/library/controller/bloc.dart' as _i13;
 import 'app/application/library/watch/bloc.dart' as _i10;
 import 'app/domain/auth/i_auth_facade.dart' as _i6;
 import 'app/domain/book/repository.dart' as _i8;

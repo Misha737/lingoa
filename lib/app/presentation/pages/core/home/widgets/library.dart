@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
-import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/app/presentation/widgets/cards/books/error.dart';
 import 'package:lingoa/app/presentation/widgets/cards/books/passed.dart';
 import 'package:lingoa/app/presentation/widgets/cards/books/standard.dart';
 import 'package:lingoa/app/presentation/widgets/menu/sheet_menu.dart';
@@ -13,12 +13,12 @@ class LibraryCardsBook extends StatefulWidget {
     Key? key,
     required this.title,
     required this.isNotPassed,
-    required this.length,
+    required this.books,
   }) : super(key: key);
 
   final String title;
   final bool isNotPassed;
-  final int length;
+  final List<BookBody?> books;
 
   @override
   State<LibraryCardsBook> createState() => _LibraryCardsBookState();
@@ -85,24 +85,24 @@ class _LibraryCardsBookState extends State<LibraryCardsBook> {
           ),
           Column(
             children: List<Widget>.generate(
-              widget.length,
-              (index) => widget.isNotPassed
-                  ? CardBook(
-                      // * Тут перевіряти і виводити помилки
-                      book: BookBody.empty().copyWith(
-                        name: Name('Кобзар'),
-                        author: Name('Тарас Шевченко'),
-                        date: DateTime.now(),
-                      ),
-                    )
-                  // ? const CardBookError(isPassed: false)
-                  : CardBookPassed(
-                      book: BookBody.empty().copyWith(
-                        name: Name('Пригоди на острові'),
-                        author: Name('Пірат'),
-                      ),
-                    ),
-              // : const CardBookError(isPassed: true),
+              widget.books.length,
+              (index) {
+                final book = widget.books[index];
+
+                if (book == null) {
+                  return const SizedBox.shrink();
+                }
+
+                if (book.failureOption.isSome()) {
+                  return CardBookError(isPassed: !widget.isNotPassed);
+                } else {
+                  if (widget.isNotPassed) {
+                    return CardBook(book: book);
+                  } else {
+                    return CardBookPassed(book: book);
+                  }
+                }
+              },
             ),
           )
         ],
