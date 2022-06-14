@@ -20,7 +20,7 @@ class LibraryWatchBloc extends Bloc<LibraryWatchEvent, LibraryWatchState> {
 
   LibraryWatchBloc(this._bookRepository)
       : super(const LibraryWatchState.initial()) {
-    on<Sort>(
+    on<_Sort>(
       (event, emit) async {
         emit(const LibraryWatchState.loading());
 
@@ -28,11 +28,11 @@ class LibraryWatchBloc extends Bloc<LibraryWatchEvent, LibraryWatchState> {
 
         _streamSubscription = _bookRepository
             .getBody()
-            .listen((event) => LibraryWatchEvent.received(event));
+            .listen((event) => add(LibraryWatchEvent.received(event)));
       },
     );
 
-    on<Received>(
+    on<_Received>(
       (event, emit) => emit(
         event.failureOrSuccess.fold(
           (f) => LibraryWatchState.failure(f),

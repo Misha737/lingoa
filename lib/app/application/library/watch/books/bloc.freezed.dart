@@ -41,20 +41,20 @@ mixin _$LibraryWatchEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Sort value) sort,
-    required TResult Function(Received value) received,
+    required TResult Function(_Sort value) sort,
+    required TResult Function(_Received value) received,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Sort value)? sort,
-    TResult Function(Received value)? received,
+    TResult Function(_Sort value)? sort,
+    TResult Function(_Received value)? received,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Sort value)? sort,
-    TResult Function(Received value)? received,
+    TResult Function(_Sort value)? sort,
+    TResult Function(_Received value)? received,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,26 +78,26 @@ class _$LibraryWatchEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $SortCopyWith<$Res> {
-  factory $SortCopyWith(Sort value, $Res Function(Sort) then) =
-      _$SortCopyWithImpl<$Res>;
+abstract class _$SortCopyWith<$Res> {
+  factory _$SortCopyWith(_Sort value, $Res Function(_Sort) then) =
+      __$SortCopyWithImpl<$Res>;
   $Res call({int type});
 }
 
 /// @nodoc
-class _$SortCopyWithImpl<$Res> extends _$LibraryWatchEventCopyWithImpl<$Res>
-    implements $SortCopyWith<$Res> {
-  _$SortCopyWithImpl(Sort _value, $Res Function(Sort) _then)
-      : super(_value, (v) => _then(v as Sort));
+class __$SortCopyWithImpl<$Res> extends _$LibraryWatchEventCopyWithImpl<$Res>
+    implements _$SortCopyWith<$Res> {
+  __$SortCopyWithImpl(_Sort _value, $Res Function(_Sort) _then)
+      : super(_value, (v) => _then(v as _Sort));
 
   @override
-  Sort get _value => super._value as Sort;
+  _Sort get _value => super._value as _Sort;
 
   @override
   $Res call({
     Object? type = freezed,
   }) {
-    return _then(Sort(
+    return _then(_Sort(
       type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -108,8 +108,8 @@ class _$SortCopyWithImpl<$Res> extends _$LibraryWatchEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Sort implements Sort {
-  const _$Sort(this.type);
+class _$_Sort implements _Sort {
+  const _$_Sort(this.type);
 
   @override
   final int type;
@@ -123,7 +123,7 @@ class _$Sort implements Sort {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Sort &&
+            other is _Sort &&
             const DeepCollectionEquality().equals(other.type, type));
   }
 
@@ -133,8 +133,8 @@ class _$Sort implements Sort {
 
   @JsonKey(ignore: true)
   @override
-  $SortCopyWith<Sort> get copyWith =>
-      _$SortCopyWithImpl<Sort>(this, _$identity);
+  _$SortCopyWith<_Sort> get copyWith =>
+      __$SortCopyWithImpl<_Sort>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -174,8 +174,8 @@ class _$Sort implements Sort {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Sort value) sort,
-    required TResult Function(Received value) received,
+    required TResult Function(_Sort value) sort,
+    required TResult Function(_Received value) received,
   }) {
     return sort(this);
   }
@@ -183,8 +183,8 @@ class _$Sort implements Sort {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Sort value)? sort,
-    TResult Function(Received value)? received,
+    TResult Function(_Sort value)? sort,
+    TResult Function(_Received value)? received,
   }) {
     return sort?.call(this);
   }
@@ -192,8 +192,8 @@ class _$Sort implements Sort {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Sort value)? sort,
-    TResult Function(Received value)? received,
+    TResult Function(_Sort value)? sort,
+    TResult Function(_Received value)? received,
     required TResult orElse(),
   }) {
     if (sort != null) {
@@ -203,35 +203,36 @@ class _$Sort implements Sort {
   }
 }
 
-abstract class Sort implements LibraryWatchEvent {
-  const factory Sort(final int type) = _$Sort;
+abstract class _Sort implements LibraryWatchEvent {
+  const factory _Sort(final int type) = _$_Sort;
 
   int get type => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SortCopyWith<Sort> get copyWith => throw _privateConstructorUsedError;
+  _$SortCopyWith<_Sort> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ReceivedCopyWith<$Res> {
-  factory $ReceivedCopyWith(Received value, $Res Function(Received) then) =
-      _$ReceivedCopyWithImpl<$Res>;
+abstract class _$ReceivedCopyWith<$Res> {
+  factory _$ReceivedCopyWith(_Received value, $Res Function(_Received) then) =
+      __$ReceivedCopyWithImpl<$Res>;
   $Res call({Either<BookFailure, List<BookBody>> failureOrSuccess});
 }
 
 /// @nodoc
-class _$ReceivedCopyWithImpl<$Res> extends _$LibraryWatchEventCopyWithImpl<$Res>
-    implements $ReceivedCopyWith<$Res> {
-  _$ReceivedCopyWithImpl(Received _value, $Res Function(Received) _then)
-      : super(_value, (v) => _then(v as Received));
+class __$ReceivedCopyWithImpl<$Res>
+    extends _$LibraryWatchEventCopyWithImpl<$Res>
+    implements _$ReceivedCopyWith<$Res> {
+  __$ReceivedCopyWithImpl(_Received _value, $Res Function(_Received) _then)
+      : super(_value, (v) => _then(v as _Received));
 
   @override
-  Received get _value => super._value as Received;
+  _Received get _value => super._value as _Received;
 
   @override
   $Res call({
     Object? failureOrSuccess = freezed,
   }) {
-    return _then(Received(
+    return _then(_Received(
       failureOrSuccess == freezed
           ? _value.failureOrSuccess
           : failureOrSuccess // ignore: cast_nullable_to_non_nullable
@@ -242,8 +243,8 @@ class _$ReceivedCopyWithImpl<$Res> extends _$LibraryWatchEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Received implements Received {
-  const _$Received(this.failureOrSuccess);
+class _$_Received implements _Received {
+  const _$_Received(this.failureOrSuccess);
 
   @override
   final Either<BookFailure, List<BookBody>> failureOrSuccess;
@@ -257,7 +258,7 @@ class _$Received implements Received {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Received &&
+            other is _Received &&
             const DeepCollectionEquality()
                 .equals(other.failureOrSuccess, failureOrSuccess));
   }
@@ -268,8 +269,8 @@ class _$Received implements Received {
 
   @JsonKey(ignore: true)
   @override
-  $ReceivedCopyWith<Received> get copyWith =>
-      _$ReceivedCopyWithImpl<Received>(this, _$identity);
+  _$ReceivedCopyWith<_Received> get copyWith =>
+      __$ReceivedCopyWithImpl<_Received>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -309,8 +310,8 @@ class _$Received implements Received {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Sort value) sort,
-    required TResult Function(Received value) received,
+    required TResult Function(_Sort value) sort,
+    required TResult Function(_Received value) received,
   }) {
     return received(this);
   }
@@ -318,8 +319,8 @@ class _$Received implements Received {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Sort value)? sort,
-    TResult Function(Received value)? received,
+    TResult Function(_Sort value)? sort,
+    TResult Function(_Received value)? received,
   }) {
     return received?.call(this);
   }
@@ -327,8 +328,8 @@ class _$Received implements Received {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Sort value)? sort,
-    TResult Function(Received value)? received,
+    TResult Function(_Sort value)? sort,
+    TResult Function(_Received value)? received,
     required TResult orElse(),
   }) {
     if (received != null) {
@@ -338,14 +339,14 @@ class _$Received implements Received {
   }
 }
 
-abstract class Received implements LibraryWatchEvent {
-  const factory Received(
-      final Either<BookFailure, List<BookBody>> failureOrSuccess) = _$Received;
+abstract class _Received implements LibraryWatchEvent {
+  const factory _Received(
+      final Either<BookFailure, List<BookBody>> failureOrSuccess) = _$_Received;
 
   Either<BookFailure, List<BookBody>> get failureOrSuccess =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ReceivedCopyWith<Received> get copyWith =>
+  _$ReceivedCopyWith<_Received> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -356,7 +357,7 @@ mixin _$LibraryWatchState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookBody> books) success,
-    required TResult Function(BookFailure failures) failure,
+    required TResult Function(BookFailure failure) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -364,7 +365,7 @@ mixin _$LibraryWatchState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -372,7 +373,7 @@ mixin _$LibraryWatchState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -461,7 +462,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookBody> books) success,
-    required TResult Function(BookFailure failures) failure,
+    required TResult Function(BookFailure failure) failure,
   }) {
     return initial();
   }
@@ -472,7 +473,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
   }) {
     return initial?.call();
   }
@@ -483,7 +484,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -575,7 +576,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookBody> books) success,
-    required TResult Function(BookFailure failures) failure,
+    required TResult Function(BookFailure failure) failure,
   }) {
     return loading();
   }
@@ -586,7 +587,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
   }) {
     return loading?.call();
   }
@@ -597,7 +598,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -717,7 +718,7 @@ class _$_Success implements _Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookBody> books) success,
-    required TResult Function(BookFailure failures) failure,
+    required TResult Function(BookFailure failure) failure,
   }) {
     return success(books);
   }
@@ -728,7 +729,7 @@ class _$_Success implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
   }) {
     return success?.call(books);
   }
@@ -739,7 +740,7 @@ class _$_Success implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -799,9 +800,9 @@ abstract class _Success implements LibraryWatchState {
 abstract class _$FailureCopyWith<$Res> {
   factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
       __$FailureCopyWithImpl<$Res>;
-  $Res call({BookFailure failures});
+  $Res call({BookFailure failure});
 
-  $BookFailureCopyWith<$Res> get failures;
+  $BookFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -815,20 +816,20 @@ class __$FailureCopyWithImpl<$Res> extends _$LibraryWatchStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? failures = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_Failure(
-      failures == freezed
-          ? _value.failures
-          : failures // ignore: cast_nullable_to_non_nullable
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
               as BookFailure,
     ));
   }
 
   @override
-  $BookFailureCopyWith<$Res> get failures {
-    return $BookFailureCopyWith<$Res>(_value.failures, (value) {
-      return _then(_value.copyWith(failures: value));
+  $BookFailureCopyWith<$Res> get failure {
+    return $BookFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
     });
   }
 }
@@ -836,14 +837,14 @@ class __$FailureCopyWithImpl<$Res> extends _$LibraryWatchStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Failure implements _Failure {
-  const _$_Failure(this.failures);
+  const _$_Failure(this.failure);
 
   @override
-  final BookFailure failures;
+  final BookFailure failure;
 
   @override
   String toString() {
-    return 'LibraryWatchState.failure(failures: $failures)';
+    return 'LibraryWatchState.failure(failure: $failure)';
   }
 
   @override
@@ -851,12 +852,12 @@ class _$_Failure implements _Failure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Failure &&
-            const DeepCollectionEquality().equals(other.failures, failures));
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(failures));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -869,9 +870,9 @@ class _$_Failure implements _Failure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookBody> books) success,
-    required TResult Function(BookFailure failures) failure,
+    required TResult Function(BookFailure failure) failure,
   }) {
-    return failure(failures);
+    return failure(this.failure);
   }
 
   @override
@@ -880,9 +881,9 @@ class _$_Failure implements _Failure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
   }) {
-    return failure?.call(failures);
+    return failure?.call(this.failure);
   }
 
   @override
@@ -891,11 +892,11 @@ class _$_Failure implements _Failure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookBody> books)? success,
-    TResult Function(BookFailure failures)? failure,
+    TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(failures);
+      return failure(this.failure);
     }
     return orElse();
   }
@@ -939,9 +940,9 @@ class _$_Failure implements _Failure {
 }
 
 abstract class _Failure implements LibraryWatchState {
-  const factory _Failure(final BookFailure failures) = _$_Failure;
+  const factory _Failure(final BookFailure failure) = _$_Failure;
 
-  BookFailure get failures => throw _privateConstructorUsedError;
+  BookFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$FailureCopyWith<_Failure> get copyWith =>
       throw _privateConstructorUsedError;

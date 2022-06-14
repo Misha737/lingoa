@@ -240,6 +240,36 @@ class S {
     );
   }
 
+  /// `CANCEL`
+  String get Cancel {
+    return Intl.message(
+      'CANCEL',
+      name: 'Cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DELETE`
+  String get Delete {
+    return Intl.message(
+      'DELETE',
+      name: 'Delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report`
+  String get Report {
+    return Intl.message(
+      'Report',
+      name: 'Report',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `The field cannot be empty`
   String get TheFieldCannotBeEmpty {
     return Intl.message(
@@ -360,6 +390,16 @@ class S {
     );
   }
 
+  /// `There was a problem with the server`
+  String get ThereProblemServer {
+    return Intl.message(
+      'There was a problem with the server',
+      name: 'ThereProblemServer',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Check the network connection or send a feedback`
   String get CheckTheNetworkConnection {
     return Intl.message(
@@ -440,6 +480,66 @@ class S {
     );
   }
 
+  /// `You may not delete this book`
+  String get YouMayNotDeleteThisBook {
+    return Intl.message(
+      'You may not delete this book',
+      name: 'YouMayNotDeleteThisBook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no right to these books`
+  String get insufficientPermissionsLibrary {
+    return Intl.message(
+      'You have no right to these books',
+      name: 'insufficientPermissionsLibrary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You do not have access to this book, please leave a report by e-mail`
+  String get YouDoNotHaveAccess {
+    return Intl.message(
+      'You do not have access to this book, please leave a report by e-mail',
+      name: 'YouDoNotHaveAccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This book could not be deleted`
+  String get ThisBookCouldNotBeDeleted {
+    return Intl.message(
+      'This book could not be deleted',
+      name: 'ThisBookCouldNotBeDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Leave a report to resolve this issue`
+  String get LeaveAReportToResolve {
+    return Intl.message(
+      'Leave a report to resolve this issue',
+      name: 'LeaveAReportToResolve',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Statistics not found, send report by email`
+  String get StatisticsNotFound {
+    return Intl.message(
+      'Statistics not found, send report by email',
+      name: 'StatisticsNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `You have been denied access, see lingoa.com/info for details`
   String get YouHaveBeenDeniedAccess {
     return Intl.message(
@@ -455,6 +555,26 @@ class S {
     return Intl.message(
       'Weak password',
       name: 'WeakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure?`
+  String get AreYouSure {
+    return Intl.message(
+      'Are you sure?',
+      name: 'AreYouSure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this book?`
+  String get AreYouSureYouWant {
+    return Intl.message(
+      'Are you sure you want to delete this book?',
+      name: 'AreYouSureYouWant',
       desc: '',
       args: [],
     );

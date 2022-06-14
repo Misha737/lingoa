@@ -4,6 +4,7 @@ import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
 import 'package:lingoa/app/presentation/widgets/dialog/book_sheet_statistics.dart';
+import 'package:lingoa/app/presentation/widgets/dialog/dialogs.dart';
 import 'package:lingoa/app/presentation/widgets/menu/popup.dart';
 import 'package:lingoa/generated/l10n.dart';
 
@@ -96,6 +97,8 @@ class CardBook extends StatelessWidget {
                               onSelected: (value) {
                                 if (value == 0) {
                                   showBookStatistics(context, book);
+                                } else if (value == 3) {
+                                  showDialogDelete(context, onPressed: () {});
                                 }
                               },
                               items: (_) => <PopupMenuEntry<int>>[

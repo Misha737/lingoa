@@ -3,18 +3,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:lingoa/app/application/auth/form/bloc.dart';
 import 'package:lingoa/app/domain/auth/value_objects.dart';
+import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
 import 'package:lingoa/app/presentation/pages/auth/register/register.dart';
 import 'package:lingoa/app/presentation/routes/router.dart';
 import 'package:lingoa/app/presentation/widgets/buttons/outlined_button.dart';
-import 'package:lingoa/app/presentation/widgets/dialog/dialog.dart';
+import 'package:lingoa/app/presentation/widgets/dialog/dialogs.dart';
 import 'package:lingoa/app/presentation/widgets/input/text_field.dart';
 import 'package:lingoa/generated/l10n.dart';
 
-class ContentContainer extends StatelessWidget {
-  const ContentContainer({Key? key}) : super(key: key);
+class ContentContainerSignIn extends StatelessWidget {
+  const ContentContainerSignIn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +72,7 @@ class ContentContainer extends StatelessWidget {
                     .add(const AuthFormEvent.signInWithGooglePressed());
               },
               label: S().SignInWithGoogle,
-              iconName: 'google_g',
+              iconName: AssetsName.icons.googleG,
               icon: Icons.navigate_next_rounded,
               isMini: false,
             ),
@@ -109,7 +110,7 @@ class ContentContainer extends StatelessWidget {
               hintText: '••••••••',
               isObscureText: true,
               titleText: S().Password,
-              maxLength: 50, // * Зробити
+              maxLength: Password.maxLength,
               isCounter: false,
               isError: state.showErrorMessage,
               onChanged: (value) {

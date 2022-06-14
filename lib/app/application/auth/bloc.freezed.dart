@@ -37,20 +37,20 @@ mixin _$AuthEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthCheckRequested value) authCheckRequested,
-    required TResult Function(SignetOut value) signetOut,
+    required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_SignetOut value) signetOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthCheckRequested value)? authCheckRequested,
-    TResult Function(SignetOut value)? signetOut,
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_SignetOut value)? signetOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthCheckRequested value)? authCheckRequested,
-    TResult Function(SignetOut value)? signetOut,
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_SignetOut value)? signetOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -72,28 +72,28 @@ class _$AuthEventCopyWithImpl<$Res> implements $AuthEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $AuthCheckRequestedCopyWith<$Res> {
-  factory $AuthCheckRequestedCopyWith(
-          AuthCheckRequested value, $Res Function(AuthCheckRequested) then) =
-      _$AuthCheckRequestedCopyWithImpl<$Res>;
+abstract class _$AuthCheckRequestedCopyWith<$Res> {
+  factory _$AuthCheckRequestedCopyWith(
+          _AuthCheckRequested value, $Res Function(_AuthCheckRequested) then) =
+      __$AuthCheckRequestedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthCheckRequestedCopyWithImpl<$Res>
+class __$AuthCheckRequestedCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res>
-    implements $AuthCheckRequestedCopyWith<$Res> {
-  _$AuthCheckRequestedCopyWithImpl(
-      AuthCheckRequested _value, $Res Function(AuthCheckRequested) _then)
-      : super(_value, (v) => _then(v as AuthCheckRequested));
+    implements _$AuthCheckRequestedCopyWith<$Res> {
+  __$AuthCheckRequestedCopyWithImpl(
+      _AuthCheckRequested _value, $Res Function(_AuthCheckRequested) _then)
+      : super(_value, (v) => _then(v as _AuthCheckRequested));
 
   @override
-  AuthCheckRequested get _value => super._value as AuthCheckRequested;
+  _AuthCheckRequested get _value => super._value as _AuthCheckRequested;
 }
 
 /// @nodoc
 
-class _$AuthCheckRequested implements AuthCheckRequested {
-  const _$AuthCheckRequested();
+class _$_AuthCheckRequested implements _AuthCheckRequested {
+  const _$_AuthCheckRequested();
 
   @override
   String toString() {
@@ -103,7 +103,7 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is AuthCheckRequested);
+        (other.runtimeType == runtimeType && other is _AuthCheckRequested);
   }
 
   @override
@@ -143,8 +143,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthCheckRequested value) authCheckRequested,
-    required TResult Function(SignetOut value) signetOut,
+    required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_SignetOut value) signetOut,
   }) {
     return authCheckRequested(this);
   }
@@ -152,8 +152,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthCheckRequested value)? authCheckRequested,
-    TResult Function(SignetOut value)? signetOut,
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_SignetOut value)? signetOut,
   }) {
     return authCheckRequested?.call(this);
   }
@@ -161,8 +161,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthCheckRequested value)? authCheckRequested,
-    TResult Function(SignetOut value)? signetOut,
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_SignetOut value)? signetOut,
     required TResult orElse(),
   }) {
     if (authCheckRequested != null) {
@@ -172,30 +172,31 @@ class _$AuthCheckRequested implements AuthCheckRequested {
   }
 }
 
-abstract class AuthCheckRequested implements AuthEvent {
-  const factory AuthCheckRequested() = _$AuthCheckRequested;
+abstract class _AuthCheckRequested implements AuthEvent {
+  const factory _AuthCheckRequested() = _$_AuthCheckRequested;
 }
 
 /// @nodoc
-abstract class $SignetOutCopyWith<$Res> {
-  factory $SignetOutCopyWith(SignetOut value, $Res Function(SignetOut) then) =
-      _$SignetOutCopyWithImpl<$Res>;
+abstract class _$SignetOutCopyWith<$Res> {
+  factory _$SignetOutCopyWith(
+          _SignetOut value, $Res Function(_SignetOut) then) =
+      __$SignetOutCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignetOutCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
-    implements $SignetOutCopyWith<$Res> {
-  _$SignetOutCopyWithImpl(SignetOut _value, $Res Function(SignetOut) _then)
-      : super(_value, (v) => _then(v as SignetOut));
+class __$SignetOutCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
+    implements _$SignetOutCopyWith<$Res> {
+  __$SignetOutCopyWithImpl(_SignetOut _value, $Res Function(_SignetOut) _then)
+      : super(_value, (v) => _then(v as _SignetOut));
 
   @override
-  SignetOut get _value => super._value as SignetOut;
+  _SignetOut get _value => super._value as _SignetOut;
 }
 
 /// @nodoc
 
-class _$SignetOut implements SignetOut {
-  const _$SignetOut();
+class _$_SignetOut implements _SignetOut {
+  const _$_SignetOut();
 
   @override
   String toString() {
@@ -205,7 +206,7 @@ class _$SignetOut implements SignetOut {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SignetOut);
+        (other.runtimeType == runtimeType && other is _SignetOut);
   }
 
   @override
@@ -245,8 +246,8 @@ class _$SignetOut implements SignetOut {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthCheckRequested value) authCheckRequested,
-    required TResult Function(SignetOut value) signetOut,
+    required TResult Function(_AuthCheckRequested value) authCheckRequested,
+    required TResult Function(_SignetOut value) signetOut,
   }) {
     return signetOut(this);
   }
@@ -254,8 +255,8 @@ class _$SignetOut implements SignetOut {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AuthCheckRequested value)? authCheckRequested,
-    TResult Function(SignetOut value)? signetOut,
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_SignetOut value)? signetOut,
   }) {
     return signetOut?.call(this);
   }
@@ -263,8 +264,8 @@ class _$SignetOut implements SignetOut {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthCheckRequested value)? authCheckRequested,
-    TResult Function(SignetOut value)? signetOut,
+    TResult Function(_AuthCheckRequested value)? authCheckRequested,
+    TResult Function(_SignetOut value)? signetOut,
     required TResult orElse(),
   }) {
     if (signetOut != null) {
@@ -274,8 +275,8 @@ class _$SignetOut implements SignetOut {
   }
 }
 
-abstract class SignetOut implements AuthEvent {
-  const factory SignetOut() = _$SignetOut;
+abstract class _SignetOut implements AuthEvent {
+  const factory _SignetOut() = _$_SignetOut;
 }
 
 /// @nodoc

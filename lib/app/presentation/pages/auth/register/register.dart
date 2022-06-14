@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lingoa/app/application/auth/form/bloc.dart';
+import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/pages/auth/register/widgets/content_container.dart';
 import 'package:lingoa/app/presentation/pages/auth/widgets/top_container.dart';
@@ -26,14 +27,14 @@ class RegisterPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     TopContainer(
-                      nameImage: 'welcome',
+                      nameImage: AssetsName.images.welcome,
                       topText: S().ContainerToRegisterTop,
                       bottomText: S().ContainerToRegisterBottom,
                     ),
                     const SizedBox(
                       height: Dimensions.d24,
                     ),
-                    const ContentContainer(),
+                    const ContentContainerRegister(),
                   ],
                 ),
               ),

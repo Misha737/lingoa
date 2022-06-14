@@ -24,7 +24,7 @@ class TopContainer extends StatelessWidget {
         SizedBox(
           width: 200,
           height: 200,
-          child: SvgPicture.asset('assets/images/$nameImage.svg'),
+          child: SvgPicture.asset(nameImage),
         ),
         const SizedBox(
           height: Dimensions.d8,

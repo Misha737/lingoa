@@ -9,12 +9,12 @@ import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dar
 import 'package:lingoa/app/presentation/pages/auth/register/widgets/field_container.dart';
 import 'package:lingoa/app/presentation/pages/auth/sign_in/sign_in.dart';
 import 'package:lingoa/app/presentation/routes/router.dart';
-import 'package:lingoa/app/presentation/widgets/dialog/dialog.dart';
+import 'package:lingoa/app/presentation/widgets/dialog/dialogs.dart';
 import 'package:lingoa/app/presentation/widgets/input/text_field.dart';
 import 'package:lingoa/generated/l10n.dart';
 
-class ContentContainer extends StatelessWidget {
-  const ContentContainer({Key? key}) : super(key: key);
+class ContentContainerRegister extends StatelessWidget {
+  const ContentContainerRegister({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

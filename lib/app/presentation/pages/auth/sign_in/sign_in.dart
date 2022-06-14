@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lingoa/app/application/auth/form/bloc.dart';
+import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/pages/auth/sign_in/widgets/content_container.dart';
 import 'package:lingoa/app/presentation/widgets/progress_indicator/progress_indicator.dart';
@@ -27,14 +28,14 @@ class SignInPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     TopContainer(
-                      nameImage: 'welcome',
+                      nameImage: AssetsName.images.welcome,
                       topText: S().ContainerToSignInTop,
                       bottomText: S().ContainerToSignInBottom,
                     ),
                     const SizedBox(
                       height: Dimensions.d24,
                     ),
-                    const ContentContainer(),
+                    const ContentContainerSignIn(),
                   ],
                 ),
               ),

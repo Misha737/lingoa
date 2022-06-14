@@ -3,6 +3,7 @@ import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/app/presentation/widgets/dialog/dialogs.dart';
 import 'package:lingoa/generated/l10n.dart';
 
 class CardBookStatistics extends StatelessWidget {
@@ -102,7 +103,12 @@ class CardBookStatistics extends StatelessWidget {
                           icon: const Icon(
                             Icons.share,
                           ),
-                          onPressed: () {},
+                          onPressed: () =>
+                              showDialogDelete(context, onPressed: () {
+                            // context
+                            //     .read<BookControllerBloc>()
+                            //     .add(BookControllerEvent.delete(book));
+                          }),
                         ),
                       ],
                     ),

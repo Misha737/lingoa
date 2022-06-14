@@ -19,33 +19,33 @@ mixin _$BookControllerEvent {
   BookBody get book => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookBody book) deleted,
+    required TResult Function(BookBody book) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(BookBody book)? deleted,
+    TResult Function(BookBody book)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookBody book)? deleted,
+    TResult Function(BookBody book)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Deleted value) deleted,
+    required TResult Function(_Delete value) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Deleted value)? deleted,
+    TResult Function(_Delete value)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Deleted value)? deleted,
+    TResult Function(_Delete value)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -95,10 +95,10 @@ class _$BookControllerEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $DeletedCopyWith<$Res>
+abstract class _$DeleteCopyWith<$Res>
     implements $BookControllerEventCopyWith<$Res> {
-  factory $DeletedCopyWith(Deleted value, $Res Function(Deleted) then) =
-      _$DeletedCopyWithImpl<$Res>;
+  factory _$DeleteCopyWith(_Delete value, $Res Function(_Delete) then) =
+      __$DeleteCopyWithImpl<$Res>;
   @override
   $Res call({BookBody book});
 
@@ -107,20 +107,20 @@ abstract class $DeletedCopyWith<$Res>
 }
 
 /// @nodoc
-class _$DeletedCopyWithImpl<$Res>
+class __$DeleteCopyWithImpl<$Res>
     extends _$BookControllerEventCopyWithImpl<$Res>
-    implements $DeletedCopyWith<$Res> {
-  _$DeletedCopyWithImpl(Deleted _value, $Res Function(Deleted) _then)
-      : super(_value, (v) => _then(v as Deleted));
+    implements _$DeleteCopyWith<$Res> {
+  __$DeleteCopyWithImpl(_Delete _value, $Res Function(_Delete) _then)
+      : super(_value, (v) => _then(v as _Delete));
 
   @override
-  Deleted get _value => super._value as Deleted;
+  _Delete get _value => super._value as _Delete;
 
   @override
   $Res call({
     Object? book = freezed,
   }) {
-    return _then(Deleted(
+    return _then(_Delete(
       book == freezed
           ? _value.book
           : book // ignore: cast_nullable_to_non_nullable
@@ -131,22 +131,22 @@ class _$DeletedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Deleted implements Deleted {
-  const _$Deleted(this.book);
+class _$_Delete implements _Delete {
+  const _$_Delete(this.book);
 
   @override
   final BookBody book;
 
   @override
   String toString() {
-    return 'BookControllerEvent.deleted(book: $book)';
+    return 'BookControllerEvent.delete(book: $book)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Deleted &&
+            other is _Delete &&
             const DeepCollectionEquality().equals(other.book, book));
   }
 
@@ -156,33 +156,33 @@ class _$Deleted implements Deleted {
 
   @JsonKey(ignore: true)
   @override
-  $DeletedCopyWith<Deleted> get copyWith =>
-      _$DeletedCopyWithImpl<Deleted>(this, _$identity);
+  _$DeleteCopyWith<_Delete> get copyWith =>
+      __$DeleteCopyWithImpl<_Delete>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookBody book) deleted,
+    required TResult Function(BookBody book) delete,
   }) {
-    return deleted(book);
+    return delete(book);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(BookBody book)? deleted,
+    TResult Function(BookBody book)? delete,
   }) {
-    return deleted?.call(book);
+    return delete?.call(book);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookBody book)? deleted,
+    TResult Function(BookBody book)? delete,
     required TResult orElse(),
   }) {
-    if (deleted != null) {
-      return deleted(book);
+    if (delete != null) {
+      return delete(book);
     }
     return orElse();
   }
@@ -190,40 +190,40 @@ class _$Deleted implements Deleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Deleted value) deleted,
+    required TResult Function(_Delete value) delete,
   }) {
-    return deleted(this);
+    return delete(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Deleted value)? deleted,
+    TResult Function(_Delete value)? delete,
   }) {
-    return deleted?.call(this);
+    return delete?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Deleted value)? deleted,
+    TResult Function(_Delete value)? delete,
     required TResult orElse(),
   }) {
-    if (deleted != null) {
-      return deleted(this);
+    if (delete != null) {
+      return delete(this);
     }
     return orElse();
   }
 }
 
-abstract class Deleted implements BookControllerEvent {
-  const factory Deleted(final BookBody book) = _$Deleted;
+abstract class _Delete implements BookControllerEvent {
+  const factory _Delete(final BookBody book) = _$_Delete;
 
   @override
   BookBody get book => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $DeletedCopyWith<Deleted> get copyWith => throw _privateConstructorUsedError;
+  _$DeleteCopyWith<_Delete> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -233,7 +233,7 @@ mixin _$BookControllerState {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function() deleteSuccess,
-    required TResult Function(BookFailure book) deleteFailure,
+    required TResult Function(BookFailure failure) deleteFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -241,7 +241,7 @@ mixin _$BookControllerState {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -249,7 +249,7 @@ mixin _$BookControllerState {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -339,7 +339,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function() deleteSuccess,
-    required TResult Function(BookFailure book) deleteFailure,
+    required TResult Function(BookFailure failure) deleteFailure,
   }) {
     return initial();
   }
@@ -350,7 +350,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
   }) {
     return initial?.call();
   }
@@ -361,7 +361,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -456,7 +456,7 @@ class _$_ActionInProgress implements _ActionInProgress {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function() deleteSuccess,
-    required TResult Function(BookFailure book) deleteFailure,
+    required TResult Function(BookFailure failure) deleteFailure,
   }) {
     return actionInProgress();
   }
@@ -467,7 +467,7 @@ class _$_ActionInProgress implements _ActionInProgress {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
   }) {
     return actionInProgress?.call();
   }
@@ -478,7 +478,7 @@ class _$_ActionInProgress implements _ActionInProgress {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
     required TResult orElse(),
   }) {
     if (actionInProgress != null) {
@@ -573,7 +573,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function() deleteSuccess,
-    required TResult Function(BookFailure book) deleteFailure,
+    required TResult Function(BookFailure failure) deleteFailure,
   }) {
     return deleteSuccess();
   }
@@ -584,7 +584,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
   }) {
     return deleteSuccess?.call();
   }
@@ -595,7 +595,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
     required TResult orElse(),
   }) {
     if (deleteSuccess != null) {
@@ -651,9 +651,9 @@ abstract class _$DeleteFailureCopyWith<$Res> {
   factory _$DeleteFailureCopyWith(
           _DeleteFailure value, $Res Function(_DeleteFailure) then) =
       __$DeleteFailureCopyWithImpl<$Res>;
-  $Res call({BookFailure book});
+  $Res call({BookFailure failure});
 
-  $BookFailureCopyWith<$Res> get book;
+  $BookFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -669,20 +669,20 @@ class __$DeleteFailureCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? book = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_DeleteFailure(
-      book == freezed
-          ? _value.book
-          : book // ignore: cast_nullable_to_non_nullable
+      failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
               as BookFailure,
     ));
   }
 
   @override
-  $BookFailureCopyWith<$Res> get book {
-    return $BookFailureCopyWith<$Res>(_value.book, (value) {
-      return _then(_value.copyWith(book: value));
+  $BookFailureCopyWith<$Res> get failure {
+    return $BookFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
     });
   }
 }
@@ -690,14 +690,14 @@ class __$DeleteFailureCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DeleteFailure implements _DeleteFailure {
-  const _$_DeleteFailure(this.book);
+  const _$_DeleteFailure(this.failure);
 
   @override
-  final BookFailure book;
+  final BookFailure failure;
 
   @override
   String toString() {
-    return 'BookControllerState.deleteFailure(book: $book)';
+    return 'BookControllerState.deleteFailure(failure: $failure)';
   }
 
   @override
@@ -705,12 +705,12 @@ class _$_DeleteFailure implements _DeleteFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _DeleteFailure &&
-            const DeepCollectionEquality().equals(other.book, book));
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(book));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -723,9 +723,9 @@ class _$_DeleteFailure implements _DeleteFailure {
     required TResult Function() initial,
     required TResult Function() actionInProgress,
     required TResult Function() deleteSuccess,
-    required TResult Function(BookFailure book) deleteFailure,
+    required TResult Function(BookFailure failure) deleteFailure,
   }) {
-    return deleteFailure(book);
+    return deleteFailure(failure);
   }
 
   @override
@@ -734,9 +734,9 @@ class _$_DeleteFailure implements _DeleteFailure {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
   }) {
-    return deleteFailure?.call(book);
+    return deleteFailure?.call(failure);
   }
 
   @override
@@ -745,11 +745,11 @@ class _$_DeleteFailure implements _DeleteFailure {
     TResult Function()? initial,
     TResult Function()? actionInProgress,
     TResult Function()? deleteSuccess,
-    TResult Function(BookFailure book)? deleteFailure,
+    TResult Function(BookFailure failure)? deleteFailure,
     required TResult orElse(),
   }) {
     if (deleteFailure != null) {
-      return deleteFailure(book);
+      return deleteFailure(failure);
     }
     return orElse();
   }
@@ -793,9 +793,9 @@ class _$_DeleteFailure implements _DeleteFailure {
 }
 
 abstract class _DeleteFailure implements BookControllerState {
-  const factory _DeleteFailure(final BookFailure book) = _$_DeleteFailure;
+  const factory _DeleteFailure(final BookFailure failure) = _$_DeleteFailure;
 
-  BookFailure get book => throw _privateConstructorUsedError;
+  BookFailure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$DeleteFailureCopyWith<_DeleteFailure> get copyWith =>
       throw _privateConstructorUsedError;

@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
+import 'package:lingoa/generated/l10n.dart';
 
 Future<T?> showDialogApp<T>(
   BuildContext context, {
@@ -22,3 +24,23 @@ Future<T?> showDialogApp<T>(
     ),
   );
 }
+
+Future<T?> showDialogDelete<T>(
+  BuildContext context, {
+  required void Function() onPressed,
+}) =>
+    showDialogApp(
+      context,
+      title: S().AreYouSure,
+      content: S().AreYouSureYouWant,
+      actions: [
+        TextButton(
+          onPressed: () => context.popRoute(),
+          child: Text(S().Cancel),
+        ),
+        TextButton(
+          onPressed: () => {},
+          child: Text(S().Delete),
+        ),
+      ],
+    );

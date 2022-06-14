@@ -4,11 +4,22 @@ import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
 import 'package:lingoa/app/presentation/widgets/buttons/outlined_button.dart';
-import 'package:lingoa/generated/l10n.dart';
 
-// ! Видалити
-class AddBookHome extends StatelessWidget {
-  const AddBookHome({Key? key}) : super(key: key);
+class InformationTemplate extends StatelessWidget {
+  const InformationTemplate({
+    Key? key,
+    required this.imageName,
+    required this.description,
+    required this.labelButton,
+    required this.iconButton,
+    required this.onPressed,
+  }) : super(key: key);
+
+  final String imageName;
+  final String description;
+  final String labelButton;
+  final IconData iconButton;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +32,19 @@ class AddBookHome extends StatelessWidget {
           SizedBox(
             height: 160,
             width: 160,
-            child: SvgPicture.asset('assets/images/add_file.svg'),
+            child: SvgPicture.asset(imageName),
           ),
           const SizedBox(height: Dimensions.d24),
           Text(
-            S().AddBookLike,
+            description,
             style: TextStyles.body3
                 .copyWith(color: ColorsLightTheme.lightMediumGray),
           ),
           const SizedBox(height: Dimensions.d24),
           OutlinedButtonApp(
-            onPressed: () {},
-            label: S().AddBook,
-            icon: Icons.arrow_forward_ios_rounded,
+            onPressed: onPressed,
+            label: labelButton,
+            icon: iconButton,
             isMini: true,
           ),
         ],

@@ -58,7 +58,7 @@ class OutlinedButtonApp extends StatelessWidget {
                     height: Dimensions.button.iconSize,
                     width: Dimensions.button.iconSize,
                     child: SvgPicture.asset(
-                      'assets/icons/$iconName.svg',
+                      iconName!,
                       fit: BoxFit.contain,
                     ),
                   ),

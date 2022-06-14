@@ -17,7 +17,7 @@ class BookControllerBloc
 
   BookControllerBloc(this._bookRepository)
       : super(const BookControllerState.initial()) {
-    on<Deleted>((event, emit) async {
+    on<_Delete>((event, emit) async {
       emit(const BookControllerState.actionInProgress());
 
       final successOrFailure = await _bookRepository.delete(event.book);

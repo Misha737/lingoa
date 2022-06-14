@@ -17,14 +17,14 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
   final IAuthFacade _authFacade;
 
   AuthFormBloc(this._authFacade) : super(AuthFormState.initial()) {
-    on<NameChanged>(
+    on<_NameChanged>(
       (event, emit) => emit(state.copyWith(
         name: Name(event.input),
         failureOrSuccessOption: none(),
       )),
     );
 
-    on<EmailAddressChanged>(
+    on<_EmailAddressChanged>(
       (event, emit) => emit(
         state.copyWith(
           emailAddress: EmailAddress(event.input.trim()),
@@ -33,7 +33,7 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
       ),
     );
 
-    on<PasswordChanged>(
+    on<_PasswordChanged>(
       (event, emit) => emit(
         state.copyWith(
           password: Password(event.input),
@@ -42,7 +42,7 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
       ),
     );
 
-    on<SignInWithEmailAddressAndPasswordPressed>((_, emit) async {
+    on<_SignInWithEmailAddressAndPasswordPressed>((_, emit) async {
       Either<AuthFailure, Unit>? failureOrSuccess;
 
       final isEmailAddressValid = state.emailAddress.isValid();
@@ -71,7 +71,7 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
       );
     });
 
-    on<SignInWithGooglePressed>((event, emit) async {
+    on<_SignInWithGooglePressed>((event, emit) async {
       emit(
         state.copyWith(
           isSubmitting: true,
@@ -90,7 +90,7 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
       );
     });
 
-    on<RepeatPasswordChanged>(
+    on<_RepeatPasswordChanged>(
       (event, emit) {
         //if (state.password.isValid()) {
         emit(
@@ -104,7 +104,7 @@ class AuthFormBloc extends Bloc<AuthFormEvent, AuthFormState> {
       },
     );
 
-    on<RegisterWithEmailAddressAndPasswordPressed>(
+    on<_RegisterWithEmailAddressAndPasswordPressed>(
       (_, emit) async {
         Either<AuthFailure, Unit>? failureOrSuccess;
 

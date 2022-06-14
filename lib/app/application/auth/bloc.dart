@@ -12,7 +12,7 @@ part 'bloc.freezed.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthFacade _authFacade;
   AuthBloc(this._authFacade) : super(const AuthState.initial()) {
-    on<AuthCheckRequested>((_, emit) async {
+    on<_AuthCheckRequested>((_, emit) async {
       final userOption = await _authFacade.getSignetInUser();
 
       emit(userOption.fold(
@@ -20,7 +20,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         (_) => const AuthState.authenticated(),
       ));
     });
-    on<SignetOut>((_, emit) async {
+    on<_SignetOut>((_, emit) async {
       await _authFacade.signOut();
       emit(const AuthState.unauthenticated());
     });

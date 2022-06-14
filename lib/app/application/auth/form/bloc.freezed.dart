@@ -52,43 +52,43 @@ mixin _$AuthFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RepeatPasswordChanged value)
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
-    required TResult Function(SignInWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_SignInWithEmailAddressAndPasswordPressed value)
         signInWithEmailAddressAndPasswordPressed,
-    required TResult Function(RegisterWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)
         registerWithEmailAddressAndPasswordPressed,
-    required TResult Function(SignInWithGooglePressed value)
+    required TResult Function(_SignInWithGooglePressed value)
         signInWithGooglePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,28 +112,28 @@ class _$AuthFormEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $NameChangedCopyWith<$Res> {
-  factory $NameChangedCopyWith(
-          NameChanged value, $Res Function(NameChanged) then) =
-      _$NameChangedCopyWithImpl<$Res>;
+abstract class _$NameChangedCopyWith<$Res> {
+  factory _$NameChangedCopyWith(
+          _NameChanged value, $Res Function(_NameChanged) then) =
+      __$NameChangedCopyWithImpl<$Res>;
   $Res call({String input});
 }
 
 /// @nodoc
-class _$NameChangedCopyWithImpl<$Res> extends _$AuthFormEventCopyWithImpl<$Res>
-    implements $NameChangedCopyWith<$Res> {
-  _$NameChangedCopyWithImpl(
-      NameChanged _value, $Res Function(NameChanged) _then)
-      : super(_value, (v) => _then(v as NameChanged));
+class __$NameChangedCopyWithImpl<$Res> extends _$AuthFormEventCopyWithImpl<$Res>
+    implements _$NameChangedCopyWith<$Res> {
+  __$NameChangedCopyWithImpl(
+      _NameChanged _value, $Res Function(_NameChanged) _then)
+      : super(_value, (v) => _then(v as _NameChanged));
 
   @override
-  NameChanged get _value => super._value as NameChanged;
+  _NameChanged get _value => super._value as _NameChanged;
 
   @override
   $Res call({
     Object? input = freezed,
   }) {
-    return _then(NameChanged(
+    return _then(_NameChanged(
       input == freezed
           ? _value.input
           : input // ignore: cast_nullable_to_non_nullable
@@ -144,8 +144,8 @@ class _$NameChangedCopyWithImpl<$Res> extends _$AuthFormEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NameChanged implements NameChanged {
-  const _$NameChanged(this.input);
+class _$_NameChanged implements _NameChanged {
+  const _$_NameChanged(this.input);
 
   @override
   final String input;
@@ -159,7 +159,7 @@ class _$NameChanged implements NameChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is NameChanged &&
+            other is _NameChanged &&
             const DeepCollectionEquality().equals(other.input, input));
   }
 
@@ -169,8 +169,8 @@ class _$NameChanged implements NameChanged {
 
   @JsonKey(ignore: true)
   @override
-  $NameChangedCopyWith<NameChanged> get copyWith =>
-      _$NameChangedCopyWithImpl<NameChanged>(this, _$identity);
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -221,16 +221,16 @@ class _$NameChanged implements NameChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RepeatPasswordChanged value)
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
-    required TResult Function(SignInWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_SignInWithEmailAddressAndPasswordPressed value)
         signInWithEmailAddressAndPasswordPressed,
-    required TResult Function(RegisterWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)
         registerWithEmailAddressAndPasswordPressed,
-    required TResult Function(SignInWithGooglePressed value)
+    required TResult Function(_SignInWithGooglePressed value)
         signInWithGooglePressed,
   }) {
     return nameChanged(this);
@@ -239,15 +239,15 @@ class _$NameChanged implements NameChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) {
     return nameChanged?.call(this);
   }
@@ -255,15 +255,15 @@ class _$NameChanged implements NameChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) {
     if (nameChanged != null) {
@@ -273,39 +273,39 @@ class _$NameChanged implements NameChanged {
   }
 }
 
-abstract class NameChanged implements AuthFormEvent {
-  const factory NameChanged(final String input) = _$NameChanged;
+abstract class _NameChanged implements AuthFormEvent {
+  const factory _NameChanged(final String input) = _$_NameChanged;
 
   String get input => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NameChangedCopyWith<NameChanged> get copyWith =>
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EmailAddressChangedCopyWith<$Res> {
-  factory $EmailAddressChangedCopyWith(
-          EmailAddressChanged value, $Res Function(EmailAddressChanged) then) =
-      _$EmailAddressChangedCopyWithImpl<$Res>;
+abstract class _$EmailAddressChangedCopyWith<$Res> {
+  factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value,
+          $Res Function(_EmailAddressChanged) then) =
+      __$EmailAddressChangedCopyWithImpl<$Res>;
   $Res call({String input});
 }
 
 /// @nodoc
-class _$EmailAddressChangedCopyWithImpl<$Res>
+class __$EmailAddressChangedCopyWithImpl<$Res>
     extends _$AuthFormEventCopyWithImpl<$Res>
-    implements $EmailAddressChangedCopyWith<$Res> {
-  _$EmailAddressChangedCopyWithImpl(
-      EmailAddressChanged _value, $Res Function(EmailAddressChanged) _then)
-      : super(_value, (v) => _then(v as EmailAddressChanged));
+    implements _$EmailAddressChangedCopyWith<$Res> {
+  __$EmailAddressChangedCopyWithImpl(
+      _EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
+      : super(_value, (v) => _then(v as _EmailAddressChanged));
 
   @override
-  EmailAddressChanged get _value => super._value as EmailAddressChanged;
+  _EmailAddressChanged get _value => super._value as _EmailAddressChanged;
 
   @override
   $Res call({
     Object? input = freezed,
   }) {
-    return _then(EmailAddressChanged(
+    return _then(_EmailAddressChanged(
       input == freezed
           ? _value.input
           : input // ignore: cast_nullable_to_non_nullable
@@ -316,8 +316,8 @@ class _$EmailAddressChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmailAddressChanged implements EmailAddressChanged {
-  const _$EmailAddressChanged(this.input);
+class _$_EmailAddressChanged implements _EmailAddressChanged {
+  const _$_EmailAddressChanged(this.input);
 
   @override
   final String input;
@@ -331,7 +331,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is EmailAddressChanged &&
+            other is _EmailAddressChanged &&
             const DeepCollectionEquality().equals(other.input, input));
   }
 
@@ -341,8 +341,9 @@ class _$EmailAddressChanged implements EmailAddressChanged {
 
   @JsonKey(ignore: true)
   @override
-  $EmailAddressChangedCopyWith<EmailAddressChanged> get copyWith =>
-      _$EmailAddressChangedCopyWithImpl<EmailAddressChanged>(this, _$identity);
+  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
+      __$EmailAddressChangedCopyWithImpl<_EmailAddressChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -393,16 +394,16 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RepeatPasswordChanged value)
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
-    required TResult Function(SignInWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_SignInWithEmailAddressAndPasswordPressed value)
         signInWithEmailAddressAndPasswordPressed,
-    required TResult Function(RegisterWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)
         registerWithEmailAddressAndPasswordPressed,
-    required TResult Function(SignInWithGooglePressed value)
+    required TResult Function(_SignInWithGooglePressed value)
         signInWithGooglePressed,
   }) {
     return emailAddressChanged(this);
@@ -411,15 +412,15 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) {
     return emailAddressChanged?.call(this);
   }
@@ -427,15 +428,15 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) {
     if (emailAddressChanged != null) {
@@ -445,39 +446,40 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   }
 }
 
-abstract class EmailAddressChanged implements AuthFormEvent {
-  const factory EmailAddressChanged(final String input) = _$EmailAddressChanged;
+abstract class _EmailAddressChanged implements AuthFormEvent {
+  const factory _EmailAddressChanged(final String input) =
+      _$_EmailAddressChanged;
 
   String get input => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EmailAddressChangedCopyWith<EmailAddressChanged> get copyWith =>
+  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PasswordChangedCopyWith<$Res> {
-  factory $PasswordChangedCopyWith(
-          PasswordChanged value, $Res Function(PasswordChanged) then) =
-      _$PasswordChangedCopyWithImpl<$Res>;
+abstract class _$PasswordChangedCopyWith<$Res> {
+  factory _$PasswordChangedCopyWith(
+          _PasswordChanged value, $Res Function(_PasswordChanged) then) =
+      __$PasswordChangedCopyWithImpl<$Res>;
   $Res call({String input});
 }
 
 /// @nodoc
-class _$PasswordChangedCopyWithImpl<$Res>
+class __$PasswordChangedCopyWithImpl<$Res>
     extends _$AuthFormEventCopyWithImpl<$Res>
-    implements $PasswordChangedCopyWith<$Res> {
-  _$PasswordChangedCopyWithImpl(
-      PasswordChanged _value, $Res Function(PasswordChanged) _then)
-      : super(_value, (v) => _then(v as PasswordChanged));
+    implements _$PasswordChangedCopyWith<$Res> {
+  __$PasswordChangedCopyWithImpl(
+      _PasswordChanged _value, $Res Function(_PasswordChanged) _then)
+      : super(_value, (v) => _then(v as _PasswordChanged));
 
   @override
-  PasswordChanged get _value => super._value as PasswordChanged;
+  _PasswordChanged get _value => super._value as _PasswordChanged;
 
   @override
   $Res call({
     Object? input = freezed,
   }) {
-    return _then(PasswordChanged(
+    return _then(_PasswordChanged(
       input == freezed
           ? _value.input
           : input // ignore: cast_nullable_to_non_nullable
@@ -488,8 +490,8 @@ class _$PasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PasswordChanged implements PasswordChanged {
-  const _$PasswordChanged(this.input);
+class _$_PasswordChanged implements _PasswordChanged {
+  const _$_PasswordChanged(this.input);
 
   @override
   final String input;
@@ -503,7 +505,7 @@ class _$PasswordChanged implements PasswordChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is PasswordChanged &&
+            other is _PasswordChanged &&
             const DeepCollectionEquality().equals(other.input, input));
   }
 
@@ -513,8 +515,8 @@ class _$PasswordChanged implements PasswordChanged {
 
   @JsonKey(ignore: true)
   @override
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
-      _$PasswordChangedCopyWithImpl<PasswordChanged>(this, _$identity);
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
+      __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -565,16 +567,16 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RepeatPasswordChanged value)
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
-    required TResult Function(SignInWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_SignInWithEmailAddressAndPasswordPressed value)
         signInWithEmailAddressAndPasswordPressed,
-    required TResult Function(RegisterWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)
         registerWithEmailAddressAndPasswordPressed,
-    required TResult Function(SignInWithGooglePressed value)
+    required TResult Function(_SignInWithGooglePressed value)
         signInWithGooglePressed,
   }) {
     return passwordChanged(this);
@@ -583,15 +585,15 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) {
     return passwordChanged?.call(this);
   }
@@ -599,15 +601,15 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -617,39 +619,39 @@ class _$PasswordChanged implements PasswordChanged {
   }
 }
 
-abstract class PasswordChanged implements AuthFormEvent {
-  const factory PasswordChanged(final String input) = _$PasswordChanged;
+abstract class _PasswordChanged implements AuthFormEvent {
+  const factory _PasswordChanged(final String input) = _$_PasswordChanged;
 
   String get input => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RepeatPasswordChangedCopyWith<$Res> {
-  factory $RepeatPasswordChangedCopyWith(RepeatPasswordChanged value,
-          $Res Function(RepeatPasswordChanged) then) =
-      _$RepeatPasswordChangedCopyWithImpl<$Res>;
+abstract class _$RepeatPasswordChangedCopyWith<$Res> {
+  factory _$RepeatPasswordChangedCopyWith(_RepeatPasswordChanged value,
+          $Res Function(_RepeatPasswordChanged) then) =
+      __$RepeatPasswordChangedCopyWithImpl<$Res>;
   $Res call({String input});
 }
 
 /// @nodoc
-class _$RepeatPasswordChangedCopyWithImpl<$Res>
+class __$RepeatPasswordChangedCopyWithImpl<$Res>
     extends _$AuthFormEventCopyWithImpl<$Res>
-    implements $RepeatPasswordChangedCopyWith<$Res> {
-  _$RepeatPasswordChangedCopyWithImpl(
-      RepeatPasswordChanged _value, $Res Function(RepeatPasswordChanged) _then)
-      : super(_value, (v) => _then(v as RepeatPasswordChanged));
+    implements _$RepeatPasswordChangedCopyWith<$Res> {
+  __$RepeatPasswordChangedCopyWithImpl(_RepeatPasswordChanged _value,
+      $Res Function(_RepeatPasswordChanged) _then)
+      : super(_value, (v) => _then(v as _RepeatPasswordChanged));
 
   @override
-  RepeatPasswordChanged get _value => super._value as RepeatPasswordChanged;
+  _RepeatPasswordChanged get _value => super._value as _RepeatPasswordChanged;
 
   @override
   $Res call({
     Object? input = freezed,
   }) {
-    return _then(RepeatPasswordChanged(
+    return _then(_RepeatPasswordChanged(
       input == freezed
           ? _value.input
           : input // ignore: cast_nullable_to_non_nullable
@@ -660,8 +662,8 @@ class _$RepeatPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RepeatPasswordChanged implements RepeatPasswordChanged {
-  const _$RepeatPasswordChanged(this.input);
+class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
+  const _$_RepeatPasswordChanged(this.input);
 
   @override
   final String input;
@@ -675,7 +677,7 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RepeatPasswordChanged &&
+            other is _RepeatPasswordChanged &&
             const DeepCollectionEquality().equals(other.input, input));
   }
 
@@ -685,8 +687,8 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
 
   @JsonKey(ignore: true)
   @override
-  $RepeatPasswordChangedCopyWith<RepeatPasswordChanged> get copyWith =>
-      _$RepeatPasswordChangedCopyWithImpl<RepeatPasswordChanged>(
+  _$RepeatPasswordChangedCopyWith<_RepeatPasswordChanged> get copyWith =>
+      __$RepeatPasswordChangedCopyWithImpl<_RepeatPasswordChanged>(
           this, _$identity);
 
   @override
@@ -738,16 +740,16 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RepeatPasswordChanged value)
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
-    required TResult Function(SignInWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_SignInWithEmailAddressAndPasswordPressed value)
         signInWithEmailAddressAndPasswordPressed,
-    required TResult Function(RegisterWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)
         registerWithEmailAddressAndPasswordPressed,
-    required TResult Function(SignInWithGooglePressed value)
+    required TResult Function(_SignInWithGooglePressed value)
         signInWithGooglePressed,
   }) {
     return repeatPasswordChanged(this);
@@ -756,15 +758,15 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) {
     return repeatPasswordChanged?.call(this);
   }
@@ -772,15 +774,15 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) {
     if (repeatPasswordChanged != null) {
@@ -790,44 +792,44 @@ class _$RepeatPasswordChanged implements RepeatPasswordChanged {
   }
 }
 
-abstract class RepeatPasswordChanged implements AuthFormEvent {
-  const factory RepeatPasswordChanged(final String input) =
-      _$RepeatPasswordChanged;
+abstract class _RepeatPasswordChanged implements AuthFormEvent {
+  const factory _RepeatPasswordChanged(final String input) =
+      _$_RepeatPasswordChanged;
 
   String get input => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RepeatPasswordChangedCopyWith<RepeatPasswordChanged> get copyWith =>
+  _$RepeatPasswordChangedCopyWith<_RepeatPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignInWithEmailAddressAndPasswordPressedCopyWith<$Res> {
-  factory $SignInWithEmailAddressAndPasswordPressedCopyWith(
-          SignInWithEmailAddressAndPasswordPressed value,
-          $Res Function(SignInWithEmailAddressAndPasswordPressed) then) =
-      _$SignInWithEmailAddressAndPasswordPressedCopyWithImpl<$Res>;
+abstract class _$SignInWithEmailAddressAndPasswordPressedCopyWith<$Res> {
+  factory _$SignInWithEmailAddressAndPasswordPressedCopyWith(
+          _SignInWithEmailAddressAndPasswordPressed value,
+          $Res Function(_SignInWithEmailAddressAndPasswordPressed) then) =
+      __$SignInWithEmailAddressAndPasswordPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignInWithEmailAddressAndPasswordPressedCopyWithImpl<$Res>
+class __$SignInWithEmailAddressAndPasswordPressedCopyWithImpl<$Res>
     extends _$AuthFormEventCopyWithImpl<$Res>
-    implements $SignInWithEmailAddressAndPasswordPressedCopyWith<$Res> {
-  _$SignInWithEmailAddressAndPasswordPressedCopyWithImpl(
-      SignInWithEmailAddressAndPasswordPressed _value,
-      $Res Function(SignInWithEmailAddressAndPasswordPressed) _then)
+    implements _$SignInWithEmailAddressAndPasswordPressedCopyWith<$Res> {
+  __$SignInWithEmailAddressAndPasswordPressedCopyWithImpl(
+      _SignInWithEmailAddressAndPasswordPressed _value,
+      $Res Function(_SignInWithEmailAddressAndPasswordPressed) _then)
       : super(_value,
-            (v) => _then(v as SignInWithEmailAddressAndPasswordPressed));
+            (v) => _then(v as _SignInWithEmailAddressAndPasswordPressed));
 
   @override
-  SignInWithEmailAddressAndPasswordPressed get _value =>
-      super._value as SignInWithEmailAddressAndPasswordPressed;
+  _SignInWithEmailAddressAndPasswordPressed get _value =>
+      super._value as _SignInWithEmailAddressAndPasswordPressed;
 }
 
 /// @nodoc
 
-class _$SignInWithEmailAddressAndPasswordPressed
-    implements SignInWithEmailAddressAndPasswordPressed {
-  const _$SignInWithEmailAddressAndPasswordPressed();
+class _$_SignInWithEmailAddressAndPasswordPressed
+    implements _SignInWithEmailAddressAndPasswordPressed {
+  const _$_SignInWithEmailAddressAndPasswordPressed();
 
   @override
   String toString() {
@@ -838,7 +840,7 @@ class _$SignInWithEmailAddressAndPasswordPressed
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SignInWithEmailAddressAndPasswordPressed);
+            other is _SignInWithEmailAddressAndPasswordPressed);
   }
 
   @override
@@ -893,16 +895,16 @@ class _$SignInWithEmailAddressAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RepeatPasswordChanged value)
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
-    required TResult Function(SignInWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_SignInWithEmailAddressAndPasswordPressed value)
         signInWithEmailAddressAndPasswordPressed,
-    required TResult Function(RegisterWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)
         registerWithEmailAddressAndPasswordPressed,
-    required TResult Function(SignInWithGooglePressed value)
+    required TResult Function(_SignInWithGooglePressed value)
         signInWithGooglePressed,
   }) {
     return signInWithEmailAddressAndPasswordPressed(this);
@@ -911,15 +913,15 @@ class _$SignInWithEmailAddressAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) {
     return signInWithEmailAddressAndPasswordPressed?.call(this);
   }
@@ -927,15 +929,15 @@ class _$SignInWithEmailAddressAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) {
     if (signInWithEmailAddressAndPasswordPressed != null) {
@@ -945,40 +947,40 @@ class _$SignInWithEmailAddressAndPasswordPressed
   }
 }
 
-abstract class SignInWithEmailAddressAndPasswordPressed
+abstract class _SignInWithEmailAddressAndPasswordPressed
     implements AuthFormEvent {
-  const factory SignInWithEmailAddressAndPasswordPressed() =
-      _$SignInWithEmailAddressAndPasswordPressed;
+  const factory _SignInWithEmailAddressAndPasswordPressed() =
+      _$_SignInWithEmailAddressAndPasswordPressed;
 }
 
 /// @nodoc
-abstract class $RegisterWithEmailAddressAndPasswordPressedCopyWith<$Res> {
-  factory $RegisterWithEmailAddressAndPasswordPressedCopyWith(
-          RegisterWithEmailAddressAndPasswordPressed value,
-          $Res Function(RegisterWithEmailAddressAndPasswordPressed) then) =
-      _$RegisterWithEmailAddressAndPasswordPressedCopyWithImpl<$Res>;
+abstract class _$RegisterWithEmailAddressAndPasswordPressedCopyWith<$Res> {
+  factory _$RegisterWithEmailAddressAndPasswordPressedCopyWith(
+          _RegisterWithEmailAddressAndPasswordPressed value,
+          $Res Function(_RegisterWithEmailAddressAndPasswordPressed) then) =
+      __$RegisterWithEmailAddressAndPasswordPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RegisterWithEmailAddressAndPasswordPressedCopyWithImpl<$Res>
+class __$RegisterWithEmailAddressAndPasswordPressedCopyWithImpl<$Res>
     extends _$AuthFormEventCopyWithImpl<$Res>
-    implements $RegisterWithEmailAddressAndPasswordPressedCopyWith<$Res> {
-  _$RegisterWithEmailAddressAndPasswordPressedCopyWithImpl(
-      RegisterWithEmailAddressAndPasswordPressed _value,
-      $Res Function(RegisterWithEmailAddressAndPasswordPressed) _then)
+    implements _$RegisterWithEmailAddressAndPasswordPressedCopyWith<$Res> {
+  __$RegisterWithEmailAddressAndPasswordPressedCopyWithImpl(
+      _RegisterWithEmailAddressAndPasswordPressed _value,
+      $Res Function(_RegisterWithEmailAddressAndPasswordPressed) _then)
       : super(_value,
-            (v) => _then(v as RegisterWithEmailAddressAndPasswordPressed));
+            (v) => _then(v as _RegisterWithEmailAddressAndPasswordPressed));
 
   @override
-  RegisterWithEmailAddressAndPasswordPressed get _value =>
-      super._value as RegisterWithEmailAddressAndPasswordPressed;
+  _RegisterWithEmailAddressAndPasswordPressed get _value =>
+      super._value as _RegisterWithEmailAddressAndPasswordPressed;
 }
 
 /// @nodoc
 
-class _$RegisterWithEmailAddressAndPasswordPressed
-    implements RegisterWithEmailAddressAndPasswordPressed {
-  const _$RegisterWithEmailAddressAndPasswordPressed();
+class _$_RegisterWithEmailAddressAndPasswordPressed
+    implements _RegisterWithEmailAddressAndPasswordPressed {
+  const _$_RegisterWithEmailAddressAndPasswordPressed();
 
   @override
   String toString() {
@@ -989,7 +991,7 @@ class _$RegisterWithEmailAddressAndPasswordPressed
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RegisterWithEmailAddressAndPasswordPressed);
+            other is _RegisterWithEmailAddressAndPasswordPressed);
   }
 
   @override
@@ -1044,16 +1046,16 @@ class _$RegisterWithEmailAddressAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RepeatPasswordChanged value)
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
-    required TResult Function(SignInWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_SignInWithEmailAddressAndPasswordPressed value)
         signInWithEmailAddressAndPasswordPressed,
-    required TResult Function(RegisterWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)
         registerWithEmailAddressAndPasswordPressed,
-    required TResult Function(SignInWithGooglePressed value)
+    required TResult Function(_SignInWithGooglePressed value)
         signInWithGooglePressed,
   }) {
     return registerWithEmailAddressAndPasswordPressed(this);
@@ -1062,15 +1064,15 @@ class _$RegisterWithEmailAddressAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) {
     return registerWithEmailAddressAndPasswordPressed?.call(this);
   }
@@ -1078,15 +1080,15 @@ class _$RegisterWithEmailAddressAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) {
     if (registerWithEmailAddressAndPasswordPressed != null) {
@@ -1096,35 +1098,36 @@ class _$RegisterWithEmailAddressAndPasswordPressed
   }
 }
 
-abstract class RegisterWithEmailAddressAndPasswordPressed
+abstract class _RegisterWithEmailAddressAndPasswordPressed
     implements AuthFormEvent {
-  const factory RegisterWithEmailAddressAndPasswordPressed() =
-      _$RegisterWithEmailAddressAndPasswordPressed;
+  const factory _RegisterWithEmailAddressAndPasswordPressed() =
+      _$_RegisterWithEmailAddressAndPasswordPressed;
 }
 
 /// @nodoc
-abstract class $SignInWithGooglePressedCopyWith<$Res> {
-  factory $SignInWithGooglePressedCopyWith(SignInWithGooglePressed value,
-          $Res Function(SignInWithGooglePressed) then) =
-      _$SignInWithGooglePressedCopyWithImpl<$Res>;
+abstract class _$SignInWithGooglePressedCopyWith<$Res> {
+  factory _$SignInWithGooglePressedCopyWith(_SignInWithGooglePressed value,
+          $Res Function(_SignInWithGooglePressed) then) =
+      __$SignInWithGooglePressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignInWithGooglePressedCopyWithImpl<$Res>
+class __$SignInWithGooglePressedCopyWithImpl<$Res>
     extends _$AuthFormEventCopyWithImpl<$Res>
-    implements $SignInWithGooglePressedCopyWith<$Res> {
-  _$SignInWithGooglePressedCopyWithImpl(SignInWithGooglePressed _value,
-      $Res Function(SignInWithGooglePressed) _then)
-      : super(_value, (v) => _then(v as SignInWithGooglePressed));
+    implements _$SignInWithGooglePressedCopyWith<$Res> {
+  __$SignInWithGooglePressedCopyWithImpl(_SignInWithGooglePressed _value,
+      $Res Function(_SignInWithGooglePressed) _then)
+      : super(_value, (v) => _then(v as _SignInWithGooglePressed));
 
   @override
-  SignInWithGooglePressed get _value => super._value as SignInWithGooglePressed;
+  _SignInWithGooglePressed get _value =>
+      super._value as _SignInWithGooglePressed;
 }
 
 /// @nodoc
 
-class _$SignInWithGooglePressed implements SignInWithGooglePressed {
-  const _$SignInWithGooglePressed();
+class _$_SignInWithGooglePressed implements _SignInWithGooglePressed {
+  const _$_SignInWithGooglePressed();
 
   @override
   String toString() {
@@ -1134,7 +1137,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SignInWithGooglePressed);
+        (other.runtimeType == runtimeType && other is _SignInWithGooglePressed);
   }
 
   @override
@@ -1189,16 +1192,16 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RepeatPasswordChanged value)
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
-    required TResult Function(SignInWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_SignInWithEmailAddressAndPasswordPressed value)
         signInWithEmailAddressAndPasswordPressed,
-    required TResult Function(RegisterWithEmailAddressAndPasswordPressed value)
+    required TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)
         registerWithEmailAddressAndPasswordPressed,
-    required TResult Function(SignInWithGooglePressed value)
+    required TResult Function(_SignInWithGooglePressed value)
         signInWithGooglePressed,
   }) {
     return signInWithGooglePressed(this);
@@ -1207,15 +1210,15 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) {
     return signInWithGooglePressed?.call(this);
   }
@@ -1223,15 +1226,15 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(NameChanged value)? nameChanged,
-    TResult Function(EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RepeatPasswordChanged value)? repeatPasswordChanged,
-    TResult Function(SignInWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_SignInWithEmailAddressAndPasswordPressed value)?
         signInWithEmailAddressAndPasswordPressed,
-    TResult Function(RegisterWithEmailAddressAndPasswordPressed value)?
+    TResult Function(_RegisterWithEmailAddressAndPasswordPressed value)?
         registerWithEmailAddressAndPasswordPressed,
-    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) {
     if (signInWithGooglePressed != null) {
@@ -1241,8 +1244,8 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   }
 }
 
-abstract class SignInWithGooglePressed implements AuthFormEvent {
-  const factory SignInWithGooglePressed() = _$SignInWithGooglePressed;
+abstract class _SignInWithGooglePressed implements AuthFormEvent {
+  const factory _SignInWithGooglePressed() = _$_SignInWithGooglePressed;
 }
 
 /// @nodoc

@@ -20,6 +20,10 @@ extension FirebaseFirestoreX on FirebaseFirestore {
 
 extension DocumentReferenceX on DocumentReference {
   CollectionReference get libraryCollection => collection('library');
+
+  CollectionReference _commonBookCollection(String bookId) =>
+      libraryCollection.doc(bookId).collection('common');
+
   DocumentReference bookStatisticsDocument(String bookId) =>
-      libraryCollection.doc(bookId).collection('common').doc('statistics');
+      _commonBookCollection(bookId).doc('statistics');
 }

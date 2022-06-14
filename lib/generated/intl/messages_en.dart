@@ -25,7 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddBook": MessageLookupByLibrary.simpleMessage("Add a book"),
         "AddBookLike":
             MessageLookupByLibrary.simpleMessage("Add your favorite book"),
+        "AreYouSure": MessageLookupByLibrary.simpleMessage("Are you sure?"),
+        "AreYouSureYouWant": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to delete this book?"),
         "BookAdded": MessageLookupByLibrary.simpleMessage("Book added"),
+        "Cancel": MessageLookupByLibrary.simpleMessage("CANCEL"),
         "CheckTheNetworkConnection": MessageLookupByLibrary.simpleMessage(
             "Check the network connection or send a feedback"),
         "ContainerToRegisterBottom": MessageLookupByLibrary.simpleMessage(
@@ -37,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ContainerToSignInTop":
             MessageLookupByLibrary.simpleMessage("Welcome to Lingoa!"),
         "CreateANew": MessageLookupByLibrary.simpleMessage("Create a new!"),
+        "Delete": MessageLookupByLibrary.simpleMessage("DELETE"),
         "Distribute": MessageLookupByLibrary.simpleMessage("Distribute"),
         "EDIT": MessageLookupByLibrary.simpleMessage("EDIT"),
         "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
@@ -56,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "InvalidEmailAndPasswordCombination":
             MessageLookupByLibrary.simpleMessage(
                 "Email or password was entered incorrectly"),
+        "LeaveAReportToResolve": MessageLookupByLibrary.simpleMessage(
+            "Leave a report to resolve this issue"),
         "Library": MessageLookupByLibrary.simpleMessage("Library"),
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NoProfile": MessageLookupByLibrary.simpleMessage("No profile?"),
@@ -70,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Repeat": MessageLookupByLibrary.simpleMessage("Repeat"),
         "RepeatPassword":
             MessageLookupByLibrary.simpleMessage("Repeat password"),
+        "Report": MessageLookupByLibrary.simpleMessage("Report"),
         "Response": MessageLookupByLibrary.simpleMessage("Response"),
         "SignIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "SignInHail": MessageLookupByLibrary.simpleMessage("Sign in!"),
@@ -78,9 +86,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "SomethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong :("),
         "Statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
+        "StatisticsNotFound": MessageLookupByLibrary.simpleMessage(
+            "Statistics not found, send report by email"),
         "StringEmpty": MessageLookupByLibrary.simpleMessage("The empty field"),
         "TheFieldCannotBeEmpty":
             MessageLookupByLibrary.simpleMessage("The field cannot be empty"),
+        "ThereProblemServer": MessageLookupByLibrary.simpleMessage(
+            "There was a problem with the server"),
+        "ThisBookCouldNotBeDeleted": MessageLookupByLibrary.simpleMessage(
+            "This book could not be deleted"),
         "ThisEmailHas": MessageLookupByLibrary.simpleMessage(
             "This email address has already been registered"),
         "UserDisabled": MessageLookupByLibrary.simpleMessage(
@@ -90,8 +104,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "We care about your safety and do not want to be hacked"),
         "WeakPassword": MessageLookupByLibrary.simpleMessage("Weak password"),
         "Wrong": MessageLookupByLibrary.simpleMessage("Wrong"),
+        "YouDoNotHaveAccess": MessageLookupByLibrary.simpleMessage(
+            "You do not have access to this book, please leave a report by e-mail"),
         "YouHaveBeenDeniedAccess": MessageLookupByLibrary.simpleMessage(
             "You have been denied access, see lingoa.com/info for details"),
+        "YouMayNotDeleteThisBook": MessageLookupByLibrary.simpleMessage(
+            "You may not delete this book"),
         "YourBook": MessageLookupByLibrary.simpleMessage("Your book"),
         "YourName": MessageLookupByLibrary.simpleMessage("Your name"),
         "exceedingMaxLength":
@@ -100,6 +118,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("characters"),
         "exceedingMinLengthStart":
             MessageLookupByLibrary.simpleMessage("The field is smaller"),
+        "insufficientPermissionsLibrary": MessageLookupByLibrary.simpleMessage(
+            "You have no right to these books"),
         "notLevels":
             MessageLookupByLibrary.simpleMessage("Passwords do not match")
       };

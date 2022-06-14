@@ -1,14 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
-import 'package:lingoa/app/domain/book/statistics.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/app/presentation/widgets/cards/statistics/states.dart';
 import 'package:lingoa/generated/l10n.dart';
 
 import '../cards/books/statistics.dart';
-import '../cards/statistics/body.dart';
 
 Future<T?> showBookStatistics<T extends Object?>(
   BuildContext context,
@@ -59,17 +58,7 @@ Future<T?> showBookStatistics<T extends Object?>(
                             const SizedBox(
                               height: Dimensions.d12,
                             ),
-                            StatisticsCards(
-                              statistics: const BookStatistics(
-                                statistics: {
-                                  'Прочитано сторінок': 30,
-                                  'Вивчено слів': 30,
-                                  'Прогрес': 30,
-                                  'Пройдено речень': 30,
-                                },
-                              ).statistics,
-                              title: S().Statistics,
-                            ),
+                            StatesStatisticsBook(book: book),
                             const SizedBox(
                               height: Dimensions.d4,
                             ),
