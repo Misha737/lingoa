@@ -32,14 +32,33 @@ class LibraryWatchBloc extends Bloc<LibraryWatchEvent, LibraryWatchState> {
       },
     );
 
-    on<_Received>(
-      (event, emit) => emit(
+    on<_Received>((event, emit) {
+      final List<BookBody> booksRead = [];
+      final List<BookBody> booksNotRead = [];
+
+      event.failureOrSuccess.fold(
+        (_) => null,
+        (books) => books.forEach(
+          (book) {
+            if (book.isRead) {
+              booksRead.add(book);
+            } else {
+              booksNotRead.add(book);
+            }
+          },
+        ),
+      );
+
+      emit(
         event.failureOrSuccess.fold(
           (f) => LibraryWatchState.failure(f),
-          (books) => LibraryWatchState.success(books),
+          (books) => LibraryWatchState.success(
+            booksNotRead,
+            booksRead,
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 
   @override

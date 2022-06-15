@@ -44,6 +44,8 @@ class BookRepositoryFirestore implements IBookRepository {
       } else {
         return left(const BookFailure.unexpected());
       }
+    } catch (e) {
+      return left(const BookFailure.unexpected());
     }
   }
 
@@ -91,6 +93,8 @@ class BookRepositoryFirestore implements IBookRepository {
       } else {
         return left(const BookFailure.unexpected());
       }
+    } catch (e) {
+      return left(const BookFailure.unexpected());
     }
   }
 
@@ -122,6 +126,8 @@ class BookRepositoryFirestore implements IBookRepository {
       } else {
         return left(const BookFailure.unexpected());
       }
+    } catch (e) {
+      return left(const BookFailure.unexpected());
     }
   }
 
@@ -142,6 +148,8 @@ class BookRepositoryFirestore implements IBookRepository {
       } else {
         return left(const BookFailure.unexpected());
       }
+    } catch (e) {
+      return left(const BookFailure.unexpected());
     }
   }
 }

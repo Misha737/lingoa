@@ -25,19 +25,12 @@ class BuilderLibraryWatch extends StatelessWidget {
                 loading: (_) => const Center(
                       child: CircularProgressIndicator(),
                     ),
-                success: (state) {
-                  final booksRead =
-                      state.books.map((e) => e.isRead ? e : null).toList();
-                  final booksNotRead =
-                      state.books.map((e) => !e.isRead ? e : null).toList();
-
-                  return Center(
-                    child: SuccessColumnHome(
-                      booksRead: booksRead,
-                      booksNotRead: booksNotRead,
+                success: (state) => Center(
+                      child: SuccessColumnHome(
+                        booksRead: state.booksRead,
+                        booksNotRead: state.booksNotRead,
+                      ),
                     ),
-                  );
-                },
                 failure: (state) => InformationTemplate(
                       imageName: AssetsName.images.addFile,
                       description: state.failure.maybeMap(

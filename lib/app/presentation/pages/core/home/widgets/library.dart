@@ -8,8 +8,8 @@ import 'package:lingoa/app/presentation/widgets/cards/books/passed.dart';
 import 'package:lingoa/app/presentation/widgets/cards/books/standard.dart';
 import 'package:lingoa/app/presentation/widgets/menu/sheet_menu.dart';
 
-class LibraryCardsBook extends StatefulWidget {
-  const LibraryCardsBook({
+class LibraryCardBooks extends StatefulWidget {
+  const LibraryCardBooks({
     Key? key,
     required this.title,
     required this.isNotPassed,
@@ -21,10 +21,10 @@ class LibraryCardsBook extends StatefulWidget {
   final List<BookBody?> books;
 
   @override
-  State<LibraryCardsBook> createState() => _LibraryCardsBookState();
+  State<LibraryCardBooks> createState() => _LibraryCardBooksState();
 }
 
-class _LibraryCardsBookState extends State<LibraryCardsBook> {
+class _LibraryCardBooksState extends State<LibraryCardBooks> {
   late int _selectedIndex;
 
   @override

@@ -33,6 +33,7 @@ class ContentContainerRegister extends StatelessWidget {
                   operationNotAllowed: (_) => S().OperationNotAllowed,
                   weakPassword: (_) => S().WeakPassword,
                   invalidEmail: (_) => S().InvalidEmailAddress,
+                  unexpected: (_) => S().Oops,
                 ),
                 content: failure.maybeMap(
                   orElse: () => S().SomethingWentWrong,
@@ -41,6 +42,7 @@ class ContentContainerRegister extends StatelessWidget {
                   operationNotAllowed: (_) => S().YouHaveBeenDeniedAccess,
                   weakPassword: (_) => S().WeCareAbout,
                   invalidEmail: (_) => S().EnterAValidEmailAddress,
+                  unexpected: (_) => S().Oops,
                 ),
                 actions: [
                   TextButton(

@@ -49,6 +49,8 @@ class FirebaseAuthFacade implements IAuthFacade {
       } else {
         return left(const AuthFailure.serverError());
       }
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 
@@ -83,6 +85,8 @@ class FirebaseAuthFacade implements IAuthFacade {
       } else {
         return left(const AuthFailure.serverError());
       }
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 
@@ -104,6 +108,8 @@ class FirebaseAuthFacade implements IAuthFacade {
       return right(unit);
     } on FirebaseAuthException catch (_) {
       return left(const AuthFailure.serverError());
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 
@@ -119,6 +125,8 @@ class FirebaseAuthFacade implements IAuthFacade {
     } on FirebaseAuthException catch (e) {
       log(e.code);
       return left(const AuthFailure.serverError());
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 

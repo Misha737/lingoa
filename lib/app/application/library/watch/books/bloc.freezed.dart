@@ -356,7 +356,9 @@ mixin _$LibraryWatchState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<BookBody> books) success,
+    required TResult Function(
+            List<BookBody> booksNotRead, List<BookBody> booksRead)
+        success,
     required TResult Function(BookFailure failure) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -364,7 +366,8 @@ mixin _$LibraryWatchState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -372,7 +375,8 @@ mixin _$LibraryWatchState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) =>
@@ -461,7 +465,9 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<BookBody> books) success,
+    required TResult Function(
+            List<BookBody> booksNotRead, List<BookBody> booksRead)
+        success,
     required TResult Function(BookFailure failure) failure,
   }) {
     return initial();
@@ -472,7 +478,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) {
     return initial?.call();
@@ -483,7 +490,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -575,7 +583,9 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<BookBody> books) success,
+    required TResult Function(
+            List<BookBody> booksNotRead, List<BookBody> booksRead)
+        success,
     required TResult Function(BookFailure failure) failure,
   }) {
     return loading();
@@ -586,7 +596,8 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) {
     return loading?.call();
@@ -597,7 +608,8 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -653,7 +665,7 @@ abstract class _Loading implements LibraryWatchState {
 abstract class _$SuccessCopyWith<$Res> {
   factory _$SuccessCopyWith(_Success value, $Res Function(_Success) then) =
       __$SuccessCopyWithImpl<$Res>;
-  $Res call({List<BookBody> books});
+  $Res call({List<BookBody> booksNotRead, List<BookBody> booksRead});
 }
 
 /// @nodoc
@@ -667,12 +679,17 @@ class __$SuccessCopyWithImpl<$Res> extends _$LibraryWatchStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? books = freezed,
+    Object? booksNotRead = freezed,
+    Object? booksRead = freezed,
   }) {
     return _then(_Success(
-      books == freezed
-          ? _value.books
-          : books // ignore: cast_nullable_to_non_nullable
+      booksNotRead == freezed
+          ? _value.booksNotRead
+          : booksNotRead // ignore: cast_nullable_to_non_nullable
+              as List<BookBody>,
+      booksRead == freezed
+          ? _value.booksRead
+          : booksRead // ignore: cast_nullable_to_non_nullable
               as List<BookBody>,
     ));
   }
@@ -681,18 +698,28 @@ class __$SuccessCopyWithImpl<$Res> extends _$LibraryWatchStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Success implements _Success {
-  const _$_Success(final List<BookBody> books) : _books = books;
+  const _$_Success(
+      final List<BookBody> booksNotRead, final List<BookBody> booksRead)
+      : _booksNotRead = booksNotRead,
+        _booksRead = booksRead;
 
-  final List<BookBody> _books;
+  final List<BookBody> _booksNotRead;
   @override
-  List<BookBody> get books {
+  List<BookBody> get booksNotRead {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_books);
+    return EqualUnmodifiableListView(_booksNotRead);
+  }
+
+  final List<BookBody> _booksRead;
+  @override
+  List<BookBody> get booksRead {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_booksRead);
   }
 
   @override
   String toString() {
-    return 'LibraryWatchState.success(books: $books)';
+    return 'LibraryWatchState.success(booksNotRead: $booksNotRead, booksRead: $booksRead)';
   }
 
   @override
@@ -700,12 +727,16 @@ class _$_Success implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Success &&
-            const DeepCollectionEquality().equals(other.books, books));
+            const DeepCollectionEquality()
+                .equals(other.booksNotRead, booksNotRead) &&
+            const DeepCollectionEquality().equals(other.booksRead, booksRead));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(books));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(booksNotRead),
+      const DeepCollectionEquality().hash(booksRead));
 
   @JsonKey(ignore: true)
   @override
@@ -717,10 +748,12 @@ class _$_Success implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<BookBody> books) success,
+    required TResult Function(
+            List<BookBody> booksNotRead, List<BookBody> booksRead)
+        success,
     required TResult Function(BookFailure failure) failure,
   }) {
-    return success(books);
+    return success(booksNotRead, booksRead);
   }
 
   @override
@@ -728,10 +761,11 @@ class _$_Success implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) {
-    return success?.call(books);
+    return success?.call(booksNotRead, booksRead);
   }
 
   @override
@@ -739,12 +773,13 @@ class _$_Success implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(books);
+      return success(booksNotRead, booksRead);
     }
     return orElse();
   }
@@ -788,9 +823,12 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements LibraryWatchState {
-  const factory _Success(final List<BookBody> books) = _$_Success;
+  const factory _Success(
+          final List<BookBody> booksNotRead, final List<BookBody> booksRead) =
+      _$_Success;
 
-  List<BookBody> get books => throw _privateConstructorUsedError;
+  List<BookBody> get booksNotRead => throw _privateConstructorUsedError;
+  List<BookBody> get booksRead => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$SuccessCopyWith<_Success> get copyWith =>
       throw _privateConstructorUsedError;
@@ -869,7 +907,9 @@ class _$_Failure implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<BookBody> books) success,
+    required TResult Function(
+            List<BookBody> booksNotRead, List<BookBody> booksRead)
+        success,
     required TResult Function(BookFailure failure) failure,
   }) {
     return failure(this.failure);
@@ -880,7 +920,8 @@ class _$_Failure implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) {
     return failure?.call(this.failure);
@@ -891,7 +932,8 @@ class _$_Failure implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<BookBody> books)? success,
+    TResult Function(List<BookBody> booksNotRead, List<BookBody> booksRead)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {

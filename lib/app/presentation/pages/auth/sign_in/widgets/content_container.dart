@@ -33,6 +33,8 @@ class ContentContainerSignIn extends StatelessWidget {
                   invalidEmailAndPasswordCombination: (_) => S().Wrong,
                   userDisabled: (_) => S().Error,
                   invalidEmail: (_) => S().InvalidEmailAddress,
+                  cancelledByUser: (_) => S().SomethingWentWrong,
+                  unexpected: (_) => S().Oops,
                 ),
                 content: failure.maybeMap(
                   orElse: () => S().SomethingWentWrong,
@@ -41,6 +43,8 @@ class ContentContainerSignIn extends StatelessWidget {
                       S().InvalidEmailAndPasswordCombination,
                   userDisabled: (_) => S().UserDisabled,
                   invalidEmail: (_) => S().EnterAValidEmailAddress,
+                  cancelledByUser: (_) => S().CheckTheNetworkConnection,
+                  unexpected: (_) => S().SomethingWentWrong,
                 ),
                 actions: [
                   TextButton(

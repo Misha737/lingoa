@@ -13,3 +13,4 @@ Future<void> main() async {
   );
   runApp(AppWidget());
 }
+// TODO: Зменшити кількість файлів
