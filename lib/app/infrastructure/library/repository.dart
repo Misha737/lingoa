@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:lingoa/app/infrastructure/library/dtos/content/content.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:lingoa/app/domain/book/failures.dart';
 import 'package:lingoa/app/domain/book/content.dart';
@@ -69,9 +70,25 @@ class BookRepositoryFirestore implements IBookRepository {
   }
 
   @override
-  Future<Either<BookFailure, BookContent>> getContent() {
-    // TODO: implement getContent
-    throw UnimplementedError();
+  Future<Either<BookFailure, BookContent>> getContent(
+      BookBody book, int part) async {
+    try {
+      final userDoc = await _firestore.userDocument();
+      final bookId = book.id.getOrCrash();
+      final doc = await userDoc.bookContentDocument(bookId, part).get();
+
+      return right(BookContentDto.fromFirestore(doc).toDomain());
+    } on FirebaseException catch (e) {
+      if (e.message!.contains(permissionDenied)) {
+        return left(const BookFailure.insufficientPermissions());
+      } else if (e.message!.contains(notFound)) {
+        return left(const BookFailure.unableToUpdate());
+      } else {
+        return left(const BookFailure.unexpected());
+      }
+    } catch (e) {
+      return left(const BookFailure.unexpected());
+    }
   }
 
   @override

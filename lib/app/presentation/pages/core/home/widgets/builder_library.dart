@@ -25,23 +25,23 @@ class BuilderLibraryWatch extends StatelessWidget {
                 loading: (_) => const Center(
                       child: CircularProgressIndicator(),
                     ),
-                success: (state) => Center(
-                      child: SuccessColumnHome(
-                        booksRead: state.booksRead,
-                        booksNotRead: state.booksNotRead,
-                      ),
+                success: (state) => SuccessColumnHome(
+                      booksRead: state.booksRead,
+                      booksNotRead: state.booksNotRead,
                     ),
-                failure: (state) => InformationTemplate(
-                      imageName: AssetsName.images.addFile,
-                      description: state.failure.maybeMap(
-                        orElse: () => S().SomethingWentWrong,
-                        serverException: (_) => S().ThereProblemServer,
-                        insufficientPermissions: (_) =>
-                            S().insufficientPermissionsLibrary,
+                failure: (state) => Center(
+                      child: InformationTemplate(
+                        imageName: AssetsName.images.addFile,
+                        description: state.failure.maybeMap(
+                          orElse: () => S().SomethingWentWrong,
+                          serverException: (_) => S().ThereProblemServer,
+                          insufficientPermissions: (_) =>
+                              S().insufficientPermissionsLibrary,
+                        ),
+                        labelButton: S().Report,
+                        iconButton: Icons.report_outlined,
+                        onPressed: () {},
                       ),
-                      labelButton: S().Report,
-                      iconButton: Icons.report_outlined,
-                      onPressed: () {},
                     )),
           ),
         );

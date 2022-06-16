@@ -19,6 +19,8 @@ mixin _$BookStatistics {
 // required String name,
 // required num value,
   Map<String, num> get statistics => throw _privateConstructorUsedError;
+  int get part => throw _privateConstructorUsedError;
+  int get sentence => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BookStatisticsCopyWith<BookStatistics> get copyWith =>
@@ -30,7 +32,7 @@ abstract class $BookStatisticsCopyWith<$Res> {
   factory $BookStatisticsCopyWith(
           BookStatistics value, $Res Function(BookStatistics) then) =
       _$BookStatisticsCopyWithImpl<$Res>;
-  $Res call({Map<String, num> statistics});
+  $Res call({Map<String, num> statistics, int part, int sentence});
 }
 
 /// @nodoc
@@ -45,12 +47,22 @@ class _$BookStatisticsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? statistics = freezed,
+    Object? part = freezed,
+    Object? sentence = freezed,
   }) {
     return _then(_value.copyWith(
       statistics: statistics == freezed
           ? _value.statistics
           : statistics // ignore: cast_nullable_to_non_nullable
               as Map<String, num>,
+      part: part == freezed
+          ? _value.part
+          : part // ignore: cast_nullable_to_non_nullable
+              as int,
+      sentence: sentence == freezed
+          ? _value.sentence
+          : sentence // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -62,7 +74,7 @@ abstract class _$BookStatisticsCopyWith<$Res>
           _BookStatistics value, $Res Function(_BookStatistics) then) =
       __$BookStatisticsCopyWithImpl<$Res>;
   @override
-  $Res call({Map<String, num> statistics});
+  $Res call({Map<String, num> statistics, int part, int sentence});
 }
 
 /// @nodoc
@@ -79,12 +91,22 @@ class __$BookStatisticsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? statistics = freezed,
+    Object? part = freezed,
+    Object? sentence = freezed,
   }) {
     return _then(_BookStatistics(
       statistics: statistics == freezed
           ? _value.statistics
           : statistics // ignore: cast_nullable_to_non_nullable
               as Map<String, num>,
+      part: part == freezed
+          ? _value.part
+          : part // ignore: cast_nullable_to_non_nullable
+              as int,
+      sentence: sentence == freezed
+          ? _value.sentence
+          : sentence // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -92,7 +114,10 @@ class __$BookStatisticsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_BookStatistics extends _BookStatistics {
-  const _$_BookStatistics({required final Map<String, num> statistics})
+  const _$_BookStatistics(
+      {required final Map<String, num> statistics,
+      required this.part,
+      required this.sentence})
       : _statistics = statistics,
         super._();
 
@@ -108,8 +133,13 @@ class _$_BookStatistics extends _BookStatistics {
   }
 
   @override
+  final int part;
+  @override
+  final int sentence;
+
+  @override
   String toString() {
-    return 'BookStatistics(statistics: $statistics)';
+    return 'BookStatistics(statistics: $statistics, part: $part, sentence: $sentence)';
   }
 
   @override
@@ -118,12 +148,17 @@ class _$_BookStatistics extends _BookStatistics {
         (other.runtimeType == runtimeType &&
             other is _BookStatistics &&
             const DeepCollectionEquality()
-                .equals(other.statistics, statistics));
+                .equals(other.statistics, statistics) &&
+            const DeepCollectionEquality().equals(other.part, part) &&
+            const DeepCollectionEquality().equals(other.sentence, sentence));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(statistics));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(statistics),
+      const DeepCollectionEquality().hash(part),
+      const DeepCollectionEquality().hash(sentence));
 
   @JsonKey(ignore: true)
   @override
@@ -132,13 +167,19 @@ class _$_BookStatistics extends _BookStatistics {
 }
 
 abstract class _BookStatistics extends BookStatistics {
-  const factory _BookStatistics({required final Map<String, num> statistics}) =
-      _$_BookStatistics;
+  const factory _BookStatistics(
+      {required final Map<String, num> statistics,
+      required final int part,
+      required final int sentence}) = _$_BookStatistics;
   const _BookStatistics._() : super._();
 
   @override // required String name,
 // required num value,
   Map<String, num> get statistics => throw _privateConstructorUsedError;
+  @override
+  int get part => throw _privateConstructorUsedError;
+  @override
+  int get sentence => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$BookStatisticsCopyWith<_BookStatistics> get copyWith =>

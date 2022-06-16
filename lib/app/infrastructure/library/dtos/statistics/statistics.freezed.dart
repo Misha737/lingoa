@@ -21,6 +21,8 @@ BookStatisticsDto _$BookStatisticsDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BookStatisticsDto {
   Map<String, num> get statistics => throw _privateConstructorUsedError;
+  int get part => throw _privateConstructorUsedError;
+  int get sentence => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +35,7 @@ abstract class $BookStatisticsDtoCopyWith<$Res> {
   factory $BookStatisticsDtoCopyWith(
           BookStatisticsDto value, $Res Function(BookStatisticsDto) then) =
       _$BookStatisticsDtoCopyWithImpl<$Res>;
-  $Res call({Map<String, num> statistics});
+  $Res call({Map<String, num> statistics, int part, int sentence});
 }
 
 /// @nodoc
@@ -48,12 +50,22 @@ class _$BookStatisticsDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? statistics = freezed,
+    Object? part = freezed,
+    Object? sentence = freezed,
   }) {
     return _then(_value.copyWith(
       statistics: statistics == freezed
           ? _value.statistics
           : statistics // ignore: cast_nullable_to_non_nullable
               as Map<String, num>,
+      part: part == freezed
+          ? _value.part
+          : part // ignore: cast_nullable_to_non_nullable
+              as int,
+      sentence: sentence == freezed
+          ? _value.sentence
+          : sentence // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -65,7 +77,7 @@ abstract class _$BookStatisticsDtoCopyWith<$Res>
           _BookStatisticsDto value, $Res Function(_BookStatisticsDto) then) =
       __$BookStatisticsDtoCopyWithImpl<$Res>;
   @override
-  $Res call({Map<String, num> statistics});
+  $Res call({Map<String, num> statistics, int part, int sentence});
 }
 
 /// @nodoc
@@ -82,12 +94,22 @@ class __$BookStatisticsDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? statistics = freezed,
+    Object? part = freezed,
+    Object? sentence = freezed,
   }) {
     return _then(_BookStatisticsDto(
       statistics: statistics == freezed
           ? _value.statistics
           : statistics // ignore: cast_nullable_to_non_nullable
               as Map<String, num>,
+      part: part == freezed
+          ? _value.part
+          : part // ignore: cast_nullable_to_non_nullable
+              as int,
+      sentence: sentence == freezed
+          ? _value.sentence
+          : sentence // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -95,7 +117,10 @@ class __$BookStatisticsDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BookStatisticsDto extends _BookStatisticsDto {
-  const _$_BookStatisticsDto({required final Map<String, num> statistics})
+  const _$_BookStatisticsDto(
+      {required final Map<String, num> statistics,
+      required this.part,
+      required this.sentence})
       : _statistics = statistics,
         super._();
 
@@ -110,8 +135,13 @@ class _$_BookStatisticsDto extends _BookStatisticsDto {
   }
 
   @override
+  final int part;
+  @override
+  final int sentence;
+
+  @override
   String toString() {
-    return 'BookStatisticsDto(statistics: $statistics)';
+    return 'BookStatisticsDto(statistics: $statistics, part: $part, sentence: $sentence)';
   }
 
   @override
@@ -120,13 +150,18 @@ class _$_BookStatisticsDto extends _BookStatisticsDto {
         (other.runtimeType == runtimeType &&
             other is _BookStatisticsDto &&
             const DeepCollectionEquality()
-                .equals(other.statistics, statistics));
+                .equals(other.statistics, statistics) &&
+            const DeepCollectionEquality().equals(other.part, part) &&
+            const DeepCollectionEquality().equals(other.sentence, sentence));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(statistics));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(statistics),
+      const DeepCollectionEquality().hash(part),
+      const DeepCollectionEquality().hash(sentence));
 
   @JsonKey(ignore: true)
   @override
@@ -141,7 +176,9 @@ class _$_BookStatisticsDto extends _BookStatisticsDto {
 
 abstract class _BookStatisticsDto extends BookStatisticsDto {
   const factory _BookStatisticsDto(
-      {required final Map<String, num> statistics}) = _$_BookStatisticsDto;
+      {required final Map<String, num> statistics,
+      required final int part,
+      required final int sentence}) = _$_BookStatisticsDto;
   const _BookStatisticsDto._() : super._();
 
   factory _BookStatisticsDto.fromJson(Map<String, dynamic> json) =
@@ -149,6 +186,10 @@ abstract class _BookStatisticsDto extends BookStatisticsDto {
 
   @override
   Map<String, num> get statistics => throw _privateConstructorUsedError;
+  @override
+  int get part => throw _privateConstructorUsedError;
+  @override
+  int get sentence => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$BookStatisticsDtoCopyWith<_BookStatisticsDto> get copyWith =>

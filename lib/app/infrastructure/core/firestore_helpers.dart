@@ -24,6 +24,9 @@ extension DocumentReferenceX on DocumentReference {
   CollectionReference _commonBookCollection(String bookId) =>
       libraryCollection.doc(bookId).collection('common');
 
+  DocumentReference bookContentDocument(String bookId, int part) =>
+      libraryCollection.doc(bookId).collection('content').doc(part.toString());
+
   DocumentReference bookStatisticsDocument(String bookId) =>
       _commonBookCollection(bookId).doc('statistics');
 }

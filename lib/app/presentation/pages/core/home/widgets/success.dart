@@ -23,40 +23,42 @@ class SuccessColumnHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BookControllerListener(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SearchButton(),
-          booksNotRead.isNotEmpty
-              ? Column(
-                  children: [
-                    LibraryCardBooks(
-                      title: S().Library,
-                      books: booksNotRead,
-                      isNotPassed: true,
-                    ),
-                    const SizedBox(height: Dimensions.d8),
-                    RoundButton(
-                      onTap: () {},
-                    ),
-                  ],
-                )
-              : InformationTemplate(
-                  imageName: AssetsName.images.addFile,
-                  description: S().AddBookLike,
-                  labelButton: S().AddBook,
-                  iconButton: Icons.arrow_forward_ios_rounded,
-                  onPressed: () {},
-                ),
-          booksRead.isNotEmpty
-              ? LibraryCardBooks(
-                  title: S().Read,
-                  books: booksRead,
-                  isNotPassed: false,
-                )
-              : const SizedBox.shrink(),
-          // AddBookHome(),
-        ],
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SearchButton(),
+            booksNotRead.isNotEmpty
+                ? Column(
+                    children: [
+                      LibraryCardBooks(
+                        title: S().Library,
+                        books: booksNotRead,
+                        isNotPassed: true,
+                      ),
+                      const SizedBox(height: Dimensions.d8),
+                      RoundButton(
+                        onTap: () {},
+                      ),
+                    ],
+                  )
+                : InformationTemplate(
+                    imageName: AssetsName.images.addFile,
+                    description: S().AddBookLike,
+                    labelButton: S().AddBook,
+                    iconButton: Icons.arrow_forward_ios_rounded,
+                    onPressed: () {},
+                  ),
+            booksRead.isNotEmpty
+                ? LibraryCardBooks(
+                    title: S().Read,
+                    books: booksRead,
+                    isNotPassed: false,
+                  )
+                : const SizedBox.shrink(),
+            // AddBookHome(),
+          ],
+        ),
       ),
     );
   }

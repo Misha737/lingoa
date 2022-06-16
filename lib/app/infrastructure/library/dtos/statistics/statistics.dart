@@ -10,14 +10,24 @@ abstract class BookStatisticsDto implements _$BookStatisticsDto {
   const BookStatisticsDto._();
   const factory BookStatisticsDto({
     required Map<String, num> statistics,
+    required int part,
+    required int sentence,
   }) = _BookStatisticsDto;
 
   factory BookStatisticsDto.fromDomain(BookStatistics statistics) {
-    return BookStatisticsDto(statistics: statistics.statistics);
+    return BookStatisticsDto(
+      statistics: statistics.statistics,
+      part: statistics.part,
+      sentence: statistics.sentence,
+    );
   }
 
   BookStatistics toDomain() {
-    return BookStatistics(statistics: statistics);
+    return BookStatistics(
+      statistics: statistics,
+      part: part,
+      sentence: sentence,
+    );
   }
 
   factory BookStatisticsDto.fromJson(Map<String, dynamic> json) =>
