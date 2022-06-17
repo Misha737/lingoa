@@ -18,33 +18,33 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CommonFailures {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() serverExeption,
+    required TResult Function() serverException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverExeption,
+    TResult Function()? serverException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverExeption,
+    TResult Function()? serverException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ServerExeption value) serverExeption,
+    required TResult Function(_ServerException value) serverException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ServerExeption value)? serverExeption,
+    TResult Function(_ServerException value)? serverException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ServerExeption value)? serverExeption,
+    TResult Function(_ServerException value)? serverException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,38 +68,38 @@ class _$CommonFailuresCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ServerExeptionCopyWith<$Res> {
-  factory _$ServerExeptionCopyWith(
-          _ServerExeption value, $Res Function(_ServerExeption) then) =
-      __$ServerExeptionCopyWithImpl<$Res>;
+abstract class _$ServerExceptionCopyWith<$Res> {
+  factory _$ServerExceptionCopyWith(
+          _ServerException value, $Res Function(_ServerException) then) =
+      __$ServerExceptionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ServerExeptionCopyWithImpl<$Res>
+class __$ServerExceptionCopyWithImpl<$Res>
     extends _$CommonFailuresCopyWithImpl<$Res>
-    implements _$ServerExeptionCopyWith<$Res> {
-  __$ServerExeptionCopyWithImpl(
-      _ServerExeption _value, $Res Function(_ServerExeption) _then)
-      : super(_value, (v) => _then(v as _ServerExeption));
+    implements _$ServerExceptionCopyWith<$Res> {
+  __$ServerExceptionCopyWithImpl(
+      _ServerException _value, $Res Function(_ServerException) _then)
+      : super(_value, (v) => _then(v as _ServerException));
 
   @override
-  _ServerExeption get _value => super._value as _ServerExeption;
+  _ServerException get _value => super._value as _ServerException;
 }
 
 /// @nodoc
 
-class _$_ServerExeption implements _ServerExeption {
-  const _$_ServerExeption();
+class _$_ServerException implements _ServerException {
+  const _$_ServerException();
 
   @override
   String toString() {
-    return 'CommonFailures.serverExeption()';
+    return 'CommonFailures.serverException()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ServerExeption);
+        (other.runtimeType == runtimeType && other is _ServerException);
   }
 
   @override
@@ -108,27 +108,27 @@ class _$_ServerExeption implements _ServerExeption {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() serverExeption,
+    required TResult Function() serverException,
   }) {
-    return serverExeption();
+    return serverException();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? serverExeption,
+    TResult Function()? serverException,
   }) {
-    return serverExeption?.call();
+    return serverException?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverExeption,
+    TResult Function()? serverException,
     required TResult orElse(),
   }) {
-    if (serverExeption != null) {
-      return serverExeption();
+    if (serverException != null) {
+      return serverException();
     }
     return orElse();
   }
@@ -136,32 +136,32 @@ class _$_ServerExeption implements _ServerExeption {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ServerExeption value) serverExeption,
+    required TResult Function(_ServerException value) serverException,
   }) {
-    return serverExeption(this);
+    return serverException(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ServerExeption value)? serverExeption,
+    TResult Function(_ServerException value)? serverException,
   }) {
-    return serverExeption?.call(this);
+    return serverException?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ServerExeption value)? serverExeption,
+    TResult Function(_ServerException value)? serverException,
     required TResult orElse(),
   }) {
-    if (serverExeption != null) {
-      return serverExeption(this);
+    if (serverException != null) {
+      return serverException(this);
     }
     return orElse();
   }
 }
 
-abstract class _ServerExeption implements CommonFailures {
-  const factory _ServerExeption() = _$_ServerExeption;
+abstract class _ServerException implements CommonFailures {
+  const factory _ServerException() = _$_ServerException;
 }

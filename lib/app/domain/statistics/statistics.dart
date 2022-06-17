@@ -7,7 +7,6 @@ abstract class Statistics implements _$Statistics {
   const Statistics._();
 
   const factory Statistics({
-    required String name,
-    required double value,
+    required Map<String, String> statistics,
   }) = _Statistics;
 }

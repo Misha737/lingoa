@@ -16,8 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Statistics {
-  String get name => throw _privateConstructorUsedError;
-  double get value => throw _privateConstructorUsedError;
+  Map<String, String> get statistics => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $StatisticsCopyWith<Statistics> get copyWith =>
@@ -29,7 +28,7 @@ abstract class $StatisticsCopyWith<$Res> {
   factory $StatisticsCopyWith(
           Statistics value, $Res Function(Statistics) then) =
       _$StatisticsCopyWithImpl<$Res>;
-  $Res call({String name, double value});
+  $Res call({Map<String, String> statistics});
 }
 
 /// @nodoc
@@ -42,18 +41,13 @@ class _$StatisticsCopyWithImpl<$Res> implements $StatisticsCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? name = freezed,
-    Object? value = freezed,
+    Object? statistics = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: value == freezed
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as double,
+      statistics: statistics == freezed
+          ? _value.statistics
+          : statistics // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ));
   }
 }
@@ -64,7 +58,7 @@ abstract class _$StatisticsCopyWith<$Res> implements $StatisticsCopyWith<$Res> {
           _Statistics value, $Res Function(_Statistics) then) =
       __$StatisticsCopyWithImpl<$Res>;
   @override
-  $Res call({String name, double value});
+  $Res call({Map<String, String> statistics});
 }
 
 /// @nodoc
@@ -79,18 +73,13 @@ class __$StatisticsCopyWithImpl<$Res> extends _$StatisticsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? name = freezed,
-    Object? value = freezed,
+    Object? statistics = freezed,
   }) {
     return _then(_Statistics(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: value == freezed
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as double,
+      statistics: statistics == freezed
+          ? _value.statistics
+          : statistics // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
     ));
   }
 }
@@ -98,16 +87,20 @@ class __$StatisticsCopyWithImpl<$Res> extends _$StatisticsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Statistics extends _Statistics {
-  const _$_Statistics({required this.name, required this.value}) : super._();
+  const _$_Statistics({required final Map<String, String> statistics})
+      : _statistics = statistics,
+        super._();
 
+  final Map<String, String> _statistics;
   @override
-  final String name;
-  @override
-  final double value;
+  Map<String, String> get statistics {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_statistics);
+  }
 
   @override
   String toString() {
-    return 'Statistics(name: $name, value: $value)';
+    return 'Statistics(statistics: $statistics)';
   }
 
   @override
@@ -115,15 +108,13 @@ class _$_Statistics extends _Statistics {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Statistics &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.value, value));
+            const DeepCollectionEquality()
+                .equals(other.statistics, statistics));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(value));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(statistics));
 
   @JsonKey(ignore: true)
   @override
@@ -132,15 +123,12 @@ class _$_Statistics extends _Statistics {
 }
 
 abstract class _Statistics extends Statistics {
-  const factory _Statistics(
-      {required final String name,
-      required final double value}) = _$_Statistics;
+  const factory _Statistics({required final Map<String, String> statistics}) =
+      _$_Statistics;
   const _Statistics._() : super._();
 
   @override
-  String get name => throw _privateConstructorUsedError;
-  @override
-  double get value => throw _privateConstructorUsedError;
+  Map<String, String> get statistics => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StatisticsCopyWith<_Statistics> get copyWith =>

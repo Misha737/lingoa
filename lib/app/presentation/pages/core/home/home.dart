@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lingoa/app/application/library/controller/bloc.dart';
-import 'package:lingoa/app/application/library/watch/books/bloc.dart';
+import 'package:lingoa/app/application/library/watch/body/bloc.dart';
 import 'package:lingoa/app/application/library/watch/statistics/bloc.dart';
 import 'package:lingoa/app/presentation/pages/core/home/widgets/builder_library.dart';
 

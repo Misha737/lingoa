@@ -4,8 +4,6 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-// ignore_for_file: no_leading_underscores_for_library_prefixes
-
 import 'package:cloud_firestore/cloud_firestore.dart' as _i4;
 import 'package:firebase_auth/firebase_auth.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
@@ -15,7 +13,7 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'app/application/auth/bloc.dart' as _i12;
 import 'app/application/auth/form/bloc.dart' as _i13;
 import 'app/application/library/controller/bloc.dart' as _i14;
-import 'app/application/library/watch/books/bloc.dart' as _i10;
+import 'app/application/library/watch/body/bloc.dart' as _i10;
 import 'app/application/library/watch/statistics/bloc.dart' as _i11;
 import 'app/domain/auth/i_auth_facade.dart' as _i6;
 import 'app/domain/book/repository.dart' as _i8;

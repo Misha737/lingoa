@@ -4,5 +4,5 @@ part 'failures.freezed.dart';
 
 @freezed
 abstract class CommonFailures with _$CommonFailures {
-  const factory CommonFailures.serverExeption() = _ServerExeption;
+  const factory CommonFailures.serverException() = _ServerException;
 }
