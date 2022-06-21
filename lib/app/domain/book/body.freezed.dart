@@ -21,7 +21,8 @@ mixin _$BookBody {
   Name get author => throw _privateConstructorUsedError;
   Way get way => throw _privateConstructorUsedError;
   double get progress => throw _privateConstructorUsedError; // Від 0 до 1
-  Language get language => throw _privateConstructorUsedError;
+  Language get learnLanguage => throw _privateConstructorUsedError;
+  Language get nativeLanguage => throw _privateConstructorUsedError;
   bool get isRead => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
 
@@ -40,7 +41,8 @@ abstract class $BookBodyCopyWith<$Res> {
       Name author,
       Way way,
       double progress,
-      Language language,
+      Language learnLanguage,
+      Language nativeLanguage,
       bool isRead,
       DateTime date});
 }
@@ -60,7 +62,8 @@ class _$BookBodyCopyWithImpl<$Res> implements $BookBodyCopyWith<$Res> {
     Object? author = freezed,
     Object? way = freezed,
     Object? progress = freezed,
-    Object? language = freezed,
+    Object? learnLanguage = freezed,
+    Object? nativeLanguage = freezed,
     Object? isRead = freezed,
     Object? date = freezed,
   }) {
@@ -85,9 +88,13 @@ class _$BookBodyCopyWithImpl<$Res> implements $BookBodyCopyWith<$Res> {
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as double,
-      language: language == freezed
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
+      learnLanguage: learnLanguage == freezed
+          ? _value.learnLanguage
+          : learnLanguage // ignore: cast_nullable_to_non_nullable
+              as Language,
+      nativeLanguage: nativeLanguage == freezed
+          ? _value.nativeLanguage
+          : nativeLanguage // ignore: cast_nullable_to_non_nullable
               as Language,
       isRead: isRead == freezed
           ? _value.isRead
@@ -112,7 +119,8 @@ abstract class _$BookBodyCopyWith<$Res> implements $BookBodyCopyWith<$Res> {
       Name author,
       Way way,
       double progress,
-      Language language,
+      Language learnLanguage,
+      Language nativeLanguage,
       bool isRead,
       DateTime date});
 }
@@ -133,7 +141,8 @@ class __$BookBodyCopyWithImpl<$Res> extends _$BookBodyCopyWithImpl<$Res>
     Object? author = freezed,
     Object? way = freezed,
     Object? progress = freezed,
-    Object? language = freezed,
+    Object? learnLanguage = freezed,
+    Object? nativeLanguage = freezed,
     Object? isRead = freezed,
     Object? date = freezed,
   }) {
@@ -158,9 +167,13 @@ class __$BookBodyCopyWithImpl<$Res> extends _$BookBodyCopyWithImpl<$Res>
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as double,
-      language: language == freezed
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
+      learnLanguage: learnLanguage == freezed
+          ? _value.learnLanguage
+          : learnLanguage // ignore: cast_nullable_to_non_nullable
+              as Language,
+      nativeLanguage: nativeLanguage == freezed
+          ? _value.nativeLanguage
+          : nativeLanguage // ignore: cast_nullable_to_non_nullable
               as Language,
       isRead: isRead == freezed
           ? _value.isRead
@@ -183,7 +196,8 @@ class _$_BookBody extends _BookBody {
       required this.author,
       required this.way,
       required this.progress,
-      required this.language,
+      required this.learnLanguage,
+      required this.nativeLanguage,
       required this.isRead,
       required this.date})
       : super._();
@@ -200,7 +214,9 @@ class _$_BookBody extends _BookBody {
   final double progress;
 // Від 0 до 1
   @override
-  final Language language;
+  final Language learnLanguage;
+  @override
+  final Language nativeLanguage;
   @override
   final bool isRead;
   @override
@@ -208,7 +224,7 @@ class _$_BookBody extends _BookBody {
 
   @override
   String toString() {
-    return 'BookBody(id: $id, name: $name, author: $author, way: $way, progress: $progress, language: $language, isRead: $isRead, date: $date)';
+    return 'BookBody(id: $id, name: $name, author: $author, way: $way, progress: $progress, learnLanguage: $learnLanguage, nativeLanguage: $nativeLanguage, isRead: $isRead, date: $date)';
   }
 
   @override
@@ -221,7 +237,10 @@ class _$_BookBody extends _BookBody {
             const DeepCollectionEquality().equals(other.author, author) &&
             const DeepCollectionEquality().equals(other.way, way) &&
             const DeepCollectionEquality().equals(other.progress, progress) &&
-            const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality()
+                .equals(other.learnLanguage, learnLanguage) &&
+            const DeepCollectionEquality()
+                .equals(other.nativeLanguage, nativeLanguage) &&
             const DeepCollectionEquality().equals(other.isRead, isRead) &&
             const DeepCollectionEquality().equals(other.date, date));
   }
@@ -234,7 +253,8 @@ class _$_BookBody extends _BookBody {
       const DeepCollectionEquality().hash(author),
       const DeepCollectionEquality().hash(way),
       const DeepCollectionEquality().hash(progress),
-      const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(learnLanguage),
+      const DeepCollectionEquality().hash(nativeLanguage),
       const DeepCollectionEquality().hash(isRead),
       const DeepCollectionEquality().hash(date));
 
@@ -251,7 +271,8 @@ abstract class _BookBody extends BookBody {
       required final Name author,
       required final Way way,
       required final double progress,
-      required final Language language,
+      required final Language learnLanguage,
+      required final Language nativeLanguage,
       required final bool isRead,
       required final DateTime date}) = _$_BookBody;
   const _BookBody._() : super._();
@@ -267,7 +288,9 @@ abstract class _BookBody extends BookBody {
   @override
   double get progress => throw _privateConstructorUsedError;
   @override // Від 0 до 1
-  Language get language => throw _privateConstructorUsedError;
+  Language get learnLanguage => throw _privateConstructorUsedError;
+  @override
+  Language get nativeLanguage => throw _privateConstructorUsedError;
   @override
   bool get isRead => throw _privateConstructorUsedError;
   @override

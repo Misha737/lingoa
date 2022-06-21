@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$BookStatistics {
 // required String name,
 // required num value,
-  Map<String, num> get statistics => throw _privateConstructorUsedError;
+  BookStatisticsContent get statistics => throw _privateConstructorUsedError;
   int get part => throw _privateConstructorUsedError;
   int get sentence => throw _privateConstructorUsedError;
 
@@ -32,7 +32,9 @@ abstract class $BookStatisticsCopyWith<$Res> {
   factory $BookStatisticsCopyWith(
           BookStatistics value, $Res Function(BookStatistics) then) =
       _$BookStatisticsCopyWithImpl<$Res>;
-  $Res call({Map<String, num> statistics, int part, int sentence});
+  $Res call({BookStatisticsContent statistics, int part, int sentence});
+
+  $BookStatisticsContentCopyWith<$Res> get statistics;
 }
 
 /// @nodoc
@@ -54,7 +56,7 @@ class _$BookStatisticsCopyWithImpl<$Res>
       statistics: statistics == freezed
           ? _value.statistics
           : statistics // ignore: cast_nullable_to_non_nullable
-              as Map<String, num>,
+              as BookStatisticsContent,
       part: part == freezed
           ? _value.part
           : part // ignore: cast_nullable_to_non_nullable
@@ -65,6 +67,13 @@ class _$BookStatisticsCopyWithImpl<$Res>
               as int,
     ));
   }
+
+  @override
+  $BookStatisticsContentCopyWith<$Res> get statistics {
+    return $BookStatisticsContentCopyWith<$Res>(_value.statistics, (value) {
+      return _then(_value.copyWith(statistics: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -74,7 +83,10 @@ abstract class _$BookStatisticsCopyWith<$Res>
           _BookStatistics value, $Res Function(_BookStatistics) then) =
       __$BookStatisticsCopyWithImpl<$Res>;
   @override
-  $Res call({Map<String, num> statistics, int part, int sentence});
+  $Res call({BookStatisticsContent statistics, int part, int sentence});
+
+  @override
+  $BookStatisticsContentCopyWith<$Res> get statistics;
 }
 
 /// @nodoc
@@ -98,7 +110,7 @@ class __$BookStatisticsCopyWithImpl<$Res>
       statistics: statistics == freezed
           ? _value.statistics
           : statistics // ignore: cast_nullable_to_non_nullable
-              as Map<String, num>,
+              as BookStatisticsContent,
       part: part == freezed
           ? _value.part
           : part // ignore: cast_nullable_to_non_nullable
@@ -115,23 +127,13 @@ class __$BookStatisticsCopyWithImpl<$Res>
 
 class _$_BookStatistics extends _BookStatistics {
   const _$_BookStatistics(
-      {required final Map<String, num> statistics,
-      required this.part,
-      required this.sentence})
-      : _statistics = statistics,
-        super._();
+      {required this.statistics, required this.part, required this.sentence})
+      : super._();
 
-// required String name,
-// required num value,
-  final Map<String, num> _statistics;
 // required String name,
 // required num value,
   @override
-  Map<String, num> get statistics {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_statistics);
-  }
-
+  final BookStatisticsContent statistics;
   @override
   final int part;
   @override
@@ -168,14 +170,14 @@ class _$_BookStatistics extends _BookStatistics {
 
 abstract class _BookStatistics extends BookStatistics {
   const factory _BookStatistics(
-      {required final Map<String, num> statistics,
+      {required final BookStatisticsContent statistics,
       required final int part,
       required final int sentence}) = _$_BookStatistics;
   const _BookStatistics._() : super._();
 
   @override // required String name,
 // required num value,
-  Map<String, num> get statistics => throw _privateConstructorUsedError;
+  BookStatisticsContent get statistics => throw _privateConstructorUsedError;
   @override
   int get part => throw _privateConstructorUsedError;
   @override
@@ -183,5 +185,123 @@ abstract class _BookStatistics extends BookStatistics {
   @override
   @JsonKey(ignore: true)
   _$BookStatisticsCopyWith<_BookStatistics> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$BookStatisticsContent {
+  int get progress => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BookStatisticsContentCopyWith<BookStatisticsContent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BookStatisticsContentCopyWith<$Res> {
+  factory $BookStatisticsContentCopyWith(BookStatisticsContent value,
+          $Res Function(BookStatisticsContent) then) =
+      _$BookStatisticsContentCopyWithImpl<$Res>;
+  $Res call({int progress});
+}
+
+/// @nodoc
+class _$BookStatisticsContentCopyWithImpl<$Res>
+    implements $BookStatisticsContentCopyWith<$Res> {
+  _$BookStatisticsContentCopyWithImpl(this._value, this._then);
+
+  final BookStatisticsContent _value;
+  // ignore: unused_field
+  final $Res Function(BookStatisticsContent) _then;
+
+  @override
+  $Res call({
+    Object? progress = freezed,
+  }) {
+    return _then(_value.copyWith(
+      progress: progress == freezed
+          ? _value.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$BookStatisticsContentCopyWith<$Res>
+    implements $BookStatisticsContentCopyWith<$Res> {
+  factory _$BookStatisticsContentCopyWith(_BookStatisticsContent value,
+          $Res Function(_BookStatisticsContent) then) =
+      __$BookStatisticsContentCopyWithImpl<$Res>;
+  @override
+  $Res call({int progress});
+}
+
+/// @nodoc
+class __$BookStatisticsContentCopyWithImpl<$Res>
+    extends _$BookStatisticsContentCopyWithImpl<$Res>
+    implements _$BookStatisticsContentCopyWith<$Res> {
+  __$BookStatisticsContentCopyWithImpl(_BookStatisticsContent _value,
+      $Res Function(_BookStatisticsContent) _then)
+      : super(_value, (v) => _then(v as _BookStatisticsContent));
+
+  @override
+  _BookStatisticsContent get _value => super._value as _BookStatisticsContent;
+
+  @override
+  $Res call({
+    Object? progress = freezed,
+  }) {
+    return _then(_BookStatisticsContent(
+      progress: progress == freezed
+          ? _value.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_BookStatisticsContent extends _BookStatisticsContent {
+  const _$_BookStatisticsContent({required this.progress}) : super._();
+
+  @override
+  final int progress;
+
+  @override
+  String toString() {
+    return 'BookStatisticsContent(progress: $progress)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _BookStatisticsContent &&
+            const DeepCollectionEquality().equals(other.progress, progress));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(progress));
+
+  @JsonKey(ignore: true)
+  @override
+  _$BookStatisticsContentCopyWith<_BookStatisticsContent> get copyWith =>
+      __$BookStatisticsContentCopyWithImpl<_BookStatisticsContent>(
+          this, _$identity);
+}
+
+abstract class _BookStatisticsContent extends BookStatisticsContent {
+  const factory _BookStatisticsContent({required final int progress}) =
+      _$_BookStatisticsContent;
+  const _BookStatisticsContent._() : super._();
+
+  @override
+  int get progress => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$BookStatisticsContentCopyWith<_BookStatisticsContent> get copyWith =>
       throw _privateConstructorUsedError;
 }

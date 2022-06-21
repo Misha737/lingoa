@@ -26,7 +26,8 @@ mixin _$BookBodyDto {
   String get author => throw _privateConstructorUsedError;
   String get way => throw _privateConstructorUsedError;
   double get progress => throw _privateConstructorUsedError;
-  String get language => throw _privateConstructorUsedError;
+  String get learnLanguage => throw _privateConstructorUsedError;
+  String get nativeLanguage => throw _privateConstructorUsedError;
   bool get isRead => throw _privateConstructorUsedError;
   String get date => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
@@ -49,7 +50,8 @@ abstract class $BookBodyDtoCopyWith<$Res> {
       String author,
       String way,
       double progress,
-      String language,
+      String learnLanguage,
+      String nativeLanguage,
       bool isRead,
       String date,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
@@ -70,7 +72,8 @@ class _$BookBodyDtoCopyWithImpl<$Res> implements $BookBodyDtoCopyWith<$Res> {
     Object? author = freezed,
     Object? way = freezed,
     Object? progress = freezed,
-    Object? language = freezed,
+    Object? learnLanguage = freezed,
+    Object? nativeLanguage = freezed,
     Object? isRead = freezed,
     Object? date = freezed,
     Object? serverTimeStamp = freezed,
@@ -96,9 +99,13 @@ class _$BookBodyDtoCopyWithImpl<$Res> implements $BookBodyDtoCopyWith<$Res> {
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as double,
-      language: language == freezed
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
+      learnLanguage: learnLanguage == freezed
+          ? _value.learnLanguage
+          : learnLanguage // ignore: cast_nullable_to_non_nullable
+              as String,
+      nativeLanguage: nativeLanguage == freezed
+          ? _value.nativeLanguage
+          : nativeLanguage // ignore: cast_nullable_to_non_nullable
               as String,
       isRead: isRead == freezed
           ? _value.isRead
@@ -129,7 +136,8 @@ abstract class _$BookBodyDtoCopyWith<$Res>
       String author,
       String way,
       double progress,
-      String language,
+      String learnLanguage,
+      String nativeLanguage,
       bool isRead,
       String date,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
@@ -152,7 +160,8 @@ class __$BookBodyDtoCopyWithImpl<$Res> extends _$BookBodyDtoCopyWithImpl<$Res>
     Object? author = freezed,
     Object? way = freezed,
     Object? progress = freezed,
-    Object? language = freezed,
+    Object? learnLanguage = freezed,
+    Object? nativeLanguage = freezed,
     Object? isRead = freezed,
     Object? date = freezed,
     Object? serverTimeStamp = freezed,
@@ -178,9 +187,13 @@ class __$BookBodyDtoCopyWithImpl<$Res> extends _$BookBodyDtoCopyWithImpl<$Res>
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as double,
-      language: language == freezed
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
+      learnLanguage: learnLanguage == freezed
+          ? _value.learnLanguage
+          : learnLanguage // ignore: cast_nullable_to_non_nullable
+              as String,
+      nativeLanguage: nativeLanguage == freezed
+          ? _value.nativeLanguage
+          : nativeLanguage // ignore: cast_nullable_to_non_nullable
               as String,
       isRead: isRead == freezed
           ? _value.isRead
@@ -207,7 +220,8 @@ class _$_BookBodyDto extends _BookBodyDto {
       required this.author,
       required this.way,
       required this.progress,
-      required this.language,
+      required this.learnLanguage,
+      required this.nativeLanguage,
       required this.isRead,
       required this.date,
       @ServerTimestampConverter() required this.serverTimeStamp})
@@ -228,7 +242,9 @@ class _$_BookBodyDto extends _BookBodyDto {
   @override
   final double progress;
   @override
-  final String language;
+  final String learnLanguage;
+  @override
+  final String nativeLanguage;
   @override
   final bool isRead;
   @override
@@ -239,7 +255,7 @@ class _$_BookBodyDto extends _BookBodyDto {
 
   @override
   String toString() {
-    return 'BookBodyDto(id: $id, name: $name, author: $author, way: $way, progress: $progress, language: $language, isRead: $isRead, date: $date, serverTimeStamp: $serverTimeStamp)';
+    return 'BookBodyDto(id: $id, name: $name, author: $author, way: $way, progress: $progress, learnLanguage: $learnLanguage, nativeLanguage: $nativeLanguage, isRead: $isRead, date: $date, serverTimeStamp: $serverTimeStamp)';
   }
 
   @override
@@ -252,7 +268,10 @@ class _$_BookBodyDto extends _BookBodyDto {
             const DeepCollectionEquality().equals(other.author, author) &&
             const DeepCollectionEquality().equals(other.way, way) &&
             const DeepCollectionEquality().equals(other.progress, progress) &&
-            const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality()
+                .equals(other.learnLanguage, learnLanguage) &&
+            const DeepCollectionEquality()
+                .equals(other.nativeLanguage, nativeLanguage) &&
             const DeepCollectionEquality().equals(other.isRead, isRead) &&
             const DeepCollectionEquality().equals(other.date, date) &&
             const DeepCollectionEquality()
@@ -268,7 +287,8 @@ class _$_BookBodyDto extends _BookBodyDto {
       const DeepCollectionEquality().hash(author),
       const DeepCollectionEquality().hash(way),
       const DeepCollectionEquality().hash(progress),
-      const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(learnLanguage),
+      const DeepCollectionEquality().hash(nativeLanguage),
       const DeepCollectionEquality().hash(isRead),
       const DeepCollectionEquality().hash(date),
       const DeepCollectionEquality().hash(serverTimeStamp));
@@ -291,7 +311,8 @@ abstract class _BookBodyDto extends BookBodyDto {
       required final String author,
       required final String way,
       required final double progress,
-      required final String language,
+      required final String learnLanguage,
+      required final String nativeLanguage,
       required final bool isRead,
       required final String date,
       @ServerTimestampConverter()
@@ -312,7 +333,9 @@ abstract class _BookBodyDto extends BookBodyDto {
   @override
   double get progress => throw _privateConstructorUsedError;
   @override
-  String get language => throw _privateConstructorUsedError;
+  String get learnLanguage => throw _privateConstructorUsedError;
+  @override
+  String get nativeLanguage => throw _privateConstructorUsedError;
   @override
   bool get isRead => throw _privateConstructorUsedError;
   @override

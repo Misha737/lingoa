@@ -9,15 +9,15 @@ part 'content.g.dart';
 abstract class BookContentDto implements _$BookContentDto {
   const BookContentDto._();
   const factory BookContentDto({
-    required Map<String, String> content,
+    required Map<String, String> sentence,
   }) = _BookContentDto;
 
   factory BookContentDto.fromDomain(BookContent content) {
-    return BookContentDto(content: content.content);
+    return BookContentDto(sentence: content.sentence);
   }
 
   BookContent toDomain() {
-    return BookContent(content: content);
+    return BookContent(sentence: sentence);
   }
 
   factory BookContentDto.fromJson(Map<String, dynamic> json) =>

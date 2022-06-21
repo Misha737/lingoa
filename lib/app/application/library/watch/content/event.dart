@@ -2,7 +2,7 @@ part of 'bloc.dart';
 
 @freezed
 abstract class WatchBookContentEvent with _$WatchBookContentEvent {
-  const factory WatchBookContentEvent.watch(BookBody book, int part) = _Watch;
+  const factory WatchBookContentEvent.watch(BookBody book) = _Watch;
   const factory WatchBookContentEvent.next({
     required BookBody book,
     required BookStatistics statistics,

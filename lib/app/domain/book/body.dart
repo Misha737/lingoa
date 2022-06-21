@@ -15,7 +15,8 @@ abstract class BookBody implements _$BookBody {
     required Name author,
     required Way way,
     required double progress, // Від 0 до 1
-    required Language language,
+    required Language learnLanguage,
+    required Language nativeLanguage,
     required bool isRead,
     required DateTime date,
   }) = _BookBody;
@@ -26,7 +27,8 @@ abstract class BookBody implements _$BookBody {
         author: Name.empty(''),
         way: Way.reading,
         progress: 0,
-        language: Language('en'),
+        learnLanguage: Language('en'),
+        nativeLanguage: Language('ua'),
         isRead: false,
         date: DateTime(0),
       );
@@ -34,7 +36,8 @@ abstract class BookBody implements _$BookBody {
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
         .andThen(author.failureOrUnit)
-        .andThen(language.failureOrUnit)
+        .andThen(learnLanguage.failureOrUnit)
+        .andThen(nativeLanguage.failureOrUnit)
         .fold((f) => some(f), (_) => none());
   }
 }

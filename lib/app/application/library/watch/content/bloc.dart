@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/domain/book/content.dart';
 import 'package:lingoa/app/domain/book/failures.dart';
@@ -12,6 +13,7 @@ part 'state.dart';
 
 part 'bloc.freezed.dart';
 
+@injectable
 class WatchBookContentBloc
     extends Bloc<WatchBookContentEvent, WatchBookContentState> {
   final IBookRepository _bookRepository;
@@ -20,13 +22,25 @@ class WatchBookContentBloc
     on<_Watch>((event, emit) async {
       emit(const WatchBookContentState.loading());
 
-      final successOrFailure =
-          await _bookRepository.getContent(event.book, event.part);
+      final successOrFailureStatistics =
+          await _bookRepository.getStatistics(event.book);
 
-      emit(successOrFailure.fold(
-        (f) => WatchBookContentState.failure(f),
-        (r) => WatchBookContentState.successWatch(r),
-      ));
+      await successOrFailureStatistics.fold(
+        (failureStatistics) {
+          emit(WatchBookContentState.failure(failureStatistics));
+        },
+        (statistics) async {
+          final successOrFailureContent =
+              await _bookRepository.getContent(event.book, statistics.part);
+
+          emit(
+            successOrFailureContent.fold(
+              (failureContent) => WatchBookContentState.failure(failureContent),
+              (content) => WatchBookContentState.success(content, statistics),
+            ),
+          );
+        },
+      );
     });
 
     on<_Next>(
@@ -34,7 +48,6 @@ class WatchBookContentBloc
         emit(const WatchBookContentState.loading());
 
         final sentence = event.statistics.sentence;
-        final part = event.statistics.part;
         final Either<BookFailure, Unit> successOrFailure;
 
         if (sentence == event.maxSentence) {
@@ -42,7 +55,7 @@ class WatchBookContentBloc
             event.statistics.copyWith(sentence: 0),
             event.book,
           );
-          add(_Watch(event.book, part));
+          add(_Watch(event.book));
         } else {
           successOrFailure = await _bookRepository.updateStatistics(
             // * Тут ми і будемо обновляти статистику

@@ -500,6 +500,26 @@ class S {
     );
   }
 
+  /// `The book was not found`
+  String get unableToUpdateBook {
+    return Intl.message(
+      'The book was not found',
+      name: 'unableToUpdateBook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are not entitled to this book`
+  String get insufficientPermissionsBook {
+    return Intl.message(
+      'You are not entitled to this book',
+      name: 'insufficientPermissionsBook',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `You do not have access to this book, please leave a report by e-mail`
   String get YouDoNotHaveAccess {
     return Intl.message(
@@ -715,6 +735,16 @@ class S {
     return Intl.message(
       'Response',
       name: 'Response',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Options`
+  String get options {
+    return Intl.message(
+      'Options',
+      name: 'options',
       desc: '',
       args: [],
     );

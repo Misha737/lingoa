@@ -12,7 +12,7 @@ class StatisticsCards extends StatelessWidget {
     required this.title,
   }) : super(key: key);
 
-  final Map<String, num> statistics;
+  final Map<String, dynamic> statistics;
   final String title;
 
   @override

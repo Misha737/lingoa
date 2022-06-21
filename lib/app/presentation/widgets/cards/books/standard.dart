@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
+import 'package:lingoa/app/presentation/routes/router.dart';
 import 'package:lingoa/app/presentation/widgets/dialog/book_sheet_statistics.dart';
-import 'package:lingoa/app/presentation/widgets/dialog/dialogs.dart';
 import 'package:lingoa/app/presentation/widgets/menu/popup.dart';
 import 'package:lingoa/generated/l10n.dart';
 
@@ -23,7 +24,9 @@ class CardBook extends StatelessWidget {
       child: Ink(
         decoration: Dimensions.boxDecoration,
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            context.pushRoute(ReadingPageRoute(book: book));
+          },
           onLongPress: () {
             showBookStatistics(context, book); //showBookStatistics(context);
           },
@@ -93,32 +96,8 @@ class CardBook extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            PopupMenuApp(
-                              onSelected: (value) {
-                                if (value == 0) {
-                                  showBookStatistics(context, book);
-                                } else if (value == 3) {
-                                  showDialogDelete(context, onPressed: () {});
-                                }
-                              },
-                              items: (_) => <PopupMenuEntry<int>>[
-                                PopupMenuItem<int>(
-                                  value: 0,
-                                  child: Text(S().Statistics),
-                                ),
-                                PopupMenuItem<int>(
-                                  value: 1,
-                                  child: Text(S().Distribute),
-                                ),
-                                PopupMenuItem<int>(
-                                  value: 2,
-                                  child: Text(S().Edit),
-                                ),
-                                PopupMenuItem<int>(
-                                  value: 3,
-                                  child: Text(S().Remove),
-                                ),
-                              ],
+                            PopupMenuBook(
+                              book: book,
                             ),
                             Text(
                               '${book.progress}%',

@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'statistics.dart';
 
 // **************************************************************************
@@ -10,7 +8,8 @@ part of 'statistics.dart';
 
 _$_BookStatisticsDto _$$_BookStatisticsDtoFromJson(Map<String, dynamic> json) =>
     _$_BookStatisticsDto(
-      statistics: Map<String, num>.from(json['statistics'] as Map),
+      statistics: BookStatisticsContentDto.fromJson(
+          json['statistics'] as Map<String, dynamic>),
       part: json['part'] as int,
       sentence: json['sentence'] as int,
     );
@@ -18,7 +17,19 @@ _$_BookStatisticsDto _$$_BookStatisticsDtoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_BookStatisticsDtoToJson(
         _$_BookStatisticsDto instance) =>
     <String, dynamic>{
-      'statistics': instance.statistics,
+      'statistics': instance.statistics.toJson(),
       'part': instance.part,
       'sentence': instance.sentence,
+    };
+
+_$_BookStatisticsContentDto _$$_BookStatisticsContentDtoFromJson(
+        Map<String, dynamic> json) =>
+    _$_BookStatisticsContentDto(
+      progress: json['progress'] as int,
+    );
+
+Map<String, dynamic> _$$_BookStatisticsContentDtoToJson(
+        _$_BookStatisticsContentDto instance) =>
+    <String, dynamic>{
+      'progress': instance.progress,
     };

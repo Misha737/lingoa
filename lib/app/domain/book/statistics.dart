@@ -9,8 +9,17 @@ abstract class BookStatistics implements _$BookStatistics {
   const factory BookStatistics({
     // required String name,
     // required num value,
-    required Map<String, num> statistics,
+    required BookStatisticsContent statistics,
     required int part,
     required int sentence,
   }) = _BookStatistics;
+}
+
+@freezed
+abstract class BookStatisticsContent implements _$BookStatisticsContent {
+  const BookStatisticsContent._();
+
+  const factory BookStatisticsContent({
+    required int progress,
+  }) = _BookStatisticsContent;
 }

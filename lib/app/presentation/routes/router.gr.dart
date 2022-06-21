@@ -30,6 +30,12 @@ class _$AppRouter extends RootStackRouter {
     CorePageRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const CorePage());
+    },
+    ReadingPageRoute.name: (routeData) {
+      final args = routeData.argsAs<ReadingPageRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: ReadingPage(key: args.key, book: args.book));
     }
   };
 
@@ -37,7 +43,8 @@ class _$AppRouter extends RootStackRouter {
   List<RouteConfig> get routes => [
         RouteConfig(SplashPageRoute.name, path: '/'),
         RouteConfig(AuthPageRoute.name, path: '/auth-page'),
-        RouteConfig(CorePageRoute.name, path: '/core-page')
+        RouteConfig(CorePageRoute.name, path: '/core-page'),
+        RouteConfig(ReadingPageRoute.name, path: '/')
       ];
 }
 
@@ -78,4 +85,27 @@ class CorePageRoute extends PageRouteInfo<void> {
   const CorePageRoute() : super(CorePageRoute.name, path: '/core-page');
 
   static const String name = 'CorePageRoute';
+}
+
+/// generated route for
+/// [ReadingPage]
+class ReadingPageRoute extends PageRouteInfo<ReadingPageRouteArgs> {
+  ReadingPageRoute({Key? key, required BookBody book})
+      : super(ReadingPageRoute.name,
+            path: '/', args: ReadingPageRouteArgs(key: key, book: book));
+
+  static const String name = 'ReadingPageRoute';
+}
+
+class ReadingPageRouteArgs {
+  const ReadingPageRouteArgs({this.key, required this.book});
+
+  final Key? key;
+
+  final BookBody book;
+
+  @override
+  String toString() {
+    return 'ReadingPageRouteArgs{key: $key, book: $book}';
+  }
 }

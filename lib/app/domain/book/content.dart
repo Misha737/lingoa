@@ -9,6 +9,6 @@ abstract class BookContent implements _$BookContent {
   const factory BookContent({
     // required String nativeTranslate,
     // required String learnTranslate,
-    required Map<String, String> content,
+    required Map<String, String> sentence,
   }) = _BookContent;
 }

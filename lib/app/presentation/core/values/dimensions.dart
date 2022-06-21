@@ -42,6 +42,10 @@ class Dimensions {
     color: ColorsLightTheme.blue,
     borderRadius: BorderRadius.circular(Dimensions.borderRadius),
   );
+  static final BoxDecoration boxDecorationGray = BoxDecoration(
+    color: ColorsLightTheme.gray,
+    borderRadius: BorderRadius.circular(Dimensions.borderRadius),
+  );
 }
 
 class _Navigation {

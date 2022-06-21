@@ -20,7 +20,7 @@ BookStatisticsDto _$BookStatisticsDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BookStatisticsDto {
-  Map<String, num> get statistics => throw _privateConstructorUsedError;
+  BookStatisticsContentDto get statistics => throw _privateConstructorUsedError;
   int get part => throw _privateConstructorUsedError;
   int get sentence => throw _privateConstructorUsedError;
 
@@ -35,7 +35,9 @@ abstract class $BookStatisticsDtoCopyWith<$Res> {
   factory $BookStatisticsDtoCopyWith(
           BookStatisticsDto value, $Res Function(BookStatisticsDto) then) =
       _$BookStatisticsDtoCopyWithImpl<$Res>;
-  $Res call({Map<String, num> statistics, int part, int sentence});
+  $Res call({BookStatisticsContentDto statistics, int part, int sentence});
+
+  $BookStatisticsContentDtoCopyWith<$Res> get statistics;
 }
 
 /// @nodoc
@@ -57,7 +59,7 @@ class _$BookStatisticsDtoCopyWithImpl<$Res>
       statistics: statistics == freezed
           ? _value.statistics
           : statistics // ignore: cast_nullable_to_non_nullable
-              as Map<String, num>,
+              as BookStatisticsContentDto,
       part: part == freezed
           ? _value.part
           : part // ignore: cast_nullable_to_non_nullable
@@ -68,6 +70,13 @@ class _$BookStatisticsDtoCopyWithImpl<$Res>
               as int,
     ));
   }
+
+  @override
+  $BookStatisticsContentDtoCopyWith<$Res> get statistics {
+    return $BookStatisticsContentDtoCopyWith<$Res>(_value.statistics, (value) {
+      return _then(_value.copyWith(statistics: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -77,7 +86,10 @@ abstract class _$BookStatisticsDtoCopyWith<$Res>
           _BookStatisticsDto value, $Res Function(_BookStatisticsDto) then) =
       __$BookStatisticsDtoCopyWithImpl<$Res>;
   @override
-  $Res call({Map<String, num> statistics, int part, int sentence});
+  $Res call({BookStatisticsContentDto statistics, int part, int sentence});
+
+  @override
+  $BookStatisticsContentDtoCopyWith<$Res> get statistics;
 }
 
 /// @nodoc
@@ -101,7 +113,7 @@ class __$BookStatisticsDtoCopyWithImpl<$Res>
       statistics: statistics == freezed
           ? _value.statistics
           : statistics // ignore: cast_nullable_to_non_nullable
-              as Map<String, num>,
+              as BookStatisticsContentDto,
       part: part == freezed
           ? _value.part
           : part // ignore: cast_nullable_to_non_nullable
@@ -118,22 +130,14 @@ class __$BookStatisticsDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_BookStatisticsDto extends _BookStatisticsDto {
   const _$_BookStatisticsDto(
-      {required final Map<String, num> statistics,
-      required this.part,
-      required this.sentence})
-      : _statistics = statistics,
-        super._();
+      {required this.statistics, required this.part, required this.sentence})
+      : super._();
 
   factory _$_BookStatisticsDto.fromJson(Map<String, dynamic> json) =>
       _$$_BookStatisticsDtoFromJson(json);
 
-  final Map<String, num> _statistics;
   @override
-  Map<String, num> get statistics {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_statistics);
-  }
-
+  final BookStatisticsContentDto statistics;
   @override
   final int part;
   @override
@@ -176,7 +180,7 @@ class _$_BookStatisticsDto extends _BookStatisticsDto {
 
 abstract class _BookStatisticsDto extends BookStatisticsDto {
   const factory _BookStatisticsDto(
-      {required final Map<String, num> statistics,
+      {required final BookStatisticsContentDto statistics,
       required final int part,
       required final int sentence}) = _$_BookStatisticsDto;
   const _BookStatisticsDto._() : super._();
@@ -185,7 +189,7 @@ abstract class _BookStatisticsDto extends BookStatisticsDto {
       _$_BookStatisticsDto.fromJson;
 
   @override
-  Map<String, num> get statistics => throw _privateConstructorUsedError;
+  BookStatisticsContentDto get statistics => throw _privateConstructorUsedError;
   @override
   int get part => throw _privateConstructorUsedError;
   @override
@@ -193,5 +197,142 @@ abstract class _BookStatisticsDto extends BookStatisticsDto {
   @override
   @JsonKey(ignore: true)
   _$BookStatisticsDtoCopyWith<_BookStatisticsDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+BookStatisticsContentDto _$BookStatisticsContentDtoFromJson(
+    Map<String, dynamic> json) {
+  return _BookStatisticsContentDto.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BookStatisticsContentDto {
+  int get progress => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BookStatisticsContentDtoCopyWith<BookStatisticsContentDto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BookStatisticsContentDtoCopyWith<$Res> {
+  factory $BookStatisticsContentDtoCopyWith(BookStatisticsContentDto value,
+          $Res Function(BookStatisticsContentDto) then) =
+      _$BookStatisticsContentDtoCopyWithImpl<$Res>;
+  $Res call({int progress});
+}
+
+/// @nodoc
+class _$BookStatisticsContentDtoCopyWithImpl<$Res>
+    implements $BookStatisticsContentDtoCopyWith<$Res> {
+  _$BookStatisticsContentDtoCopyWithImpl(this._value, this._then);
+
+  final BookStatisticsContentDto _value;
+  // ignore: unused_field
+  final $Res Function(BookStatisticsContentDto) _then;
+
+  @override
+  $Res call({
+    Object? progress = freezed,
+  }) {
+    return _then(_value.copyWith(
+      progress: progress == freezed
+          ? _value.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$BookStatisticsContentDtoCopyWith<$Res>
+    implements $BookStatisticsContentDtoCopyWith<$Res> {
+  factory _$BookStatisticsContentDtoCopyWith(_BookStatisticsContentDto value,
+          $Res Function(_BookStatisticsContentDto) then) =
+      __$BookStatisticsContentDtoCopyWithImpl<$Res>;
+  @override
+  $Res call({int progress});
+}
+
+/// @nodoc
+class __$BookStatisticsContentDtoCopyWithImpl<$Res>
+    extends _$BookStatisticsContentDtoCopyWithImpl<$Res>
+    implements _$BookStatisticsContentDtoCopyWith<$Res> {
+  __$BookStatisticsContentDtoCopyWithImpl(_BookStatisticsContentDto _value,
+      $Res Function(_BookStatisticsContentDto) _then)
+      : super(_value, (v) => _then(v as _BookStatisticsContentDto));
+
+  @override
+  _BookStatisticsContentDto get _value =>
+      super._value as _BookStatisticsContentDto;
+
+  @override
+  $Res call({
+    Object? progress = freezed,
+  }) {
+    return _then(_BookStatisticsContentDto(
+      progress: progress == freezed
+          ? _value.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_BookStatisticsContentDto extends _BookStatisticsContentDto {
+  const _$_BookStatisticsContentDto({required this.progress}) : super._();
+
+  factory _$_BookStatisticsContentDto.fromJson(Map<String, dynamic> json) =>
+      _$$_BookStatisticsContentDtoFromJson(json);
+
+  @override
+  final int progress;
+
+  @override
+  String toString() {
+    return 'BookStatisticsContentDto(progress: $progress)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _BookStatisticsContentDto &&
+            const DeepCollectionEquality().equals(other.progress, progress));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(progress));
+
+  @JsonKey(ignore: true)
+  @override
+  _$BookStatisticsContentDtoCopyWith<_BookStatisticsContentDto> get copyWith =>
+      __$BookStatisticsContentDtoCopyWithImpl<_BookStatisticsContentDto>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_BookStatisticsContentDtoToJson(this);
+  }
+}
+
+abstract class _BookStatisticsContentDto extends BookStatisticsContentDto {
+  const factory _BookStatisticsContentDto({required final int progress}) =
+      _$_BookStatisticsContentDto;
+  const _BookStatisticsContentDto._() : super._();
+
+  factory _BookStatisticsContentDto.fromJson(Map<String, dynamic> json) =
+      _$_BookStatisticsContentDto.fromJson;
+
+  @override
+  int get progress => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$BookStatisticsContentDtoCopyWith<_BookStatisticsContentDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'body.dart';
 
 // **************************************************************************
@@ -15,7 +13,8 @@ _$_BookBodyDto _$$_BookBodyDtoFromJson(Map<String, dynamic> json) =>
       author: json['author'] as String,
       way: json['way'] as String,
       progress: (json['progress'] as num).toDouble(),
-      language: json['language'] as String,
+      learnLanguage: json['learnLanguage'] as String,
+      nativeLanguage: json['nativeLanguage'] as String,
       isRead: json['isRead'] as bool,
       date: json['date'] as String,
       serverTimeStamp: const ServerTimestampConverter()
@@ -29,7 +28,8 @@ Map<String, dynamic> _$$_BookBodyDtoToJson(_$_BookBodyDto instance) =>
       'author': instance.author,
       'way': instance.way,
       'progress': instance.progress,
-      'language': instance.language,
+      'learnLanguage': instance.learnLanguage,
+      'nativeLanguage': instance.nativeLanguage,
       'isRead': instance.isRead,
       'date': instance.date,
       'serverTimeStamp':

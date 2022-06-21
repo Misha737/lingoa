@@ -8,15 +8,16 @@ part 'statistics.g.dart';
 @freezed
 abstract class BookStatisticsDto implements _$BookStatisticsDto {
   const BookStatisticsDto._();
+
   const factory BookStatisticsDto({
-    required Map<String, num> statistics,
+    required BookStatisticsContentDto statistics,
     required int part,
     required int sentence,
   }) = _BookStatisticsDto;
 
   factory BookStatisticsDto.fromDomain(BookStatistics statistics) {
     return BookStatisticsDto(
-      statistics: statistics.statistics,
+      statistics: BookStatisticsContentDto.fromDomain(statistics.statistics),
       part: statistics.part,
       sentence: statistics.sentence,
     );
@@ -24,7 +25,7 @@ abstract class BookStatisticsDto implements _$BookStatisticsDto {
 
   BookStatistics toDomain() {
     return BookStatistics(
-      statistics: statistics,
+      statistics: statistics.toDomain(),
       part: part,
       sentence: sentence,
     );
@@ -35,4 +36,26 @@ abstract class BookStatisticsDto implements _$BookStatisticsDto {
 
   factory BookStatisticsDto.fromFirestore(DocumentSnapshot doc) =>
       BookStatisticsDto.fromJson(doc.data() as Map<String, dynamic>);
+}
+
+@freezed
+abstract class BookStatisticsContentDto implements _$BookStatisticsContentDto {
+  const BookStatisticsContentDto._();
+
+  const factory BookStatisticsContentDto({
+    required int progress,
+  }) = _BookStatisticsContentDto;
+
+  factory BookStatisticsContentDto.fromDomain(
+    BookStatisticsContent statisticsContent,
+  ) {
+    return BookStatisticsContentDto(progress: statisticsContent.progress);
+  }
+
+  BookStatisticsContent toDomain() {
+    return BookStatisticsContent(progress: progress);
+  }
+
+  factory BookStatisticsContentDto.fromJson(Map<String, dynamic> json) =>
+      _$BookStatisticsContentDtoFromJson(json);
 }

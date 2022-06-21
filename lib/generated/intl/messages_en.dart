@@ -118,9 +118,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("characters"),
         "exceedingMinLengthStart":
             MessageLookupByLibrary.simpleMessage("The field is smaller"),
+        "insufficientPermissionsBook": MessageLookupByLibrary.simpleMessage(
+            "You are not entitled to this book"),
         "insufficientPermissionsLibrary": MessageLookupByLibrary.simpleMessage(
             "You have no right to these books"),
         "notLevels":
-            MessageLookupByLibrary.simpleMessage("Passwords do not match")
+            MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "options": MessageLookupByLibrary.simpleMessage("Options"),
+        "unableToUpdateBook":
+            MessageLookupByLibrary.simpleMessage("The book was not found")
       };
 }
