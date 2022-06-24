@@ -8,7 +8,7 @@ import 'package:lingoa/app/domain/book/words.dart';
 abstract class IBookRepository {
   Future<Either<BookFailure, BookContent>> getContent(BookBody book, int part);
   Stream<Either<BookFailure, List<BookBody>>> getBody();
-  Future<Either<BookFailure, BookStatistics>> getStatistics(BookBody book);
+  Stream<Either<BookFailure, BookStatistics>> getStatistics(BookBody book);
   Future<Either<BookFailure, BookWords>> getWords();
   Future<Either<BookFailure, Unit>> updateBody(BookBody book);
   Future<Either<BookFailure, Unit>> updateStatistics(

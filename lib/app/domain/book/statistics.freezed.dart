@@ -18,7 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$BookStatistics {
 // required String name,
 // required num value,
-  BookStatisticsContent get statistics => throw _privateConstructorUsedError;
+  BookStatisticsDynamic get dynamicContent =>
+      throw _privateConstructorUsedError;
+  BookStatisticsStatic get staticContent => throw _privateConstructorUsedError;
   int get part => throw _privateConstructorUsedError;
   int get sentence => throw _privateConstructorUsedError;
 
@@ -32,9 +34,14 @@ abstract class $BookStatisticsCopyWith<$Res> {
   factory $BookStatisticsCopyWith(
           BookStatistics value, $Res Function(BookStatistics) then) =
       _$BookStatisticsCopyWithImpl<$Res>;
-  $Res call({BookStatisticsContent statistics, int part, int sentence});
+  $Res call(
+      {BookStatisticsDynamic dynamicContent,
+      BookStatisticsStatic staticContent,
+      int part,
+      int sentence});
 
-  $BookStatisticsContentCopyWith<$Res> get statistics;
+  $BookStatisticsDynamicCopyWith<$Res> get dynamicContent;
+  $BookStatisticsStaticCopyWith<$Res> get staticContent;
 }
 
 /// @nodoc
@@ -48,15 +55,20 @@ class _$BookStatisticsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? statistics = freezed,
+    Object? dynamicContent = freezed,
+    Object? staticContent = freezed,
     Object? part = freezed,
     Object? sentence = freezed,
   }) {
     return _then(_value.copyWith(
-      statistics: statistics == freezed
-          ? _value.statistics
-          : statistics // ignore: cast_nullable_to_non_nullable
-              as BookStatisticsContent,
+      dynamicContent: dynamicContent == freezed
+          ? _value.dynamicContent
+          : dynamicContent // ignore: cast_nullable_to_non_nullable
+              as BookStatisticsDynamic,
+      staticContent: staticContent == freezed
+          ? _value.staticContent
+          : staticContent // ignore: cast_nullable_to_non_nullable
+              as BookStatisticsStatic,
       part: part == freezed
           ? _value.part
           : part // ignore: cast_nullable_to_non_nullable
@@ -69,9 +81,16 @@ class _$BookStatisticsCopyWithImpl<$Res>
   }
 
   @override
-  $BookStatisticsContentCopyWith<$Res> get statistics {
-    return $BookStatisticsContentCopyWith<$Res>(_value.statistics, (value) {
-      return _then(_value.copyWith(statistics: value));
+  $BookStatisticsDynamicCopyWith<$Res> get dynamicContent {
+    return $BookStatisticsDynamicCopyWith<$Res>(_value.dynamicContent, (value) {
+      return _then(_value.copyWith(dynamicContent: value));
+    });
+  }
+
+  @override
+  $BookStatisticsStaticCopyWith<$Res> get staticContent {
+    return $BookStatisticsStaticCopyWith<$Res>(_value.staticContent, (value) {
+      return _then(_value.copyWith(staticContent: value));
     });
   }
 }
@@ -83,10 +102,16 @@ abstract class _$BookStatisticsCopyWith<$Res>
           _BookStatistics value, $Res Function(_BookStatistics) then) =
       __$BookStatisticsCopyWithImpl<$Res>;
   @override
-  $Res call({BookStatisticsContent statistics, int part, int sentence});
+  $Res call(
+      {BookStatisticsDynamic dynamicContent,
+      BookStatisticsStatic staticContent,
+      int part,
+      int sentence});
 
   @override
-  $BookStatisticsContentCopyWith<$Res> get statistics;
+  $BookStatisticsDynamicCopyWith<$Res> get dynamicContent;
+  @override
+  $BookStatisticsStaticCopyWith<$Res> get staticContent;
 }
 
 /// @nodoc
@@ -102,15 +127,20 @@ class __$BookStatisticsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? statistics = freezed,
+    Object? dynamicContent = freezed,
+    Object? staticContent = freezed,
     Object? part = freezed,
     Object? sentence = freezed,
   }) {
     return _then(_BookStatistics(
-      statistics: statistics == freezed
-          ? _value.statistics
-          : statistics // ignore: cast_nullable_to_non_nullable
-              as BookStatisticsContent,
+      dynamicContent: dynamicContent == freezed
+          ? _value.dynamicContent
+          : dynamicContent // ignore: cast_nullable_to_non_nullable
+              as BookStatisticsDynamic,
+      staticContent: staticContent == freezed
+          ? _value.staticContent
+          : staticContent // ignore: cast_nullable_to_non_nullable
+              as BookStatisticsStatic,
       part: part == freezed
           ? _value.part
           : part // ignore: cast_nullable_to_non_nullable
@@ -127,13 +157,18 @@ class __$BookStatisticsCopyWithImpl<$Res>
 
 class _$_BookStatistics extends _BookStatistics {
   const _$_BookStatistics(
-      {required this.statistics, required this.part, required this.sentence})
+      {required this.dynamicContent,
+      required this.staticContent,
+      required this.part,
+      required this.sentence})
       : super._();
 
 // required String name,
 // required num value,
   @override
-  final BookStatisticsContent statistics;
+  final BookStatisticsDynamic dynamicContent;
+  @override
+  final BookStatisticsStatic staticContent;
   @override
   final int part;
   @override
@@ -141,7 +176,7 @@ class _$_BookStatistics extends _BookStatistics {
 
   @override
   String toString() {
-    return 'BookStatistics(statistics: $statistics, part: $part, sentence: $sentence)';
+    return 'BookStatistics(dynamicContent: $dynamicContent, staticContent: $staticContent, part: $part, sentence: $sentence)';
   }
 
   @override
@@ -150,7 +185,9 @@ class _$_BookStatistics extends _BookStatistics {
         (other.runtimeType == runtimeType &&
             other is _BookStatistics &&
             const DeepCollectionEquality()
-                .equals(other.statistics, statistics) &&
+                .equals(other.dynamicContent, dynamicContent) &&
+            const DeepCollectionEquality()
+                .equals(other.staticContent, staticContent) &&
             const DeepCollectionEquality().equals(other.part, part) &&
             const DeepCollectionEquality().equals(other.sentence, sentence));
   }
@@ -158,7 +195,8 @@ class _$_BookStatistics extends _BookStatistics {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(statistics),
+      const DeepCollectionEquality().hash(dynamicContent),
+      const DeepCollectionEquality().hash(staticContent),
       const DeepCollectionEquality().hash(part),
       const DeepCollectionEquality().hash(sentence));
 
@@ -170,14 +208,18 @@ class _$_BookStatistics extends _BookStatistics {
 
 abstract class _BookStatistics extends BookStatistics {
   const factory _BookStatistics(
-      {required final BookStatisticsContent statistics,
+      {required final BookStatisticsDynamic dynamicContent,
+      required final BookStatisticsStatic staticContent,
       required final int part,
       required final int sentence}) = _$_BookStatistics;
   const _BookStatistics._() : super._();
 
   @override // required String name,
 // required num value,
-  BookStatisticsContent get statistics => throw _privateConstructorUsedError;
+  BookStatisticsDynamic get dynamicContent =>
+      throw _privateConstructorUsedError;
+  @override
+  BookStatisticsStatic get staticContent => throw _privateConstructorUsedError;
   @override
   int get part => throw _privateConstructorUsedError;
   @override
@@ -189,30 +231,30 @@ abstract class _BookStatistics extends BookStatistics {
 }
 
 /// @nodoc
-mixin _$BookStatisticsContent {
+mixin _$BookStatisticsDynamic {
   int get progress => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BookStatisticsContentCopyWith<BookStatisticsContent> get copyWith =>
+  $BookStatisticsDynamicCopyWith<BookStatisticsDynamic> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BookStatisticsContentCopyWith<$Res> {
-  factory $BookStatisticsContentCopyWith(BookStatisticsContent value,
-          $Res Function(BookStatisticsContent) then) =
-      _$BookStatisticsContentCopyWithImpl<$Res>;
+abstract class $BookStatisticsDynamicCopyWith<$Res> {
+  factory $BookStatisticsDynamicCopyWith(BookStatisticsDynamic value,
+          $Res Function(BookStatisticsDynamic) then) =
+      _$BookStatisticsDynamicCopyWithImpl<$Res>;
   $Res call({int progress});
 }
 
 /// @nodoc
-class _$BookStatisticsContentCopyWithImpl<$Res>
-    implements $BookStatisticsContentCopyWith<$Res> {
-  _$BookStatisticsContentCopyWithImpl(this._value, this._then);
+class _$BookStatisticsDynamicCopyWithImpl<$Res>
+    implements $BookStatisticsDynamicCopyWith<$Res> {
+  _$BookStatisticsDynamicCopyWithImpl(this._value, this._then);
 
-  final BookStatisticsContent _value;
+  final BookStatisticsDynamic _value;
   // ignore: unused_field
-  final $Res Function(BookStatisticsContent) _then;
+  final $Res Function(BookStatisticsDynamic) _then;
 
   @override
   $Res call({
@@ -228,31 +270,31 @@ class _$BookStatisticsContentCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$BookStatisticsContentCopyWith<$Res>
-    implements $BookStatisticsContentCopyWith<$Res> {
-  factory _$BookStatisticsContentCopyWith(_BookStatisticsContent value,
-          $Res Function(_BookStatisticsContent) then) =
-      __$BookStatisticsContentCopyWithImpl<$Res>;
+abstract class _$BookStatisticsDynamicCopyWith<$Res>
+    implements $BookStatisticsDynamicCopyWith<$Res> {
+  factory _$BookStatisticsDynamicCopyWith(_BookStatisticsDynamic value,
+          $Res Function(_BookStatisticsDynamic) then) =
+      __$BookStatisticsDynamicCopyWithImpl<$Res>;
   @override
   $Res call({int progress});
 }
 
 /// @nodoc
-class __$BookStatisticsContentCopyWithImpl<$Res>
-    extends _$BookStatisticsContentCopyWithImpl<$Res>
-    implements _$BookStatisticsContentCopyWith<$Res> {
-  __$BookStatisticsContentCopyWithImpl(_BookStatisticsContent _value,
-      $Res Function(_BookStatisticsContent) _then)
-      : super(_value, (v) => _then(v as _BookStatisticsContent));
+class __$BookStatisticsDynamicCopyWithImpl<$Res>
+    extends _$BookStatisticsDynamicCopyWithImpl<$Res>
+    implements _$BookStatisticsDynamicCopyWith<$Res> {
+  __$BookStatisticsDynamicCopyWithImpl(_BookStatisticsDynamic _value,
+      $Res Function(_BookStatisticsDynamic) _then)
+      : super(_value, (v) => _then(v as _BookStatisticsDynamic));
 
   @override
-  _BookStatisticsContent get _value => super._value as _BookStatisticsContent;
+  _BookStatisticsDynamic get _value => super._value as _BookStatisticsDynamic;
 
   @override
   $Res call({
     Object? progress = freezed,
   }) {
-    return _then(_BookStatisticsContent(
+    return _then(_BookStatisticsDynamic(
       progress: progress == freezed
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
@@ -263,22 +305,22 @@ class __$BookStatisticsContentCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BookStatisticsContent extends _BookStatisticsContent {
-  const _$_BookStatisticsContent({required this.progress}) : super._();
+class _$_BookStatisticsDynamic extends _BookStatisticsDynamic {
+  const _$_BookStatisticsDynamic({required this.progress}) : super._();
 
   @override
   final int progress;
 
   @override
   String toString() {
-    return 'BookStatisticsContent(progress: $progress)';
+    return 'BookStatisticsDynamic(progress: $progress)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _BookStatisticsContent &&
+            other is _BookStatisticsDynamic &&
             const DeepCollectionEquality().equals(other.progress, progress));
   }
 
@@ -288,20 +330,139 @@ class _$_BookStatisticsContent extends _BookStatisticsContent {
 
   @JsonKey(ignore: true)
   @override
-  _$BookStatisticsContentCopyWith<_BookStatisticsContent> get copyWith =>
-      __$BookStatisticsContentCopyWithImpl<_BookStatisticsContent>(
+  _$BookStatisticsDynamicCopyWith<_BookStatisticsDynamic> get copyWith =>
+      __$BookStatisticsDynamicCopyWithImpl<_BookStatisticsDynamic>(
           this, _$identity);
 }
 
-abstract class _BookStatisticsContent extends BookStatisticsContent {
-  const factory _BookStatisticsContent({required final int progress}) =
-      _$_BookStatisticsContent;
-  const _BookStatisticsContent._() : super._();
+abstract class _BookStatisticsDynamic extends BookStatisticsDynamic {
+  const factory _BookStatisticsDynamic({required final int progress}) =
+      _$_BookStatisticsDynamic;
+  const _BookStatisticsDynamic._() : super._();
 
   @override
   int get progress => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$BookStatisticsContentCopyWith<_BookStatisticsContent> get copyWith =>
+  _$BookStatisticsDynamicCopyWith<_BookStatisticsDynamic> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$BookStatisticsStatic {
+  int get partsLength => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BookStatisticsStaticCopyWith<BookStatisticsStatic> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BookStatisticsStaticCopyWith<$Res> {
+  factory $BookStatisticsStaticCopyWith(BookStatisticsStatic value,
+          $Res Function(BookStatisticsStatic) then) =
+      _$BookStatisticsStaticCopyWithImpl<$Res>;
+  $Res call({int partsLength});
+}
+
+/// @nodoc
+class _$BookStatisticsStaticCopyWithImpl<$Res>
+    implements $BookStatisticsStaticCopyWith<$Res> {
+  _$BookStatisticsStaticCopyWithImpl(this._value, this._then);
+
+  final BookStatisticsStatic _value;
+  // ignore: unused_field
+  final $Res Function(BookStatisticsStatic) _then;
+
+  @override
+  $Res call({
+    Object? partsLength = freezed,
+  }) {
+    return _then(_value.copyWith(
+      partsLength: partsLength == freezed
+          ? _value.partsLength
+          : partsLength // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$BookStatisticsStaticCopyWith<$Res>
+    implements $BookStatisticsStaticCopyWith<$Res> {
+  factory _$BookStatisticsStaticCopyWith(_BookStatisticsStatic value,
+          $Res Function(_BookStatisticsStatic) then) =
+      __$BookStatisticsStaticCopyWithImpl<$Res>;
+  @override
+  $Res call({int partsLength});
+}
+
+/// @nodoc
+class __$BookStatisticsStaticCopyWithImpl<$Res>
+    extends _$BookStatisticsStaticCopyWithImpl<$Res>
+    implements _$BookStatisticsStaticCopyWith<$Res> {
+  __$BookStatisticsStaticCopyWithImpl(
+      _BookStatisticsStatic _value, $Res Function(_BookStatisticsStatic) _then)
+      : super(_value, (v) => _then(v as _BookStatisticsStatic));
+
+  @override
+  _BookStatisticsStatic get _value => super._value as _BookStatisticsStatic;
+
+  @override
+  $Res call({
+    Object? partsLength = freezed,
+  }) {
+    return _then(_BookStatisticsStatic(
+      partsLength: partsLength == freezed
+          ? _value.partsLength
+          : partsLength // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_BookStatisticsStatic extends _BookStatisticsStatic {
+  const _$_BookStatisticsStatic({required this.partsLength}) : super._();
+
+  @override
+  final int partsLength;
+
+  @override
+  String toString() {
+    return 'BookStatisticsStatic(partsLength: $partsLength)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _BookStatisticsStatic &&
+            const DeepCollectionEquality()
+                .equals(other.partsLength, partsLength));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(partsLength));
+
+  @JsonKey(ignore: true)
+  @override
+  _$BookStatisticsStaticCopyWith<_BookStatisticsStatic> get copyWith =>
+      __$BookStatisticsStaticCopyWithImpl<_BookStatisticsStatic>(
+          this, _$identity);
+}
+
+abstract class _BookStatisticsStatic extends BookStatisticsStatic {
+  const factory _BookStatisticsStatic({required final int partsLength}) =
+      _$_BookStatisticsStatic;
+  const _BookStatisticsStatic._() : super._();
+
+  @override
+  int get partsLength => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$BookStatisticsStaticCopyWith<_BookStatisticsStatic> get copyWith =>
       throw _privateConstructorUsedError;
 }

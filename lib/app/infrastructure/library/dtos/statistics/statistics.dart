@@ -10,14 +10,18 @@ abstract class BookStatisticsDto implements _$BookStatisticsDto {
   const BookStatisticsDto._();
 
   const factory BookStatisticsDto({
-    required BookStatisticsContentDto statistics,
+    required BookStatisticsDynamicDto dynamicContent,
+    required BookStatisticsStaticDto staticContent,
     required int part,
     required int sentence,
   }) = _BookStatisticsDto;
 
   factory BookStatisticsDto.fromDomain(BookStatistics statistics) {
     return BookStatisticsDto(
-      statistics: BookStatisticsContentDto.fromDomain(statistics.statistics),
+      dynamicContent:
+          BookStatisticsDynamicDto.fromDomain(statistics.dynamicContent),
+      staticContent:
+          BookStatisticsStaticDto.fromDomain(statistics.staticContent),
       part: statistics.part,
       sentence: statistics.sentence,
     );
@@ -25,7 +29,8 @@ abstract class BookStatisticsDto implements _$BookStatisticsDto {
 
   BookStatistics toDomain() {
     return BookStatistics(
-      statistics: statistics.toDomain(),
+      dynamicContent: dynamicContent.toDomain(),
+      staticContent: staticContent.toDomain(),
       part: part,
       sentence: sentence,
     );
@@ -39,23 +44,45 @@ abstract class BookStatisticsDto implements _$BookStatisticsDto {
 }
 
 @freezed
-abstract class BookStatisticsContentDto implements _$BookStatisticsContentDto {
-  const BookStatisticsContentDto._();
+abstract class BookStatisticsDynamicDto implements _$BookStatisticsDynamicDto {
+  const BookStatisticsDynamicDto._();
 
-  const factory BookStatisticsContentDto({
+  const factory BookStatisticsDynamicDto({
     required int progress,
-  }) = _BookStatisticsContentDto;
+  }) = _BookStatisticsDynamicDto;
 
-  factory BookStatisticsContentDto.fromDomain(
-    BookStatisticsContent statisticsContent,
+  factory BookStatisticsDynamicDto.fromDomain(
+    BookStatisticsDynamic statisticsContent,
   ) {
-    return BookStatisticsContentDto(progress: statisticsContent.progress);
+    return BookStatisticsDynamicDto(progress: statisticsContent.progress);
   }
 
-  BookStatisticsContent toDomain() {
-    return BookStatisticsContent(progress: progress);
+  BookStatisticsDynamic toDomain() {
+    return BookStatisticsDynamic(progress: progress);
   }
 
-  factory BookStatisticsContentDto.fromJson(Map<String, dynamic> json) =>
-      _$BookStatisticsContentDtoFromJson(json);
+  factory BookStatisticsDynamicDto.fromJson(Map<String, dynamic> json) =>
+      _$BookStatisticsDynamicDtoFromJson(json);
+}
+
+@freezed
+abstract class BookStatisticsStaticDto implements _$BookStatisticsStaticDto {
+  const BookStatisticsStaticDto._();
+
+  const factory BookStatisticsStaticDto({
+    required int partsLength,
+  }) = _BookStatisticsStaticDto;
+
+  factory BookStatisticsStaticDto.fromDomain(
+    BookStatisticsStatic statisticsContent,
+  ) {
+    return BookStatisticsStaticDto(partsLength: statisticsContent.partsLength);
+  }
+
+  BookStatisticsStatic toDomain() {
+    return BookStatisticsStatic(partsLength: partsLength);
+  }
+
+  factory BookStatisticsStaticDto.fromJson(Map<String, dynamic> json) =>
+      _$BookStatisticsStaticDtoFromJson(json);
 }

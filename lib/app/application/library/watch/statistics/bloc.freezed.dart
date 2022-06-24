@@ -16,42 +16,47 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$WatchBookStatisticsEvent {
-  BookBody get book => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(BookBody book) watch,
+    required TResult Function(
+            Either<BookFailure, BookStatistics> successOrFailure)
+        received,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(BookBody book)? watch,
+    TResult Function(Either<BookFailure, BookStatistics> successOrFailure)?
+        received,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(BookBody book)? watch,
+    TResult Function(Either<BookFailure, BookStatistics> successOrFailure)?
+        received,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Watch value) watch,
+    required TResult Function(_Received value) received,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Watch value)? watch,
+    TResult Function(_Received value)? received,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Watch value)? watch,
+    TResult Function(_Received value)? received,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $WatchBookStatisticsEventCopyWith<WatchBookStatisticsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,9 +65,6 @@ abstract class $WatchBookStatisticsEventCopyWith<$Res> {
   factory $WatchBookStatisticsEventCopyWith(WatchBookStatisticsEvent value,
           $Res Function(WatchBookStatisticsEvent) then) =
       _$WatchBookStatisticsEventCopyWithImpl<$Res>;
-  $Res call({BookBody book});
-
-  $BookBodyCopyWith<$Res> get book;
 }
 
 /// @nodoc
@@ -73,36 +75,14 @@ class _$WatchBookStatisticsEventCopyWithImpl<$Res>
   final WatchBookStatisticsEvent _value;
   // ignore: unused_field
   final $Res Function(WatchBookStatisticsEvent) _then;
-
-  @override
-  $Res call({
-    Object? book = freezed,
-  }) {
-    return _then(_value.copyWith(
-      book: book == freezed
-          ? _value.book
-          : book // ignore: cast_nullable_to_non_nullable
-              as BookBody,
-    ));
-  }
-
-  @override
-  $BookBodyCopyWith<$Res> get book {
-    return $BookBodyCopyWith<$Res>(_value.book, (value) {
-      return _then(_value.copyWith(book: value));
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$WatchCopyWith<$Res>
-    implements $WatchBookStatisticsEventCopyWith<$Res> {
+abstract class _$WatchCopyWith<$Res> {
   factory _$WatchCopyWith(_Watch value, $Res Function(_Watch) then) =
       __$WatchCopyWithImpl<$Res>;
-  @override
   $Res call({BookBody book});
 
-  @override
   $BookBodyCopyWith<$Res> get book;
 }
 
@@ -126,6 +106,13 @@ class __$WatchCopyWithImpl<$Res>
           : book // ignore: cast_nullable_to_non_nullable
               as BookBody,
     ));
+  }
+
+  @override
+  $BookBodyCopyWith<$Res> get book {
+    return $BookBodyCopyWith<$Res>(_value.book, (value) {
+      return _then(_value.copyWith(book: value));
+    });
   }
 }
 
@@ -163,6 +150,9 @@ class _$_Watch implements _Watch {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(BookBody book) watch,
+    required TResult Function(
+            Either<BookFailure, BookStatistics> successOrFailure)
+        received,
   }) {
     return watch(book);
   }
@@ -171,6 +161,8 @@ class _$_Watch implements _Watch {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(BookBody book)? watch,
+    TResult Function(Either<BookFailure, BookStatistics> successOrFailure)?
+        received,
   }) {
     return watch?.call(book);
   }
@@ -179,6 +171,8 @@ class _$_Watch implements _Watch {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(BookBody book)? watch,
+    TResult Function(Either<BookFailure, BookStatistics> successOrFailure)?
+        received,
     required TResult orElse(),
   }) {
     if (watch != null) {
@@ -191,6 +185,7 @@ class _$_Watch implements _Watch {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Watch value) watch,
+    required TResult Function(_Received value) received,
   }) {
     return watch(this);
   }
@@ -199,6 +194,7 @@ class _$_Watch implements _Watch {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Watch value)? watch,
+    TResult Function(_Received value)? received,
   }) {
     return watch?.call(this);
   }
@@ -207,6 +203,7 @@ class _$_Watch implements _Watch {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Watch value)? watch,
+    TResult Function(_Received value)? received,
     required TResult orElse(),
   }) {
     if (watch != null) {
@@ -219,11 +216,148 @@ class _$_Watch implements _Watch {
 abstract class _Watch implements WatchBookStatisticsEvent {
   const factory _Watch(final BookBody book) = _$_Watch;
 
-  @override
   BookBody get book => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$WatchCopyWith<_Watch> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ReceivedCopyWith<$Res> {
+  factory _$ReceivedCopyWith(_Received value, $Res Function(_Received) then) =
+      __$ReceivedCopyWithImpl<$Res>;
+  $Res call({Either<BookFailure, BookStatistics> successOrFailure});
+}
+
+/// @nodoc
+class __$ReceivedCopyWithImpl<$Res>
+    extends _$WatchBookStatisticsEventCopyWithImpl<$Res>
+    implements _$ReceivedCopyWith<$Res> {
+  __$ReceivedCopyWithImpl(_Received _value, $Res Function(_Received) _then)
+      : super(_value, (v) => _then(v as _Received));
+
+  @override
+  _Received get _value => super._value as _Received;
+
+  @override
+  $Res call({
+    Object? successOrFailure = freezed,
+  }) {
+    return _then(_Received(
+      successOrFailure == freezed
+          ? _value.successOrFailure
+          : successOrFailure // ignore: cast_nullable_to_non_nullable
+              as Either<BookFailure, BookStatistics>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Received implements _Received {
+  const _$_Received(this.successOrFailure);
+
+  @override
+  final Either<BookFailure, BookStatistics> successOrFailure;
+
+  @override
+  String toString() {
+    return 'WatchBookStatisticsEvent.received(successOrFailure: $successOrFailure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Received &&
+            const DeepCollectionEquality()
+                .equals(other.successOrFailure, successOrFailure));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(successOrFailure));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ReceivedCopyWith<_Received> get copyWith =>
+      __$ReceivedCopyWithImpl<_Received>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(BookBody book) watch,
+    required TResult Function(
+            Either<BookFailure, BookStatistics> successOrFailure)
+        received,
+  }) {
+    return received(successOrFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(BookBody book)? watch,
+    TResult Function(Either<BookFailure, BookStatistics> successOrFailure)?
+        received,
+  }) {
+    return received?.call(successOrFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(BookBody book)? watch,
+    TResult Function(Either<BookFailure, BookStatistics> successOrFailure)?
+        received,
+    required TResult orElse(),
+  }) {
+    if (received != null) {
+      return received(successOrFailure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Watch value) watch,
+    required TResult Function(_Received value) received,
+  }) {
+    return received(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Watch value)? watch,
+    TResult Function(_Received value)? received,
+  }) {
+    return received?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Watch value)? watch,
+    TResult Function(_Received value)? received,
+    required TResult orElse(),
+  }) {
+    if (received != null) {
+      return received(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Received implements WatchBookStatisticsEvent {
+  const factory _Received(
+      final Either<BookFailure, BookStatistics> successOrFailure) = _$_Received;
+
+  Either<BookFailure, BookStatistics> get successOrFailure =>
+      throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ReceivedCopyWith<_Received> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

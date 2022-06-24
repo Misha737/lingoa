@@ -19,41 +19,53 @@ mixin _$WatchBookContentEvent {
   BookBody get book => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookBody book) watch,
+    required TResult Function(BookBody book, BookStatistics statistics) started,
     required TResult Function(
-            BookBody book, BookStatistics statistics, int maxSentence)
+            BookBody book, int part, int? sentence, int partsLength)
+        watch,
+    required TResult Function(BookBody book, BookStatistics statistics,
+            int targetPart, int targetIndex, int sentenceLength)
         next,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(BookBody book)? watch,
-    TResult Function(BookBody book, BookStatistics statistics, int maxSentence)?
+    TResult Function(BookBody book, BookStatistics statistics)? started,
+    TResult Function(BookBody book, int part, int? sentence, int partsLength)?
+        watch,
+    TResult Function(BookBody book, BookStatistics statistics, int targetPart,
+            int targetIndex, int sentenceLength)?
         next,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookBody book)? watch,
-    TResult Function(BookBody book, BookStatistics statistics, int maxSentence)?
+    TResult Function(BookBody book, BookStatistics statistics)? started,
+    TResult Function(BookBody book, int part, int? sentence, int partsLength)?
+        watch,
+    TResult Function(BookBody book, BookStatistics statistics, int targetPart,
+            int targetIndex, int sentenceLength)?
         next,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
     required TResult Function(_Watch value) watch,
     required TResult Function(_Next value) next,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
     TResult Function(_Watch value)? watch,
     TResult Function(_Next value)? next,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
     TResult Function(_Watch value)? watch,
     TResult Function(_Next value)? next,
     required TResult orElse(),
@@ -105,12 +117,188 @@ class _$WatchBookContentEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+abstract class _$StartedCopyWith<$Res>
+    implements $WatchBookContentEventCopyWith<$Res> {
+  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
+      __$StartedCopyWithImpl<$Res>;
+  @override
+  $Res call({BookBody book, BookStatistics statistics});
+
+  @override
+  $BookBodyCopyWith<$Res> get book;
+  $BookStatisticsCopyWith<$Res> get statistics;
+}
+
+/// @nodoc
+class __$StartedCopyWithImpl<$Res>
+    extends _$WatchBookContentEventCopyWithImpl<$Res>
+    implements _$StartedCopyWith<$Res> {
+  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
+      : super(_value, (v) => _then(v as _Started));
+
+  @override
+  _Started get _value => super._value as _Started;
+
+  @override
+  $Res call({
+    Object? book = freezed,
+    Object? statistics = freezed,
+  }) {
+    return _then(_Started(
+      book == freezed
+          ? _value.book
+          : book // ignore: cast_nullable_to_non_nullable
+              as BookBody,
+      statistics == freezed
+          ? _value.statistics
+          : statistics // ignore: cast_nullable_to_non_nullable
+              as BookStatistics,
+    ));
+  }
+
+  @override
+  $BookStatisticsCopyWith<$Res> get statistics {
+    return $BookStatisticsCopyWith<$Res>(_value.statistics, (value) {
+      return _then(_value.copyWith(statistics: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Started implements _Started {
+  const _$_Started(this.book, this.statistics);
+
+  @override
+  final BookBody book;
+  @override
+  final BookStatistics statistics;
+
+  @override
+  String toString() {
+    return 'WatchBookContentEvent.started(book: $book, statistics: $statistics)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Started &&
+            const DeepCollectionEquality().equals(other.book, book) &&
+            const DeepCollectionEquality()
+                .equals(other.statistics, statistics));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(book),
+      const DeepCollectionEquality().hash(statistics));
+
+  @JsonKey(ignore: true)
+  @override
+  _$StartedCopyWith<_Started> get copyWith =>
+      __$StartedCopyWithImpl<_Started>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(BookBody book, BookStatistics statistics) started,
+    required TResult Function(
+            BookBody book, int part, int? sentence, int partsLength)
+        watch,
+    required TResult Function(BookBody book, BookStatistics statistics,
+            int targetPart, int targetIndex, int sentenceLength)
+        next,
+  }) {
+    return started(book, statistics);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(BookBody book, BookStatistics statistics)? started,
+    TResult Function(BookBody book, int part, int? sentence, int partsLength)?
+        watch,
+    TResult Function(BookBody book, BookStatistics statistics, int targetPart,
+            int targetIndex, int sentenceLength)?
+        next,
+  }) {
+    return started?.call(book, statistics);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(BookBody book, BookStatistics statistics)? started,
+    TResult Function(BookBody book, int part, int? sentence, int partsLength)?
+        watch,
+    TResult Function(BookBody book, BookStatistics statistics, int targetPart,
+            int targetIndex, int sentenceLength)?
+        next,
+    required TResult orElse(),
+  }) {
+    if (started != null) {
+      return started(book, statistics);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Watch value) watch,
+    required TResult Function(_Next value) next,
+  }) {
+    return started(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Watch value)? watch,
+    TResult Function(_Next value)? next,
+  }) {
+    return started?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Watch value)? watch,
+    TResult Function(_Next value)? next,
+    required TResult orElse(),
+  }) {
+    if (started != null) {
+      return started(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Started implements WatchBookContentEvent {
+  const factory _Started(final BookBody book, final BookStatistics statistics) =
+      _$_Started;
+
+  @override
+  BookBody get book => throw _privateConstructorUsedError;
+  BookStatistics get statistics => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$StartedCopyWith<_Started> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$WatchCopyWith<$Res>
     implements $WatchBookContentEventCopyWith<$Res> {
   factory _$WatchCopyWith(_Watch value, $Res Function(_Watch) then) =
       __$WatchCopyWithImpl<$Res>;
   @override
-  $Res call({BookBody book});
+  $Res call({BookBody book, int part, int? sentence, int partsLength});
 
   @override
   $BookBodyCopyWith<$Res> get book;
@@ -129,12 +317,27 @@ class __$WatchCopyWithImpl<$Res>
   @override
   $Res call({
     Object? book = freezed,
+    Object? part = freezed,
+    Object? sentence = freezed,
+    Object? partsLength = freezed,
   }) {
     return _then(_Watch(
       book == freezed
           ? _value.book
           : book // ignore: cast_nullable_to_non_nullable
               as BookBody,
+      part == freezed
+          ? _value.part
+          : part // ignore: cast_nullable_to_non_nullable
+              as int,
+      sentence == freezed
+          ? _value.sentence
+          : sentence // ignore: cast_nullable_to_non_nullable
+              as int?,
+      partsLength == freezed
+          ? _value.partsLength
+          : partsLength // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -142,14 +345,20 @@ class __$WatchCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Watch implements _Watch {
-  const _$_Watch(this.book);
+  const _$_Watch(this.book, this.part, this.sentence, this.partsLength);
 
   @override
   final BookBody book;
+  @override
+  final int part;
+  @override
+  final int? sentence;
+  @override
+  final int partsLength;
 
   @override
   String toString() {
-    return 'WatchBookContentEvent.watch(book: $book)';
+    return 'WatchBookContentEvent.watch(book: $book, part: $part, sentence: $sentence, partsLength: $partsLength)';
   }
 
   @override
@@ -157,12 +366,20 @@ class _$_Watch implements _Watch {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Watch &&
-            const DeepCollectionEquality().equals(other.book, book));
+            const DeepCollectionEquality().equals(other.book, book) &&
+            const DeepCollectionEquality().equals(other.part, part) &&
+            const DeepCollectionEquality().equals(other.sentence, sentence) &&
+            const DeepCollectionEquality()
+                .equals(other.partsLength, partsLength));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(book));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(book),
+      const DeepCollectionEquality().hash(part),
+      const DeepCollectionEquality().hash(sentence),
+      const DeepCollectionEquality().hash(partsLength));
 
   @JsonKey(ignore: true)
   @override
@@ -172,34 +389,43 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookBody book) watch,
+    required TResult Function(BookBody book, BookStatistics statistics) started,
     required TResult Function(
-            BookBody book, BookStatistics statistics, int maxSentence)
+            BookBody book, int part, int? sentence, int partsLength)
+        watch,
+    required TResult Function(BookBody book, BookStatistics statistics,
+            int targetPart, int targetIndex, int sentenceLength)
         next,
   }) {
-    return watch(book);
+    return watch(book, part, sentence, partsLength);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(BookBody book)? watch,
-    TResult Function(BookBody book, BookStatistics statistics, int maxSentence)?
+    TResult Function(BookBody book, BookStatistics statistics)? started,
+    TResult Function(BookBody book, int part, int? sentence, int partsLength)?
+        watch,
+    TResult Function(BookBody book, BookStatistics statistics, int targetPart,
+            int targetIndex, int sentenceLength)?
         next,
   }) {
-    return watch?.call(book);
+    return watch?.call(book, part, sentence, partsLength);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookBody book)? watch,
-    TResult Function(BookBody book, BookStatistics statistics, int maxSentence)?
+    TResult Function(BookBody book, BookStatistics statistics)? started,
+    TResult Function(BookBody book, int part, int? sentence, int partsLength)?
+        watch,
+    TResult Function(BookBody book, BookStatistics statistics, int targetPart,
+            int targetIndex, int sentenceLength)?
         next,
     required TResult orElse(),
   }) {
     if (watch != null) {
-      return watch(book);
+      return watch(book, part, sentence, partsLength);
     }
     return orElse();
   }
@@ -207,6 +433,7 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
     required TResult Function(_Watch value) watch,
     required TResult Function(_Next value) next,
   }) {
@@ -216,6 +443,7 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
     TResult Function(_Watch value)? watch,
     TResult Function(_Next value)? next,
   }) {
@@ -225,6 +453,7 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
     TResult Function(_Watch value)? watch,
     TResult Function(_Next value)? next,
     required TResult orElse(),
@@ -237,10 +466,14 @@ class _$_Watch implements _Watch {
 }
 
 abstract class _Watch implements WatchBookContentEvent {
-  const factory _Watch(final BookBody book) = _$_Watch;
+  const factory _Watch(final BookBody book, final int part, final int? sentence,
+      final int partsLength) = _$_Watch;
 
   @override
   BookBody get book => throw _privateConstructorUsedError;
+  int get part => throw _privateConstructorUsedError;
+  int? get sentence => throw _privateConstructorUsedError;
+  int get partsLength => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$WatchCopyWith<_Watch> get copyWith => throw _privateConstructorUsedError;
@@ -252,7 +485,12 @@ abstract class _$NextCopyWith<$Res>
   factory _$NextCopyWith(_Next value, $Res Function(_Next) then) =
       __$NextCopyWithImpl<$Res>;
   @override
-  $Res call({BookBody book, BookStatistics statistics, int maxSentence});
+  $Res call(
+      {BookBody book,
+      BookStatistics statistics,
+      int targetPart,
+      int targetIndex,
+      int sentenceLength});
 
   @override
   $BookBodyCopyWith<$Res> get book;
@@ -273,7 +511,9 @@ class __$NextCopyWithImpl<$Res>
   $Res call({
     Object? book = freezed,
     Object? statistics = freezed,
-    Object? maxSentence = freezed,
+    Object? targetPart = freezed,
+    Object? targetIndex = freezed,
+    Object? sentenceLength = freezed,
   }) {
     return _then(_Next(
       book: book == freezed
@@ -284,9 +524,17 @@ class __$NextCopyWithImpl<$Res>
           ? _value.statistics
           : statistics // ignore: cast_nullable_to_non_nullable
               as BookStatistics,
-      maxSentence: maxSentence == freezed
-          ? _value.maxSentence
-          : maxSentence // ignore: cast_nullable_to_non_nullable
+      targetPart: targetPart == freezed
+          ? _value.targetPart
+          : targetPart // ignore: cast_nullable_to_non_nullable
+              as int,
+      targetIndex: targetIndex == freezed
+          ? _value.targetIndex
+          : targetIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      sentenceLength: sentenceLength == freezed
+          ? _value.sentenceLength
+          : sentenceLength // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -305,18 +553,24 @@ class _$_Next implements _Next {
   const _$_Next(
       {required this.book,
       required this.statistics,
-      required this.maxSentence});
+      required this.targetPart,
+      required this.targetIndex,
+      required this.sentenceLength});
 
   @override
   final BookBody book;
   @override
   final BookStatistics statistics;
   @override
-  final int maxSentence;
+  final int targetPart;
+  @override
+  final int targetIndex;
+  @override
+  final int sentenceLength;
 
   @override
   String toString() {
-    return 'WatchBookContentEvent.next(book: $book, statistics: $statistics, maxSentence: $maxSentence)';
+    return 'WatchBookContentEvent.next(book: $book, statistics: $statistics, targetPart: $targetPart, targetIndex: $targetIndex, sentenceLength: $sentenceLength)';
   }
 
   @override
@@ -328,7 +582,11 @@ class _$_Next implements _Next {
             const DeepCollectionEquality()
                 .equals(other.statistics, statistics) &&
             const DeepCollectionEquality()
-                .equals(other.maxSentence, maxSentence));
+                .equals(other.targetPart, targetPart) &&
+            const DeepCollectionEquality()
+                .equals(other.targetIndex, targetIndex) &&
+            const DeepCollectionEquality()
+                .equals(other.sentenceLength, sentenceLength));
   }
 
   @override
@@ -336,7 +594,9 @@ class _$_Next implements _Next {
       runtimeType,
       const DeepCollectionEquality().hash(book),
       const DeepCollectionEquality().hash(statistics),
-      const DeepCollectionEquality().hash(maxSentence));
+      const DeepCollectionEquality().hash(targetPart),
+      const DeepCollectionEquality().hash(targetIndex),
+      const DeepCollectionEquality().hash(sentenceLength));
 
   @JsonKey(ignore: true)
   @override
@@ -346,34 +606,44 @@ class _$_Next implements _Next {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(BookBody book) watch,
+    required TResult Function(BookBody book, BookStatistics statistics) started,
     required TResult Function(
-            BookBody book, BookStatistics statistics, int maxSentence)
+            BookBody book, int part, int? sentence, int partsLength)
+        watch,
+    required TResult Function(BookBody book, BookStatistics statistics,
+            int targetPart, int targetIndex, int sentenceLength)
         next,
   }) {
-    return next(book, statistics, maxSentence);
+    return next(book, statistics, targetPart, targetIndex, sentenceLength);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(BookBody book)? watch,
-    TResult Function(BookBody book, BookStatistics statistics, int maxSentence)?
+    TResult Function(BookBody book, BookStatistics statistics)? started,
+    TResult Function(BookBody book, int part, int? sentence, int partsLength)?
+        watch,
+    TResult Function(BookBody book, BookStatistics statistics, int targetPart,
+            int targetIndex, int sentenceLength)?
         next,
   }) {
-    return next?.call(book, statistics, maxSentence);
+    return next?.call(
+        book, statistics, targetPart, targetIndex, sentenceLength);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(BookBody book)? watch,
-    TResult Function(BookBody book, BookStatistics statistics, int maxSentence)?
+    TResult Function(BookBody book, BookStatistics statistics)? started,
+    TResult Function(BookBody book, int part, int? sentence, int partsLength)?
+        watch,
+    TResult Function(BookBody book, BookStatistics statistics, int targetPart,
+            int targetIndex, int sentenceLength)?
         next,
     required TResult orElse(),
   }) {
     if (next != null) {
-      return next(book, statistics, maxSentence);
+      return next(book, statistics, targetPart, targetIndex, sentenceLength);
     }
     return orElse();
   }
@@ -381,6 +651,7 @@ class _$_Next implements _Next {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
     required TResult Function(_Watch value) watch,
     required TResult Function(_Next value) next,
   }) {
@@ -390,6 +661,7 @@ class _$_Next implements _Next {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
     TResult Function(_Watch value)? watch,
     TResult Function(_Next value)? next,
   }) {
@@ -399,6 +671,7 @@ class _$_Next implements _Next {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
     TResult Function(_Watch value)? watch,
     TResult Function(_Next value)? next,
     required TResult orElse(),
@@ -414,12 +687,16 @@ abstract class _Next implements WatchBookContentEvent {
   const factory _Next(
       {required final BookBody book,
       required final BookStatistics statistics,
-      required final int maxSentence}) = _$_Next;
+      required final int targetPart,
+      required final int targetIndex,
+      required final int sentenceLength}) = _$_Next;
 
   @override
   BookBody get book => throw _privateConstructorUsedError;
   BookStatistics get statistics => throw _privateConstructorUsedError;
-  int get maxSentence => throw _privateConstructorUsedError;
+  int get targetPart => throw _privateConstructorUsedError;
+  int get targetIndex => throw _privateConstructorUsedError;
+  int get sentenceLength => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$NextCopyWith<_Next> get copyWith => throw _privateConstructorUsedError;
@@ -431,7 +708,8 @@ mixin _$WatchBookContentState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookContent content, BookStatistics statistics)
+    required TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) =>
@@ -440,7 +718,9 @@ mixin _$WatchBookContentState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -448,7 +728,9 @@ mixin _$WatchBookContentState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) =>
@@ -538,7 +820,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookContent content, BookStatistics statistics)
+    required TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) {
@@ -550,7 +833,9 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) {
     return initial?.call();
@@ -561,7 +846,9 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -654,7 +941,8 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookContent content, BookStatistics statistics)
+    required TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) {
@@ -666,7 +954,9 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) {
     return loading?.call();
@@ -677,7 +967,9 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -734,10 +1026,7 @@ abstract class _$SuccessWatchCopyWith<$Res> {
   factory _$SuccessWatchCopyWith(
           _SuccessWatch value, $Res Function(_SuccessWatch) then) =
       __$SuccessWatchCopyWithImpl<$Res>;
-  $Res call({BookContent content, BookStatistics statistics});
-
-  $BookContentCopyWith<$Res> get content;
-  $BookStatisticsCopyWith<$Res> get statistics;
+  $Res call({Map<String, String?> content, int targetPart, int targetSentence});
 }
 
 /// @nodoc
@@ -754,48 +1043,50 @@ class __$SuccessWatchCopyWithImpl<$Res>
   @override
   $Res call({
     Object? content = freezed,
-    Object? statistics = freezed,
+    Object? targetPart = freezed,
+    Object? targetSentence = freezed,
   }) {
     return _then(_SuccessWatch(
-      content == freezed
+      content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as BookContent,
-      statistics == freezed
-          ? _value.statistics
-          : statistics // ignore: cast_nullable_to_non_nullable
-              as BookStatistics,
+              as Map<String, String?>,
+      targetPart: targetPart == freezed
+          ? _value.targetPart
+          : targetPart // ignore: cast_nullable_to_non_nullable
+              as int,
+      targetSentence: targetSentence == freezed
+          ? _value.targetSentence
+          : targetSentence // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
-  }
-
-  @override
-  $BookContentCopyWith<$Res> get content {
-    return $BookContentCopyWith<$Res>(_value.content, (value) {
-      return _then(_value.copyWith(content: value));
-    });
-  }
-
-  @override
-  $BookStatisticsCopyWith<$Res> get statistics {
-    return $BookStatisticsCopyWith<$Res>(_value.statistics, (value) {
-      return _then(_value.copyWith(statistics: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$_SuccessWatch implements _SuccessWatch {
-  const _$_SuccessWatch(this.content, this.statistics);
+  const _$_SuccessWatch(
+      {required final Map<String, String?> content,
+      required this.targetPart,
+      required this.targetSentence})
+      : _content = content;
+
+  final Map<String, String?> _content;
+  @override
+  Map<String, String?> get content {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_content);
+  }
 
   @override
-  final BookContent content;
+  final int targetPart;
   @override
-  final BookStatistics statistics;
+  final int targetSentence;
 
   @override
   String toString() {
-    return 'WatchBookContentState.success(content: $content, statistics: $statistics)';
+    return 'WatchBookContentState.success(content: $content, targetPart: $targetPart, targetSentence: $targetSentence)';
   }
 
   @override
@@ -805,14 +1096,17 @@ class _$_SuccessWatch implements _SuccessWatch {
             other is _SuccessWatch &&
             const DeepCollectionEquality().equals(other.content, content) &&
             const DeepCollectionEquality()
-                .equals(other.statistics, statistics));
+                .equals(other.targetPart, targetPart) &&
+            const DeepCollectionEquality()
+                .equals(other.targetSentence, targetSentence));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(content),
-      const DeepCollectionEquality().hash(statistics));
+      const DeepCollectionEquality().hash(targetPart),
+      const DeepCollectionEquality().hash(targetSentence));
 
   @JsonKey(ignore: true)
   @override
@@ -824,11 +1118,12 @@ class _$_SuccessWatch implements _SuccessWatch {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookContent content, BookStatistics statistics)
+    required TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) {
-    return success(content, statistics);
+    return success(content, targetPart, targetSentence);
   }
 
   @override
@@ -836,10 +1131,12 @@ class _$_SuccessWatch implements _SuccessWatch {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) {
-    return success?.call(content, statistics);
+    return success?.call(content, targetPart, targetSentence);
   }
 
   @override
@@ -847,12 +1144,14 @@ class _$_SuccessWatch implements _SuccessWatch {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(content, statistics);
+      return success(content, targetPart, targetSentence);
     }
     return orElse();
   }
@@ -897,11 +1196,13 @@ class _$_SuccessWatch implements _SuccessWatch {
 
 abstract class _SuccessWatch implements WatchBookContentState {
   const factory _SuccessWatch(
-          final BookContent content, final BookStatistics statistics) =
-      _$_SuccessWatch;
+      {required final Map<String, String?> content,
+      required final int targetPart,
+      required final int targetSentence}) = _$_SuccessWatch;
 
-  BookContent get content => throw _privateConstructorUsedError;
-  BookStatistics get statistics => throw _privateConstructorUsedError;
+  Map<String, String?> get content => throw _privateConstructorUsedError;
+  int get targetPart => throw _privateConstructorUsedError;
+  int get targetSentence => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$SuccessWatchCopyWith<_SuccessWatch> get copyWith =>
       throw _privateConstructorUsedError;
@@ -981,7 +1282,8 @@ class _$_Failure implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(BookContent content, BookStatistics statistics)
+    required TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) {
@@ -993,7 +1295,9 @@ class _$_Failure implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
   }) {
     return failure?.call(this.failure);
@@ -1004,7 +1308,9 @@ class _$_Failure implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(BookContent content, BookStatistics statistics)? success,
+    TResult Function(
+            Map<String, String?> content, int targetPart, int targetSentence)?
+        success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
   }) {

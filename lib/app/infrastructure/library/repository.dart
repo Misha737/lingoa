@@ -92,27 +92,27 @@ class BookRepositoryFirestore implements IBookRepository {
   }
 
   @override
-  Future<Either<BookFailure, BookStatistics>> getStatistics(
-      BookBody book) async {
-    try {
-      final userDoc = await _firestore.userDocument();
-      final bookId = book.id.getOrCrash();
-      final doc = await userDoc.bookStatisticsDocument(bookId).get();
+  Stream<Either<BookFailure, BookStatistics>> getStatistics(
+      BookBody book) async* {
+    final userDoc = await _firestore.userDocument();
+    final bookId = book.id.getOrCrash();
+    final doc = userDoc.bookStatisticsDocument(bookId);
 
-      final listStatistics = BookStatisticsDto.fromFirestore(doc).toDomain();
-
-      return right(listStatistics);
-    } on FirebaseException catch (e) {
-      if (e.message!.contains(permissionDenied)) {
+    yield* doc
+        .snapshots()
+        .map((event) => right<BookFailure, BookStatistics>(
+            BookStatisticsDto.fromFirestore(event).toDomain()))
+        .onErrorReturnWith((error, _) {
+      if (error is FirebaseException &&
+          error.message!.contains(permissionDenied)) {
         return left(const BookFailure.insufficientPermissions());
-      } else if (e.message!.contains(notFound)) {
+      } else if (error is FirebaseException &&
+          error.message!.contains(notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
         return left(const BookFailure.unexpected());
       }
-    } catch (e) {
-      return left(const BookFailure.unexpected());
-    }
+    });
   }
 
   @override

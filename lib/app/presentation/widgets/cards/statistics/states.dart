@@ -27,9 +27,10 @@ class StatesStatisticsBook extends StatelessWidget {
           child: CircularProgressIndicator(),
         ),
         success: (state) => StatisticsCards(
-          statistics:
-              BookStatisticsContentDto.fromDomain(state.statistics.statistics)
-                  .toJson(),
+          // TODO: Переробити
+          statistics: BookStatisticsDynamicDto.fromDomain(
+                  state.statistics.dynamicContent)
+              .toJson(),
           title: S().Statistics,
         ),
         failure: (state) => Center(

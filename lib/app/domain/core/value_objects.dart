@@ -4,7 +4,6 @@ import 'package:lingoa/app/domain/core/failures.dart';
 import 'package:lingoa/app/domain/core/validators.dart';
 import 'package:uuid/uuid.dart';
 
-//@immutable
 abstract class ValueObject<T> {
   const ValueObject();
   Either<ValueFailure<T>, T> get value;
@@ -96,7 +95,7 @@ class Language extends ValueObject<String> {
   factory Language(
     String input,
   ) {
-    return Language._(right(input));
+    return Language._(ValueValidator.stringNotEmpty(input));
   }
 
   const Language._(this.value);

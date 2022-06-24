@@ -1,9 +1,9 @@
-import 'package:dartz/dartz.dart';
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lingoa/app/domain/book/body.dart';
-import 'package:lingoa/app/domain/book/content.dart';
 import 'package:lingoa/app/domain/book/failures.dart';
 import 'package:lingoa/app/domain/book/repository.dart';
 import 'package:lingoa/app/domain/book/statistics.dart';
@@ -17,59 +17,114 @@ part 'bloc.freezed.dart';
 class WatchBookContentBloc
     extends Bloc<WatchBookContentEvent, WatchBookContentState> {
   final IBookRepository _bookRepository;
+
+  static const String start = 'start';
+  static const String startBook = 'startBook';
+  static const String end = 'end';
+  static const String endBook = 'endBook';
+
   WatchBookContentBloc(this._bookRepository)
       : super(const WatchBookContentState.initial()) {
-    on<_Watch>((event, emit) async {
-      emit(const WatchBookContentState.loading());
-
-      final successOrFailureStatistics =
-          await _bookRepository.getStatistics(event.book);
-
-      await successOrFailureStatistics.fold(
-        (failureStatistics) {
-          emit(WatchBookContentState.failure(failureStatistics));
-        },
-        (statistics) async {
-          final successOrFailureContent =
-              await _bookRepository.getContent(event.book, statistics.part);
-
-          emit(
-            successOrFailureContent.fold(
-              (failureContent) => WatchBookContentState.failure(failureContent),
-              (content) => WatchBookContentState.success(content, statistics),
-            ),
-          );
-        },
-      );
-    });
-
-    on<_Next>(
+    on<_Started>(
+      (event, emit) {
+        add(WatchBookContentEvent.watch(
+            event.book,
+            event.statistics.part,
+            event.statistics.sentence,
+            event.statistics.staticContent.partsLength));
+      },
+    );
+    on<_Watch>(
       (event, emit) async {
         emit(const WatchBookContentState.loading());
 
-        final sentence = event.statistics.sentence;
-        final Either<BookFailure, Unit> successOrFailure;
-
-        if (sentence == event.maxSentence) {
-          successOrFailure = await _bookRepository.updateStatistics(
-            event.statistics.copyWith(sentence: 0),
-            event.book,
-          );
-          add(_Watch(event.book));
-        } else {
-          successOrFailure = await _bookRepository.updateStatistics(
-            // * Тут ми і будемо обновляти статистику
-            event.statistics.copyWith(sentence: sentence + 1),
-            event.book,
-          );
-        }
+        final successOrFailure =
+            await _bookRepository.getContent(event.book, event.part);
 
         emit(
           successOrFailure.fold(
-            (f) => WatchBookContentState.failure(f),
-            (_) => state,
+            (failureContent) => WatchBookContentState.failure(failureContent),
+            (content) {
+              final Map<String, String?> sentence = {};
+
+              event.part == 0
+                  ? sentence.addAll({startBook: null})
+                  : sentence.addAll({start: null});
+
+              sentence.addAll(content.sentence);
+
+              event.part == event.partsLength - 1
+                  ? sentence.addAll({endBook: null})
+                  : sentence.addAll({end: null});
+
+              log('000000000000000000000000000000000000000000000');
+
+              final int toSentence = event.sentence ?? sentence.length - 3;
+
+              return WatchBookContentState.success(
+                content: sentence,
+                targetPart: event.part,
+                targetSentence: toSentence,
+              );
+            },
           ),
         );
+      },
+    );
+
+    on<_Next>(
+      (event, emit) async {
+        int targetIndex = event.targetIndex;
+        int targetPart = event.targetPart;
+
+        if (targetIndex == event.sentenceLength - 1 &&
+            event.targetPart !=
+                event.statistics.staticContent.partsLength - 1) {
+          if (targetPart >= event.statistics.part) {
+            final successOrFailure = await _bookRepository.updateStatistics(
+              event.statistics.copyWith(
+                sentence: 0,
+                part: event.statistics.part + 1,
+              ),
+              event.book,
+            );
+            successOrFailure.fold(
+              (failure) => emit(WatchBookContentState.failure(failure)),
+              (_) => add(WatchBookContentEvent.watch(
+                event.book,
+                targetPart + 1,
+                0,
+                event.statistics.staticContent.partsLength,
+              )),
+            );
+          } else {
+            add(WatchBookContentEvent.watch(
+              event.book,
+              targetPart + 1,
+              0,
+              event.statistics.staticContent.partsLength,
+            ));
+          }
+        } else if (targetIndex == 0 && targetPart >= 1) {
+          add(WatchBookContentEvent.watch(
+            event.book,
+            targetPart - 1,
+            null,
+            event.statistics.staticContent.partsLength,
+          ));
+        } else if (targetIndex - 1 > event.statistics.sentence &&
+            targetPart >= event.statistics.part) {
+          final successOrFailure = await _bookRepository.updateStatistics(
+            event.statistics.copyWith(
+              sentence: event.statistics.sentence + 1,
+            ),
+            event.book,
+          );
+          successOrFailure.fold(
+            (failure) => emit(WatchBookContentState.failure(failure)),
+            (_) => null,
+          );
+        }
       },
     );
   }

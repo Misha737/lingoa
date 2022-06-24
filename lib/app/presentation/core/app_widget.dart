@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:lingoa/app/application/auth/bloc.dart';
-import 'package:lingoa/app/application/library/watch/statistics/bloc.dart';
 import 'package:lingoa/app/presentation/core/values/styles/themes.dart';
 import 'package:lingoa/app/presentation/routes/router.dart';
 import 'package:lingoa/generated/l10n.dart';
@@ -24,9 +23,6 @@ class AppWidget extends StatelessWidget {
           BlocProvider(
             create: (context) =>
                 getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
-          ),
-          BlocProvider(
-            create: (context) => getIt<WatchBookStatisticsBloc>(),
           ),
         ],
         child: MaterialApp.router(
