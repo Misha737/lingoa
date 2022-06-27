@@ -21,28 +21,29 @@ class BuilderLibraryWatch extends StatelessWidget {
               vertical: Dimensions.d16,
             ),
             child: state.map(
-                initial: (_) => const SizedBox.shrink(),
-                loading: (_) => const Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                success: (state) => SuccessColumnHome(
-                      booksRead: state.booksRead,
-                      booksNotRead: state.booksNotRead,
-                    ),
-                failure: (state) => Center(
-                      child: InformationTemplate(
-                        imageName: AssetsName.images.addFile,
-                        description: state.failure.maybeMap(
-                          orElse: () => S().SomethingWentWrong,
-                          serverException: (_) => S().ThereProblemServer,
-                          insufficientPermissions: (_) =>
-                              S().insufficientPermissionsLibrary,
-                        ),
-                        labelButton: S().Report,
-                        iconButton: Icons.report_outlined,
-                        onPressed: () {},
-                      ),
-                    )),
+              initial: (_) => const SizedBox.shrink(),
+              loading: (_) => const Center(
+                child: CircularProgressIndicator(),
+              ),
+              success: (state) => SuccessColumnHome(
+                booksRead: state.booksRead,
+                booksNotRead: state.booksNotRead,
+              ),
+              failure: (state) => Center(
+                child: InformationTemplate(
+                  imageName: AssetsName.images.addFile,
+                  description: state.failure.maybeMap(
+                    orElse: () => S().SomethingWentWrong,
+                    serverException: (_) => S().ThereProblemServer,
+                    insufficientPermissions: (_) =>
+                        S().insufficientPermissionsLibrary,
+                  ),
+                  labelButton: S().Report,
+                  iconButton: Icons.report_outlined,
+                  onPressed: () {},
+                ),
+              ),
+            ),
           ),
         );
       },

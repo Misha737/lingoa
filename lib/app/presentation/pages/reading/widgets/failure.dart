@@ -23,10 +23,11 @@ class FailureBookReading extends StatelessWidget {
       child: InformationTemplate(
         imageName: AssetsName.images.welcome,
         description: failure.maybeMap(
-            orElse: () => S().SomethingWentWrong,
-            unexpected: (_) => S().SomethingWentWrong,
-            insufficientPermissions: (_) => S().insufficientPermissionsBook,
-            unableToUpdate: (_) => S().unableToUpdateBook),
+          orElse: () => S().SomethingWentWrong,
+          unexpected: (_) => S().SomethingWentWrong,
+          insufficientPermissions: (_) => S().insufficientPermissionsBook,
+          unableToUpdate: (_) => S().unableToUpdateBook,
+        ),
         labelButton: S().Repeat,
         iconButton: Icons.replay_rounded,
         onPressed: onPressed,

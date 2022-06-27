@@ -56,7 +56,6 @@ class SuccessColumnHome extends StatelessWidget {
                     isNotPassed: false,
                   )
                 : const SizedBox.shrink(),
-            // AddBookHome(),
           ],
         ),
       ),
