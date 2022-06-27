@@ -35,7 +35,7 @@ class SuccessStatisticsReading extends StatelessWidget {
             ),
           ),
           success: (state) => SuccessReading(
-            content: state.content,
+            contentBook: state.content,
             statistics: statistics,
             targetPart: state.targetPart,
             targetSentence: state.targetSentence,

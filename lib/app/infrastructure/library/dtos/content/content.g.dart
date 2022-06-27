@@ -8,10 +8,13 @@ part of 'content.dart';
 
 _$_BookContentDto _$$_BookContentDtoFromJson(Map<String, dynamic> json) =>
     _$_BookContentDto(
-      sentence: Map<String, String>.from(json['sentence'] as Map),
+      languages: (json['languages'] as Map<String, dynamic>).map(
+        (k, e) =>
+            MapEntry(k, (e as List<dynamic>).map((e) => e as String).toList()),
+      ),
     );
 
 Map<String, dynamic> _$$_BookContentDtoToJson(_$_BookContentDto instance) =>
     <String, dynamic>{
-      'sentence': instance.sentence,
+      'languages': instance.languages,
     };

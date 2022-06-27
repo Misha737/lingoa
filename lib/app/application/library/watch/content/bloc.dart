@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lingoa/app/domain/book/body.dart';
+import 'package:lingoa/app/domain/book/content.dart';
 import 'package:lingoa/app/domain/book/failures.dart';
 import 'package:lingoa/app/domain/book/repository.dart';
 import 'package:lingoa/app/domain/book/statistics.dart';
@@ -17,11 +18,6 @@ part 'bloc.freezed.dart';
 class WatchBookContentBloc
     extends Bloc<WatchBookContentEvent, WatchBookContentState> {
   final IBookRepository _bookRepository;
-
-  static const String start = 'start';
-  static const String startBook = 'startBook';
-  static const String end = 'end';
-  static const String endBook = 'endBook';
 
   WatchBookContentBloc(this._bookRepository)
       : super(const WatchBookContentState.initial()) {
@@ -45,24 +41,13 @@ class WatchBookContentBloc
           successOrFailure.fold(
             (failureContent) => WatchBookContentState.failure(failureContent),
             (content) {
-              final Map<String, String?> sentence = {};
-
-              event.part == 0
-                  ? sentence.addAll({startBook: null})
-                  : sentence.addAll({start: null});
-
-              sentence.addAll(content.sentence);
-
-              event.part == event.partsLength - 1
-                  ? sentence.addAll({endBook: null})
-                  : sentence.addAll({end: null});
-
               log('000000000000000000000000000000000000000000000');
 
-              final int toSentence = event.sentence ?? sentence.length - 3;
+              final int toSentence = event.sentence ??
+                  content.languages.lengthLanguageSentence - 1;
 
               return WatchBookContentState.success(
-                content: sentence,
+                content: content,
                 targetPart: event.part,
                 targetSentence: toSentence,
               );
@@ -77,7 +62,7 @@ class WatchBookContentBloc
         int targetIndex = event.targetIndex;
         int targetPart = event.targetPart;
 
-        if (targetIndex == event.sentenceLength - 1 &&
+        if (targetIndex == event.sentenceLength + 1 &&
             event.targetPart !=
                 event.statistics.staticContent.partsLength - 1) {
           if (targetPart >= event.statistics.part) {

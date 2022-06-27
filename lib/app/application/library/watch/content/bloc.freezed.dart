@@ -709,7 +709,7 @@ mixin _$WatchBookContentState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)
+            BookContent content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) =>
@@ -718,8 +718,7 @@ mixin _$WatchBookContentState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
   }) =>
@@ -728,8 +727,7 @@ mixin _$WatchBookContentState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
@@ -821,7 +819,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)
+            BookContent content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) {
@@ -833,8 +831,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
   }) {
@@ -846,8 +843,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
@@ -942,7 +938,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)
+            BookContent content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) {
@@ -954,8 +950,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
   }) {
@@ -967,8 +962,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
@@ -1026,7 +1020,9 @@ abstract class _$SuccessWatchCopyWith<$Res> {
   factory _$SuccessWatchCopyWith(
           _SuccessWatch value, $Res Function(_SuccessWatch) then) =
       __$SuccessWatchCopyWithImpl<$Res>;
-  $Res call({Map<String, String?> content, int targetPart, int targetSentence});
+  $Res call({BookContent content, int targetPart, int targetSentence});
+
+  $BookContentCopyWith<$Res> get content;
 }
 
 /// @nodoc
@@ -1050,7 +1046,7 @@ class __$SuccessWatchCopyWithImpl<$Res>
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as Map<String, String?>,
+              as BookContent,
       targetPart: targetPart == freezed
           ? _value.targetPart
           : targetPart // ignore: cast_nullable_to_non_nullable
@@ -1061,24 +1057,25 @@ class __$SuccessWatchCopyWithImpl<$Res>
               as int,
     ));
   }
+
+  @override
+  $BookContentCopyWith<$Res> get content {
+    return $BookContentCopyWith<$Res>(_value.content, (value) {
+      return _then(_value.copyWith(content: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_SuccessWatch implements _SuccessWatch {
   const _$_SuccessWatch(
-      {required final Map<String, String?> content,
+      {required this.content,
       required this.targetPart,
-      required this.targetSentence})
-      : _content = content;
+      required this.targetSentence});
 
-  final Map<String, String?> _content;
   @override
-  Map<String, String?> get content {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_content);
-  }
-
+  final BookContent content;
   @override
   final int targetPart;
   @override
@@ -1119,7 +1116,7 @@ class _$_SuccessWatch implements _SuccessWatch {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)
+            BookContent content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) {
@@ -1131,8 +1128,7 @@ class _$_SuccessWatch implements _SuccessWatch {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
   }) {
@@ -1144,8 +1140,7 @@ class _$_SuccessWatch implements _SuccessWatch {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),
@@ -1196,11 +1191,11 @@ class _$_SuccessWatch implements _SuccessWatch {
 
 abstract class _SuccessWatch implements WatchBookContentState {
   const factory _SuccessWatch(
-      {required final Map<String, String?> content,
+      {required final BookContent content,
       required final int targetPart,
       required final int targetSentence}) = _$_SuccessWatch;
 
-  Map<String, String?> get content => throw _privateConstructorUsedError;
+  BookContent get content => throw _privateConstructorUsedError;
   int get targetPart => throw _privateConstructorUsedError;
   int get targetSentence => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1283,7 +1278,7 @@ class _$_Failure implements _Failure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)
+            BookContent content, int targetPart, int targetSentence)
         success,
     required TResult Function(BookFailure failure) failure,
   }) {
@@ -1295,8 +1290,7 @@ class _$_Failure implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
   }) {
@@ -1308,8 +1302,7 @@ class _$_Failure implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            Map<String, String?> content, int targetPart, int targetSentence)?
+    TResult Function(BookContent content, int targetPart, int targetSentence)?
         success,
     TResult Function(BookFailure failure)? failure,
     required TResult orElse(),

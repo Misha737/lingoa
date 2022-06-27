@@ -18,7 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$BookContent {
 // required String nativeTranslate,
 // required String learnTranslate,
-  Map<String, String> get sentence => throw _privateConstructorUsedError;
+// required Map<String, String> sentence,
+  Content get languages => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BookContentCopyWith<BookContent> get copyWith =>
@@ -30,7 +31,7 @@ abstract class $BookContentCopyWith<$Res> {
   factory $BookContentCopyWith(
           BookContent value, $Res Function(BookContent) then) =
       _$BookContentCopyWithImpl<$Res>;
-  $Res call({Map<String, String> sentence});
+  $Res call({Content languages});
 }
 
 /// @nodoc
@@ -43,13 +44,13 @@ class _$BookContentCopyWithImpl<$Res> implements $BookContentCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? sentence = freezed,
+    Object? languages = freezed,
   }) {
     return _then(_value.copyWith(
-      sentence: sentence == freezed
-          ? _value.sentence
-          : sentence // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
+      languages: languages == freezed
+          ? _value.languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as Content,
     ));
   }
 }
@@ -61,7 +62,7 @@ abstract class _$BookContentCopyWith<$Res>
           _BookContent value, $Res Function(_BookContent) then) =
       __$BookContentCopyWithImpl<$Res>;
   @override
-  $Res call({Map<String, String> sentence});
+  $Res call({Content languages});
 }
 
 /// @nodoc
@@ -76,13 +77,13 @@ class __$BookContentCopyWithImpl<$Res> extends _$BookContentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? sentence = freezed,
+    Object? languages = freezed,
   }) {
     return _then(_BookContent(
-      sentence: sentence == freezed
-          ? _value.sentence
-          : sentence // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
+      languages: languages == freezed
+          ? _value.languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as Content,
     ));
   }
 }
@@ -90,24 +91,17 @@ class __$BookContentCopyWithImpl<$Res> extends _$BookContentCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_BookContent extends _BookContent {
-  const _$_BookContent({required final Map<String, String> sentence})
-      : _sentence = sentence,
-        super._();
+  const _$_BookContent({required this.languages}) : super._();
 
 // required String nativeTranslate,
 // required String learnTranslate,
-  final Map<String, String> _sentence;
-// required String nativeTranslate,
-// required String learnTranslate,
+// required Map<String, String> sentence,
   @override
-  Map<String, String> get sentence {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_sentence);
-  }
+  final Content languages;
 
   @override
   String toString() {
-    return 'BookContent(sentence: $sentence)';
+    return 'BookContent(languages: $languages)';
   }
 
   @override
@@ -115,12 +109,12 @@ class _$_BookContent extends _BookContent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _BookContent &&
-            const DeepCollectionEquality().equals(other.sentence, sentence));
+            const DeepCollectionEquality().equals(other.languages, languages));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(sentence));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(languages));
 
   @JsonKey(ignore: true)
   @override
@@ -129,13 +123,14 @@ class _$_BookContent extends _BookContent {
 }
 
 abstract class _BookContent extends BookContent {
-  const factory _BookContent({required final Map<String, String> sentence}) =
+  const factory _BookContent({required final Content languages}) =
       _$_BookContent;
   const _BookContent._() : super._();
 
   @override // required String nativeTranslate,
 // required String learnTranslate,
-  Map<String, String> get sentence => throw _privateConstructorUsedError;
+// required Map<String, String> sentence,
+  Content get languages => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$BookContentCopyWith<_BookContent> get copyWith =>

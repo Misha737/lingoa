@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import './value_objects.dart';
 
 part 'content.freezed.dart';
 
@@ -9,6 +10,7 @@ abstract class BookContent implements _$BookContent {
   const factory BookContent({
     // required String nativeTranslate,
     // required String learnTranslate,
-    required Map<String, String> sentence,
+    // required Map<String, String> sentence,
+    required Content languages,
   }) = _BookContent;
 }

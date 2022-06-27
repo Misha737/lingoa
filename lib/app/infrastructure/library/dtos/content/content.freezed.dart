@@ -20,7 +20,7 @@ BookContentDto _$BookContentDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BookContentDto {
-  Map<String, String> get sentence => throw _privateConstructorUsedError;
+  Map<String, List<String>> get languages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $BookContentDtoCopyWith<$Res> {
   factory $BookContentDtoCopyWith(
           BookContentDto value, $Res Function(BookContentDto) then) =
       _$BookContentDtoCopyWithImpl<$Res>;
-  $Res call({Map<String, String> sentence});
+  $Res call({Map<String, List<String>> languages});
 }
 
 /// @nodoc
@@ -47,13 +47,13 @@ class _$BookContentDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? sentence = freezed,
+    Object? languages = freezed,
   }) {
     return _then(_value.copyWith(
-      sentence: sentence == freezed
-          ? _value.sentence
-          : sentence // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
+      languages: languages == freezed
+          ? _value.languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>,
     ));
   }
 }
@@ -65,7 +65,7 @@ abstract class _$BookContentDtoCopyWith<$Res>
           _BookContentDto value, $Res Function(_BookContentDto) then) =
       __$BookContentDtoCopyWithImpl<$Res>;
   @override
-  $Res call({Map<String, String> sentence});
+  $Res call({Map<String, List<String>> languages});
 }
 
 /// @nodoc
@@ -81,13 +81,13 @@ class __$BookContentDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? sentence = freezed,
+    Object? languages = freezed,
   }) {
     return _then(_BookContentDto(
-      sentence: sentence == freezed
-          ? _value.sentence
-          : sentence // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>,
+      languages: languages == freezed
+          ? _value.languages
+          : languages // ignore: cast_nullable_to_non_nullable
+              as Map<String, List<String>>,
     ));
   }
 }
@@ -95,23 +95,23 @@ class __$BookContentDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BookContentDto extends _BookContentDto {
-  const _$_BookContentDto({required final Map<String, String> sentence})
-      : _sentence = sentence,
+  const _$_BookContentDto({required final Map<String, List<String>> languages})
+      : _languages = languages,
         super._();
 
   factory _$_BookContentDto.fromJson(Map<String, dynamic> json) =>
       _$$_BookContentDtoFromJson(json);
 
-  final Map<String, String> _sentence;
+  final Map<String, List<String>> _languages;
   @override
-  Map<String, String> get sentence {
+  Map<String, List<String>> get languages {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_sentence);
+    return EqualUnmodifiableMapView(_languages);
   }
 
   @override
   String toString() {
-    return 'BookContentDto(sentence: $sentence)';
+    return 'BookContentDto(languages: $languages)';
   }
 
   @override
@@ -119,13 +119,13 @@ class _$_BookContentDto extends _BookContentDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _BookContentDto &&
-            const DeepCollectionEquality().equals(other.sentence, sentence));
+            const DeepCollectionEquality().equals(other.languages, languages));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(sentence));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(languages));
 
   @JsonKey(ignore: true)
   @override
@@ -139,15 +139,15 @@ class _$_BookContentDto extends _BookContentDto {
 }
 
 abstract class _BookContentDto extends BookContentDto {
-  const factory _BookContentDto({required final Map<String, String> sentence}) =
-      _$_BookContentDto;
+  const factory _BookContentDto(
+      {required final Map<String, List<String>> languages}) = _$_BookContentDto;
   const _BookContentDto._() : super._();
 
   factory _BookContentDto.fromJson(Map<String, dynamic> json) =
       _$_BookContentDto.fromJson;
 
   @override
-  Map<String, String> get sentence => throw _privateConstructorUsedError;
+  Map<String, List<String>> get languages => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$BookContentDtoCopyWith<_BookContentDto> get copyWith =>

@@ -98,5 +98,10 @@ class Language extends ValueObject<String> {
     return Language._(ValueValidator.stringNotEmpty(input));
   }
 
+  @override
+  String toString() {
+    return value.getOrElse(() => '');
+  }
+
   const Language._(this.value);
 }

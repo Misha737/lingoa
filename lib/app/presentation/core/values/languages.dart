@@ -1,7 +1,7 @@
 import 'package:lingoa/generated/l10n.dart';
 
-class Language {
-  Language(this._language);
+class LanguageGto {
+  LanguageGto(this._language);
 
   final String _language;
 
