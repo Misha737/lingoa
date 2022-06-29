@@ -8,8 +8,8 @@ abstract class VocabularyContent implements _$VocabularyContent {
   const VocabularyContent._();
 
   const factory VocabularyContent({
-    required Word nativeTranslate,
-    required Word learnTranslate,
-    required int repeated,
+    // required Word learn,
+    required Word native,
+    required int repeat,
   }) = _VocabularyContent;
 }

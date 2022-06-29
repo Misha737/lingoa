@@ -29,4 +29,9 @@ extension DocumentReferenceX on DocumentReference {
 
   DocumentReference bookStatisticsDocument(String bookId) =>
       _commonBookCollection(bookId).doc('statistics');
+
+  CollectionReference get vocabularyCollection => collection('vocabulary');
+
+  DocumentReference wordsDocument(String language) =>
+      vocabularyCollection.doc(language);
 }

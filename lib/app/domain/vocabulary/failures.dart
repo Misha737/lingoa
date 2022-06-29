@@ -8,5 +8,5 @@ abstract class VocabularyFailures with _$VocabularyFailures {
   const factory VocabularyFailures.unexpected() = _Unexpected;
   const factory VocabularyFailures.insufficientPermissions() =
       _InsufficientPermissions;
-  const factory VocabularyFailures.unableToUpdate() = _UnableToUpdate;
+  const factory VocabularyFailures.notFound() = _NotFound;
 }

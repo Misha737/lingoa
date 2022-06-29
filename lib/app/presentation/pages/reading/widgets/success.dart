@@ -4,7 +4,6 @@ import 'package:lingoa/app/application/library/watch/content/bloc.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/domain/book/content.dart';
 import 'package:lingoa/app/domain/book/statistics.dart';
-import 'package:lingoa/app/domain/book/value_objects.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/languages.dart';

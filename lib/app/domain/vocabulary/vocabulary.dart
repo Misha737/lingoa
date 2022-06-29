@@ -10,6 +10,16 @@ abstract class Vocabulary implements _$Vocabulary {
 
   const factory Vocabulary({
     required Language language,
-    required List<VocabularyContent> content,
+    required Map<Word, VocabularyContent> words,
   }) = _Vocabulary;
+}
+
+@freezed
+abstract class VocabularyInfoBody implements _$VocabularyInfoBody {
+  const VocabularyInfoBody._();
+
+  const factory VocabularyInfoBody({
+    required Language language,
+    required int lengthWords,
+  }) = _VocabularyInfoBody;
 }

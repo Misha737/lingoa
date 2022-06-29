@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:lingoa/app/infrastructure/core/errors_code.dart';
 import 'package:lingoa/app/infrastructure/library/dtos/content/content.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:lingoa/app/domain/book/failures.dart';
@@ -16,9 +17,6 @@ import 'dtos/statistics/statistics.dart';
 @LazySingleton(as: IBookRepository)
 class BookRepositoryFirestore implements IBookRepository {
   final FirebaseFirestore _firestore;
-
-  static const String permissionDenied = 'permission-denied';
-  static const String notFound = 'not-found';
 
   BookRepositoryFirestore(this._firestore);
 
@@ -38,9 +36,9 @@ class BookRepositoryFirestore implements IBookRepository {
 
       return right(unit);
     } on FirebaseException catch (e) {
-      if (e.code.contains(permissionDenied)) {
+      if (e.code.contains(ErrorsCodeFirebase.permissionDenied)) {
         return left(const BookFailure.insufficientPermissions());
-      } else if (e.code.contains(notFound)) {
+      } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
         return left(const BookFailure.unexpected());
@@ -60,7 +58,8 @@ class BookRepositoryFirestore implements IBookRepository {
             .map((doc) => BookBodyDto.fromFirestore(doc).toDomain())
             .toList()))
         .onErrorReturnWith((e, _) {
-      if (e is FirebaseException && e.code.contains(permissionDenied)) {
+      if (e is FirebaseException &&
+          e.code.contains(ErrorsCodeFirebase.permissionDenied)) {
         return left(const BookFailure.insufficientPermissions());
       } else {
         return left(const BookFailure.serverException());
@@ -78,9 +77,9 @@ class BookRepositoryFirestore implements IBookRepository {
 
       return right(BookContentDto.fromFirestore(doc).toDomain());
     } on FirebaseException catch (e) {
-      if (e.code.contains(permissionDenied)) {
+      if (e.code.contains(ErrorsCodeFirebase.permissionDenied)) {
         return left(const BookFailure.insufficientPermissions());
-      } else if (e.code.contains(notFound)) {
+      } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
         return left(const BookFailure.unexpected());
@@ -102,9 +101,11 @@ class BookRepositoryFirestore implements IBookRepository {
         .map((event) => right<BookFailure, BookStatistics>(
             BookStatisticsDto.fromFirestore(event).toDomain()))
         .onErrorReturnWith((error, _) {
-      if (error is FirebaseException && error.code.contains(permissionDenied)) {
+      if (error is FirebaseException &&
+          error.code.contains(ErrorsCodeFirebase.permissionDenied)) {
         return left(const BookFailure.insufficientPermissions());
-      } else if (error is FirebaseException && error.code.contains(notFound)) {
+      } else if (error is FirebaseException &&
+          error.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
         return left(const BookFailure.unexpected());
@@ -133,9 +134,9 @@ class BookRepositoryFirestore implements IBookRepository {
 
       return right(unit);
     } on FirebaseException catch (e) {
-      if (e.code.contains(permissionDenied)) {
+      if (e.code.contains(ErrorsCodeFirebase.permissionDenied)) {
         return left(const BookFailure.insufficientPermissions());
-      } else if (e.code.contains(notFound)) {
+      } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
         return left(const BookFailure.unexpected());
@@ -155,9 +156,9 @@ class BookRepositoryFirestore implements IBookRepository {
 
       return right(unit);
     } on FirebaseException catch (e) {
-      if (e.code.contains(permissionDenied)) {
+      if (e.code.contains(ErrorsCodeFirebase.permissionDenied)) {
         return left(const BookFailure.insufficientPermissions());
-      } else if (e.code.contains(notFound)) {
+      } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
         return left(const BookFailure.unexpected());

@@ -10,18 +10,20 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i5;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'app/application/auth/bloc.dart' as _i13;
-import 'app/application/auth/form/bloc.dart' as _i14;
-import 'app/application/library/controller/bloc.dart' as _i15;
+import 'app/application/auth/bloc.dart' as _i15;
+import 'app/application/auth/form/bloc.dart' as _i16;
+import 'app/application/library/controller/bloc.dart' as _i17;
 import 'app/application/library/watch/body/bloc.dart' as _i10;
-import 'app/application/library/watch/content/bloc.dart' as _i11;
-import 'app/application/library/watch/statistics/bloc.dart' as _i12;
+import 'app/application/library/watch/content/bloc.dart' as _i13;
+import 'app/application/library/watch/statistics/bloc.dart' as _i14;
 import 'app/domain/auth/i_auth_facade.dart' as _i6;
 import 'app/domain/book/repository.dart' as _i8;
+import 'app/domain/vocabulary/repository.dart' as _i11;
 import 'app/infrastructure/auth/firebase_auth_facade.dart' as _i7;
-import 'app/infrastructure/core/firebase_injectable_module.dart' as _i16;
-import 'app/infrastructure/library/repository.dart'
-    as _i9; // ignore_for_file: unnecessary_lambdas
+import 'app/infrastructure/core/firebase_injectable_module.dart' as _i18;
+import 'app/infrastructure/library/repository.dart' as _i9;
+import 'app/infrastructure/vocabulary/repository.dart'
+    as _i12; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -41,16 +43,18 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i9.BookRepositoryFirestore(get<_i4.FirebaseFirestore>()));
   gh.factory<_i10.LibraryWatchBloc>(
       () => _i10.LibraryWatchBloc(get<_i8.IBookRepository>()));
-  gh.factory<_i11.WatchBookContentBloc>(
-      () => _i11.WatchBookContentBloc(get<_i8.IBookRepository>()));
-  gh.factory<_i12.WatchBookStatisticsBloc>(
-      () => _i12.WatchBookStatisticsBloc(get<_i8.IBookRepository>()));
-  gh.factory<_i13.AuthBloc>(() => _i13.AuthBloc(get<_i6.IAuthFacade>()));
-  gh.factory<_i14.AuthFormBloc>(
-      () => _i14.AuthFormBloc(get<_i6.IAuthFacade>()));
-  gh.factory<_i15.BookControllerBloc>(
-      () => _i15.BookControllerBloc(get<_i8.IBookRepository>()));
+  gh.lazySingleton<_i11.VocabularyRepository>(
+      () => _i12.VocabularyRepositoryFirestore(get<_i4.FirebaseFirestore>()));
+  gh.factory<_i13.WatchBookContentBloc>(
+      () => _i13.WatchBookContentBloc(get<_i8.IBookRepository>()));
+  gh.factory<_i14.WatchBookStatisticsBloc>(
+      () => _i14.WatchBookStatisticsBloc(get<_i8.IBookRepository>()));
+  gh.factory<_i15.AuthBloc>(() => _i15.AuthBloc(get<_i6.IAuthFacade>()));
+  gh.factory<_i16.AuthFormBloc>(
+      () => _i16.AuthFormBloc(get<_i6.IAuthFacade>()));
+  gh.factory<_i17.BookControllerBloc>(
+      () => _i17.BookControllerBloc(get<_i8.IBookRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i16.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i18.FirebaseInjectableModule {}

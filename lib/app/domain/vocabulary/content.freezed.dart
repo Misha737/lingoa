@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$VocabularyContent {
-  Word get nativeTranslate => throw _privateConstructorUsedError;
-  Word get learnTranslate => throw _privateConstructorUsedError;
-  int get repeated => throw _privateConstructorUsedError;
+// required Word learn,
+  Word get native => throw _privateConstructorUsedError;
+  int get repeat => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $VocabularyContentCopyWith<VocabularyContent> get copyWith =>
@@ -30,7 +30,7 @@ abstract class $VocabularyContentCopyWith<$Res> {
   factory $VocabularyContentCopyWith(
           VocabularyContent value, $Res Function(VocabularyContent) then) =
       _$VocabularyContentCopyWithImpl<$Res>;
-  $Res call({Word nativeTranslate, Word learnTranslate, int repeated});
+  $Res call({Word native, int repeat});
 }
 
 /// @nodoc
@@ -44,22 +44,17 @@ class _$VocabularyContentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? nativeTranslate = freezed,
-    Object? learnTranslate = freezed,
-    Object? repeated = freezed,
+    Object? native = freezed,
+    Object? repeat = freezed,
   }) {
     return _then(_value.copyWith(
-      nativeTranslate: nativeTranslate == freezed
-          ? _value.nativeTranslate
-          : nativeTranslate // ignore: cast_nullable_to_non_nullable
+      native: native == freezed
+          ? _value.native
+          : native // ignore: cast_nullable_to_non_nullable
               as Word,
-      learnTranslate: learnTranslate == freezed
-          ? _value.learnTranslate
-          : learnTranslate // ignore: cast_nullable_to_non_nullable
-              as Word,
-      repeated: repeated == freezed
-          ? _value.repeated
-          : repeated // ignore: cast_nullable_to_non_nullable
+      repeat: repeat == freezed
+          ? _value.repeat
+          : repeat // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -72,7 +67,7 @@ abstract class _$VocabularyContentCopyWith<$Res>
           _VocabularyContent value, $Res Function(_VocabularyContent) then) =
       __$VocabularyContentCopyWithImpl<$Res>;
   @override
-  $Res call({Word nativeTranslate, Word learnTranslate, int repeated});
+  $Res call({Word native, int repeat});
 }
 
 /// @nodoc
@@ -88,22 +83,17 @@ class __$VocabularyContentCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? nativeTranslate = freezed,
-    Object? learnTranslate = freezed,
-    Object? repeated = freezed,
+    Object? native = freezed,
+    Object? repeat = freezed,
   }) {
     return _then(_VocabularyContent(
-      nativeTranslate: nativeTranslate == freezed
-          ? _value.nativeTranslate
-          : nativeTranslate // ignore: cast_nullable_to_non_nullable
+      native: native == freezed
+          ? _value.native
+          : native // ignore: cast_nullable_to_non_nullable
               as Word,
-      learnTranslate: learnTranslate == freezed
-          ? _value.learnTranslate
-          : learnTranslate // ignore: cast_nullable_to_non_nullable
-              as Word,
-      repeated: repeated == freezed
-          ? _value.repeated
-          : repeated // ignore: cast_nullable_to_non_nullable
+      repeat: repeat == freezed
+          ? _value.repeat
+          : repeat // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -112,22 +102,18 @@ class __$VocabularyContentCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_VocabularyContent extends _VocabularyContent {
-  const _$_VocabularyContent(
-      {required this.nativeTranslate,
-      required this.learnTranslate,
-      required this.repeated})
+  const _$_VocabularyContent({required this.native, required this.repeat})
       : super._();
 
+// required Word learn,
   @override
-  final Word nativeTranslate;
+  final Word native;
   @override
-  final Word learnTranslate;
-  @override
-  final int repeated;
+  final int repeat;
 
   @override
   String toString() {
-    return 'VocabularyContent(nativeTranslate: $nativeTranslate, learnTranslate: $learnTranslate, repeated: $repeated)';
+    return 'VocabularyContent(native: $native, repeat: $repeat)';
   }
 
   @override
@@ -135,19 +121,15 @@ class _$_VocabularyContent extends _VocabularyContent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _VocabularyContent &&
-            const DeepCollectionEquality()
-                .equals(other.nativeTranslate, nativeTranslate) &&
-            const DeepCollectionEquality()
-                .equals(other.learnTranslate, learnTranslate) &&
-            const DeepCollectionEquality().equals(other.repeated, repeated));
+            const DeepCollectionEquality().equals(other.native, native) &&
+            const DeepCollectionEquality().equals(other.repeat, repeat));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(nativeTranslate),
-      const DeepCollectionEquality().hash(learnTranslate),
-      const DeepCollectionEquality().hash(repeated));
+      const DeepCollectionEquality().hash(native),
+      const DeepCollectionEquality().hash(repeat));
 
   @JsonKey(ignore: true)
   @override
@@ -157,17 +139,14 @@ class _$_VocabularyContent extends _VocabularyContent {
 
 abstract class _VocabularyContent extends VocabularyContent {
   const factory _VocabularyContent(
-      {required final Word nativeTranslate,
-      required final Word learnTranslate,
-      required final int repeated}) = _$_VocabularyContent;
+      {required final Word native,
+      required final int repeat}) = _$_VocabularyContent;
   const _VocabularyContent._() : super._();
 
+  @override // required Word learn,
+  Word get native => throw _privateConstructorUsedError;
   @override
-  Word get nativeTranslate => throw _privateConstructorUsedError;
-  @override
-  Word get learnTranslate => throw _privateConstructorUsedError;
-  @override
-  int get repeated => throw _privateConstructorUsedError;
+  int get repeat => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$VocabularyContentCopyWith<_VocabularyContent> get copyWith =>
