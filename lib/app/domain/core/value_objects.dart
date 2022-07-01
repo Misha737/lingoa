@@ -81,7 +81,9 @@ class Word extends ValueObject<String> {
 
   factory Word(input) {
     return Word._(
-      right(input),
+      right(
+        input,
+      ), // TODO: Певертати Всі символи крім першого маленькі і без символів
     );
   }
 

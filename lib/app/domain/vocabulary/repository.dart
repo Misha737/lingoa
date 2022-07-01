@@ -5,12 +5,9 @@ import 'package:lingoa/app/domain/vocabulary/vocabulary.dart';
 
 abstract class VocabularyRepository {
   Future<Either<VocabularyFailures, Vocabulary>> get(Language language);
-  Future<Either<VocabularyFailures, Vocabulary>> getWithFilter(
-    Language language,
-    List<Word> learnWords,
-  );
+  Future<Either<VocabularyFailures, List<VocabularyInfoBody>>> getBody();
+  Future<Either<VocabularyFailures, List<Language>>> getLanguages();
   Future<Either<VocabularyFailures, Unit>> update(
-    Vocabulary vocabulary,
+    Map<Language, List<Word>> words,
   );
-  Future<Either<VocabularyFailures, List<VocabularyInfoBody>>> getLengthWords();
 }

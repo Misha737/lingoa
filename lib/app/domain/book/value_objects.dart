@@ -60,4 +60,7 @@ class Sentence extends ValueObject<String> {
   }
 
   Sentence._(this.value);
+
+  List<Word> get toWords =>
+      value.getOrElse(() => '').split(' ').map((e) => Word(e)).toList();
 }
