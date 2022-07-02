@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/pages/core/home/home.dart';
+import 'package:lingoa/app/presentation/pages/core/vocabulary/vocabulary.dart';
 
 import 'widgets/bottom_navigation_bar.dart';
 
@@ -16,13 +17,13 @@ class _CorePageState extends State<CorePage> {
 
   final List<Widget> _body = [
     const HomeBody(),
-    const Text('DATA 2'),
-    const Text('DATA 3'),
-    const Text('DATA 4'),
+    const VocabularyBody(),
+    const Text('Training'),
+    const Text('Profile'),
   ];
   final List<AppBar> _appBar = [
     Dimensions.appBarZero,
-    AppBar(),
+    Dimensions.appBarZero,
     AppBar(),
     AppBar(),
   ];

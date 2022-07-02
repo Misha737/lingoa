@@ -23,6 +23,7 @@ class Dimensions {
   static final button = _Button();
   static final input = _Input();
   static final cardBook = _CardBook();
+  static final tile = _Tile();
   static final BoxShadow boxShadow = BoxShadow(
     color: ColorsLightTheme.shadowColor,
     blurRadius: Dimensions.blurRadius,
@@ -71,4 +72,9 @@ class _CardBook {
   final double height = 144;
   final double widthLeftContainer = 112;
   final double heightCardStatistics = 64;
+}
+
+class _Tile {
+  final double heightSmall = 56;
+  final double heightMedium = 64;
 }

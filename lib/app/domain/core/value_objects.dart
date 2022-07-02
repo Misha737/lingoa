@@ -79,11 +79,12 @@ class Word extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory Word(input) {
+  factory Word(String input) {
+    String _firstCapitalLetter() =>
+        '${input[0].toUpperCase()}${input.substring(1).toLowerCase()}';
+
     return Word._(
-      right(
-        input,
-      ), // TODO: Певертати Всі символи крім першого маленькі і без символів
+      right(_firstCapitalLetter()),
     );
   }
 

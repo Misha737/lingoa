@@ -150,6 +150,16 @@ class S {
     );
   }
 
+  /// `Search`
+  String get Search {
+    return Intl.message(
+      'Search',
+      name: 'Search',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Repeat password`
   String get RepeatPassword {
     return Intl.message(
@@ -610,6 +620,56 @@ class S {
     );
   }
 
+  /// `Server problem, check your internet connection or send feedback`
+  String get serverExceptionsVocabulary {
+    return Intl.message(
+      'Server problem, check your internet connection or send feedback',
+      name: 'serverExceptionsVocabulary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You do not have rights to this dictionary`
+  String get insufficientPermissionsVocabulary {
+    return Intl.message(
+      'You do not have rights to this dictionary',
+      name: 'insufficientPermissionsVocabulary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No dictionary found, send feedback`
+  String get notFoundVocabulary {
+    return Intl.message(
+      'No dictionary found, send feedback',
+      name: 'notFoundVocabulary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a language`
+  String get chooseALanguage {
+    return Intl.message(
+      'Choose a language',
+      name: 'chooseALanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `For more languages, please add more books with other languages`
+  String get forMoreLanguages {
+    return Intl.message(
+      'For more languages, please add more books with other languages',
+      name: 'forMoreLanguages',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Library`
   String get Library {
     return Intl.message(
@@ -625,6 +685,16 @@ class S {
     return Intl.message(
       'Read',
       name: 'Read',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `words`
+  String get wordsTitle {
+    return Intl.message(
+      'words',
+      name: 'wordsTitle',
       desc: '',
       args: [],
     );

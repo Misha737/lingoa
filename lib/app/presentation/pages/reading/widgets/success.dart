@@ -68,7 +68,7 @@ class SuccessReading extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     CardReading(
-                      language: LanguageGto(
+                      language: LanguageDto(
                         content.language(indexCard).toString(),
                       ).toName(),
                       text: content

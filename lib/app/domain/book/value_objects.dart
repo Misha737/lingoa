@@ -59,8 +59,17 @@ class Sentence extends ValueObject<String> {
     return Sentence._(right(input));
   }
 
-  Sentence._(this.value);
+  String get withoutSymbols {
+    const String regexp =
+        r"[^\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Connector_Punctuation}\p{Join_Control}\s']+";
+
+    return value
+        .getOrElse(() => '')
+        .replaceAll(RegExp(regexp, unicode: true), '');
+  }
 
   List<Word> get toWords =>
-      value.getOrElse(() => '').split(' ').map((e) => Word(e)).toList();
+      withoutSymbols.split(' ').map((e) => Word(e)).toList();
+
+  Sentence._(this.value);
 }

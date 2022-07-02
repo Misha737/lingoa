@@ -18,9 +18,15 @@ class VocabularyRepositoryFirestore implements VocabularyRepository {
   VocabularyRepositoryFirestore(this._firestore);
 
   @override
-  Future<Either<VocabularyFailures, Vocabulary>> get(Language language) async {
+  Future<Either<VocabularyFailures, Vocabulary>> get(Language? language) async {
     try {
       final userDoc = await _firestore.userDocument();
+
+      if (language == null) {
+        final wordsSnapshot = await userDoc.vocabularyCollection.get();
+
+        language = Language(wordsSnapshot.docs.first.id);
+      }
 
       final wordsDoc = await userDoc.wordsDocument(language.getOrCrash()).get();
 
@@ -51,29 +57,6 @@ class VocabularyRepositoryFirestore implements VocabularyRepository {
         wordsDocs
             .map((e) => VocabularyInfoBodyDto.fromFirebase(e).toDomain())
             .toList(),
-      );
-    } on FirebaseException catch (e) {
-      if (e.code.contains(ErrorsCodeFirebase.notFound)) {
-        return left(const VocabularyFailures.notFound());
-      }
-      if (e.code.contains(ErrorsCodeFirebase.permissionDenied)) {
-        return left(const VocabularyFailures.insufficientPermissions());
-      }
-      return left(const VocabularyFailures.serverException());
-    } catch (e) {
-      return left(const VocabularyFailures.unexpected());
-    }
-  }
-
-  @override
-  Future<Either<VocabularyFailures, List<Language>>> getLanguages() async {
-    try {
-      final userDoc = await _firestore.userDocument();
-
-      final wordsSnapshot = await userDoc.vocabularyCollection.get();
-
-      return right(
-        wordsSnapshot.docs.map((e) => Language(e.id)).toList(),
       );
     } on FirebaseException catch (e) {
       if (e.code.contains(ErrorsCodeFirebase.notFound)) {

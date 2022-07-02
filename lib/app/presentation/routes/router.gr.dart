@@ -36,6 +36,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData,
           child: ReadingPage(key: args.key, book: args.book));
+    },
+    LanguagesPageRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const LanguagesPage());
     }
   };
 
@@ -44,7 +48,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(SplashPageRoute.name, path: '/'),
         RouteConfig(AuthPageRoute.name, path: '/auth-page'),
         RouteConfig(CorePageRoute.name, path: '/core-page'),
-        RouteConfig(ReadingPageRoute.name, path: '/')
+        RouteConfig(ReadingPageRoute.name, path: '/'),
+        RouteConfig(LanguagesPageRoute.name, path: '/')
       ];
 }
 
@@ -108,4 +113,12 @@ class ReadingPageRouteArgs {
   String toString() {
     return 'ReadingPageRouteArgs{key: $key, book: $book}';
   }
+}
+
+/// generated route for
+/// [LanguagesPage]
+class LanguagesPageRoute extends PageRouteInfo<void> {
+  const LanguagesPageRoute() : super(LanguagesPageRoute.name, path: '/');
+
+  static const String name = 'LanguagesPageRoute';
 }

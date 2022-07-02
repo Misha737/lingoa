@@ -17,17 +17,6 @@ class WatchVocabularyBloc
   final VocabularyRepository _repository;
   WatchVocabularyBloc(this._repository)
       : super(const WatchVocabularyState.initial()) {
-    on<_Started>(
-      (event, emit) async {
-        final successOrFailure = await _repository.getLanguages();
-
-        successOrFailure.fold(
-          (failure) => emit(WatchVocabularyState.failure(failure)),
-          (languages) => add(WatchVocabularyEvent.watch(languages.first)),
-        );
-      },
-    );
-
     on<_Watch>(
       (event, emit) async {
         emit(const WatchVocabularyState.loading());

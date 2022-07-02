@@ -16,49 +16,42 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$WatchVocabularyEvent {
+  Language? get language => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() getWordsLength,
-    required TResult Function(Language language) watch,
+    required TResult Function(Language? language) watch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getWordsLength,
-    TResult Function(Language language)? watch,
+    TResult Function(Language? language)? watch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getWordsLength,
-    TResult Function(Language language)? watch,
+    TResult Function(Language? language)? watch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_GetWordsLength value) getWordsLength,
     required TResult Function(_Watch value) watch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetWordsLength value)? getWordsLength,
     TResult Function(_Watch value)? watch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetWordsLength value)? getWordsLength,
     TResult Function(_Watch value)? watch,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $WatchVocabularyEventCopyWith<WatchVocabularyEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -67,6 +60,7 @@ abstract class $WatchVocabularyEventCopyWith<$Res> {
   factory $WatchVocabularyEventCopyWith(WatchVocabularyEvent value,
           $Res Function(WatchVocabularyEvent) then) =
       _$WatchVocabularyEventCopyWithImpl<$Res>;
+  $Res call({Language? language});
 }
 
 /// @nodoc
@@ -77,233 +71,27 @@ class _$WatchVocabularyEventCopyWithImpl<$Res>
   final WatchVocabularyEvent _value;
   // ignore: unused_field
   final $Res Function(WatchVocabularyEvent) _then;
+
+  @override
+  $Res call({
+    Object? language = freezed,
+  }) {
+    return _then(_value.copyWith(
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as Language?,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$StartedCopyWithImpl<$Res>
-    extends _$WatchVocabularyEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
-
-  @override
-  _Started get _value => super._value as _Started;
-}
-
-/// @nodoc
-
-class _$_Started implements _Started {
-  const _$_Started();
-
-  @override
-  String toString() {
-    return 'WatchVocabularyEvent.started()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Started);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() getWordsLength,
-    required TResult Function(Language language) watch,
-  }) {
-    return started();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getWordsLength,
-    TResult Function(Language language)? watch,
-  }) {
-    return started?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getWordsLength,
-    TResult Function(Language language)? watch,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_GetWordsLength value) getWordsLength,
-    required TResult Function(_Watch value) watch,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetWordsLength value)? getWordsLength,
-    TResult Function(_Watch value)? watch,
-  }) {
-    return started?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetWordsLength value)? getWordsLength,
-    TResult Function(_Watch value)? watch,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Started implements WatchVocabularyEvent {
-  const factory _Started() = _$_Started;
-}
-
-/// @nodoc
-abstract class _$GetWordsLengthCopyWith<$Res> {
-  factory _$GetWordsLengthCopyWith(
-          _GetWordsLength value, $Res Function(_GetWordsLength) then) =
-      __$GetWordsLengthCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$GetWordsLengthCopyWithImpl<$Res>
-    extends _$WatchVocabularyEventCopyWithImpl<$Res>
-    implements _$GetWordsLengthCopyWith<$Res> {
-  __$GetWordsLengthCopyWithImpl(
-      _GetWordsLength _value, $Res Function(_GetWordsLength) _then)
-      : super(_value, (v) => _then(v as _GetWordsLength));
-
-  @override
-  _GetWordsLength get _value => super._value as _GetWordsLength;
-}
-
-/// @nodoc
-
-class _$_GetWordsLength implements _GetWordsLength {
-  const _$_GetWordsLength();
-
-  @override
-  String toString() {
-    return 'WatchVocabularyEvent.getWordsLength()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetWordsLength);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() getWordsLength,
-    required TResult Function(Language language) watch,
-  }) {
-    return getWordsLength();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getWordsLength,
-    TResult Function(Language language)? watch,
-  }) {
-    return getWordsLength?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getWordsLength,
-    TResult Function(Language language)? watch,
-    required TResult orElse(),
-  }) {
-    if (getWordsLength != null) {
-      return getWordsLength();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_GetWordsLength value) getWordsLength,
-    required TResult Function(_Watch value) watch,
-  }) {
-    return getWordsLength(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetWordsLength value)? getWordsLength,
-    TResult Function(_Watch value)? watch,
-  }) {
-    return getWordsLength?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetWordsLength value)? getWordsLength,
-    TResult Function(_Watch value)? watch,
-    required TResult orElse(),
-  }) {
-    if (getWordsLength != null) {
-      return getWordsLength(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetWordsLength implements WatchVocabularyEvent {
-  const factory _GetWordsLength() = _$_GetWordsLength;
-}
-
-/// @nodoc
-abstract class _$WatchCopyWith<$Res> {
+abstract class _$WatchCopyWith<$Res>
+    implements $WatchVocabularyEventCopyWith<$Res> {
   factory _$WatchCopyWith(_Watch value, $Res Function(_Watch) then) =
       __$WatchCopyWithImpl<$Res>;
-  $Res call({Language language});
+  @override
+  $Res call({Language? language});
 }
 
 /// @nodoc
@@ -324,7 +112,7 @@ class __$WatchCopyWithImpl<$Res>
       language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as Language,
+              as Language?,
     ));
   }
 }
@@ -335,7 +123,7 @@ class _$_Watch implements _Watch {
   const _$_Watch(this.language);
 
   @override
-  final Language language;
+  final Language? language;
 
   @override
   String toString() {
@@ -362,9 +150,7 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() getWordsLength,
-    required TResult Function(Language language) watch,
+    required TResult Function(Language? language) watch,
   }) {
     return watch(language);
   }
@@ -372,9 +158,7 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getWordsLength,
-    TResult Function(Language language)? watch,
+    TResult Function(Language? language)? watch,
   }) {
     return watch?.call(language);
   }
@@ -382,9 +166,7 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getWordsLength,
-    TResult Function(Language language)? watch,
+    TResult Function(Language? language)? watch,
     required TResult orElse(),
   }) {
     if (watch != null) {
@@ -396,8 +178,6 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_GetWordsLength value) getWordsLength,
     required TResult Function(_Watch value) watch,
   }) {
     return watch(this);
@@ -406,8 +186,6 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetWordsLength value)? getWordsLength,
     TResult Function(_Watch value)? watch,
   }) {
     return watch?.call(this);
@@ -416,8 +194,6 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetWordsLength value)? getWordsLength,
     TResult Function(_Watch value)? watch,
     required TResult orElse(),
   }) {
@@ -429,9 +205,11 @@ class _$_Watch implements _Watch {
 }
 
 abstract class _Watch implements WatchVocabularyEvent {
-  const factory _Watch(final Language language) = _$_Watch;
+  const factory _Watch(final Language? language) = _$_Watch;
 
-  Language get language => throw _privateConstructorUsedError;
+  @override
+  Language? get language => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$WatchCopyWith<_Watch> get copyWith => throw _privateConstructorUsedError;
 }

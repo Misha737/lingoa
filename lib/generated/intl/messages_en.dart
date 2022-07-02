@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Repeat password"),
         "Report": MessageLookupByLibrary.simpleMessage("Report"),
         "Response": MessageLookupByLibrary.simpleMessage("Response"),
+        "Search": MessageLookupByLibrary.simpleMessage("Search"),
         "SignIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "SignInHail": MessageLookupByLibrary.simpleMessage("Sign in!"),
         "SignInWithGoogle":
@@ -112,20 +113,32 @@ class MessageLookup extends MessageLookupByLibrary {
             "You may not delete this book"),
         "YourBook": MessageLookupByLibrary.simpleMessage("Your book"),
         "YourName": MessageLookupByLibrary.simpleMessage("Your name"),
+        "chooseALanguage":
+            MessageLookupByLibrary.simpleMessage("Choose a language"),
         "exceedingMaxLength":
             MessageLookupByLibrary.simpleMessage("Too big field"),
         "exceedingMinLengthEnd":
             MessageLookupByLibrary.simpleMessage("characters"),
         "exceedingMinLengthStart":
             MessageLookupByLibrary.simpleMessage("The field is smaller"),
+        "forMoreLanguages": MessageLookupByLibrary.simpleMessage(
+            "For more languages, please add more books with other languages"),
         "insufficientPermissionsBook": MessageLookupByLibrary.simpleMessage(
             "You are not entitled to this book"),
         "insufficientPermissionsLibrary": MessageLookupByLibrary.simpleMessage(
             "You have no right to these books"),
+        "insufficientPermissionsVocabulary":
+            MessageLookupByLibrary.simpleMessage(
+                "You do not have rights to this dictionary"),
+        "notFoundVocabulary": MessageLookupByLibrary.simpleMessage(
+            "No dictionary found, send feedback"),
         "notLevels":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
         "options": MessageLookupByLibrary.simpleMessage("Options"),
+        "serverExceptionsVocabulary": MessageLookupByLibrary.simpleMessage(
+            "Server problem, check your internet connection or send feedback"),
         "unableToUpdateBook":
-            MessageLookupByLibrary.simpleMessage("The book was not found")
+            MessageLookupByLibrary.simpleMessage("The book was not found"),
+        "wordsTitle": MessageLookupByLibrary.simpleMessage("words")
       };
 }

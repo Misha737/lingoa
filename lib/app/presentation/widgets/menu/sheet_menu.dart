@@ -107,7 +107,6 @@ class _ColumnItemsState extends State<_ColumnItems> {
                         color: index == itemSelect
                             ? ColorsLightTheme.white
                             : ColorsLightTheme.gray,
-                        inherit: false,
                       ),
                     ),
                     const Icon(
