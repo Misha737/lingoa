@@ -1,4 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lingoa/app/application/vocabulary/watch/content/bloc.dart';
 import 'package:lingoa/app/domain/vocabulary/vocabulary.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
@@ -22,7 +25,9 @@ class ListTileVocabulary extends StatelessWidget {
       decoration: Dimensions.boxDecoration,
       height: Dimensions.tile.heightSmall,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          // TODO: Зробити якийсть sheet
+        },
         borderRadius: BorderRadius.circular(Dimensions.borderRadius),
         child: Stack(
           alignment: AlignmentDirectional.center,
@@ -80,23 +85,30 @@ class ListTileLanguage extends StatelessWidget {
       decoration: Dimensions.boxDecoration,
       height: Dimensions.tile.heightMedium,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          context.popRoute();
+          context
+              .read<WatchVocabularyBloc>()
+              .add(WatchVocabularyEvent.watch(infoBody.language));
+        },
         borderRadius: BorderRadius.circular(Dimensions.borderRadius),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: Dimensions.d16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(children: [
-                Text(infoBody.language.getOrCrash()),
-                const SizedBox(width: Dimensions.d16),
-                Text(
-                  LanguageDto(infoBody.language.getOrCrash()).toName(),
-                  style: TextStyles.headline5.copyWith(
-                    color: ColorsLightTheme.lightMediumGray,
+              Row(
+                children: [
+                  Text(infoBody.language.getOrCrash()),
+                  const SizedBox(width: Dimensions.d16),
+                  Text(
+                    LanguageDto(infoBody.language.getOrCrash()).toName(),
+                    style: TextStyles.headline5.copyWith(
+                      color: ColorsLightTheme.lightMediumGray,
+                    ),
                   ),
-                ),
-              ]),
+                ],
+              ),
               Text(
                 '${infoBody.lengthWords} ${S().wordsTitle}',
                 style: TextStyles.label1.copyWith(

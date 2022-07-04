@@ -27,18 +27,20 @@ class VocabularyContentBuilder extends StatelessWidget {
           success: (state) => _SuccessVocabularyList(
             vocabulary: state.vocabulary,
           ),
-          failure: (state) => InformationTemplate(
-            imageName: AssetsName.images.welcome,
-            description: state.failure.map(
-              serverException: (_) => S().serverExceptionsVocabulary,
-              unexpected: (_) => S().SomethingWentWrong,
-              insufficientPermissions: (_) =>
-                  S().insufficientPermissionsVocabulary,
-              notFound: (_) => S().notFoundVocabulary,
+          failure: (state) => Center(
+            child: InformationTemplate(
+              imageName: AssetsName.images.welcome,
+              description: state.failure.map(
+                serverException: (_) => S().serverExceptionsVocabulary,
+                unexpected: (_) => S().SomethingWentWrong,
+                insufficientPermissions: (_) =>
+                    S().insufficientPermissionsVocabulary,
+                notFound: (_) => S().notFoundVocabulary,
+              ),
+              labelButton: S().Response,
+              iconButton: Icons.replay,
+              onPressed: () {},
             ),
-            labelButton: S().Response,
-            iconButton: Icons.replay,
-            onPressed: () {},
           ),
         );
       },

@@ -40,8 +40,7 @@ class _Builder extends StatelessWidget {
         ..add(const WatchBodyVocabularyEvent.watch()),
       builder: (context, state) => state.map(
         initial: (_) => const SizedBox.shrink(),
-        loading: (_) => const Padding(
-          padding: EdgeInsets.only(top: Dimensions.d24),
+        loading: (_) => const Center(
           child: CircularProgressIndicator(),
         ),
         success: (state) => _Success(

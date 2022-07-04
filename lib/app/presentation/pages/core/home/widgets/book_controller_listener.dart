@@ -18,34 +18,35 @@ class BookControllerListener extends StatelessWidget {
     return BlocListener<BookControllerBloc, BookControllerState>(
       listener: (context, state) {
         state.maybeMap(
-            orElse: () {},
-            deleteFailure: (state) => showDialogApp(
-                  context,
-                  title: state.failure.maybeMap(
-                    orElse: () => S().Oops,
-                    unexpected: (_) => S().Oops,
-                    insufficientPermissions: (_) => S().OperationNotAllowed,
-                    unableToUpdate: (_) => S().ThisBookCouldNotBeDeleted,
-                  ),
-                  content: state.failure.maybeMap(
-                    orElse: () => S().SomethingWentWrong,
-                    unexpected: (_) => S().SomethingWentWrong,
-                    insufficientPermissions: (_) => S().YouMayNotDeleteThisBook,
-                    unableToUpdate: (_) => S().LeaveAReportToResolve,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(S().Report),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        context.popRoute();
-                      },
-                      child: Text(S().Repeat),
-                    )
-                  ],
-                ));
+          orElse: () {},
+          deleteFailure: (state) => showDialogApp(
+            context,
+            title: state.failure.maybeMap(
+              orElse: () => S().Oops,
+              unexpected: (_) => S().Oops,
+              insufficientPermissions: (_) => S().OperationNotAllowed,
+              unableToUpdate: (_) => S().ThisBookCouldNotBeDeleted,
+            ),
+            content: state.failure.maybeMap(
+              orElse: () => S().SomethingWentWrong,
+              unexpected: (_) => S().SomethingWentWrong,
+              insufficientPermissions: (_) => S().YouMayNotDeleteThisBook,
+              unableToUpdate: (_) => S().LeaveAReportToResolve,
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {},
+                child: Text(S().Report),
+              ),
+              TextButton(
+                onPressed: () {
+                  context.popRoute();
+                },
+                child: Text(S().Repeat),
+              )
+            ],
+          ),
+        );
       },
       child: child,
     );

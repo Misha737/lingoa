@@ -5,6 +5,7 @@ import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/pages/core/home/widgets/information_template.dart';
 import 'package:lingoa/app/presentation/pages/core/home/widgets/success.dart';
+import 'package:lingoa/app/presentation/pages/core/widgets/search.dart';
 import 'package:lingoa/generated/l10n.dart';
 
 class BuilderLibraryWatch extends StatelessWidget {
@@ -20,29 +21,36 @@ class BuilderLibraryWatch extends StatelessWidget {
               horizontal: Dimensions.mainHorizontalPadding,
               vertical: Dimensions.d16,
             ),
-            child: state.map(
-              initial: (_) => const SizedBox.shrink(),
-              loading: (_) => const Center(
-                child: CircularProgressIndicator(),
-              ),
-              success: (state) => SuccessColumnHome(
-                booksRead: state.booksRead,
-                booksNotRead: state.booksNotRead,
-              ),
-              failure: (state) => Center(
-                child: InformationTemplate(
-                  imageName: AssetsName.images.addFile,
-                  description: state.failure.maybeMap(
-                    orElse: () => S().SomethingWentWrong,
-                    serverException: (_) => S().ThereProblemServer,
-                    insufficientPermissions: (_) =>
-                        S().insufficientPermissionsLibrary,
+            child: Column(
+              children: [
+                const SearchButton(), // TODO: onTap не null якщо state = success
+                state.map(
+                  initial: (_) => const SizedBox.shrink(),
+                  loading: (_) => const Padding(
+                    // TODO: По цетру
+                    padding: EdgeInsets.only(top: Dimensions.d16),
+                    child: CircularProgressIndicator(),
                   ),
-                  labelButton: S().Report,
-                  iconButton: Icons.report_outlined,
-                  onPressed: () {},
+                  success: (state) => SuccessColumnHome(
+                    booksRead: state.booksRead,
+                    booksNotRead: state.booksNotRead,
+                  ),
+                  failure: (state) => Center(
+                    child: InformationTemplate(
+                      imageName: AssetsName.images.addFile,
+                      description: state.failure.maybeMap(
+                        orElse: () => S().SomethingWentWrong,
+                        serverException: (_) => S().ThereProblemServer,
+                        insufficientPermissions: (_) =>
+                            S().insufficientPermissionsLibrary,
+                      ),
+                      labelButton: S().Report,
+                      iconButton: Icons.report_outlined,
+                      onPressed: () {},
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
         );

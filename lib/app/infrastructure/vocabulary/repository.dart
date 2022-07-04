@@ -19,6 +19,7 @@ class VocabularyRepositoryFirestore implements VocabularyRepository {
 
   @override
   Future<Either<VocabularyFailures, Vocabulary>> get(Language? language) async {
+    // TODO: Зробити щось з тим що колекції користувача може неіснувати
     try {
       final userDoc = await _firestore.userDocument();
 
