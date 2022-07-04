@@ -8,5 +8,5 @@ abstract class StatisticsFailures with _$StatisticsFailures {
   const factory StatisticsFailures.unexpected() = _Unexpected;
   const factory StatisticsFailures.insufficientPermissions() =
       _InsufficientPermissions;
-  const factory StatisticsFailures.unableToUpdate() = _UnableToUpdate;
+  const factory StatisticsFailures.notFound() = _NotFound;
 }

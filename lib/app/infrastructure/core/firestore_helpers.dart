@@ -19,6 +19,8 @@ extension FirebaseFirestoreX on FirebaseFirestore {
 }
 
 extension DocumentReferenceX on DocumentReference {
+  CollectionReference get _commonCollection => collection('common');
+
   CollectionReference get libraryCollection => collection('library');
 
   CollectionReference _commonBookCollection(String bookId) =>
@@ -34,4 +36,7 @@ extension DocumentReferenceX on DocumentReference {
 
   DocumentReference wordsDocument(String language) =>
       vocabularyCollection.doc(language);
+
+  DocumentReference get statisticsDocument =>
+      _commonCollection.doc('statistics');
 }

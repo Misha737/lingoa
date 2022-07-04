@@ -57,6 +57,7 @@ class WatchBookContentBloc
       },
     );
 
+    // TODO: Щось придумаити с тим що треба звертатис 2 раза в репозіторій для оновлення статистики (Може помістити в однин блок)
     on<_Next>(
       (event, emit) async {
         int targetIndex = event.targetIndex;

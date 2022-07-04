@@ -21,7 +21,7 @@ mixin _$StatisticsFailures {
     required TResult Function() serverException,
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
-    required TResult Function() unableToUpdate,
+    required TResult Function() notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$StatisticsFailures {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$StatisticsFailures {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,7 +47,7 @@ mixin _$StatisticsFailures {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
-    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_NotFound value) notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,7 +55,7 @@ mixin _$StatisticsFailures {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,7 +63,7 @@ mixin _$StatisticsFailures {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,7 +130,7 @@ class _$_ServerException implements _ServerException {
     required TResult Function() serverException,
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
-    required TResult Function() unableToUpdate,
+    required TResult Function() notFound,
   }) {
     return serverException();
   }
@@ -141,7 +141,7 @@ class _$_ServerException implements _ServerException {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
   }) {
     return serverException?.call();
   }
@@ -152,7 +152,7 @@ class _$_ServerException implements _ServerException {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
     required TResult orElse(),
   }) {
     if (serverException != null) {
@@ -168,7 +168,7 @@ class _$_ServerException implements _ServerException {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
-    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_NotFound value) notFound,
   }) {
     return serverException(this);
   }
@@ -179,7 +179,7 @@ class _$_ServerException implements _ServerException {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
   }) {
     return serverException?.call(this);
   }
@@ -190,7 +190,7 @@ class _$_ServerException implements _ServerException {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) {
     if (serverException != null) {
@@ -248,7 +248,7 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function() serverException,
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
-    required TResult Function() unableToUpdate,
+    required TResult Function() notFound,
   }) {
     return unexpected();
   }
@@ -259,7 +259,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
   }) {
     return unexpected?.call();
   }
@@ -270,7 +270,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -286,7 +286,7 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
-    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_NotFound value) notFound,
   }) {
     return unexpected(this);
   }
@@ -297,7 +297,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
   }) {
     return unexpected?.call(this);
   }
@@ -308,7 +308,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -367,7 +367,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     required TResult Function() serverException,
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
-    required TResult Function() unableToUpdate,
+    required TResult Function() notFound,
   }) {
     return insufficientPermissions();
   }
@@ -378,7 +378,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
   }) {
     return insufficientPermissions?.call();
   }
@@ -389,7 +389,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -405,7 +405,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
-    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_NotFound value) notFound,
   }) {
     return insufficientPermissions(this);
   }
@@ -416,7 +416,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
   }) {
     return insufficientPermissions?.call(this);
   }
@@ -427,7 +427,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -442,38 +442,36 @@ abstract class _InsufficientPermissions implements StatisticsFailures {
 }
 
 /// @nodoc
-abstract class _$UnableToUpdateCopyWith<$Res> {
-  factory _$UnableToUpdateCopyWith(
-          _UnableToUpdate value, $Res Function(_UnableToUpdate) then) =
-      __$UnableToUpdateCopyWithImpl<$Res>;
+abstract class _$NotFoundCopyWith<$Res> {
+  factory _$NotFoundCopyWith(_NotFound value, $Res Function(_NotFound) then) =
+      __$NotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnableToUpdateCopyWithImpl<$Res>
+class __$NotFoundCopyWithImpl<$Res>
     extends _$StatisticsFailuresCopyWithImpl<$Res>
-    implements _$UnableToUpdateCopyWith<$Res> {
-  __$UnableToUpdateCopyWithImpl(
-      _UnableToUpdate _value, $Res Function(_UnableToUpdate) _then)
-      : super(_value, (v) => _then(v as _UnableToUpdate));
+    implements _$NotFoundCopyWith<$Res> {
+  __$NotFoundCopyWithImpl(_NotFound _value, $Res Function(_NotFound) _then)
+      : super(_value, (v) => _then(v as _NotFound));
 
   @override
-  _UnableToUpdate get _value => super._value as _UnableToUpdate;
+  _NotFound get _value => super._value as _NotFound;
 }
 
 /// @nodoc
 
-class _$_UnableToUpdate implements _UnableToUpdate {
-  const _$_UnableToUpdate();
+class _$_NotFound implements _NotFound {
+  const _$_NotFound();
 
   @override
   String toString() {
-    return 'StatisticsFailures.unableToUpdate()';
+    return 'StatisticsFailures.notFound()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UnableToUpdate);
+        (other.runtimeType == runtimeType && other is _NotFound);
   }
 
   @override
@@ -485,9 +483,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     required TResult Function() serverException,
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
-    required TResult Function() unableToUpdate,
+    required TResult Function() notFound,
   }) {
-    return unableToUpdate();
+    return notFound();
   }
 
   @override
@@ -496,9 +494,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
   }) {
-    return unableToUpdate?.call();
+    return notFound?.call();
   }
 
   @override
@@ -507,11 +505,11 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     TResult Function()? serverException,
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
-    TResult Function()? unableToUpdate,
+    TResult Function()? notFound,
     required TResult orElse(),
   }) {
-    if (unableToUpdate != null) {
-      return unableToUpdate();
+    if (notFound != null) {
+      return notFound();
     }
     return orElse();
   }
@@ -523,9 +521,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     required TResult Function(_Unexpected value) unexpected,
     required TResult Function(_InsufficientPermissions value)
         insufficientPermissions,
-    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_NotFound value) notFound,
   }) {
-    return unableToUpdate(this);
+    return notFound(this);
   }
 
   @override
@@ -534,9 +532,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
   }) {
-    return unableToUpdate?.call(this);
+    return notFound?.call(this);
   }
 
   @override
@@ -545,16 +543,16 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     TResult Function(_ServerException value)? serverException,
     TResult Function(_Unexpected value)? unexpected,
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) {
-    if (unableToUpdate != null) {
-      return unableToUpdate(this);
+    if (notFound != null) {
+      return notFound(this);
     }
     return orElse();
   }
 }
 
-abstract class _UnableToUpdate implements StatisticsFailures {
-  const factory _UnableToUpdate() = _$_UnableToUpdate;
+abstract class _NotFound implements StatisticsFailures {
+  const factory _NotFound() = _$_NotFound;
 }
