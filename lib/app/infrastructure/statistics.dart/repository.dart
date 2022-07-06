@@ -43,11 +43,14 @@ class StatisticsRepositoryFirestore implements StatisticsRepository {
   }
 
   @override
-  Future<Either<StatisticsFailures, Unit>> update() async {
+  Future<Either<StatisticsFailures, Unit>> update(
+      StatisticsDynamic statistics) async {
     try {
       final userDoc = await _firestore.userDocument();
 
-      userDoc.statisticsDocument.update({});
+      userDoc.statisticsDocument.update({
+        'dynamic': StatisticsDynamicDto.fromDomain(statistics).toJson(),
+      });
 
       return right(unit);
     } on FirebaseException catch (error) {
