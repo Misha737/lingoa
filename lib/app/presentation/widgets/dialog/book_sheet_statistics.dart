@@ -4,7 +4,7 @@ import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
-import 'package:lingoa/app/presentation/widgets/cards/statistics/states.dart';
+import 'package:lingoa/app/presentation/widgets/cards/statistics/builders.dart';
 import 'package:lingoa/generated/l10n.dart';
 
 import '../cards/books/statistics.dart';
@@ -58,7 +58,7 @@ Future<T?> showBookStatistics<T extends Object?>(
                             const SizedBox(
                               height: Dimensions.d12,
                             ),
-                            StatesStatisticsBook(book: book),
+                            BuilderStatisticsBook(book: book),
                             const SizedBox(
                               height: Dimensions.d4,
                             ),

@@ -130,11 +130,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "insufficientPermissionsVocabulary":
             MessageLookupByLibrary.simpleMessage(
                 "You do not have rights to this dictionary"),
+        "languages": MessageLookupByLibrary.simpleMessage("Languages"),
         "notFoundVocabulary": MessageLookupByLibrary.simpleMessage(
             "No dictionary found, send feedback"),
         "notLevels":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
         "options": MessageLookupByLibrary.simpleMessage("Options"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "serverExceptionsVocabulary": MessageLookupByLibrary.simpleMessage(
             "Server problem, check your internet connection or send feedback"),
         "unableToUpdateBook":

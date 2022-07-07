@@ -680,6 +680,26 @@ class S {
     );
   }
 
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Languages`
+  String get languages {
+    return Intl.message(
+      'Languages',
+      name: 'languages',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Read`
   String get Read {
     return Intl.message(

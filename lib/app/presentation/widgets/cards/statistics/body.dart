@@ -3,16 +3,16 @@ import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
 
-import 'card.dart';
-
-class StatisticsCards extends StatelessWidget {
-  const StatisticsCards({
+class StatisticsBody extends StatelessWidget {
+  const StatisticsBody({
     Key? key,
-    required this.statistics,
+    required this.itemBuilder,
+    required this.length,
     required this.title,
   }) : super(key: key);
 
-  final Map<String, dynamic> statistics;
+  final Widget Function(int index) itemBuilder;
+  final int length;
   final String title;
 
   @override
@@ -33,19 +33,16 @@ class StatisticsCards extends StatelessWidget {
         ),
         const SizedBox(height: Dimensions.d4),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: Column(
                 children: List.generate(
-                  statistics.length,
+                  length,
                   (index) => index % 2 == 0
-                      ? StatisticsCard(
-                          name: statistics.keys.elementAt(index),
-                          value: statistics.values.elementAt(index),
-                          icon: Icons.book_rounded,
-                        )
-                      : const SizedBox(),
+                      ? itemBuilder(index)
+                      : const SizedBox.shrink(),
                 ),
               ),
             ),
@@ -53,14 +50,10 @@ class StatisticsCards extends StatelessWidget {
             Expanded(
               child: Column(
                 children: List.generate(
-                  statistics.length,
+                  length,
                   (index) => index % 2 == 0
-                      ? const SizedBox()
-                      : StatisticsCard(
-                          name: statistics.keys.elementAt(index),
-                          value: statistics.values.elementAt(index),
-                          icon: Icons.book_rounded,
-                        ),
+                      ? const SizedBox.shrink()
+                      : itemBuilder(index),
                 ),
               ),
             ),

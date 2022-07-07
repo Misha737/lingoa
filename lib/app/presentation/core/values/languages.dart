@@ -6,9 +6,12 @@ class LanguageDto {
   final String _language;
 
   // iso 639-1
+  // TODO: Доробити
   final Map<String, String> _languages = {
     'en': 'English',
-    'ua': 'Українська', // TODO: Доробити
+    'ua': 'Українська',
+    'pl': 'Polski',
+    'de': 'Deutsch',
   };
 
   String toName() {

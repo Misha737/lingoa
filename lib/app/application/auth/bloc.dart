@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lingoa/app/domain/auth/i_auth_facade.dart';
+import 'package:lingoa/app/domain/auth/user.dart';
 
 part 'event.dart';
 part 'state.dart';
@@ -17,7 +18,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
       emit(userOption.fold(
         () => const AuthState.unauthenticated(),
-        (_) => const AuthState.authenticated(),
+        (user) => AuthState.authenticated(user),
       ));
     });
     on<_SignetOut>((_, emit) async {

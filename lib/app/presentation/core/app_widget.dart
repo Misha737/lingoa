@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:lingoa/app/application/auth/bloc.dart';
 import 'package:lingoa/app/application/library/watch/body/bloc.dart';
+import 'package:lingoa/app/application/statistics/watch/bloc.dart';
+import 'package:lingoa/app/application/vocabulary/watch/body/bloc.dart';
 import 'package:lingoa/app/application/vocabulary/watch/content/bloc.dart';
 import 'package:lingoa/app/presentation/core/values/styles/themes.dart';
 import 'package:lingoa/app/presentation/routes/router.dart';
@@ -23,17 +25,25 @@ class AppWidget extends StatelessWidget {
       builder: (theme, darkTheme) => MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) =>
+            create: (_) =>
                 getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
           ),
           BlocProvider(
-            create: (context) =>
+            create: (_) =>
                 getIt<LibraryWatchBloc>()..add(const LibraryWatchEvent.sort(0)),
           ),
           BlocProvider(
-            create: (context) => getIt<WatchVocabularyBloc>()
+            create: (_) => getIt<WatchVocabularyBloc>()
               ..add(const WatchVocabularyEvent.watch(null)),
           ),
+          BlocProvider(
+            create: (_) => getIt<WatchStatisticsBloc>()
+              ..add(const WatchStatisticsEvent.watch()),
+          ),
+          BlocProvider(
+            create: (_) => getIt<WatchBodyVocabularyBloc>()
+              ..add(const WatchBodyVocabularyEvent.watch()),
+          )
         ],
         child: MaterialApp.router(
           localizationsDelegates: const [

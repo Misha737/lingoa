@@ -8,6 +8,7 @@ abstract class User with _$User {
   const factory User({
     required UniqueId id,
     required Name name,
+    required String photoURL,
   }) = _User;
 }
 

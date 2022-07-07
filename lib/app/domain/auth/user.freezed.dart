@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$User {
   UniqueId get id => throw _privateConstructorUsedError;
   Name get name => throw _privateConstructorUsedError;
+  String get photoURL => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -27,7 +28,7 @@ mixin _$User {
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
-  $Res call({UniqueId id, Name name});
+  $Res call({UniqueId id, Name name, String photoURL});
 }
 
 /// @nodoc
@@ -42,6 +43,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? photoURL = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -52,6 +54,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as Name,
+      photoURL: photoURL == freezed
+          ? _value.photoURL
+          : photoURL // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -61,7 +67,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
       __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, Name name});
+  $Res call({UniqueId id, Name name, String photoURL});
 }
 
 /// @nodoc
@@ -77,6 +83,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? photoURL = freezed,
   }) {
     return _then(_User(
       id: id == freezed
@@ -87,6 +94,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as Name,
+      photoURL: photoURL == freezed
+          ? _value.photoURL
+          : photoURL // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -94,16 +105,18 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_User implements _User {
-  const _$_User({required this.id, required this.name});
+  const _$_User({required this.id, required this.name, required this.photoURL});
 
   @override
   final UniqueId id;
   @override
   final Name name;
+  @override
+  final String photoURL;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name)';
+    return 'User(id: $id, name: $name, photoURL: $photoURL)';
   }
 
   @override
@@ -112,14 +125,16 @@ class _$_User implements _User {
         (other.runtimeType == runtimeType &&
             other is _User &&
             const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.photoURL, photoURL));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name));
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(photoURL));
 
   @JsonKey(ignore: true)
   @override
@@ -128,13 +143,17 @@ class _$_User implements _User {
 }
 
 abstract class _User implements User {
-  const factory _User({required final UniqueId id, required final Name name}) =
-      _$_User;
+  const factory _User(
+      {required final UniqueId id,
+      required final Name name,
+      required final String photoURL}) = _$_User;
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
   @override
   Name get name => throw _privateConstructorUsedError;
+  @override
+  String get photoURL => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
