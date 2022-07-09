@@ -73,4 +73,16 @@ class ValueValidator {
       ));
     }
   }
+
+  static Either<ValueFailure<String>, String> stringIsList(
+      String input, List<String> listString) {
+    if (listString.contains(input)) {
+      return right(input);
+    } else {
+      return left(ValueFailure.itemNotFound(
+        valueFailure: input,
+        listString: listString,
+      ));
+    }
+  }
 }

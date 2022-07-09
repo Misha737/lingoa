@@ -50,26 +50,3 @@ class Sentences extends ValueObject<List<Sentence>> {
 
   Sentences._(this.value);
 }
-
-class Sentence extends ValueObject<String> {
-  @override
-  final Either<ValueFailure<String>, String> value;
-
-  factory Sentence(String input) {
-    return Sentence._(right(input));
-  }
-
-  String get withoutSymbols {
-    const String regexp =
-        r"[^\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Connector_Punctuation}\p{Join_Control}\s']+";
-
-    return value
-        .getOrElse(() => '')
-        .replaceAll(RegExp(regexp, unicode: true), '');
-  }
-
-  List<Word> get toWords =>
-      withoutSymbols.split(' ').map((e) => Word(e)).toList();
-
-  Sentence._(this.value);
-}

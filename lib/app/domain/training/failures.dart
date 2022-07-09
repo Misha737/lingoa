@@ -8,5 +8,5 @@ abstract class TrainingFailures with _$TrainingFailures {
   const factory TrainingFailures.unexpected() = _Unexpected;
   const factory TrainingFailures.insufficientPermissions() =
       _InsufficientPermissions;
-  const factory TrainingFailures.unableToUpdate() = _UnableToUpdate;
+  const factory TrainingFailures.notFound() = _NotFound;
 }

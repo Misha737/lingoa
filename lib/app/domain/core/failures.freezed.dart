@@ -24,6 +24,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T valueFailure) invalidEmailAddress,
     required TResult Function(T oldVersion) oldVersion,
     required TResult Function(T valueFailure, T levelingInput) notLevels,
+    required TResult Function(T valueFailure, List<T> listString) itemNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(NoCharDog<T> value) invalidEmailAddress,
     required TResult Function(_OldVersion<T> value) oldVersion,
     required TResult Function(_NotLevels<T> value) notLevels,
+    required TResult Function(_ItemNotFound<T> value) itemNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +69,7 @@ mixin _$ValueFailure<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +80,7 @@ mixin _$ValueFailure<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -166,6 +172,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(T valueFailure) invalidEmailAddress,
     required TResult Function(T oldVersion) oldVersion,
     required TResult Function(T valueFailure, T levelingInput) notLevels,
+    required TResult Function(T valueFailure, List<T> listString) itemNotFound,
   }) {
     return empty(valueFailure);
   }
@@ -179,6 +186,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
   }) {
     return empty?.call(valueFailure);
   }
@@ -192,6 +200,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -209,6 +218,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(NoCharDog<T> value) invalidEmailAddress,
     required TResult Function(_OldVersion<T> value) oldVersion,
     required TResult Function(_NotLevels<T> value) notLevels,
+    required TResult Function(_ItemNotFound<T> value) itemNotFound,
   }) {
     return empty(this);
   }
@@ -222,6 +232,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
   }) {
     return empty?.call(this);
   }
@@ -235,6 +246,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -337,6 +349,7 @@ class _$ExceedingMaxLength<T> implements ExceedingMaxLength<T> {
     required TResult Function(T valueFailure) invalidEmailAddress,
     required TResult Function(T oldVersion) oldVersion,
     required TResult Function(T valueFailure, T levelingInput) notLevels,
+    required TResult Function(T valueFailure, List<T> listString) itemNotFound,
   }) {
     return exceedingMaxLength(valueFailure, maxLength);
   }
@@ -350,6 +363,7 @@ class _$ExceedingMaxLength<T> implements ExceedingMaxLength<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
   }) {
     return exceedingMaxLength?.call(valueFailure, maxLength);
   }
@@ -363,6 +377,7 @@ class _$ExceedingMaxLength<T> implements ExceedingMaxLength<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
     required TResult orElse(),
   }) {
     if (exceedingMaxLength != null) {
@@ -380,6 +395,7 @@ class _$ExceedingMaxLength<T> implements ExceedingMaxLength<T> {
     required TResult Function(NoCharDog<T> value) invalidEmailAddress,
     required TResult Function(_OldVersion<T> value) oldVersion,
     required TResult Function(_NotLevels<T> value) notLevels,
+    required TResult Function(_ItemNotFound<T> value) itemNotFound,
   }) {
     return exceedingMaxLength(this);
   }
@@ -393,6 +409,7 @@ class _$ExceedingMaxLength<T> implements ExceedingMaxLength<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
   }) {
     return exceedingMaxLength?.call(this);
   }
@@ -406,6 +423,7 @@ class _$ExceedingMaxLength<T> implements ExceedingMaxLength<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
     required TResult orElse(),
   }) {
     if (exceedingMaxLength != null) {
@@ -511,6 +529,7 @@ class _$ExceedingMinLength<T> implements ExceedingMinLength<T> {
     required TResult Function(T valueFailure) invalidEmailAddress,
     required TResult Function(T oldVersion) oldVersion,
     required TResult Function(T valueFailure, T levelingInput) notLevels,
+    required TResult Function(T valueFailure, List<T> listString) itemNotFound,
   }) {
     return exceedingMinLength(valueFailure, minLength);
   }
@@ -524,6 +543,7 @@ class _$ExceedingMinLength<T> implements ExceedingMinLength<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
   }) {
     return exceedingMinLength?.call(valueFailure, minLength);
   }
@@ -537,6 +557,7 @@ class _$ExceedingMinLength<T> implements ExceedingMinLength<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
     required TResult orElse(),
   }) {
     if (exceedingMinLength != null) {
@@ -554,6 +575,7 @@ class _$ExceedingMinLength<T> implements ExceedingMinLength<T> {
     required TResult Function(NoCharDog<T> value) invalidEmailAddress,
     required TResult Function(_OldVersion<T> value) oldVersion,
     required TResult Function(_NotLevels<T> value) notLevels,
+    required TResult Function(_ItemNotFound<T> value) itemNotFound,
   }) {
     return exceedingMinLength(this);
   }
@@ -567,6 +589,7 @@ class _$ExceedingMinLength<T> implements ExceedingMinLength<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
   }) {
     return exceedingMinLength?.call(this);
   }
@@ -580,6 +603,7 @@ class _$ExceedingMinLength<T> implements ExceedingMinLength<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
     required TResult orElse(),
   }) {
     if (exceedingMinLength != null) {
@@ -673,6 +697,7 @@ class _$NoCharDog<T> implements NoCharDog<T> {
     required TResult Function(T valueFailure) invalidEmailAddress,
     required TResult Function(T oldVersion) oldVersion,
     required TResult Function(T valueFailure, T levelingInput) notLevels,
+    required TResult Function(T valueFailure, List<T> listString) itemNotFound,
   }) {
     return invalidEmailAddress(valueFailure);
   }
@@ -686,6 +711,7 @@ class _$NoCharDog<T> implements NoCharDog<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
   }) {
     return invalidEmailAddress?.call(valueFailure);
   }
@@ -699,6 +725,7 @@ class _$NoCharDog<T> implements NoCharDog<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
     required TResult orElse(),
   }) {
     if (invalidEmailAddress != null) {
@@ -716,6 +743,7 @@ class _$NoCharDog<T> implements NoCharDog<T> {
     required TResult Function(NoCharDog<T> value) invalidEmailAddress,
     required TResult Function(_OldVersion<T> value) oldVersion,
     required TResult Function(_NotLevels<T> value) notLevels,
+    required TResult Function(_ItemNotFound<T> value) itemNotFound,
   }) {
     return invalidEmailAddress(this);
   }
@@ -729,6 +757,7 @@ class _$NoCharDog<T> implements NoCharDog<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
   }) {
     return invalidEmailAddress?.call(this);
   }
@@ -742,6 +771,7 @@ class _$NoCharDog<T> implements NoCharDog<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
     required TResult orElse(),
   }) {
     if (invalidEmailAddress != null) {
@@ -832,6 +862,7 @@ class _$_OldVersion<T> implements _OldVersion<T> {
     required TResult Function(T valueFailure) invalidEmailAddress,
     required TResult Function(T oldVersion) oldVersion,
     required TResult Function(T valueFailure, T levelingInput) notLevels,
+    required TResult Function(T valueFailure, List<T> listString) itemNotFound,
   }) {
     return oldVersion(this.oldVersion);
   }
@@ -845,6 +876,7 @@ class _$_OldVersion<T> implements _OldVersion<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
   }) {
     return oldVersion?.call(this.oldVersion);
   }
@@ -858,6 +890,7 @@ class _$_OldVersion<T> implements _OldVersion<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
     required TResult orElse(),
   }) {
     if (oldVersion != null) {
@@ -875,6 +908,7 @@ class _$_OldVersion<T> implements _OldVersion<T> {
     required TResult Function(NoCharDog<T> value) invalidEmailAddress,
     required TResult Function(_OldVersion<T> value) oldVersion,
     required TResult Function(_NotLevels<T> value) notLevels,
+    required TResult Function(_ItemNotFound<T> value) itemNotFound,
   }) {
     return oldVersion(this);
   }
@@ -888,6 +922,7 @@ class _$_OldVersion<T> implements _OldVersion<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
   }) {
     return oldVersion?.call(this);
   }
@@ -901,6 +936,7 @@ class _$_OldVersion<T> implements _OldVersion<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
     required TResult orElse(),
   }) {
     if (oldVersion != null) {
@@ -1002,6 +1038,7 @@ class _$_NotLevels<T> implements _NotLevels<T> {
     required TResult Function(T valueFailure) invalidEmailAddress,
     required TResult Function(T oldVersion) oldVersion,
     required TResult Function(T valueFailure, T levelingInput) notLevels,
+    required TResult Function(T valueFailure, List<T> listString) itemNotFound,
   }) {
     return notLevels(valueFailure, levelingInput);
   }
@@ -1015,6 +1052,7 @@ class _$_NotLevels<T> implements _NotLevels<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
   }) {
     return notLevels?.call(valueFailure, levelingInput);
   }
@@ -1028,6 +1066,7 @@ class _$_NotLevels<T> implements _NotLevels<T> {
     TResult Function(T valueFailure)? invalidEmailAddress,
     TResult Function(T oldVersion)? oldVersion,
     TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
     required TResult orElse(),
   }) {
     if (notLevels != null) {
@@ -1045,6 +1084,7 @@ class _$_NotLevels<T> implements _NotLevels<T> {
     required TResult Function(NoCharDog<T> value) invalidEmailAddress,
     required TResult Function(_OldVersion<T> value) oldVersion,
     required TResult Function(_NotLevels<T> value) notLevels,
+    required TResult Function(_ItemNotFound<T> value) itemNotFound,
   }) {
     return notLevels(this);
   }
@@ -1058,6 +1098,7 @@ class _$_NotLevels<T> implements _NotLevels<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
   }) {
     return notLevels?.call(this);
   }
@@ -1071,6 +1112,7 @@ class _$_NotLevels<T> implements _NotLevels<T> {
     TResult Function(NoCharDog<T> value)? invalidEmailAddress,
     TResult Function(_OldVersion<T> value)? oldVersion,
     TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
     required TResult orElse(),
   }) {
     if (notLevels != null) {
@@ -1089,5 +1131,190 @@ abstract class _NotLevels<T> implements ValueFailure<T> {
   T get levelingInput => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$NotLevelsCopyWith<T, _NotLevels<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ItemNotFoundCopyWith<T, $Res> {
+  factory _$ItemNotFoundCopyWith(
+          _ItemNotFound<T> value, $Res Function(_ItemNotFound<T>) then) =
+      __$ItemNotFoundCopyWithImpl<T, $Res>;
+  $Res call({T valueFailure, List<T> listString});
+}
+
+/// @nodoc
+class __$ItemNotFoundCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$ItemNotFoundCopyWith<T, $Res> {
+  __$ItemNotFoundCopyWithImpl(
+      _ItemNotFound<T> _value, $Res Function(_ItemNotFound<T>) _then)
+      : super(_value, (v) => _then(v as _ItemNotFound<T>));
+
+  @override
+  _ItemNotFound<T> get _value => super._value as _ItemNotFound<T>;
+
+  @override
+  $Res call({
+    Object? valueFailure = freezed,
+    Object? listString = freezed,
+  }) {
+    return _then(_ItemNotFound<T>(
+      valueFailure: valueFailure == freezed
+          ? _value.valueFailure
+          : valueFailure // ignore: cast_nullable_to_non_nullable
+              as T,
+      listString: listString == freezed
+          ? _value.listString
+          : listString // ignore: cast_nullable_to_non_nullable
+              as List<T>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ItemNotFound<T> implements _ItemNotFound<T> {
+  const _$_ItemNotFound(
+      {required this.valueFailure, required final List<T> listString})
+      : _listString = listString;
+
+  @override
+  final T valueFailure;
+  final List<T> _listString;
+  @override
+  List<T> get listString {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listString);
+  }
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.itemNotFound(valueFailure: $valueFailure, listString: $listString)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ItemNotFound<T> &&
+            const DeepCollectionEquality()
+                .equals(other.valueFailure, valueFailure) &&
+            const DeepCollectionEquality()
+                .equals(other.listString, listString));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(valueFailure),
+      const DeepCollectionEquality().hash(listString));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ItemNotFoundCopyWith<T, _ItemNotFound<T>> get copyWith =>
+      __$ItemNotFoundCopyWithImpl<T, _ItemNotFound<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T valueFailure) empty,
+    required TResult Function(T valueFailure, int maxLength) exceedingMaxLength,
+    required TResult Function(T valueFailure, int minLength) exceedingMinLength,
+    required TResult Function(T valueFailure) invalidEmailAddress,
+    required TResult Function(T oldVersion) oldVersion,
+    required TResult Function(T valueFailure, T levelingInput) notLevels,
+    required TResult Function(T valueFailure, List<T> listString) itemNotFound,
+  }) {
+    return itemNotFound(valueFailure, listString);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T valueFailure)? empty,
+    TResult Function(T valueFailure, int maxLength)? exceedingMaxLength,
+    TResult Function(T valueFailure, int minLength)? exceedingMinLength,
+    TResult Function(T valueFailure)? invalidEmailAddress,
+    TResult Function(T oldVersion)? oldVersion,
+    TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
+  }) {
+    return itemNotFound?.call(valueFailure, listString);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T valueFailure)? empty,
+    TResult Function(T valueFailure, int maxLength)? exceedingMaxLength,
+    TResult Function(T valueFailure, int minLength)? exceedingMinLength,
+    TResult Function(T valueFailure)? invalidEmailAddress,
+    TResult Function(T oldVersion)? oldVersion,
+    TResult Function(T valueFailure, T levelingInput)? notLevels,
+    TResult Function(T valueFailure, List<T> listString)? itemNotFound,
+    required TResult orElse(),
+  }) {
+    if (itemNotFound != null) {
+      return itemNotFound(valueFailure, listString);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(ExceedingMaxLength<T> value) exceedingMaxLength,
+    required TResult Function(ExceedingMinLength<T> value) exceedingMinLength,
+    required TResult Function(NoCharDog<T> value) invalidEmailAddress,
+    required TResult Function(_OldVersion<T> value) oldVersion,
+    required TResult Function(_NotLevels<T> value) notLevels,
+    required TResult Function(_ItemNotFound<T> value) itemNotFound,
+  }) {
+    return itemNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(ExceedingMaxLength<T> value)? exceedingMaxLength,
+    TResult Function(ExceedingMinLength<T> value)? exceedingMinLength,
+    TResult Function(NoCharDog<T> value)? invalidEmailAddress,
+    TResult Function(_OldVersion<T> value)? oldVersion,
+    TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
+  }) {
+    return itemNotFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(ExceedingMaxLength<T> value)? exceedingMaxLength,
+    TResult Function(ExceedingMinLength<T> value)? exceedingMinLength,
+    TResult Function(NoCharDog<T> value)? invalidEmailAddress,
+    TResult Function(_OldVersion<T> value)? oldVersion,
+    TResult Function(_NotLevels<T> value)? notLevels,
+    TResult Function(_ItemNotFound<T> value)? itemNotFound,
+    required TResult orElse(),
+  }) {
+    if (itemNotFound != null) {
+      return itemNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ItemNotFound<T> implements ValueFailure<T> {
+  const factory _ItemNotFound(
+      {required final T valueFailure,
+      required final List<T> listString}) = _$_ItemNotFound<T>;
+
+  T get valueFailure => throw _privateConstructorUsedError;
+  List<T> get listString => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ItemNotFoundCopyWith<T, _ItemNotFound<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

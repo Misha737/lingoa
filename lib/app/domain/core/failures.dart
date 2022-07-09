@@ -25,4 +25,8 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     required T valueFailure,
     required T levelingInput,
   }) = _NotLevels<T>;
+  const factory ValueFailure.itemNotFound({
+    required T valueFailure,
+    required List<T> listString,
+  }) = _ItemNotFound<T>;
 }
