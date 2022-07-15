@@ -1,6 +1,10 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:lingoa/app/domain/book/value_objects.dart';
+import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/infrastructure/core/errors_code.dart';
 import 'package:lingoa/app/infrastructure/library/dtos/content/content.dart';
 import 'package:rxdart/rxdart.dart';
@@ -73,7 +77,7 @@ class BookRepositoryFirestore implements IBookRepository {
     try {
       final userDoc = await _firestore.userDocument();
       final bookId = book.id.getOrCrash();
-      final doc = await userDoc.bookContentDocument(bookId, part).get();
+      final doc = await userDoc.bookContentDocumentId(bookId, part).get();
 
       return right(BookContentDto.fromFirestore(doc).toDomain());
     } on FirebaseException catch (e) {
@@ -155,6 +159,46 @@ class BookRepositoryFirestore implements IBookRepository {
       await userDoc.libraryCollection.doc(bookDto.id).update(bookDto.toJson());
 
       return right(unit);
+    } on FirebaseException catch (e) {
+      if (e.code.contains(ErrorsCodeFirebase.permissionDenied)) {
+        return left(const BookFailure.insufficientPermissions());
+      } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
+        return left(const BookFailure.unableToUpdate());
+      } else {
+        return left(const BookFailure.unexpected());
+      }
+    } catch (e) {
+      return left(const BookFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<BookFailure, List<Future<Content>>>> getRandomContent(
+    int length,
+    Language language,
+  ) async {
+    try {
+      final userDoc = await _firestore.userDocument();
+      final random = Random();
+
+      final books = (await userDoc.libraryCollection.get()).docs;
+
+      final resContents = List.generate(
+        length,
+        (_) async {
+          final content = await books
+              .elementAt(random.nextInt(books.length))
+              .reference
+              .bookContentCollection
+              .get();
+
+          return BookContentDto.fromFirestore(
+            content.docs.elementAt(random.nextInt(content.docs.length)),
+          ).toDomain().languages.getContentLanguage(language);
+        },
+      );
+
+      return right(resContents);
     } on FirebaseException catch (e) {
       if (e.code.contains(ErrorsCodeFirebase.permissionDenied)) {
         return left(const BookFailure.insufficientPermissions());

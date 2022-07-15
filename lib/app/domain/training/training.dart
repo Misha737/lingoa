@@ -10,18 +10,18 @@ abstract class Training implements _$Training {
 
   const factory Training({
     required Language language,
-    required Map<TrainingName, TrainingContents> content,
+    required Map<TrainingName, TrainingBody> content,
   }) = _Training;
 }
 
 @freezed
-abstract class TrainingContents implements _$TrainingContents {
-  const TrainingContents._();
+abstract class TrainingBody implements _$TrainingBody {
+  const TrainingBody._();
 
-  const factory TrainingContents({
+  const factory TrainingBody({
     required TrainingDescription description,
     required List<TrainingContent> content,
-  }) = _TrainingContents;
+  }) = _TrainingBody;
 }
 
 @freezed
@@ -31,6 +31,10 @@ abstract class TrainingDescription implements _$TrainingDescription {
   const factory TrainingDescription({
     required int progress,
   }) = _TrainingDescription;
+
+  factory TrainingDescription.empty() => const TrainingDescription(
+        progress: 0,
+      );
 }
 
 @freezed

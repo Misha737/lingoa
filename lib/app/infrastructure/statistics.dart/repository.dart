@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
-import 'package:lingoa/app/domain/statistics/failures.dart';
 import 'package:dartz/dartz.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:lingoa/app/domain/statistics/failures.dart';
 import 'package:lingoa/app/domain/statistics/repository.dart';
 import 'package:lingoa/app/domain/statistics/statistics.dart';
 import 'package:lingoa/app/infrastructure/core/errors_code.dart';
 import 'package:lingoa/app/infrastructure/core/firestore_helpers.dart';
 import 'package:lingoa/app/infrastructure/statistics.dart/dtos/statistics.dart';
-import 'package:rxdart/rxdart.dart';
 
 @LazySingleton(as: StatisticsRepository)
 class StatisticsRepositoryFirestore implements StatisticsRepository {

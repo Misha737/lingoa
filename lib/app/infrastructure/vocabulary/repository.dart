@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
+import 'package:dartz/dartz.dart';
 import 'package:lingoa/app/domain/vocabulary/content.dart';
 import 'package:lingoa/app/domain/vocabulary/failures.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
-import 'package:dartz/dartz.dart';
 import 'package:lingoa/app/domain/vocabulary/repository.dart';
 import 'package:lingoa/app/domain/vocabulary/vocabulary.dart';
 import 'package:lingoa/app/infrastructure/core/errors_code.dart';

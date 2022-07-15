@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Training {
   Language get language => throw _privateConstructorUsedError;
-  Map<TrainingName, TrainingContents> get content =>
+  Map<TrainingName, TrainingBody> get content =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +29,7 @@ mixin _$Training {
 abstract class $TrainingCopyWith<$Res> {
   factory $TrainingCopyWith(Training value, $Res Function(Training) then) =
       _$TrainingCopyWithImpl<$Res>;
-  $Res call({Language language, Map<TrainingName, TrainingContents> content});
+  $Res call({Language language, Map<TrainingName, TrainingBody> content});
 }
 
 /// @nodoc
@@ -53,7 +53,7 @@ class _$TrainingCopyWithImpl<$Res> implements $TrainingCopyWith<$Res> {
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as Map<TrainingName, TrainingContents>,
+              as Map<TrainingName, TrainingBody>,
     ));
   }
 }
@@ -63,7 +63,7 @@ abstract class _$TrainingCopyWith<$Res> implements $TrainingCopyWith<$Res> {
   factory _$TrainingCopyWith(_Training value, $Res Function(_Training) then) =
       __$TrainingCopyWithImpl<$Res>;
   @override
-  $Res call({Language language, Map<TrainingName, TrainingContents> content});
+  $Res call({Language language, Map<TrainingName, TrainingBody> content});
 }
 
 /// @nodoc
@@ -88,7 +88,7 @@ class __$TrainingCopyWithImpl<$Res> extends _$TrainingCopyWithImpl<$Res>
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as Map<TrainingName, TrainingContents>,
+              as Map<TrainingName, TrainingBody>,
     ));
   }
 }
@@ -98,15 +98,15 @@ class __$TrainingCopyWithImpl<$Res> extends _$TrainingCopyWithImpl<$Res>
 class _$_Training extends _Training {
   const _$_Training(
       {required this.language,
-      required final Map<TrainingName, TrainingContents> content})
+      required final Map<TrainingName, TrainingBody> content})
       : _content = content,
         super._();
 
   @override
   final Language language;
-  final Map<TrainingName, TrainingContents> _content;
+  final Map<TrainingName, TrainingBody> _content;
   @override
-  Map<TrainingName, TrainingContents> get content {
+  Map<TrainingName, TrainingBody> get content {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(_content);
   }
@@ -139,15 +139,14 @@ class _$_Training extends _Training {
 
 abstract class _Training extends Training {
   const factory _Training(
-          {required final Language language,
-          required final Map<TrainingName, TrainingContents> content}) =
-      _$_Training;
+      {required final Language language,
+      required final Map<TrainingName, TrainingBody> content}) = _$_Training;
   const _Training._() : super._();
 
   @override
   Language get language => throw _privateConstructorUsedError;
   @override
-  Map<TrainingName, TrainingContents> get content =>
+  Map<TrainingName, TrainingBody> get content =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
@@ -156,33 +155,32 @@ abstract class _Training extends Training {
 }
 
 /// @nodoc
-mixin _$TrainingContents {
+mixin _$TrainingBody {
   TrainingDescription get description => throw _privateConstructorUsedError;
   List<TrainingContent> get content => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TrainingContentsCopyWith<TrainingContents> get copyWith =>
+  $TrainingBodyCopyWith<TrainingBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TrainingContentsCopyWith<$Res> {
-  factory $TrainingContentsCopyWith(
-          TrainingContents value, $Res Function(TrainingContents) then) =
-      _$TrainingContentsCopyWithImpl<$Res>;
+abstract class $TrainingBodyCopyWith<$Res> {
+  factory $TrainingBodyCopyWith(
+          TrainingBody value, $Res Function(TrainingBody) then) =
+      _$TrainingBodyCopyWithImpl<$Res>;
   $Res call({TrainingDescription description, List<TrainingContent> content});
 
   $TrainingDescriptionCopyWith<$Res> get description;
 }
 
 /// @nodoc
-class _$TrainingContentsCopyWithImpl<$Res>
-    implements $TrainingContentsCopyWith<$Res> {
-  _$TrainingContentsCopyWithImpl(this._value, this._then);
+class _$TrainingBodyCopyWithImpl<$Res> implements $TrainingBodyCopyWith<$Res> {
+  _$TrainingBodyCopyWithImpl(this._value, this._then);
 
-  final TrainingContents _value;
+  final TrainingBody _value;
   // ignore: unused_field
-  final $Res Function(TrainingContents) _then;
+  final $Res Function(TrainingBody) _then;
 
   @override
   $Res call({
@@ -210,11 +208,11 @@ class _$TrainingContentsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$TrainingContentsCopyWith<$Res>
-    implements $TrainingContentsCopyWith<$Res> {
-  factory _$TrainingContentsCopyWith(
-          _TrainingContents value, $Res Function(_TrainingContents) then) =
-      __$TrainingContentsCopyWithImpl<$Res>;
+abstract class _$TrainingBodyCopyWith<$Res>
+    implements $TrainingBodyCopyWith<$Res> {
+  factory _$TrainingBodyCopyWith(
+          _TrainingBody value, $Res Function(_TrainingBody) then) =
+      __$TrainingBodyCopyWithImpl<$Res>;
   @override
   $Res call({TrainingDescription description, List<TrainingContent> content});
 
@@ -223,22 +221,21 @@ abstract class _$TrainingContentsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$TrainingContentsCopyWithImpl<$Res>
-    extends _$TrainingContentsCopyWithImpl<$Res>
-    implements _$TrainingContentsCopyWith<$Res> {
-  __$TrainingContentsCopyWithImpl(
-      _TrainingContents _value, $Res Function(_TrainingContents) _then)
-      : super(_value, (v) => _then(v as _TrainingContents));
+class __$TrainingBodyCopyWithImpl<$Res> extends _$TrainingBodyCopyWithImpl<$Res>
+    implements _$TrainingBodyCopyWith<$Res> {
+  __$TrainingBodyCopyWithImpl(
+      _TrainingBody _value, $Res Function(_TrainingBody) _then)
+      : super(_value, (v) => _then(v as _TrainingBody));
 
   @override
-  _TrainingContents get _value => super._value as _TrainingContents;
+  _TrainingBody get _value => super._value as _TrainingBody;
 
   @override
   $Res call({
     Object? description = freezed,
     Object? content = freezed,
   }) {
-    return _then(_TrainingContents(
+    return _then(_TrainingBody(
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -253,8 +250,8 @@ class __$TrainingContentsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TrainingContents extends _TrainingContents {
-  const _$_TrainingContents(
+class _$_TrainingBody extends _TrainingBody {
+  const _$_TrainingBody(
       {required this.description, required final List<TrainingContent> content})
       : _content = content,
         super._();
@@ -270,14 +267,14 @@ class _$_TrainingContents extends _TrainingContents {
 
   @override
   String toString() {
-    return 'TrainingContents(description: $description, content: $content)';
+    return 'TrainingBody(description: $description, content: $content)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TrainingContents &&
+            other is _TrainingBody &&
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
             const DeepCollectionEquality().equals(other.content, content));
@@ -291,15 +288,15 @@ class _$_TrainingContents extends _TrainingContents {
 
   @JsonKey(ignore: true)
   @override
-  _$TrainingContentsCopyWith<_TrainingContents> get copyWith =>
-      __$TrainingContentsCopyWithImpl<_TrainingContents>(this, _$identity);
+  _$TrainingBodyCopyWith<_TrainingBody> get copyWith =>
+      __$TrainingBodyCopyWithImpl<_TrainingBody>(this, _$identity);
 }
 
-abstract class _TrainingContents extends TrainingContents {
-  const factory _TrainingContents(
+abstract class _TrainingBody extends TrainingBody {
+  const factory _TrainingBody(
       {required final TrainingDescription description,
-      required final List<TrainingContent> content}) = _$_TrainingContents;
-  const _TrainingContents._() : super._();
+      required final List<TrainingContent> content}) = _$_TrainingBody;
+  const _TrainingBody._() : super._();
 
   @override
   TrainingDescription get description => throw _privateConstructorUsedError;
@@ -307,7 +304,7 @@ abstract class _TrainingContents extends TrainingContents {
   List<TrainingContent> get content => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$TrainingContentsCopyWith<_TrainingContents> get copyWith =>
+  _$TrainingBodyCopyWith<_TrainingBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

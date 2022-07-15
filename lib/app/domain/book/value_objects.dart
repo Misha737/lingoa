@@ -16,6 +16,17 @@ class Content extends ValueObject<Map<Language, Sentences>> {
     );
   }
 
+  Content getContentLanguage(Language language) {
+    // TODO: Щось придумати з UA
+    // TODO: І без нула
+    final content = {
+      Language('ua'): value.getOrElse(() => {})[Language('ua')]!,
+      language: value.getOrElse(() => {})[language]!,
+    };
+
+    return Content(content);
+  }
+
   int get length => value.getOrElse(() => {}).length;
 
   Language language(int indexCard) =>

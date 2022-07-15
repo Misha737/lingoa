@@ -1,12 +1,15 @@
 import 'package:dartz/dartz.dart';
+import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/domain/training/failures.dart';
 import 'package:lingoa/app/domain/training/training.dart';
+import 'package:lingoa/app/domain/training/value_objects.dart';
 
 abstract class TrainingRepository {
-  Stream<Either<TrainingFailures, Training>> get();
+  Stream<Either<TrainingFailures, Training>> get(Language? language);
   Future<Either<TrainingFailures, Unit>> update(
-    String nameTraining,
-    int progress,
+    Language language,
+    TrainingName name,
+    TrainingDescription description,
   ); // TODO: Якось добавляти по одному
   Future<Either<TrainingFailures, Unit>> create();
 }
