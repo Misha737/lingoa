@@ -12,8 +12,9 @@ class CreateTrainingTypes {
   const CreateTrainingTypes(this._language);
 
   Future<MapEntry<TrainingName, TrainingBody>> _createRepeatSentence() async {
+    //TODO: length брати з бази
     final bookContent =
-        (await GetRandomBookContent().getContent(_language)).fold(
+        (await GetRandomBookContent().getContent(_language, 10)).fold(
       () => throw Exception(), // TODO: Поправити
       (content) => content,
     );
@@ -40,7 +41,7 @@ class CreateTrainingTypes {
     );
   }
 
-  Future<Either<TrainingFailures, Training>> createAll() async {
+  Future<Training> createAll() async {
     final content = Map.fromEntries(
       [
         await _createRepeatSentence(),
@@ -48,11 +49,9 @@ class CreateTrainingTypes {
       ],
     );
 
-    return right(
-      Training(
-        language: _language,
-        content: content,
-      ),
+    return Training(
+      language: _language,
+      content: content,
     );
   }
 }

@@ -6,10 +6,10 @@ import 'package:lingoa/app/domain/training/value_objects.dart';
 
 abstract class TrainingRepository {
   Stream<Either<TrainingFailures, Training>> get(Language? language);
-  Future<Either<TrainingFailures, Unit>> update(
-    Language language,
-    TrainingName name,
-    TrainingDescription description,
-  ); // TODO: Якось добавляти по одному
+  Future<Either<TrainingFailures, Unit>> update({
+    required Language language,
+    required TrainingName name,
+    required TrainingDescription description,
+  }); // TODO: Якось добавляти по одному
   Future<Either<TrainingFailures, Unit>> create();
 }

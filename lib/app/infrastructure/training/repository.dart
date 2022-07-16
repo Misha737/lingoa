@@ -25,9 +25,10 @@ class TrainingRepositoryFirestore extends TrainingRepository {
 
       (await userDoc.trainingCollection.get()).docs.map(
         (doc) async {
-          await doc.reference.set(
-            CreateTrainingTypes(Language(doc.id)).createAll(),
-          );
+          final training =
+              await CreateTrainingTypes(Language(doc.id)).createAll();
+
+          await doc.reference.set(TrainingDto.fromDomain(training).toJson());
         },
       );
 
@@ -76,11 +77,11 @@ class TrainingRepositoryFirestore extends TrainingRepository {
   }
 
   @override
-  Future<Either<TrainingFailures, Unit>> update(
-    Language language,
-    TrainingName name,
-    TrainingDescription description,
-  ) async {
+  Future<Either<TrainingFailures, Unit>> update({
+    required Language language,
+    required TrainingName name,
+    required TrainingDescription description,
+  }) async {
     try {
       final userDoc = await _firestore.userDocument();
 

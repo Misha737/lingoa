@@ -5,11 +5,14 @@ import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/injection.dart';
 
 class GetRandomBookContent {
-  Future<Option<List<Future<Content>>>> getContent(Language language) async {
+  Future<Option<List<Future<Content>>>> getContent(
+    Language language,
+    int length,
+  ) async {
     final bookFirestore = getIt<IBookRepository>();
 
     final successOrFailure = await bookFirestore.getRandomContent(
-      10, //TODO: length брати з бази
+      length,
       language,
     );
 
