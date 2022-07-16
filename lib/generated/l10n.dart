@@ -621,10 +621,10 @@ class S {
   }
 
   /// `Server problem, check your internet connection or send feedback`
-  String get serverExceptionsVocabulary {
+  String get serverException {
     return Intl.message(
       'Server problem, check your internet connection or send feedback',
-      name: 'serverExceptionsVocabulary',
+      name: 'serverException',
       desc: '',
       args: [],
     );
@@ -835,6 +835,36 @@ class S {
     return Intl.message(
       'Options',
       name: 'options',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Training`
+  String get training {
+    return Intl.message(
+      'Training',
+      name: 'training',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You do not have rights to these workouts`
+  String get insufficientPermissionsTrainingFailure {
+    return Intl.message(
+      'You do not have rights to these workouts',
+      name: 'insufficientPermissionsTrainingFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `File not found, send feedback`
+  String get notFoundTrainingFailure {
+    return Intl.message(
+      'File not found, send feedback',
+      name: 'notFoundTrainingFailure',
       desc: '',
       args: [],
     );

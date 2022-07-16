@@ -127,18 +127,24 @@ class MessageLookup extends MessageLookupByLibrary {
             "You are not entitled to this book"),
         "insufficientPermissionsLibrary": MessageLookupByLibrary.simpleMessage(
             "You have no right to these books"),
+        "insufficientPermissionsTrainingFailure":
+            MessageLookupByLibrary.simpleMessage(
+                "You do not have rights to these workouts"),
         "insufficientPermissionsVocabulary":
             MessageLookupByLibrary.simpleMessage(
                 "You do not have rights to this dictionary"),
         "languages": MessageLookupByLibrary.simpleMessage("Languages"),
+        "notFoundTrainingFailure": MessageLookupByLibrary.simpleMessage(
+            "File not found, send feedback"),
         "notFoundVocabulary": MessageLookupByLibrary.simpleMessage(
             "No dictionary found, send feedback"),
         "notLevels":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
         "options": MessageLookupByLibrary.simpleMessage("Options"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
-        "serverExceptionsVocabulary": MessageLookupByLibrary.simpleMessage(
+        "serverException": MessageLookupByLibrary.simpleMessage(
             "Server problem, check your internet connection or send feedback"),
+        "training": MessageLookupByLibrary.simpleMessage("Training"),
         "unableToUpdateBook":
             MessageLookupByLibrary.simpleMessage("The book was not found"),
         "wordsTitle": MessageLookupByLibrary.simpleMessage("words")

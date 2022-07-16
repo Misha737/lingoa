@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
@@ -15,7 +16,7 @@ class InformationTemplate extends StatelessWidget {
     required this.onPressed,
   }) : super(key: key);
 
-  final String imageName;
+  final AssetsImage imageName;
   final String description;
   final String labelButton;
   final IconData iconButton;
@@ -32,7 +33,7 @@ class InformationTemplate extends StatelessWidget {
           SizedBox(
             height: 160,
             width: 160,
-            child: SvgPicture.asset(imageName),
+            child: SvgPicture.asset(imageName.toString()),
           ),
           const SizedBox(height: Dimensions.d24),
           Text(

@@ -3,14 +3,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lingoa/app/application/vocabulary/watch/body/bloc.dart';
 import 'package:lingoa/app/domain/vocabulary/vocabulary.dart';
-import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
-import 'package:lingoa/app/presentation/pages/core/home/widgets/information_template.dart';
-import 'package:lingoa/app/presentation/pages/core/vocabulary/widgets/tiles.dart';
 import 'package:lingoa/generated/l10n.dart';
 import 'package:lingoa/injection.dart';
+
+import '../widgets/failure.dart';
+import '../widgets/tiles.dart';
 
 class LanguagesPage extends StatelessWidget {
   const LanguagesPage({Key? key}) : super(key: key);
@@ -40,25 +40,9 @@ class _Builder extends StatelessWidget {
         ..add(const WatchBodyVocabularyEvent.watch()),
       builder: (context, state) => state.map(
         initial: (_) => const SizedBox.shrink(),
-        loading: (_) => const Center(
-          child: CircularProgressIndicator(),
-        ),
-        success: (state) => _Success(
-          infoBody: state.infoBody,
-        ),
-        failure: (state) => InformationTemplate(
-          imageName: AssetsName.images.welcome,
-          description: state.failure.map(
-            serverException: (_) => S().serverExceptionsVocabulary,
-            unexpected: (_) => S().SomethingWentWrong,
-            insufficientPermissions: (_) =>
-                S().insufficientPermissionsVocabulary,
-            notFound: (_) => S().notFoundVocabulary,
-          ),
-          labelButton: S().Response,
-          iconButton: Icons.replay,
-          onPressed: () {}, // TODO: Зробитит оновлення або відгук
-        ),
+        loading: (_) => const Center(child: CircularProgressIndicator()),
+        success: (state) => _Success(infoBody: state.infoBody),
+        failure: (state) => FailureTrainingState(failure: state.failure),
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:lingoa/app/application/auth/bloc.dart';
 import 'package:lingoa/app/application/library/watch/body/bloc.dart';
 import 'package:lingoa/app/application/statistics/watch/bloc.dart';
+import 'package:lingoa/app/application/training/watch/bloc.dart';
 import 'package:lingoa/app/application/vocabulary/watch/body/bloc.dart';
 import 'package:lingoa/app/application/vocabulary/watch/content/bloc.dart';
 import 'package:lingoa/app/presentation/core/values/styles/themes.dart';
@@ -43,7 +44,11 @@ class AppWidget extends StatelessWidget {
           BlocProvider(
             create: (_) => getIt<WatchBodyVocabularyBloc>()
               ..add(const WatchBodyVocabularyEvent.watch()),
-          )
+          ),
+          BlocProvider(
+            create: (context) => getIt<WatchTrainingBloc>()
+              ..add(const WatchTrainingEvent.watch(null)),
+          ),
         ],
         child: MaterialApp.router(
           localizationsDelegates: const [

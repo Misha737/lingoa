@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/buttons/outlined_button.dart';
@@ -19,7 +20,7 @@ class OutlinedButtonApp extends StatelessWidget {
   final String label;
   final bool isMini;
   final IconData? icon;
-  final String? iconName;
+  final AssetsIcon? iconName;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +59,7 @@ class OutlinedButtonApp extends StatelessWidget {
                     height: Dimensions.button.iconSize,
                     width: Dimensions.button.iconSize,
                     child: SvgPicture.asset(
-                      iconName!,
+                      iconName!.toString(),
                       fit: BoxFit.contain,
                     ),
                   ),

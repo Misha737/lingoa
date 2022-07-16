@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lingoa/app/application/library/watch/body/bloc.dart';
 import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
-import 'package:lingoa/app/presentation/pages/core/home/widgets/information_template.dart';
+import 'package:lingoa/app/presentation/widgets/info/information_template.dart';
 import 'package:lingoa/app/presentation/pages/core/home/widgets/success.dart';
 import 'package:lingoa/app/presentation/pages/core/widgets/search.dart';
 import 'package:lingoa/generated/l10n.dart';

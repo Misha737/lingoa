@@ -3,8 +3,7 @@ import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/pages/core/home/widgets/book_controller_listener.dart';
-import 'package:lingoa/app/presentation/pages/core/home/widgets/information_template.dart';
-import 'package:lingoa/app/presentation/pages/core/widgets/search.dart';
+import 'package:lingoa/app/presentation/widgets/info/information_template.dart';
 import 'package:lingoa/app/presentation/widgets/buttons/round_button.dart';
 import 'package:lingoa/generated/l10n.dart';
 

@@ -56,7 +56,7 @@
   "AreYouSure": "Are you sure?",
   "AreYouSureYouWant": "Are you sure you want to delete this book?",
   "WeCareAbout": "We care about your safety and do not want to be hacked",
-  "serverExceptionsVocabulary": "Server problem, check your internet connection or send feedback",
+  "serverException": "Server problem, check your internet connection or send feedback",
   "insufficientPermissionsVocabulary": "You do not have rights to this dictionary",
   "notFoundVocabulary": "No dictionary found, send feedback",
   "chooseALanguage": "Choose a language",
@@ -77,5 +77,8 @@
   "YourBook": "Your book",
   "BookAdded": "Book added",
   "Response": "Response",
-  "options": "Options"
+  "options": "Options",
+  "training": "Training",
+  "insufficientPermissionsTrainingFailure": "You do not have rights to these workouts",
+  "notFoundTrainingFailure": "File not found, send feedback"
 }

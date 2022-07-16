@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lingoa/app/application/vocabulary/watch/content/bloc.dart';
 import 'package:lingoa/app/domain/vocabulary/vocabulary.dart';
-import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
-import 'package:lingoa/app/presentation/pages/core/home/widgets/information_template.dart';
 import 'package:lingoa/generated/l10n.dart';
 
+import 'failure.dart';
 import 'tiles.dart';
 
 class VocabularyContentBuilder extends StatelessWidget {
@@ -27,21 +26,7 @@ class VocabularyContentBuilder extends StatelessWidget {
           success: (state) => _SuccessVocabularyList(
             vocabulary: state.vocabulary,
           ),
-          failure: (state) => Center(
-            child: InformationTemplate(
-              imageName: AssetsName.images.welcome,
-              description: state.failure.map(
-                serverException: (_) => S().serverExceptionsVocabulary,
-                unexpected: (_) => S().SomethingWentWrong,
-                insufficientPermissions: (_) =>
-                    S().insufficientPermissionsVocabulary,
-                notFound: (_) => S().notFoundVocabulary,
-              ),
-              labelButton: S().Response,
-              iconButton: Icons.replay,
-              onPressed: () {},
-            ),
-          ),
+          failure: (state) => FailureTrainingState(failure: state.failure),
         );
       },
     );

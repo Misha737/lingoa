@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lingoa/app/presentation/core/values/assets_name.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
@@ -12,7 +13,7 @@ class TopContainer extends StatelessWidget {
     required this.bottomText,
   }) : super(key: key);
 
-  final String nameImage;
+  final AssetsImage nameImage;
   final String topText;
   final String bottomText;
 
@@ -24,7 +25,7 @@ class TopContainer extends StatelessWidget {
         SizedBox(
           width: 200,
           height: 200,
-          child: SvgPicture.asset(nameImage),
+          child: SvgPicture.asset(nameImage.toString()),
         ),
         const SizedBox(
           height: Dimensions.d8,

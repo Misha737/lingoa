@@ -40,6 +40,10 @@ class _$AppRouter extends RootStackRouter {
     LanguagesPageRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const LanguagesPage());
+    },
+    TrainingRepeatSentencePageRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const TrainingRepeatSentencePage());
     }
   };
 
@@ -49,7 +53,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(AuthPageRoute.name, path: '/auth-page'),
         RouteConfig(CorePageRoute.name, path: '/core-page'),
         RouteConfig(ReadingPageRoute.name, path: '/'),
-        RouteConfig(LanguagesPageRoute.name, path: '/')
+        RouteConfig(LanguagesPageRoute.name, path: '/'),
+        RouteConfig(TrainingRepeatSentencePageRoute.name, path: '/')
       ];
 }
 
@@ -121,4 +126,13 @@ class LanguagesPageRoute extends PageRouteInfo<void> {
   const LanguagesPageRoute() : super(LanguagesPageRoute.name, path: '/');
 
   static const String name = 'LanguagesPageRoute';
+}
+
+/// generated route for
+/// [TrainingRepeatSentencePage]
+class TrainingRepeatSentencePageRoute extends PageRouteInfo<void> {
+  const TrainingRepeatSentencePageRoute()
+      : super(TrainingRepeatSentencePageRoute.name, path: '/');
+
+  static const String name = 'TrainingRepeatSentencePageRoute';
 }

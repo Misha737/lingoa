@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/book/body.dart';
 import 'package:lingoa/app/domain/book/failures.dart';
 import 'package:lingoa/app/presentation/core/values/assets_name.dart';
-import 'package:lingoa/app/presentation/pages/core/home/widgets/information_template.dart';
+import 'package:lingoa/app/presentation/widgets/info/information_template.dart';
 import 'package:lingoa/generated/l10n.dart';
 
 class FailureBookReading extends StatelessWidget {
