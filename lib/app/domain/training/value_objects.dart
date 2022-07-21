@@ -38,5 +38,10 @@ class TrainingName extends ValueObject<String> {
     'learnWords',
   ];
 
+  static TrainingName get repeatWords => TrainingName._(right('repeatWords'));
+  static TrainingName get repeatSentences =>
+      TrainingName._(right('repeatSentences'));
+  static TrainingName get learnWords => TrainingName._(right('learnWords'));
+
   const TrainingName._(this.value);
 }

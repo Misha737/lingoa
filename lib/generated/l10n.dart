@@ -879,6 +879,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Repeat the words`
+  String get trainingNamesTitleRepeatWords {
+    return Intl.message(
+      'Repeat the words',
+      name: 'trainingNamesTitleRepeatWords',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repeat the sentence`
+  String get trainingNamesTitleRepeatSentences {
+    return Intl.message(
+      'Repeat the sentence',
+      name: 'trainingNamesTitleRepeatSentences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Learn new words`
+  String get trainingNamesTitleLearnWords {
+    return Intl.message(
+      'Learn new words',
+      name: 'trainingNamesTitleLearnWords',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repeat the words every day in order to always be on top`
+  String get trainingNamesDescriptionRepeatWords {
+    return Intl.message(
+      'Repeat the words every day in order to always be on top',
+      name: 'trainingNamesDescriptionRepeatWords',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repeat the sentences for better confidence`
+  String get trainingNamesDescriptionRepeatSentences {
+    return Intl.message(
+      'Repeat the sentences for better confidence',
+      name: 'trainingNamesDescriptionRepeatSentences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't stop! You can learn new words every day`
+  String get trainingNamesDescriptionLearnWords {
+    return Intl.message(
+      'Don\'t stop! You can learn new words every day',
+      name: 'trainingNamesDescriptionLearnWords',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

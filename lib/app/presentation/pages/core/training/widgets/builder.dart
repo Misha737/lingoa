@@ -40,18 +40,25 @@ class SuccessTraining extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Продовжити (Bloc listener і т.д.)
-    final body = training.content;
+    final bodyContent = training.content;
 
-    return body.length == 0
+    return bodyContent.length == 0
         ? const TrainingNullInformationTemplate()
         : ListView.separated(
-            itemCount: body.length,
+            itemCount: bodyContent.length,
             padding: const EdgeInsets.symmetric(
               vertical: Dimensions.heightContent,
               horizontal: Dimensions.mainHorizontalPadding,
             ),
             itemBuilder: (context, index) {
-              return CardTraining(bodyContent: body);
+              //TODO: Переробити з Entry на змінні
+              final body = bodyContent.entry(index);
+
+              return CardTraining(
+                name: body.key,
+                body: body.value,
+                length: bodyContent.length,
+              );
             },
             separatorBuilder: (_, __) => const SizedBox(
               height: Dimensions.heightContent,

@@ -148,6 +148,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "serverException": MessageLookupByLibrary.simpleMessage(
             "Server problem, check your internet connection or send feedback"),
         "training": MessageLookupByLibrary.simpleMessage("Training"),
+        "trainingNamesDescriptionLearnWords":
+            MessageLookupByLibrary.simpleMessage(
+                "Don\'t stop! You can learn new words every day"),
+        "trainingNamesDescriptionRepeatSentences":
+            MessageLookupByLibrary.simpleMessage(
+                "Repeat the sentences for better confidence"),
+        "trainingNamesDescriptionRepeatWords":
+            MessageLookupByLibrary.simpleMessage(
+                "Repeat the words every day in order to always be on top"),
+        "trainingNamesTitleLearnWords":
+            MessageLookupByLibrary.simpleMessage("Learn new words"),
+        "trainingNamesTitleRepeatSentences":
+            MessageLookupByLibrary.simpleMessage("Repeat the sentence"),
+        "trainingNamesTitleRepeatWords":
+            MessageLookupByLibrary.simpleMessage("Repeat the words"),
         "unableToUpdateBook":
             MessageLookupByLibrary.simpleMessage("The book was not found"),
         "wordsTitle": MessageLookupByLibrary.simpleMessage("words")
