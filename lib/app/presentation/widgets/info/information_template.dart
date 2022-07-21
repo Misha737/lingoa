@@ -29,6 +29,7 @@ class InformationTemplate extends StatelessWidget {
         top: Dimensions.d24,
       ),
       child: Column(
+        //TODO: mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
             height: 160,

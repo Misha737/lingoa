@@ -7,7 +7,6 @@ class TrainingBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: todo
-    return const TrainingWatchBuilder(); // TODO: explanation, https://link/to/issue
+    return const TrainingWatchBuilder();
   }
 }

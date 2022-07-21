@@ -721,10 +721,10 @@ class S {
   }
 
   /// `Add a book`
-  String get AddBook {
+  String get addBook {
     return Intl.message(
       'Add a book',
-      name: 'AddBook',
+      name: 'addBook',
       desc: '',
       args: [],
     );
@@ -865,6 +865,16 @@ class S {
     return Intl.message(
       'File not found, send feedback',
       name: 'notFoundTrainingFailure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add your favorite book for a workout`
+  String get descriptionTrainingNullInformationTemplate {
+    return Intl.message(
+      'Add your favorite book for a workout',
+      name: 'descriptionTrainingNullInformationTemplate',
       desc: '',
       args: [],
     );

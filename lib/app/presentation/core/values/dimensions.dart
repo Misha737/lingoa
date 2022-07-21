@@ -18,11 +18,13 @@ class Dimensions {
   static const double miniBorderRadius = 6;
   static const double blurRadius = 4;
   static const double mainHorizontalPadding = 24;
+  static const double heightContent = 16;
+  static const double smallHeightContent = 8;
   static const double opacityText = 0.8;
   static final navigation = _Navigation();
   static final button = _Button();
   static final input = _Input();
-  static final cardBook = _CardBook();
+  static final card = _Card();
   static final tile = _Tile();
   static final BoxShadow boxShadow = BoxShadow(
     color: ColorsLightTheme.shadowColor,
@@ -68,7 +70,7 @@ class _Input {
   final List<double> paddingHorizontal = [24, 16, 4];
 }
 
-class _CardBook {
+class _Card {
   final double height = 144;
   final double widthLeftContainer = 112;
   final double heightCardStatistics = 64;

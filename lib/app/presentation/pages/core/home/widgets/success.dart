@@ -42,7 +42,7 @@ class SuccessColumnHome extends StatelessWidget {
               : InformationTemplate(
                   imageName: AssetsName.images.addFile,
                   description: S().AddBookLike,
-                  labelButton: S().AddBook,
+                  labelButton: S().addBook,
                   iconButton: Icons.arrow_forward_ios_rounded,
                   onPressed: () {},
                 ),

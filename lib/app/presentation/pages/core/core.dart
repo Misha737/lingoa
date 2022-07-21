@@ -30,7 +30,7 @@ class _CorePageState extends State<CorePage> {
     AppBar(
       title: Text(S().training),
       leading: const Text(
-        '🏁',
+        '🗺️',
         style: TextStyle(fontSize: 24), // TODO: Змінити на прапор
       ),
       actions: [

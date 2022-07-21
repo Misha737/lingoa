@@ -1,7 +1,5 @@
-import 'package:dartz/dartz.dart';
 import 'package:lingoa/app/domain/book/value_objects.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
-import 'package:lingoa/app/domain/training/failures.dart';
 import 'package:lingoa/app/domain/training/training.dart';
 import 'package:lingoa/app/domain/training/value_objects.dart';
 import 'package:lingoa/app/infrastructure/core/get_random_book_content.dart';
@@ -51,7 +49,7 @@ class CreateTrainingTypes {
 
     return Training(
       language: _language,
-      content: content,
+      content: TrainingBodyContent(content),
     );
   }
 }

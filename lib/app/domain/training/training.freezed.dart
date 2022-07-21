@@ -17,8 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Training {
   Language get language => throw _privateConstructorUsedError;
-  Map<TrainingName, TrainingBody> get content =>
-      throw _privateConstructorUsedError;
+  TrainingBodyContent get content => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TrainingCopyWith<Training> get copyWith =>
@@ -29,7 +28,7 @@ mixin _$Training {
 abstract class $TrainingCopyWith<$Res> {
   factory $TrainingCopyWith(Training value, $Res Function(Training) then) =
       _$TrainingCopyWithImpl<$Res>;
-  $Res call({Language language, Map<TrainingName, TrainingBody> content});
+  $Res call({Language language, TrainingBodyContent content});
 }
 
 /// @nodoc
@@ -53,7 +52,7 @@ class _$TrainingCopyWithImpl<$Res> implements $TrainingCopyWith<$Res> {
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as Map<TrainingName, TrainingBody>,
+              as TrainingBodyContent,
     ));
   }
 }
@@ -63,7 +62,7 @@ abstract class _$TrainingCopyWith<$Res> implements $TrainingCopyWith<$Res> {
   factory _$TrainingCopyWith(_Training value, $Res Function(_Training) then) =
       __$TrainingCopyWithImpl<$Res>;
   @override
-  $Res call({Language language, Map<TrainingName, TrainingBody> content});
+  $Res call({Language language, TrainingBodyContent content});
 }
 
 /// @nodoc
@@ -88,7 +87,7 @@ class __$TrainingCopyWithImpl<$Res> extends _$TrainingCopyWithImpl<$Res>
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as Map<TrainingName, TrainingBody>,
+              as TrainingBodyContent,
     ));
   }
 }
@@ -96,20 +95,13 @@ class __$TrainingCopyWithImpl<$Res> extends _$TrainingCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Training extends _Training {
-  const _$_Training(
-      {required this.language,
-      required final Map<TrainingName, TrainingBody> content})
-      : _content = content,
-        super._();
+  const _$_Training({required this.language, required this.content})
+      : super._();
 
   @override
   final Language language;
-  final Map<TrainingName, TrainingBody> _content;
   @override
-  Map<TrainingName, TrainingBody> get content {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_content);
-  }
+  final TrainingBodyContent content;
 
   @override
   String toString() {
@@ -140,14 +132,13 @@ class _$_Training extends _Training {
 abstract class _Training extends Training {
   const factory _Training(
       {required final Language language,
-      required final Map<TrainingName, TrainingBody> content}) = _$_Training;
+      required final TrainingBodyContent content}) = _$_Training;
   const _Training._() : super._();
 
   @override
   Language get language => throw _privateConstructorUsedError;
   @override
-  Map<TrainingName, TrainingBody> get content =>
-      throw _privateConstructorUsedError;
+  TrainingBodyContent get content => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TrainingCopyWith<_Training> get copyWith =>

@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/domain/training/failures.dart';
 import 'package:lingoa/app/domain/training/repository.dart';
@@ -11,6 +12,7 @@ part 'state.dart';
 
 part 'bloc.freezed.dart';
 
+@injectable
 class UpdateTrainingBloc
     extends Bloc<UpdateTrainingEvent, UpdateTrainingState> {
   final TrainingRepository _repository;

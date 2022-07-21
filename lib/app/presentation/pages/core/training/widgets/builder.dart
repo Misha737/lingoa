@@ -4,6 +4,9 @@ import 'package:lingoa/app/application/training/watch/bloc.dart';
 import 'package:lingoa/app/domain/training/failures.dart';
 import 'package:lingoa/app/domain/training/training.dart';
 import 'package:lingoa/app/presentation/core/values/assets_name.dart';
+import 'package:lingoa/app/presentation/core/values/dimensions.dart';
+import 'package:lingoa/app/presentation/pages/core/training/widgets/common.dart';
+import 'package:lingoa/app/presentation/widgets/cards/training/success.dart';
 import 'package:lingoa/app/presentation/widgets/info/information_template.dart';
 import 'package:lingoa/generated/l10n.dart';
 
@@ -37,7 +40,23 @@ class SuccessTraining extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Продовжити (Bloc listener і т.д.)
-    return const SingleChildScrollView();
+    final body = training.content;
+
+    return body.length == 0
+        ? const TrainingNullInformationTemplate()
+        : ListView.separated(
+            itemCount: body.length,
+            padding: const EdgeInsets.symmetric(
+              vertical: Dimensions.heightContent,
+              horizontal: Dimensions.mainHorizontalPadding,
+            ),
+            itemBuilder: (context, index) {
+              return CardTraining(bodyContent: body);
+            },
+            separatorBuilder: (_, __) => const SizedBox(
+              height: Dimensions.heightContent,
+            ),
+          );
   }
 }
 

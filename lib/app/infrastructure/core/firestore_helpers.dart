@@ -66,5 +66,5 @@ class FirestoreDataName {
   static const content = 'content';
   static const statistics = 'statistics';
   static const vocabulary = 'vocabulary';
-  static const training = 'training';
+  static const training = 'trainig'; //'training'; // TODO: Поправити!
 }

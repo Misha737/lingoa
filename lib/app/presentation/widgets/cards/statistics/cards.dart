@@ -22,7 +22,7 @@ class StatisticsCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: Dimensions.d8),
       child: Container(
         decoration: Dimensions.boxDecoration,
-        height: Dimensions.cardBook.heightCardStatistics,
+        height: Dimensions.card.heightCardStatistics,
         child: Padding(
           padding: const EdgeInsets.only(left: Dimensions.d12),
           child: Row(
@@ -89,7 +89,7 @@ class LanguageCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: Dimensions.d8),
       child: Container(
         decoration: Dimensions.boxDecoration,
-        height: Dimensions.cardBook.heightCardStatistics,
+        height: Dimensions.card.heightCardStatistics,
         child: Padding(
           padding: const EdgeInsets.only(left: Dimensions.d12),
           child: Row(

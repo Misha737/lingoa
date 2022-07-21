@@ -19,22 +19,24 @@ abstract class TrainingDto implements _$TrainingDto {
   factory TrainingDto.fromDomain(Training training) {
     return TrainingDto(
       language: training.language.getOrCrash(),
-      content: training.content.map(
-        (key, value) => MapEntry(
-          key.getOrCrash(),
-          TrainingBodyDto.fromDomain(value),
-        ),
-      ),
+      content: training.content.getOrCrash().map(
+            (key, value) => MapEntry(
+              key.getOrCrash(),
+              TrainingBodyDto.fromDomain(value),
+            ),
+          ),
     );
   }
 
   Training toDomain() {
     return Training(
       language: Language(language),
-      content: content.map(
-        (key, value) => MapEntry(
-          TrainingName(key),
-          value.toDomain(),
+      content: TrainingBodyContent(
+        content.map(
+          (key, value) => MapEntry(
+            TrainingName(key),
+            value.toDomain(),
+          ),
         ),
       ),
     );

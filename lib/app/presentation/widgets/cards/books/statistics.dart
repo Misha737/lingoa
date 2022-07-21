@@ -19,13 +19,13 @@ class CardBookStatistics extends StatelessWidget {
     return Ink(
       decoration: Dimensions.boxDecoration,
       child: SizedBox(
-        height: Dimensions.cardBook.height,
+        height: Dimensions.card.height,
         width: MediaQuery.of(context).size.width,
         child: Row(
           children: [
             Container(
               height: MediaQuery.of(context).size.height,
-              width: Dimensions.cardBook.widthLeftContainer,
+              width: Dimensions.card.widthLeftContainer,
               decoration: BoxDecoration(
                 gradient: ColorsLightTheme.blueGradient,
                 borderRadius: BorderRadius.circular(Dimensions.borderRadius),

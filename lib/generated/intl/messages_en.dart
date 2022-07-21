@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "AddBook": MessageLookupByLibrary.simpleMessage("Add a book"),
         "AddBookLike":
             MessageLookupByLibrary.simpleMessage("Add your favorite book"),
         "AreYouSure": MessageLookupByLibrary.simpleMessage("Are you sure?"),
@@ -113,8 +112,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "You may not delete this book"),
         "YourBook": MessageLookupByLibrary.simpleMessage("Your book"),
         "YourName": MessageLookupByLibrary.simpleMessage("Your name"),
+        "addBook": MessageLookupByLibrary.simpleMessage("Add a book"),
         "chooseALanguage":
             MessageLookupByLibrary.simpleMessage("Choose a language"),
+        "descriptionTrainingNullInformationTemplate":
+            MessageLookupByLibrary.simpleMessage(
+                "Add your favorite book for a workout"),
         "exceedingMaxLength":
             MessageLookupByLibrary.simpleMessage("Too big field"),
         "exceedingMinLengthEnd":

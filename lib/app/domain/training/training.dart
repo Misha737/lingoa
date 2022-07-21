@@ -10,7 +10,7 @@ abstract class Training implements _$Training {
 
   const factory Training({
     required Language language,
-    required Map<TrainingName, TrainingBody> content,
+    required TrainingBodyContent content, // TODO: Перейменувати на Body
   }) = _Training;
 }
 
