@@ -6,9 +6,7 @@ import 'package:lingoa/app/domain/book/content.dart';
 import 'package:lingoa/app/domain/book/statistics.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
-import 'package:lingoa/app/presentation/core/values/languages.dart';
-
-import 'card.dart';
+import 'package:lingoa/app/presentation/widgets/cards/reading.dart';
 
 class SuccessReading extends StatelessWidget {
   const SuccessReading({
@@ -68,9 +66,7 @@ class SuccessReading extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     CardReading(
-                      language: LanguageDto(
-                        content.language(indexCard).toString(),
-                      ).toName(),
+                      language: content.language(indexCard),
                       text: content
                           .sentence(indexCard, indexPage - 1)
                           .getOrCrash(),

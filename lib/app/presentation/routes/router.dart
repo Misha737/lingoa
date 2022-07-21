@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:lingoa/app/domain/book/body.dart';
+import 'package:lingoa/app/domain/training/training.dart';
 import 'package:lingoa/app/presentation/pages/auth/auth.dart';
 import 'package:lingoa/app/presentation/pages/core/core.dart';
 import 'package:lingoa/app/presentation/pages/core/training/pages/repeat_sentence.dart';
@@ -19,7 +20,7 @@ part 'router.gr.dart';
     MaterialRoute(page: ReadingPage, initial: true),
     MaterialRoute(page: LanguagesPage, initial: true),
     // Training pages
-    MaterialRoute(page: TrainingRepeatSentencePage, initial: true),
+    MaterialRoute(page: TrainingRepeatSentencesPage, initial: true),
   ],
 )
 class AppRouter extends _$AppRouter {}

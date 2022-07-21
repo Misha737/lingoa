@@ -18,8 +18,8 @@ class Dimensions {
   static const double miniBorderRadius = 6;
   static const double blurRadius = 4;
   static const double mainHorizontalPadding = 24;
-  static const double heightContent = 16;
-  static const double smallHeightContent = 8;
+  static const double heightRetreatContent = 16;
+  static const double smallHeightRetreatContent = 8;
   static const double opacityText = 0.8;
   static final navigation = _Navigation();
   static final button = _Button();

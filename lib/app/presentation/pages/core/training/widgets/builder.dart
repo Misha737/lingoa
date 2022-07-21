@@ -47,7 +47,7 @@ class SuccessTraining extends StatelessWidget {
         : ListView.separated(
             itemCount: bodyContent.length,
             padding: const EdgeInsets.symmetric(
-              vertical: Dimensions.heightContent,
+              vertical: Dimensions.heightRetreatContent,
               horizontal: Dimensions.mainHorizontalPadding,
             ),
             itemBuilder: (context, index) {
@@ -57,11 +57,10 @@ class SuccessTraining extends StatelessWidget {
               return CardTraining(
                 name: body.key,
                 body: body.value,
-                length: bodyContent.length,
               );
             },
             separatorBuilder: (_, __) => const SizedBox(
-              height: Dimensions.heightContent,
+              height: Dimensions.heightRetreatContent,
             ),
           );
   }

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:lingoa/app/domain/training/training.dart';
 import 'package:lingoa/app/domain/training/value_objects.dart';
@@ -5,23 +6,24 @@ import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
 import 'package:lingoa/app/presentation/core/values/training_names.dart';
+import 'package:lingoa/app/presentation/routes/router.dart';
 
 class CardTraining extends StatelessWidget {
   const CardTraining({
     Key? key,
     required this.name,
     required this.body,
-    required this.length,
   }) : super(key: key);
 
   final TrainingName name;
   final TrainingBody body;
-  final int length;
 
   @override
   Widget build(BuildContext context) {
     Widget _counter() {
-      if (body.description.progress == length) return const _Circle();
+      if (body.description.progress == body.content.length) {
+        return const _Circle();
+      }
       if (body.description.progress == 0) {
         return const Icon(
           Icons.arrow_forward_rounded,
@@ -30,7 +32,7 @@ class CardTraining extends StatelessWidget {
       }
       return _Counter(
         target: body.description.progress,
-        length: length,
+        length: body.content.length,
       );
     }
 
@@ -42,7 +44,10 @@ class CardTraining extends StatelessWidget {
       height: Dimensions.card.height,
       child: InkWell(
         borderRadius: BorderRadius.circular(Dimensions.borderRadius),
-        onTap: () {},
+        onTap: () {
+          // TODO: Щось придумати з тим щоб переходити на різні сторінки
+          context.pushRoute(TrainingRepeatSentencesPageRoute(body: body));
+        },
         child: Row(
           children: [
             Container(

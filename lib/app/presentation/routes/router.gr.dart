@@ -41,9 +41,11 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const LanguagesPage());
     },
-    TrainingRepeatSentencePageRoute.name: (routeData) {
+    TrainingRepeatSentencesPageRoute.name: (routeData) {
+      final args = routeData.argsAs<TrainingRepeatSentencesPageRouteArgs>();
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const TrainingRepeatSentencePage());
+          routeData: routeData,
+          child: TrainingRepeatSentencesPage(key: args.key, body: args.body));
     }
   };
 
@@ -54,7 +56,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(CorePageRoute.name, path: '/core-page'),
         RouteConfig(ReadingPageRoute.name, path: '/'),
         RouteConfig(LanguagesPageRoute.name, path: '/'),
-        RouteConfig(TrainingRepeatSentencePageRoute.name, path: '/')
+        RouteConfig(TrainingRepeatSentencesPageRoute.name, path: '/')
       ];
 }
 
@@ -129,10 +131,26 @@ class LanguagesPageRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [TrainingRepeatSentencePage]
-class TrainingRepeatSentencePageRoute extends PageRouteInfo<void> {
-  const TrainingRepeatSentencePageRoute()
-      : super(TrainingRepeatSentencePageRoute.name, path: '/');
+/// [TrainingRepeatSentencesPage]
+class TrainingRepeatSentencesPageRoute
+    extends PageRouteInfo<TrainingRepeatSentencesPageRouteArgs> {
+  TrainingRepeatSentencesPageRoute({Key? key, required TrainingBody body})
+      : super(TrainingRepeatSentencesPageRoute.name,
+            path: '/',
+            args: TrainingRepeatSentencesPageRouteArgs(key: key, body: body));
 
-  static const String name = 'TrainingRepeatSentencePageRoute';
+  static const String name = 'TrainingRepeatSentencesPageRoute';
+}
+
+class TrainingRepeatSentencesPageRouteArgs {
+  const TrainingRepeatSentencesPageRouteArgs({this.key, required this.body});
+
+  final Key? key;
+
+  final TrainingBody body;
+
+  @override
+  String toString() {
+    return 'TrainingRepeatSentencesPageRouteArgs{key: $key, body: $body}';
+  }
 }

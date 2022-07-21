@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
+import 'package:lingoa/app/presentation/core/values/languages.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
 
 class CardReading extends StatelessWidget {
@@ -11,7 +13,7 @@ class CardReading extends StatelessWidget {
     required this.contentColor,
   }) : super(key: key);
 
-  final String language;
+  final Language language;
   final String text;
   final BoxDecoration boxDecoration;
   final Color contentColor;
@@ -48,7 +50,9 @@ class CardReading extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                language,
+                LanguageDto(
+                  language.getOrCrash(),
+                ).toName(),
                 style: TextStyles.headline5.copyWith(color: contentColor),
               ),
               Row(
