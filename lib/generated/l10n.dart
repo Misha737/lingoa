@@ -840,6 +840,16 @@ class S {
     );
   }
 
+  /// `Verify`
+  String get verify {
+    return Intl.message(
+      'Verify',
+      name: 'verify',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Training`
   String get training {
     return Intl.message(
@@ -935,6 +945,16 @@ class S {
     return Intl.message(
       'Don\'t stop! You can learn new words every day',
       name: 'trainingNamesDescriptionLearnWords',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Translate the sentences`
+  String get hintTextFieldTrainingRepeatSentence {
+    return Intl.message(
+      'Translate the sentences',
+      name: 'hintTextFieldTrainingRepeatSentence',
       desc: '',
       args: [],
     );

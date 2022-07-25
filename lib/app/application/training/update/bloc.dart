@@ -21,21 +21,18 @@ class UpdateTrainingBloc
       : super(const UpdateTrainingState.initial()) {
     on<UpdateTrainingEvent>(
       (event, emit) async {
-        // TODO: Тимчасово 'if'
-        if (event.description.progress != 0) {
-          final successOrFailure = await _repository.update(
-            language: event.language,
-            name: event.name,
-            description: event.description,
-          );
+        final successOrFailure = await _repository.update(
+          language: event.language,
+          name: event.name,
+          description: event.description,
+        );
 
-          emit(
-            successOrFailure.fold(
-              (failure) => UpdateTrainingState.failure(failure),
-              (_) => const UpdateTrainingState.success(),
-            ),
-          );
-        }
+        emit(
+          successOrFailure.fold(
+            (failure) => UpdateTrainingState.failure(failure),
+            (_) => const UpdateTrainingState.success(),
+          ),
+        );
       },
     );
   }

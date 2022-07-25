@@ -126,6 +126,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("The field is smaller"),
         "forMoreLanguages": MessageLookupByLibrary.simpleMessage(
             "For more languages, please add more books with other languages"),
+        "hintTextFieldTrainingRepeatSentence":
+            MessageLookupByLibrary.simpleMessage("Translate the sentences"),
         "insufficientPermissionsBook": MessageLookupByLibrary.simpleMessage(
             "You are not entitled to this book"),
         "insufficientPermissionsLibrary": MessageLookupByLibrary.simpleMessage(
@@ -165,6 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Repeat the words"),
         "unableToUpdateBook":
             MessageLookupByLibrary.simpleMessage("The book was not found"),
+        "verify": MessageLookupByLibrary.simpleMessage("Verify"),
         "wordsTitle": MessageLookupByLibrary.simpleMessage("words")
       };
 }

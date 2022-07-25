@@ -7,7 +7,7 @@ class TextFieldApp extends StatelessWidget {
   const TextFieldApp({
     Key? key,
     required this.hintText,
-    required this.titleText,
+    this.titleText,
     required this.maxLength,
     required this.isCounter,
     required this.onChanged,
@@ -17,7 +17,7 @@ class TextFieldApp extends StatelessWidget {
   }) : super(key: key);
 
   final String hintText;
-  final String titleText;
+  final String? titleText;
   final bool isCounter;
   final int maxLength;
   final String? Function(String?)? validator;
@@ -30,17 +30,19 @@ class TextFieldApp extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding:
-              const EdgeInsets.only(left: Dimensions.d8, bottom: Dimensions.d4),
-          child: Text(
-            titleText,
-            style: TextStyles.title2.copyWith(
-              color: ColorsLightTheme.gray,
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-        ),
+        titleText == null
+            ? const SizedBox.shrink()
+            : Padding(
+                padding: const EdgeInsets.only(
+                    left: Dimensions.d8, bottom: Dimensions.d4),
+                child: Text(
+                  titleText!,
+                  style: TextStyles.title2.copyWith(
+                    color: ColorsLightTheme.gray,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ),
         Stack(
           children: [
             Container(

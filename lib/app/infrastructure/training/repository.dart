@@ -85,7 +85,7 @@ class TrainingRepositoryFirestore extends TrainingRepository {
     try {
       final userDoc = await _firestore.userDocument();
 
-      userDoc.trainingDocument(language).update(
+      await userDoc.trainingDocument(language).update(
         {
           'content.${name.getOrCrash()}.description':
               TrainingDescriptionDto.fromDomain(description).toJson()

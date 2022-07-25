@@ -99,7 +99,7 @@ class Sentence extends ValueObject<String> {
     return Sentence._(right(input));
   }
 
-  String get withoutSymbols {
+  String get _withoutSymbols {
     const String regexp =
         r"[^\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Connector_Punctuation}\p{Join_Control}\s']+";
 
@@ -109,7 +109,7 @@ class Sentence extends ValueObject<String> {
   }
 
   List<Word> get toWords =>
-      withoutSymbols.split(' ').map((e) => Word(e)).toList();
+      _withoutSymbols.split(' ').map((e) => Word(e)).toList();
 
   Sentence._(this.value);
 }

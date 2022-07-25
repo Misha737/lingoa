@@ -78,6 +78,7 @@
   "BookAdded": "Book added",
   "Response": "Response",
   "options": "Options",
+  "verify": "Verify",
   "training": "Training",
   "insufficientPermissionsTrainingFailure": "You do not have rights to these workouts",
   "notFoundTrainingFailure": "File not found, send feedback",
@@ -87,5 +88,6 @@
   "trainingNamesTitleLearnWords": "Learn new words",
   "trainingNamesDescriptionRepeatWords": "Repeat the words every day in order to always be on top",
   "trainingNamesDescriptionRepeatSentences": "Repeat the sentences for better confidence",
-  "trainingNamesDescriptionLearnWords": "Don't stop! You can learn new words every day"
+  "trainingNamesDescriptionLearnWords": "Don't stop! You can learn new words every day",
+  "hintTextFieldTrainingRepeatSentence": "Translate the sentences"
 }
