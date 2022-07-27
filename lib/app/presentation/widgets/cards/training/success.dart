@@ -1,27 +1,31 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/domain/training/training.dart';
 import 'package:lingoa/app/domain/training/value_objects.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
 import 'package:lingoa/app/presentation/core/values/styles/widgets/text/text.dart';
 import 'package:lingoa/app/presentation/core/values/training_names.dart';
-import 'package:lingoa/app/presentation/routes/router.dart';
+import 'package:lingoa/app/presentation/widgets/dialog/dialogs.dart';
+import 'package:lingoa/generated/l10n.dart';
 
 class CardTraining extends StatelessWidget {
   const CardTraining({
     Key? key,
     required this.name,
     required this.body,
+    required this.language,
   }) : super(key: key);
 
   final TrainingName name;
   final TrainingBody body;
+  final Language language;
 
   @override
   Widget build(BuildContext context) {
     Widget _counter() {
-      if (body.description.progress == body.content.length) {
+      if (body.description.progress >= body.content.length) {
         return const _Circle();
       }
       if (body.description.progress == 0) {
@@ -31,7 +35,7 @@ class CardTraining extends StatelessWidget {
         );
       }
       return _Counter(
-        target: body.description.progress,
+        target: body.description.progress + 1,
         length: body.content.length,
       );
     }
@@ -44,10 +48,28 @@ class CardTraining extends StatelessWidget {
       height: Dimensions.card.height,
       child: InkWell(
         borderRadius: BorderRadius.circular(Dimensions.borderRadius),
-        onTap: () {
-          // TODO: Щось придумати з тим щоб переходити на різні сторінки
-          context.pushRoute(TrainingRepeatSentencesPageRoute(body: body));
-        },
+        onTap: body.description.progress >= body.content.length
+            ? null
+            : () {
+                TrainingNamePage.toPage(
+                  body: body,
+                  language: language,
+                  name: name,
+                ).page.fold(
+                      () => showDialogApp(
+                        context,
+                        title: S().SomethingWentWrong,
+                        content: S().trainingNamePageNull,
+                        actions: [
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(S().Response),
+                          )
+                        ],
+                      ),
+                      (page) => context.pushRoute(page),
+                    );
+              },
         child: Row(
           children: [
             Container(

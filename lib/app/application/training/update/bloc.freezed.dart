@@ -282,21 +282,21 @@ mixin _$UpdateTrainingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(int progress) success,
     required TResult Function(TrainingFailures failure) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(int progress)? success,
     TResult Function(TrainingFailures failure)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(int progress)? success,
     TResult Function(TrainingFailures failure)? failure,
     required TResult orElse(),
   }) =>
@@ -382,7 +382,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(int progress) success,
     required TResult Function(TrainingFailures failure) failure,
   }) {
     return initial();
@@ -392,7 +392,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(int progress)? success,
     TResult Function(TrainingFailures failure)? failure,
   }) {
     return initial?.call();
@@ -402,7 +402,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(int progress)? success,
     TResult Function(TrainingFailures failure)? failure,
     required TResult orElse(),
   }) {
@@ -455,6 +455,7 @@ abstract class _Initial implements UpdateTrainingState {
 abstract class _$SuccessCopyWith<$Res> {
   factory _$SuccessCopyWith(_Success value, $Res Function(_Success) then) =
       __$SuccessCopyWithImpl<$Res>;
+  $Res call({int progress});
 }
 
 /// @nodoc
@@ -466,57 +467,80 @@ class __$SuccessCopyWithImpl<$Res>
 
   @override
   _Success get _value => super._value as _Success;
+
+  @override
+  $Res call({
+    Object? progress = freezed,
+  }) {
+    return _then(_Success(
+      progress == freezed
+          ? _value.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Success implements _Success {
-  const _$_Success();
+  const _$_Success(this.progress);
+
+  @override
+  final int progress;
 
   @override
   String toString() {
-    return 'UpdateTrainingState.success()';
+    return 'UpdateTrainingState.success(progress: $progress)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Success);
+        (other.runtimeType == runtimeType &&
+            other is _Success &&
+            const DeepCollectionEquality().equals(other.progress, progress));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(progress));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SuccessCopyWith<_Success> get copyWith =>
+      __$SuccessCopyWithImpl<_Success>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(int progress) success,
     required TResult Function(TrainingFailures failure) failure,
   }) {
-    return success();
+    return success(progress);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(int progress)? success,
     TResult Function(TrainingFailures failure)? failure,
   }) {
-    return success?.call();
+    return success?.call(progress);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(int progress)? success,
     TResult Function(TrainingFailures failure)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(progress);
     }
     return orElse();
   }
@@ -557,7 +581,12 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements UpdateTrainingState {
-  const factory _Success() = _$_Success;
+  const factory _Success(final int progress) = _$_Success;
+
+  int get progress => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SuccessCopyWith<_Success> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -633,7 +662,7 @@ class _$_Failure implements _Failure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(int progress) success,
     required TResult Function(TrainingFailures failure) failure,
   }) {
     return failure(this.failure);
@@ -643,7 +672,7 @@ class _$_Failure implements _Failure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(int progress)? success,
     TResult Function(TrainingFailures failure)? failure,
   }) {
     return failure?.call(this.failure);
@@ -653,7 +682,7 @@ class _$_Failure implements _Failure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(int progress)? success,
     TResult Function(TrainingFailures failure)? failure,
     required TResult orElse(),
   }) {

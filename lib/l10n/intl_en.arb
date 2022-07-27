@@ -89,5 +89,6 @@
   "trainingNamesDescriptionRepeatWords": "Repeat the words every day in order to always be on top",
   "trainingNamesDescriptionRepeatSentences": "Repeat the sentences for better confidence",
   "trainingNamesDescriptionLearnWords": "Don't stop! You can learn new words every day",
-  "hintTextFieldTrainingRepeatSentence": "Translate the sentences"
+  "hintTextFieldTrainingRepeatSentence": "Translate the sentences",
+  "trainingNamePageNull": "No workout type found, leave a review"
 }

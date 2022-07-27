@@ -959,6 +959,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No workout type found, leave a review`
+  String get trainingNamePageNull {
+    return Intl.message(
+      'No workout type found, leave a review',
+      name: 'trainingNamePageNull',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

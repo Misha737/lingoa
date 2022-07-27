@@ -30,7 +30,7 @@ class UpdateTrainingBloc
         emit(
           successOrFailure.fold(
             (failure) => UpdateTrainingState.failure(failure),
-            (_) => const UpdateTrainingState.success(),
+            (_) => UpdateTrainingState.success(event.description.progress),
           ),
         );
       },

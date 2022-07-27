@@ -15,8 +15,8 @@ import 'package:lingoa/app/presentation/widgets/input/text_field.dart';
 import 'package:lingoa/generated/l10n.dart';
 import 'package:lingoa/injection.dart';
 
-class TrainingRepeatSentencesPage extends StatelessWidget {
-  const TrainingRepeatSentencesPage({
+class TrainingRepeatWordsPage extends StatelessWidget {
+  const TrainingRepeatWordsPage({
     Key? key,
     required this.body,
     required this.language,
@@ -128,6 +128,7 @@ class _Body extends StatelessWidget {
                   contentColor: ColorsLightTheme.white,
                 ),
                 const SizedBox(height: Dimensions.heightRetreatContent),
+                Text('data'),
                 // TODO: Зробити багато строчним
                 TextFieldApp(
                   hintText: S().hintTextFieldTrainingRepeatSentence,

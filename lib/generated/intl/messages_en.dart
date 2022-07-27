@@ -150,6 +150,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "serverException": MessageLookupByLibrary.simpleMessage(
             "Server problem, check your internet connection or send feedback"),
         "training": MessageLookupByLibrary.simpleMessage("Training"),
+        "trainingNamePageNull": MessageLookupByLibrary.simpleMessage(
+            "No workout type found, leave a review"),
         "trainingNamesDescriptionLearnWords":
             MessageLookupByLibrary.simpleMessage(
                 "Don\'t stop! You can learn new words every day"),

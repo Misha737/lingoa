@@ -1,4 +1,9 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:dartz/dartz.dart';
+import 'package:lingoa/app/domain/core/value_objects.dart';
+import 'package:lingoa/app/domain/training/training.dart';
 import 'package:lingoa/app/domain/training/value_objects.dart';
+import 'package:lingoa/app/presentation/routes/router.dart';
 import 'package:lingoa/generated/l10n.dart';
 
 // TODO: Перейменувати
@@ -28,4 +33,27 @@ class TrainingNameString {
     TrainingName.repeatSentences: S().trainingNamesDescriptionRepeatSentences,
     TrainingName.learnWords: S().trainingNamesDescriptionLearnWords,
   };
+}
+
+class TrainingNamePage {
+  const TrainingNamePage._(this.page);
+
+  final Option<PageRouteInfo> page;
+
+  factory TrainingNamePage.toPage({
+    required TrainingBody body,
+    required Language language,
+    required TrainingName name,
+  }) {
+    final Map<TrainingName, PageRouteInfo> pages = {
+      TrainingName.repeatWords:
+          TrainingRepeatWordsPageRoute(body: body, language: language),
+      TrainingName.repeatSentences:
+          TrainingRepeatSentencesPageRoute(body: body, language: language),
+      // TrainingName.learnWords:
+      //     TrainingLearnWordsPageRoute(body: body, language: language),
+    };
+
+    return TrainingNamePage._(optionOf(pages[name]));
+  }
 }

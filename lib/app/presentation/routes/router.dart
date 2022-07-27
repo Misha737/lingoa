@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:lingoa/app/domain/book/body.dart';
+import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/domain/training/training.dart';
 import 'package:lingoa/app/presentation/pages/auth/auth.dart';
 import 'package:lingoa/app/presentation/pages/core/core.dart';
@@ -8,6 +9,7 @@ import 'package:lingoa/app/presentation/pages/core/vocabulary/pages/languages.da
 import 'package:lingoa/app/presentation/pages/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
+import '../pages/core/training/pages/repeat_word.dart';
 import '../pages/reading/reading.dart';
 
 part 'router.gr.dart';
@@ -21,6 +23,7 @@ part 'router.gr.dart';
     MaterialRoute(page: LanguagesPage, initial: true),
     // Training pages
     MaterialRoute(page: TrainingRepeatSentencesPage, initial: true),
+    MaterialRoute(page: TrainingRepeatWordsPage, initial: true),
   ],
 )
 class AppRouter extends _$AppRouter {}

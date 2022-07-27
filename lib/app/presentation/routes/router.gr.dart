@@ -45,7 +45,15 @@ class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<TrainingRepeatSentencesPageRouteArgs>();
       return MaterialPageX<dynamic>(
           routeData: routeData,
-          child: TrainingRepeatSentencesPage(key: args.key, body: args.body));
+          child: TrainingRepeatSentencesPage(
+              key: args.key, body: args.body, language: args.language));
+    },
+    TrainingRepeatWordsPageRoute.name: (routeData) {
+      final args = routeData.argsAs<TrainingRepeatWordsPageRouteArgs>();
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: TrainingRepeatWordsPage(
+              key: args.key, body: args.body, language: args.language));
     }
   };
 
@@ -56,7 +64,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(CorePageRoute.name, path: '/core-page'),
         RouteConfig(ReadingPageRoute.name, path: '/'),
         RouteConfig(LanguagesPageRoute.name, path: '/'),
-        RouteConfig(TrainingRepeatSentencesPageRoute.name, path: '/')
+        RouteConfig(TrainingRepeatSentencesPageRoute.name, path: '/'),
+        RouteConfig(TrainingRepeatWordsPageRoute.name, path: '/')
       ];
 }
 
@@ -134,23 +143,58 @@ class LanguagesPageRoute extends PageRouteInfo<void> {
 /// [TrainingRepeatSentencesPage]
 class TrainingRepeatSentencesPageRoute
     extends PageRouteInfo<TrainingRepeatSentencesPageRouteArgs> {
-  TrainingRepeatSentencesPageRoute({Key? key, required TrainingBody body})
+  TrainingRepeatSentencesPageRoute(
+      {Key? key, required TrainingBody body, required Language language})
       : super(TrainingRepeatSentencesPageRoute.name,
             path: '/',
-            args: TrainingRepeatSentencesPageRouteArgs(key: key, body: body));
+            args: TrainingRepeatSentencesPageRouteArgs(
+                key: key, body: body, language: language));
 
   static const String name = 'TrainingRepeatSentencesPageRoute';
 }
 
 class TrainingRepeatSentencesPageRouteArgs {
-  const TrainingRepeatSentencesPageRouteArgs({this.key, required this.body});
+  const TrainingRepeatSentencesPageRouteArgs(
+      {this.key, required this.body, required this.language});
 
   final Key? key;
 
   final TrainingBody body;
 
+  final Language language;
+
   @override
   String toString() {
-    return 'TrainingRepeatSentencesPageRouteArgs{key: $key, body: $body}';
+    return 'TrainingRepeatSentencesPageRouteArgs{key: $key, body: $body, language: $language}';
+  }
+}
+
+/// generated route for
+/// [TrainingRepeatWordsPage]
+class TrainingRepeatWordsPageRoute
+    extends PageRouteInfo<TrainingRepeatWordsPageRouteArgs> {
+  TrainingRepeatWordsPageRoute(
+      {Key? key, required TrainingBody body, required Language language})
+      : super(TrainingRepeatWordsPageRoute.name,
+            path: '/',
+            args: TrainingRepeatWordsPageRouteArgs(
+                key: key, body: body, language: language));
+
+  static const String name = 'TrainingRepeatWordsPageRoute';
+}
+
+class TrainingRepeatWordsPageRouteArgs {
+  const TrainingRepeatWordsPageRouteArgs(
+      {this.key, required this.body, required this.language});
+
+  final Key? key;
+
+  final TrainingBody body;
+
+  final Language language;
+
+  @override
+  String toString() {
+    return 'TrainingRepeatWordsPageRouteArgs{key: $key, body: $body, language: $language}';
   }
 }

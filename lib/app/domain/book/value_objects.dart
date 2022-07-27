@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 
 import '../core/value_objects.dart';
 
+//TODO: Змінити структуру контента книги (Або подумати)
 class Content extends ValueObject<Map<Language, Sentences>> {
   @override
   final Either<ValueFailure<Map<Language, Sentences>>, Map<Language, Sentences>>

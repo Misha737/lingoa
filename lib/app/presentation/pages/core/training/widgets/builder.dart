@@ -57,6 +57,7 @@ class SuccessTraining extends StatelessWidget {
               return CardTraining(
                 name: body.key,
                 body: body.value,
+                language: training.language,
               );
             },
             separatorBuilder: (_, __) => const SizedBox(
