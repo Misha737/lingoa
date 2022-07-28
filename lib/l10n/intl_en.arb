@@ -79,6 +79,8 @@
   "Response": "Response",
   "options": "Options",
   "verify": "Verify",
+  "continueLabel": "Continue",
+  "right": "Right",
   "training": "Training",
   "insufficientPermissionsTrainingFailure": "You do not have rights to these workouts",
   "notFoundTrainingFailure": "File not found, send feedback",
@@ -90,5 +92,8 @@
   "trainingNamesDescriptionRepeatSentences": "Repeat the sentences for better confidence",
   "trainingNamesDescriptionLearnWords": "Don't stop! You can learn new words every day",
   "hintTextFieldTrainingRepeatSentence": "Translate the sentences",
-  "trainingNamePageNull": "No workout type found, leave a review"
+  "hintTextFieldTrainingRepeatWords": "Translate this word",
+  "trainingNamePageNull": "No workout type found, leave a review",
+  "sheetTrainingCheckNotRightDescription0": "You were close",
+  "sheetTrainingCheckRightDescription0": "You are doing well"
 }

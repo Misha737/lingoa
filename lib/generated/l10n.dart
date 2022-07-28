@@ -850,6 +850,26 @@ class S {
     );
   }
 
+  /// `Continue`
+  String get continueLabel {
+    return Intl.message(
+      'Continue',
+      name: 'continueLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Right`
+  String get right {
+    return Intl.message(
+      'Right',
+      name: 'right',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Training`
   String get training {
     return Intl.message(
@@ -960,11 +980,41 @@ class S {
     );
   }
 
+  /// `Translate this word`
+  String get hintTextFieldTrainingRepeatWords {
+    return Intl.message(
+      'Translate this word',
+      name: 'hintTextFieldTrainingRepeatWords',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `No workout type found, leave a review`
   String get trainingNamePageNull {
     return Intl.message(
       'No workout type found, leave a review',
       name: 'trainingNamePageNull',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You were close`
+  String get sheetTrainingCheckNotRightDescription0 {
+    return Intl.message(
+      'You were close',
+      name: 'sheetTrainingCheckNotRightDescription0',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are doing well`
+  String get sheetTrainingCheckRightDescription0 {
+    return Intl.message(
+      'You are doing well',
+      name: 'sheetTrainingCheckRightDescription0',
       desc: '',
       args: [],
     );

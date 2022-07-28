@@ -115,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addBook": MessageLookupByLibrary.simpleMessage("Add a book"),
         "chooseALanguage":
             MessageLookupByLibrary.simpleMessage("Choose a language"),
+        "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
         "descriptionTrainingNullInformationTemplate":
             MessageLookupByLibrary.simpleMessage(
                 "Add your favorite book for a workout"),
@@ -128,6 +129,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "For more languages, please add more books with other languages"),
         "hintTextFieldTrainingRepeatSentence":
             MessageLookupByLibrary.simpleMessage("Translate the sentences"),
+        "hintTextFieldTrainingRepeatWords":
+            MessageLookupByLibrary.simpleMessage("Translate this word"),
         "insufficientPermissionsBook": MessageLookupByLibrary.simpleMessage(
             "You are not entitled to this book"),
         "insufficientPermissionsLibrary": MessageLookupByLibrary.simpleMessage(
@@ -147,8 +150,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
         "options": MessageLookupByLibrary.simpleMessage("Options"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "right": MessageLookupByLibrary.simpleMessage("Right"),
         "serverException": MessageLookupByLibrary.simpleMessage(
             "Server problem, check your internet connection or send feedback"),
+        "sheetTrainingCheckNotRightDescription0":
+            MessageLookupByLibrary.simpleMessage("You were close"),
+        "sheetTrainingCheckRightDescription0":
+            MessageLookupByLibrary.simpleMessage("You are doing well"),
         "training": MessageLookupByLibrary.simpleMessage("Training"),
         "trainingNamePageNull": MessageLookupByLibrary.simpleMessage(
             "No workout type found, leave a review"),

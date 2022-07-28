@@ -47,7 +47,7 @@ Future<T?> showDialogDelete<T>(
     );
 
 // TODO: Зробити
-Future<T?> showDialogUpdateTraining<T>(
+Future<T?> showDialogUpdateTrainingFailure<T>(
   BuildContext context, {
   required TrainingFailures failure,
 }) =>

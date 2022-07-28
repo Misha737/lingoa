@@ -58,8 +58,10 @@ class TrainingRepeatSentencesPage extends StatelessWidget {
           listener: (context, state) {
             state.maybeMap(
               orElse: () {},
-              failure: (state) =>
-                  showDialogUpdateTraining(context, failure: state.failure),
+              failure: (state) => showDialogUpdateTrainingFailure(
+                context,
+                failure: state.failure,
+              ),
             );
           },
           builder: (context, state) {

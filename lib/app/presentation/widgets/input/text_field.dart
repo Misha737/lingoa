@@ -14,6 +14,7 @@ class TextFieldApp extends StatelessWidget {
     this.validator,
     required this.isError,
     this.isObscureText,
+    this.controller,
   }) : super(key: key);
 
   final String hintText;
@@ -24,6 +25,7 @@ class TextFieldApp extends StatelessWidget {
   final bool isError;
   final bool? isObscureText;
   final void Function(String value) onChanged;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +63,7 @@ class TextFieldApp extends StatelessWidget {
               ),
             ),
             TextFormField(
+              controller: controller,
               style:
                   TextStyles.body2.copyWith(color: ColorsLightTheme.darkGray),
               decoration: InputDecoration(
