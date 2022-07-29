@@ -1,19 +1,16 @@
-import 'dart:developer';
-
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lingoa/app/application/training/translation_check/bloc.dart';
-import 'package:lingoa/app/application/training/update/bloc.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/domain/training/training.dart';
+import 'package:lingoa/app/domain/training/value_objects.dart';
 import 'package:lingoa/app/presentation/core/values/colors.dart';
 import 'package:lingoa/app/presentation/core/values/dimensions.dart';
+import 'package:lingoa/app/presentation/pages/core/training/widgets/wrap.dart';
 import 'package:lingoa/app/presentation/widgets/cards/reading.dart';
-import 'package:lingoa/app/presentation/widgets/dialog/dialogs.dart';
-import 'package:lingoa/app/presentation/widgets/input/text_field.dart';
 import 'package:lingoa/generated/l10n.dart';
-import 'package:lingoa/injection.dart';
+
+import '../widgets/common.dart';
 
 class TrainingRepeatSentencesPage extends StatelessWidget {
   const TrainingRepeatSentencesPage({
@@ -27,72 +24,14 @@ class TrainingRepeatSentencesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => getIt<UpdateTrainingBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => getIt<TranslationCheckTrainingBloc>(),
-        ),
-      ],
-      child: BlocListener<TranslationCheckTrainingBloc,
-          TranslationCheckTrainingState>(
-        listener: (context, state) {
-          state.maybeMap(
-            orElse: () {},
-            // TODO: sheet bar
-            // context.read<UpdateTrainingBloc>().add(
-            //       // TODO: Змінити
-            //       UpdateTrainingEvent.update(
-            //         language,
-            //         TrainingName.repeatSentences,
-            //         TrainingDescription(progress: progress + 1),
-            //       ),
-            //     );
-            right: (_) => log('Вірно'),
-            notRight: (_) => log('Мімо'),
-          );
-        },
-        child: BlocConsumer<UpdateTrainingBloc, UpdateTrainingState>(
-          listener: (context, state) {
-            state.maybeMap(
-              orElse: () {},
-              failure: (state) => showDialogUpdateTrainingFailure(
-                context,
-                failure: state.failure,
-              ),
-            );
-          },
-          builder: (context, state) {
-            final progress = state.maybeMap(
-              orElse: () => 0,
-              initial: (_) => body.description.progress,
-              success: (state) => state.progress,
-            );
-
-            return Scaffold(
-              appBar: AppBar(
-                title: Text('${progress + 1} / ${body.content.length}'),
-                actions: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.settings_rounded),
-                  ),
-                ],
-                leading: IconButton(
-                  icon: const Icon(Icons.arrow_back_rounded),
-                  onPressed: () => context.popRoute(),
-                ),
-              ),
-              body: _Body(
-                content: body.content,
-                progress: progress,
-                language: language,
-              ),
-            );
-          },
-        ),
+    return WrapTraining(
+      body: body,
+      language: language,
+      trainingName: TrainingName.repeatSentences,
+      bodyWidget: (progress) => _Body(
+        content: body.content,
+        progress: progress,
+        language: language,
       ),
     );
   }
@@ -114,6 +53,7 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     final content = this.content[progress];
     String inputText = ''; // TODO: <--- Щось придумати
+
     return ListView(
       padding: const EdgeInsets.all(Dimensions.mainHorizontalPadding),
       children: [
@@ -130,16 +70,11 @@ class _Body extends StatelessWidget {
                   contentColor: ColorsLightTheme.white,
                 ),
                 const SizedBox(height: Dimensions.heightRetreatContent),
-                // TODO: Зробити багато строчним
-                TextFieldApp(
+                TextFieldTraining(
                   hintText: S().hintTextFieldTrainingRepeatSentence,
-                  titleText: null,
-                  maxLength: 100,
-                  isCounter: true,
                   onChanged: (input) {
                     inputText = input;
                   },
-                  isError: false,
                 ),
               ],
             ),

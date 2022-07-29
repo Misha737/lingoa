@@ -39,6 +39,7 @@ class InformationTemplate extends StatelessWidget {
           const SizedBox(height: Dimensions.d24),
           Text(
             description,
+            textAlign: TextAlign.center,
             style: TextStyles.body3
                 .copyWith(color: ColorsLightTheme.lightMediumGray),
           ),

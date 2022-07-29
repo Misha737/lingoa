@@ -113,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourBook": MessageLookupByLibrary.simpleMessage("Your book"),
         "YourName": MessageLookupByLibrary.simpleMessage("Your name"),
         "addBook": MessageLookupByLibrary.simpleMessage("Add a book"),
+        "back": MessageLookupByLibrary.simpleMessage("Back"),
         "chooseALanguage":
             MessageLookupByLibrary.simpleMessage("Choose a language"),
         "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -158,6 +159,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "sheetTrainingCheckRightDescription0":
             MessageLookupByLibrary.simpleMessage("You are doing well"),
         "training": MessageLookupByLibrary.simpleMessage("Training"),
+        "trainingFailureLength": MessageLookupByLibrary.simpleMessage(
+            "An error occurred with the length of the content"),
         "trainingNamePageNull": MessageLookupByLibrary.simpleMessage(
             "No workout type found, leave a review"),
         "trainingNamesDescriptionLearnWords":

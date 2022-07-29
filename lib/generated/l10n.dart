@@ -880,6 +880,16 @@ class S {
     );
   }
 
+  /// `Back`
+  String get back {
+    return Intl.message(
+      'Back',
+      name: 'back',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `You do not have rights to these workouts`
   String get insufficientPermissionsTrainingFailure {
     return Intl.message(
@@ -1015,6 +1025,16 @@ class S {
     return Intl.message(
       'You are doing well',
       name: 'sheetTrainingCheckRightDescription0',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred with the length of the content`
+  String get trainingFailureLength {
+    return Intl.message(
+      'An error occurred with the length of the content',
+      name: 'trainingFailureLength',
       desc: '',
       args: [],
     );

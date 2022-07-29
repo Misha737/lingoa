@@ -82,6 +82,7 @@
   "continueLabel": "Continue",
   "right": "Right",
   "training": "Training",
+  "back": "Back",
   "insufficientPermissionsTrainingFailure": "You do not have rights to these workouts",
   "notFoundTrainingFailure": "File not found, send feedback",
   "descriptionTrainingNullInformationTemplate": "Add your favorite book for a workout",
@@ -95,5 +96,6 @@
   "hintTextFieldTrainingRepeatWords": "Translate this word",
   "trainingNamePageNull": "No workout type found, leave a review",
   "sheetTrainingCheckNotRightDescription0": "You were close",
-  "sheetTrainingCheckRightDescription0": "You are doing well"
+  "sheetTrainingCheckRightDescription0": "You are doing well",
+  "trainingFailureLength": "An error occurred with the length of the content"
 }
