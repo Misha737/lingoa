@@ -16,8 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BookStatistics {
-// required String name,
-// required num value,
   BookStatisticsDynamic get dynamicContent =>
       throw _privateConstructorUsedError;
   BookStatisticsStatic get staticContent => throw _privateConstructorUsedError;
@@ -163,8 +161,6 @@ class _$_BookStatistics extends _BookStatistics {
       required this.sentence})
       : super._();
 
-// required String name,
-// required num value,
   @override
   final BookStatisticsDynamic dynamicContent;
   @override
@@ -214,8 +210,7 @@ abstract class _BookStatistics extends BookStatistics {
       required final int sentence}) = _$_BookStatistics;
   const _BookStatistics._() : super._();
 
-  @override // required String name,
-// required num value,
+  @override
   BookStatisticsDynamic get dynamicContent =>
       throw _privateConstructorUsedError;
   @override
@@ -232,7 +227,7 @@ abstract class _BookStatistics extends BookStatistics {
 
 /// @nodoc
 mixin _$BookStatisticsDynamic {
-  int get progress => throw _privateConstructorUsedError;
+  double get progress => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BookStatisticsDynamicCopyWith<BookStatisticsDynamic> get copyWith =>
@@ -244,7 +239,7 @@ abstract class $BookStatisticsDynamicCopyWith<$Res> {
   factory $BookStatisticsDynamicCopyWith(BookStatisticsDynamic value,
           $Res Function(BookStatisticsDynamic) then) =
       _$BookStatisticsDynamicCopyWithImpl<$Res>;
-  $Res call({int progress});
+  $Res call({double progress});
 }
 
 /// @nodoc
@@ -264,7 +259,7 @@ class _$BookStatisticsDynamicCopyWithImpl<$Res>
       progress: progress == freezed
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -276,7 +271,7 @@ abstract class _$BookStatisticsDynamicCopyWith<$Res>
           $Res Function(_BookStatisticsDynamic) then) =
       __$BookStatisticsDynamicCopyWithImpl<$Res>;
   @override
-  $Res call({int progress});
+  $Res call({double progress});
 }
 
 /// @nodoc
@@ -298,7 +293,7 @@ class __$BookStatisticsDynamicCopyWithImpl<$Res>
       progress: progress == freezed
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -309,7 +304,7 @@ class _$_BookStatisticsDynamic extends _BookStatisticsDynamic {
   const _$_BookStatisticsDynamic({required this.progress}) : super._();
 
   @override
-  final int progress;
+  final double progress;
 
   @override
   String toString() {
@@ -336,12 +331,12 @@ class _$_BookStatisticsDynamic extends _BookStatisticsDynamic {
 }
 
 abstract class _BookStatisticsDynamic extends BookStatisticsDynamic {
-  const factory _BookStatisticsDynamic({required final int progress}) =
+  const factory _BookStatisticsDynamic({required final double progress}) =
       _$_BookStatisticsDynamic;
   const _BookStatisticsDynamic._() : super._();
 
   @override
-  int get progress => throw _privateConstructorUsedError;
+  double get progress => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$BookStatisticsDynamicCopyWith<_BookStatisticsDynamic> get copyWith =>

@@ -24,11 +24,11 @@ abstract class BookBody implements _$BookBody {
   factory BookBody.empty() => BookBody(
         id: UniqueId(),
         name: Name(''),
-        author: Name.empty(''),
+        author: Name.empty(''), // TODO: Зробити Option (dartz)
         way: Way.reading,
         progress: 0,
         learnLanguage: Language('en'),
-        nativeLanguage: Language('ua'),
+        nativeLanguage: Language('ua'), // TODO: Поправити
         isRead: false,
         date: DateTime(0),
       );

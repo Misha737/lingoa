@@ -1,0 +1,22 @@
+part of 'bloc.dart';
+
+@freezed
+abstract class LibraryCreateState with _$LibraryCreateState {
+  const factory LibraryCreateState({
+    required BookBody body,
+    required List<Sentences> sentences,
+    required List<Language> languages,
+    required List<int> pages,
+    required bool isSubmitting,
+    required Option<Either<BookFailure, Unit>> failureOrSuccess,
+  }) = _LibraryCreateState;
+
+  factory LibraryCreateState.initial() => LibraryCreateState(
+        body: BookBody.empty(),
+        sentences: [],
+        languages: [],
+        pages: [],
+        isSubmitting: false,
+        failureOrSuccess: none(),
+      );
+}

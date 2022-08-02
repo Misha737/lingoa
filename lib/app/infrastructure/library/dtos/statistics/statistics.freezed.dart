@@ -253,7 +253,7 @@ BookStatisticsDynamicDto _$BookStatisticsDynamicDtoFromJson(
 
 /// @nodoc
 mixin _$BookStatisticsDynamicDto {
-  int get progress => throw _privateConstructorUsedError;
+  double get progress => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -266,7 +266,7 @@ abstract class $BookStatisticsDynamicDtoCopyWith<$Res> {
   factory $BookStatisticsDynamicDtoCopyWith(BookStatisticsDynamicDto value,
           $Res Function(BookStatisticsDynamicDto) then) =
       _$BookStatisticsDynamicDtoCopyWithImpl<$Res>;
-  $Res call({int progress});
+  $Res call({double progress});
 }
 
 /// @nodoc
@@ -286,7 +286,7 @@ class _$BookStatisticsDynamicDtoCopyWithImpl<$Res>
       progress: progress == freezed
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -298,7 +298,7 @@ abstract class _$BookStatisticsDynamicDtoCopyWith<$Res>
           $Res Function(_BookStatisticsDynamicDto) then) =
       __$BookStatisticsDynamicDtoCopyWithImpl<$Res>;
   @override
-  $Res call({int progress});
+  $Res call({double progress});
 }
 
 /// @nodoc
@@ -321,7 +321,7 @@ class __$BookStatisticsDynamicDtoCopyWithImpl<$Res>
       progress: progress == freezed
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -335,7 +335,7 @@ class _$_BookStatisticsDynamicDto extends _BookStatisticsDynamicDto {
       _$$_BookStatisticsDynamicDtoFromJson(json);
 
   @override
-  final int progress;
+  final double progress;
 
   @override
   String toString() {
@@ -368,7 +368,7 @@ class _$_BookStatisticsDynamicDto extends _BookStatisticsDynamicDto {
 }
 
 abstract class _BookStatisticsDynamicDto extends BookStatisticsDynamicDto {
-  const factory _BookStatisticsDynamicDto({required final int progress}) =
+  const factory _BookStatisticsDynamicDto({required final double progress}) =
       _$_BookStatisticsDynamicDto;
   const _BookStatisticsDynamicDto._() : super._();
 
@@ -376,7 +376,7 @@ abstract class _BookStatisticsDynamicDto extends BookStatisticsDynamicDto {
       _$_BookStatisticsDynamicDto.fromJson;
 
   @override
-  int get progress => throw _privateConstructorUsedError;
+  double get progress => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$BookStatisticsDynamicDtoCopyWith<_BookStatisticsDynamicDto> get copyWith =>

@@ -48,7 +48,7 @@ abstract class BookStatisticsDynamicDto implements _$BookStatisticsDynamicDto {
   const BookStatisticsDynamicDto._();
 
   const factory BookStatisticsDynamicDto({
-    required int progress,
+    required double progress,
   }) = _BookStatisticsDynamicDto;
 
   factory BookStatisticsDynamicDto.fromDomain(

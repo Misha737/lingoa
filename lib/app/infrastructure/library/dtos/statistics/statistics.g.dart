@@ -28,7 +28,7 @@ Map<String, dynamic> _$$_BookStatisticsDtoToJson(
 _$_BookStatisticsDynamicDto _$$_BookStatisticsDynamicDtoFromJson(
         Map<String, dynamic> json) =>
     _$_BookStatisticsDynamicDto(
-      progress: json['progress'] as int,
+      progress: (json['progress'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$_BookStatisticsDynamicDtoToJson(
