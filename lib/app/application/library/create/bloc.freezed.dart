@@ -20,7 +20,9 @@ mixin _$LibraryCreateEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Language> languages) languageChanged,
     required TResult Function(Way way) wayChanged,
-    required TResult Function(List<int> languages) pagesChanged,
+    required TResult Function(List<int> pages) pagesChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
     required TResult Function() save,
   }) =>
@@ -29,7 +31,9 @@ mixin _$LibraryCreateEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
   }) =>
@@ -38,7 +42,9 @@ mixin _$LibraryCreateEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
     required TResult orElse(),
@@ -49,6 +55,8 @@ mixin _$LibraryCreateEvent {
     required TResult Function(_LanguageChanged value) languageChanged,
     required TResult Function(_WayChanged value) wayChanged,
     required TResult Function(_PagesChanged value) pagesChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_AuthorChanged value) authorChanged,
     required TResult Function(_GetBookFromStorage value) getBookFromStorage,
     required TResult Function(_Save value) save,
   }) =>
@@ -58,6 +66,8 @@ mixin _$LibraryCreateEvent {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
   }) =>
@@ -67,6 +77,8 @@ mixin _$LibraryCreateEvent {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
     required TResult orElse(),
@@ -163,7 +175,9 @@ class _$_LanguageChanged implements _LanguageChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Language> languages) languageChanged,
     required TResult Function(Way way) wayChanged,
-    required TResult Function(List<int> languages) pagesChanged,
+    required TResult Function(List<int> pages) pagesChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
     required TResult Function() save,
   }) {
@@ -175,7 +189,9 @@ class _$_LanguageChanged implements _LanguageChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
   }) {
@@ -187,7 +203,9 @@ class _$_LanguageChanged implements _LanguageChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
     required TResult orElse(),
@@ -204,6 +222,8 @@ class _$_LanguageChanged implements _LanguageChanged {
     required TResult Function(_LanguageChanged value) languageChanged,
     required TResult Function(_WayChanged value) wayChanged,
     required TResult Function(_PagesChanged value) pagesChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_AuthorChanged value) authorChanged,
     required TResult Function(_GetBookFromStorage value) getBookFromStorage,
     required TResult Function(_Save value) save,
   }) {
@@ -216,6 +236,8 @@ class _$_LanguageChanged implements _LanguageChanged {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
   }) {
@@ -228,6 +250,8 @@ class _$_LanguageChanged implements _LanguageChanged {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
     required TResult orElse(),
@@ -316,7 +340,9 @@ class _$_WayChanged implements _WayChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Language> languages) languageChanged,
     required TResult Function(Way way) wayChanged,
-    required TResult Function(List<int> languages) pagesChanged,
+    required TResult Function(List<int> pages) pagesChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
     required TResult Function() save,
   }) {
@@ -328,7 +354,9 @@ class _$_WayChanged implements _WayChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
   }) {
@@ -340,7 +368,9 @@ class _$_WayChanged implements _WayChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
     required TResult orElse(),
@@ -357,6 +387,8 @@ class _$_WayChanged implements _WayChanged {
     required TResult Function(_LanguageChanged value) languageChanged,
     required TResult Function(_WayChanged value) wayChanged,
     required TResult Function(_PagesChanged value) pagesChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_AuthorChanged value) authorChanged,
     required TResult Function(_GetBookFromStorage value) getBookFromStorage,
     required TResult Function(_Save value) save,
   }) {
@@ -369,6 +401,8 @@ class _$_WayChanged implements _WayChanged {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
   }) {
@@ -381,6 +415,8 @@ class _$_WayChanged implements _WayChanged {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
     required TResult orElse(),
@@ -406,7 +442,7 @@ abstract class _$PagesChangedCopyWith<$Res> {
   factory _$PagesChangedCopyWith(
           _PagesChanged value, $Res Function(_PagesChanged) then) =
       __$PagesChangedCopyWithImpl<$Res>;
-  $Res call({List<int> languages});
+  $Res call({List<int> pages});
 }
 
 /// @nodoc
@@ -422,12 +458,12 @@ class __$PagesChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? languages = freezed,
+    Object? pages = freezed,
   }) {
     return _then(_PagesChanged(
-      languages == freezed
-          ? _value.languages
-          : languages // ignore: cast_nullable_to_non_nullable
+      pages == freezed
+          ? _value.pages
+          : pages // ignore: cast_nullable_to_non_nullable
               as List<int>,
     ));
   }
@@ -436,18 +472,18 @@ class __$PagesChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PagesChanged implements _PagesChanged {
-  const _$_PagesChanged(final List<int> languages) : _languages = languages;
+  const _$_PagesChanged(final List<int> pages) : _pages = pages;
 
-  final List<int> _languages;
+  final List<int> _pages;
   @override
-  List<int> get languages {
+  List<int> get pages {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_languages);
+    return EqualUnmodifiableListView(_pages);
   }
 
   @override
   String toString() {
-    return 'LibraryCreateEvent.pagesChanged(languages: $languages)';
+    return 'LibraryCreateEvent.pagesChanged(pages: $pages)';
   }
 
   @override
@@ -455,12 +491,12 @@ class _$_PagesChanged implements _PagesChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PagesChanged &&
-            const DeepCollectionEquality().equals(other.languages, languages));
+            const DeepCollectionEquality().equals(other.pages, pages));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(languages));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(pages));
 
   @JsonKey(ignore: true)
   @override
@@ -472,11 +508,13 @@ class _$_PagesChanged implements _PagesChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Language> languages) languageChanged,
     required TResult Function(Way way) wayChanged,
-    required TResult Function(List<int> languages) pagesChanged,
+    required TResult Function(List<int> pages) pagesChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
     required TResult Function() save,
   }) {
-    return pagesChanged(languages);
+    return pagesChanged(pages);
   }
 
   @override
@@ -484,11 +522,13 @@ class _$_PagesChanged implements _PagesChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
   }) {
-    return pagesChanged?.call(languages);
+    return pagesChanged?.call(pages);
   }
 
   @override
@@ -496,13 +536,15 @@ class _$_PagesChanged implements _PagesChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
     required TResult orElse(),
   }) {
     if (pagesChanged != null) {
-      return pagesChanged(languages);
+      return pagesChanged(pages);
     }
     return orElse();
   }
@@ -513,6 +555,8 @@ class _$_PagesChanged implements _PagesChanged {
     required TResult Function(_LanguageChanged value) languageChanged,
     required TResult Function(_WayChanged value) wayChanged,
     required TResult Function(_PagesChanged value) pagesChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_AuthorChanged value) authorChanged,
     required TResult Function(_GetBookFromStorage value) getBookFromStorage,
     required TResult Function(_Save value) save,
   }) {
@@ -525,6 +569,8 @@ class _$_PagesChanged implements _PagesChanged {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
   }) {
@@ -537,6 +583,8 @@ class _$_PagesChanged implements _PagesChanged {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
     required TResult orElse(),
@@ -549,11 +597,339 @@ class _$_PagesChanged implements _PagesChanged {
 }
 
 abstract class _PagesChanged implements LibraryCreateEvent {
-  const factory _PagesChanged(final List<int> languages) = _$_PagesChanged;
+  const factory _PagesChanged(final List<int> pages) = _$_PagesChanged;
 
-  List<int> get languages => throw _privateConstructorUsedError;
+  List<int> get pages => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$PagesChangedCopyWith<_PagesChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$NameChangedCopyWith<$Res> {
+  factory _$NameChangedCopyWith(
+          _NameChanged value, $Res Function(_NameChanged) then) =
+      __$NameChangedCopyWithImpl<$Res>;
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$NameChangedCopyWithImpl<$Res>
+    extends _$LibraryCreateEventCopyWithImpl<$Res>
+    implements _$NameChangedCopyWith<$Res> {
+  __$NameChangedCopyWithImpl(
+      _NameChanged _value, $Res Function(_NameChanged) _then)
+      : super(_value, (v) => _then(v as _NameChanged));
+
+  @override
+  _NameChanged get _value => super._value as _NameChanged;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_NameChanged(
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_NameChanged implements _NameChanged {
+  const _$_NameChanged(this.name);
+
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'LibraryCreateEvent.nameChanged(name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _NameChanged &&
+            const DeepCollectionEquality().equals(other.name, name));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
+
+  @JsonKey(ignore: true)
+  @override
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Language> languages) languageChanged,
+    required TResult Function(Way way) wayChanged,
+    required TResult Function(List<int> pages) pagesChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String author) authorChanged,
+    required TResult Function() getBookFromStorage,
+    required TResult Function() save,
+  }) {
+    return nameChanged(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Language> languages)? languageChanged,
+    TResult Function(Way way)? wayChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
+    TResult Function()? getBookFromStorage,
+    TResult Function()? save,
+  }) {
+    return nameChanged?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Language> languages)? languageChanged,
+    TResult Function(Way way)? wayChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
+    TResult Function()? getBookFromStorage,
+    TResult Function()? save,
+    required TResult orElse(),
+  }) {
+    if (nameChanged != null) {
+      return nameChanged(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LanguageChanged value) languageChanged,
+    required TResult Function(_WayChanged value) wayChanged,
+    required TResult Function(_PagesChanged value) pagesChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_AuthorChanged value) authorChanged,
+    required TResult Function(_GetBookFromStorage value) getBookFromStorage,
+    required TResult Function(_Save value) save,
+  }) {
+    return nameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LanguageChanged value)? languageChanged,
+    TResult Function(_WayChanged value)? wayChanged,
+    TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
+    TResult Function(_GetBookFromStorage value)? getBookFromStorage,
+    TResult Function(_Save value)? save,
+  }) {
+    return nameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LanguageChanged value)? languageChanged,
+    TResult Function(_WayChanged value)? wayChanged,
+    TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
+    TResult Function(_GetBookFromStorage value)? getBookFromStorage,
+    TResult Function(_Save value)? save,
+    required TResult orElse(),
+  }) {
+    if (nameChanged != null) {
+      return nameChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NameChanged implements LibraryCreateEvent {
+  const factory _NameChanged(final String name) = _$_NameChanged;
+
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$AuthorChangedCopyWith<$Res> {
+  factory _$AuthorChangedCopyWith(
+          _AuthorChanged value, $Res Function(_AuthorChanged) then) =
+      __$AuthorChangedCopyWithImpl<$Res>;
+  $Res call({String author});
+}
+
+/// @nodoc
+class __$AuthorChangedCopyWithImpl<$Res>
+    extends _$LibraryCreateEventCopyWithImpl<$Res>
+    implements _$AuthorChangedCopyWith<$Res> {
+  __$AuthorChangedCopyWithImpl(
+      _AuthorChanged _value, $Res Function(_AuthorChanged) _then)
+      : super(_value, (v) => _then(v as _AuthorChanged));
+
+  @override
+  _AuthorChanged get _value => super._value as _AuthorChanged;
+
+  @override
+  $Res call({
+    Object? author = freezed,
+  }) {
+    return _then(_AuthorChanged(
+      author == freezed
+          ? _value.author
+          : author // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_AuthorChanged implements _AuthorChanged {
+  const _$_AuthorChanged(this.author);
+
+  @override
+  final String author;
+
+  @override
+  String toString() {
+    return 'LibraryCreateEvent.authorChanged(author: $author)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AuthorChanged &&
+            const DeepCollectionEquality().equals(other.author, author));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(author));
+
+  @JsonKey(ignore: true)
+  @override
+  _$AuthorChangedCopyWith<_AuthorChanged> get copyWith =>
+      __$AuthorChangedCopyWithImpl<_AuthorChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Language> languages) languageChanged,
+    required TResult Function(Way way) wayChanged,
+    required TResult Function(List<int> pages) pagesChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String author) authorChanged,
+    required TResult Function() getBookFromStorage,
+    required TResult Function() save,
+  }) {
+    return authorChanged(author);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Language> languages)? languageChanged,
+    TResult Function(Way way)? wayChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
+    TResult Function()? getBookFromStorage,
+    TResult Function()? save,
+  }) {
+    return authorChanged?.call(author);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Language> languages)? languageChanged,
+    TResult Function(Way way)? wayChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
+    TResult Function()? getBookFromStorage,
+    TResult Function()? save,
+    required TResult orElse(),
+  }) {
+    if (authorChanged != null) {
+      return authorChanged(author);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LanguageChanged value) languageChanged,
+    required TResult Function(_WayChanged value) wayChanged,
+    required TResult Function(_PagesChanged value) pagesChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_AuthorChanged value) authorChanged,
+    required TResult Function(_GetBookFromStorage value) getBookFromStorage,
+    required TResult Function(_Save value) save,
+  }) {
+    return authorChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LanguageChanged value)? languageChanged,
+    TResult Function(_WayChanged value)? wayChanged,
+    TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
+    TResult Function(_GetBookFromStorage value)? getBookFromStorage,
+    TResult Function(_Save value)? save,
+  }) {
+    return authorChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LanguageChanged value)? languageChanged,
+    TResult Function(_WayChanged value)? wayChanged,
+    TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
+    TResult Function(_GetBookFromStorage value)? getBookFromStorage,
+    TResult Function(_Save value)? save,
+    required TResult orElse(),
+  }) {
+    if (authorChanged != null) {
+      return authorChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AuthorChanged implements LibraryCreateEvent {
+  const factory _AuthorChanged(final String author) = _$_AuthorChanged;
+
+  String get author => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$AuthorChangedCopyWith<_AuthorChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -600,7 +976,9 @@ class _$_GetBookFromStorage implements _GetBookFromStorage {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Language> languages) languageChanged,
     required TResult Function(Way way) wayChanged,
-    required TResult Function(List<int> languages) pagesChanged,
+    required TResult Function(List<int> pages) pagesChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
     required TResult Function() save,
   }) {
@@ -612,7 +990,9 @@ class _$_GetBookFromStorage implements _GetBookFromStorage {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
   }) {
@@ -624,7 +1004,9 @@ class _$_GetBookFromStorage implements _GetBookFromStorage {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
     required TResult orElse(),
@@ -641,6 +1023,8 @@ class _$_GetBookFromStorage implements _GetBookFromStorage {
     required TResult Function(_LanguageChanged value) languageChanged,
     required TResult Function(_WayChanged value) wayChanged,
     required TResult Function(_PagesChanged value) pagesChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_AuthorChanged value) authorChanged,
     required TResult Function(_GetBookFromStorage value) getBookFromStorage,
     required TResult Function(_Save value) save,
   }) {
@@ -653,6 +1037,8 @@ class _$_GetBookFromStorage implements _GetBookFromStorage {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
   }) {
@@ -665,6 +1051,8 @@ class _$_GetBookFromStorage implements _GetBookFromStorage {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
     required TResult orElse(),
@@ -720,7 +1108,9 @@ class _$_Save implements _Save {
   TResult when<TResult extends Object?>({
     required TResult Function(List<Language> languages) languageChanged,
     required TResult Function(Way way) wayChanged,
-    required TResult Function(List<int> languages) pagesChanged,
+    required TResult Function(List<int> pages) pagesChanged,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
     required TResult Function() save,
   }) {
@@ -732,7 +1122,9 @@ class _$_Save implements _Save {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
   }) {
@@ -744,7 +1136,9 @@ class _$_Save implements _Save {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<Language> languages)? languageChanged,
     TResult Function(Way way)? wayChanged,
-    TResult Function(List<int> languages)? pagesChanged,
+    TResult Function(List<int> pages)? pagesChanged,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
     TResult Function()? save,
     required TResult orElse(),
@@ -761,6 +1155,8 @@ class _$_Save implements _Save {
     required TResult Function(_LanguageChanged value) languageChanged,
     required TResult Function(_WayChanged value) wayChanged,
     required TResult Function(_PagesChanged value) pagesChanged,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_AuthorChanged value) authorChanged,
     required TResult Function(_GetBookFromStorage value) getBookFromStorage,
     required TResult Function(_Save value) save,
   }) {
@@ -773,6 +1169,8 @@ class _$_Save implements _Save {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
   }) {
@@ -785,6 +1183,8 @@ class _$_Save implements _Save {
     TResult Function(_LanguageChanged value)? languageChanged,
     TResult Function(_WayChanged value)? wayChanged,
     TResult Function(_PagesChanged value)? pagesChanged,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_AuthorChanged value)? authorChanged,
     TResult Function(_GetBookFromStorage value)? getBookFromStorage,
     TResult Function(_Save value)? save,
     required TResult orElse(),
@@ -806,6 +1206,8 @@ mixin _$LibraryCreateState {
   List<Sentences> get sentences => throw _privateConstructorUsedError;
   List<Language> get languages => throw _privateConstructorUsedError;
   List<int> get pages => throw _privateConstructorUsedError;
+  BookCreateStatistics get createStatistics =>
+      throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   Option<Either<BookFailure, Unit>> get failureOrSuccess =>
       throw _privateConstructorUsedError;
@@ -825,10 +1227,12 @@ abstract class $LibraryCreateStateCopyWith<$Res> {
       List<Sentences> sentences,
       List<Language> languages,
       List<int> pages,
+      BookCreateStatistics createStatistics,
       bool isSubmitting,
       Option<Either<BookFailure, Unit>> failureOrSuccess});
 
   $BookBodyCopyWith<$Res> get body;
+  $BookCreateStatisticsCopyWith<$Res> get createStatistics;
 }
 
 /// @nodoc
@@ -846,6 +1250,7 @@ class _$LibraryCreateStateCopyWithImpl<$Res>
     Object? sentences = freezed,
     Object? languages = freezed,
     Object? pages = freezed,
+    Object? createStatistics = freezed,
     Object? isSubmitting = freezed,
     Object? failureOrSuccess = freezed,
   }) {
@@ -866,6 +1271,10 @@ class _$LibraryCreateStateCopyWithImpl<$Res>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as List<int>,
+      createStatistics: createStatistics == freezed
+          ? _value.createStatistics
+          : createStatistics // ignore: cast_nullable_to_non_nullable
+              as BookCreateStatistics,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -883,6 +1292,14 @@ class _$LibraryCreateStateCopyWithImpl<$Res>
       return _then(_value.copyWith(body: value));
     });
   }
+
+  @override
+  $BookCreateStatisticsCopyWith<$Res> get createStatistics {
+    return $BookCreateStatisticsCopyWith<$Res>(_value.createStatistics,
+        (value) {
+      return _then(_value.copyWith(createStatistics: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -897,11 +1314,14 @@ abstract class _$LibraryCreateStateCopyWith<$Res>
       List<Sentences> sentences,
       List<Language> languages,
       List<int> pages,
+      BookCreateStatistics createStatistics,
       bool isSubmitting,
       Option<Either<BookFailure, Unit>> failureOrSuccess});
 
   @override
   $BookBodyCopyWith<$Res> get body;
+  @override
+  $BookCreateStatisticsCopyWith<$Res> get createStatistics;
 }
 
 /// @nodoc
@@ -921,6 +1341,7 @@ class __$LibraryCreateStateCopyWithImpl<$Res>
     Object? sentences = freezed,
     Object? languages = freezed,
     Object? pages = freezed,
+    Object? createStatistics = freezed,
     Object? isSubmitting = freezed,
     Object? failureOrSuccess = freezed,
   }) {
@@ -941,6 +1362,10 @@ class __$LibraryCreateStateCopyWithImpl<$Res>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as List<int>,
+      createStatistics: createStatistics == freezed
+          ? _value.createStatistics
+          : createStatistics // ignore: cast_nullable_to_non_nullable
+              as BookCreateStatistics,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -961,6 +1386,7 @@ class _$_LibraryCreateState implements _LibraryCreateState {
       required final List<Sentences> sentences,
       required final List<Language> languages,
       required final List<int> pages,
+      required this.createStatistics,
       required this.isSubmitting,
       required this.failureOrSuccess})
       : _sentences = sentences,
@@ -991,13 +1417,15 @@ class _$_LibraryCreateState implements _LibraryCreateState {
   }
 
   @override
+  final BookCreateStatistics createStatistics;
+  @override
   final bool isSubmitting;
   @override
   final Option<Either<BookFailure, Unit>> failureOrSuccess;
 
   @override
   String toString() {
-    return 'LibraryCreateState(body: $body, sentences: $sentences, languages: $languages, pages: $pages, isSubmitting: $isSubmitting, failureOrSuccess: $failureOrSuccess)';
+    return 'LibraryCreateState(body: $body, sentences: $sentences, languages: $languages, pages: $pages, createStatistics: $createStatistics, isSubmitting: $isSubmitting, failureOrSuccess: $failureOrSuccess)';
   }
 
   @override
@@ -1009,6 +1437,8 @@ class _$_LibraryCreateState implements _LibraryCreateState {
             const DeepCollectionEquality().equals(other.sentences, sentences) &&
             const DeepCollectionEquality().equals(other.languages, languages) &&
             const DeepCollectionEquality().equals(other.pages, pages) &&
+            const DeepCollectionEquality()
+                .equals(other.createStatistics, createStatistics) &&
             const DeepCollectionEquality()
                 .equals(other.isSubmitting, isSubmitting) &&
             const DeepCollectionEquality()
@@ -1022,6 +1452,7 @@ class _$_LibraryCreateState implements _LibraryCreateState {
       const DeepCollectionEquality().hash(sentences),
       const DeepCollectionEquality().hash(languages),
       const DeepCollectionEquality().hash(pages),
+      const DeepCollectionEquality().hash(createStatistics),
       const DeepCollectionEquality().hash(isSubmitting),
       const DeepCollectionEquality().hash(failureOrSuccess));
 
@@ -1037,6 +1468,7 @@ abstract class _LibraryCreateState implements LibraryCreateState {
           required final List<Sentences> sentences,
           required final List<Language> languages,
           required final List<int> pages,
+          required final BookCreateStatistics createStatistics,
           required final bool isSubmitting,
           required final Option<Either<BookFailure, Unit>> failureOrSuccess}) =
       _$_LibraryCreateState;
@@ -1049,6 +1481,9 @@ abstract class _LibraryCreateState implements LibraryCreateState {
   List<Language> get languages => throw _privateConstructorUsedError;
   @override
   List<int> get pages => throw _privateConstructorUsedError;
+  @override
+  BookCreateStatistics get createStatistics =>
+      throw _privateConstructorUsedError;
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
   @override

@@ -25,7 +25,12 @@ class BookRepositoryFirestore implements IBookRepository {
   BookRepositoryFirestore(this._firestore);
 
   @override
-  Future<Either<BookFailure, Unit>> create(originBook) {
+  Future<Either<BookFailure, Unit>> create({
+    required BookBody body,
+    required List<Sentences> sentences,
+    required List<Language> languages,
+    required List<int> pages,
+  }) {
     // TODO: implement create
     throw UnimplementedError();
   }
@@ -210,5 +215,11 @@ class BookRepositoryFirestore implements IBookRepository {
     } catch (e) {
       return left(const BookFailure.unexpected());
     }
+  }
+
+  @override
+  Future<Either<BookFailure, BookContentOrigin>> getBookFromStorage() {
+    // TODO: implement getBookFromStorage
+    throw UnimplementedError();
   }
 }

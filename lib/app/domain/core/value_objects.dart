@@ -57,8 +57,9 @@ class Name extends ValueObject<String> {
   static const int minLength = 3;
 
   factory Name(String input) {
+    final inputTrim = input.trim();
     return Name._(
-      ValueValidator.stringMaxLength(input, maxLength)
+      ValueValidator.stringMaxLength(inputTrim, maxLength)
           .flatMap(
             ValueValidator.stringNotEmpty,
           )
@@ -69,7 +70,8 @@ class Name extends ValueObject<String> {
   }
 
   factory Name.empty(String input) {
-    return Name._(ValueValidator.stringMaxLength(input, maxLength));
+    final inputTrim = input.trim();
+    return Name._(ValueValidator.stringMaxLength(inputTrim, maxLength));
   }
 
   const Name._(this.value);

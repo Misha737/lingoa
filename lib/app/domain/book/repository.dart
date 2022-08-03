@@ -21,7 +21,12 @@ abstract class IBookRepository {
     BookStatistics statistics,
     BookBody book,
   );
-  Future<Either<BookFailure, Unit>> create(
-      dynamic originBook); // * Ще не знаю що тут буде
+  Future<Either<BookFailure, BookContentOrigin>> getBookFromStorage();
+  Future<Either<BookFailure, Unit>> create({
+    required BookBody body,
+    required List<Sentences> sentences,
+    required List<Language> languages,
+    required List<int> pages,
+  });
   Future<Either<BookFailure, Unit>> delete(BookBody book);
 }

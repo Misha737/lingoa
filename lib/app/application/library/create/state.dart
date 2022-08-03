@@ -7,6 +7,7 @@ abstract class LibraryCreateState with _$LibraryCreateState {
     required List<Sentences> sentences,
     required List<Language> languages,
     required List<int> pages,
+    required BookCreateStatistics createStatistics,
     required bool isSubmitting,
     required Option<Either<BookFailure, Unit>> failureOrSuccess,
   }) = _LibraryCreateState;
@@ -16,6 +17,7 @@ abstract class LibraryCreateState with _$LibraryCreateState {
         sentences: [],
         languages: [],
         pages: [],
+        createStatistics: BookCreateStatistics.empty(),
         isSubmitting: false,
         failureOrSuccess: none(),
       );

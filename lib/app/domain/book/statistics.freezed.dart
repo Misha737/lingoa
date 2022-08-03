@@ -461,3 +461,164 @@ abstract class _BookStatisticsStatic extends BookStatisticsStatic {
   _$BookStatisticsStaticCopyWith<_BookStatisticsStatic> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$BookCreateStatistics {
+  int get allPages => throw _privateConstructorUsedError;
+  DateTime get timeToRead => throw _privateConstructorUsedError;
+  int get allSentences => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BookCreateStatisticsCopyWith<BookCreateStatistics> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BookCreateStatisticsCopyWith<$Res> {
+  factory $BookCreateStatisticsCopyWith(BookCreateStatistics value,
+          $Res Function(BookCreateStatistics) then) =
+      _$BookCreateStatisticsCopyWithImpl<$Res>;
+  $Res call({int allPages, DateTime timeToRead, int allSentences});
+}
+
+/// @nodoc
+class _$BookCreateStatisticsCopyWithImpl<$Res>
+    implements $BookCreateStatisticsCopyWith<$Res> {
+  _$BookCreateStatisticsCopyWithImpl(this._value, this._then);
+
+  final BookCreateStatistics _value;
+  // ignore: unused_field
+  final $Res Function(BookCreateStatistics) _then;
+
+  @override
+  $Res call({
+    Object? allPages = freezed,
+    Object? timeToRead = freezed,
+    Object? allSentences = freezed,
+  }) {
+    return _then(_value.copyWith(
+      allPages: allPages == freezed
+          ? _value.allPages
+          : allPages // ignore: cast_nullable_to_non_nullable
+              as int,
+      timeToRead: timeToRead == freezed
+          ? _value.timeToRead
+          : timeToRead // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      allSentences: allSentences == freezed
+          ? _value.allSentences
+          : allSentences // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$BookCreateStatisticsCopyWith<$Res>
+    implements $BookCreateStatisticsCopyWith<$Res> {
+  factory _$BookCreateStatisticsCopyWith(_BookCreateStatistics value,
+          $Res Function(_BookCreateStatistics) then) =
+      __$BookCreateStatisticsCopyWithImpl<$Res>;
+  @override
+  $Res call({int allPages, DateTime timeToRead, int allSentences});
+}
+
+/// @nodoc
+class __$BookCreateStatisticsCopyWithImpl<$Res>
+    extends _$BookCreateStatisticsCopyWithImpl<$Res>
+    implements _$BookCreateStatisticsCopyWith<$Res> {
+  __$BookCreateStatisticsCopyWithImpl(
+      _BookCreateStatistics _value, $Res Function(_BookCreateStatistics) _then)
+      : super(_value, (v) => _then(v as _BookCreateStatistics));
+
+  @override
+  _BookCreateStatistics get _value => super._value as _BookCreateStatistics;
+
+  @override
+  $Res call({
+    Object? allPages = freezed,
+    Object? timeToRead = freezed,
+    Object? allSentences = freezed,
+  }) {
+    return _then(_BookCreateStatistics(
+      allPages: allPages == freezed
+          ? _value.allPages
+          : allPages // ignore: cast_nullable_to_non_nullable
+              as int,
+      timeToRead: timeToRead == freezed
+          ? _value.timeToRead
+          : timeToRead // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      allSentences: allSentences == freezed
+          ? _value.allSentences
+          : allSentences // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_BookCreateStatistics extends _BookCreateStatistics {
+  const _$_BookCreateStatistics(
+      {required this.allPages,
+      required this.timeToRead,
+      required this.allSentences})
+      : super._();
+
+  @override
+  final int allPages;
+  @override
+  final DateTime timeToRead;
+  @override
+  final int allSentences;
+
+  @override
+  String toString() {
+    return 'BookCreateStatistics(allPages: $allPages, timeToRead: $timeToRead, allSentences: $allSentences)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _BookCreateStatistics &&
+            const DeepCollectionEquality().equals(other.allPages, allPages) &&
+            const DeepCollectionEquality()
+                .equals(other.timeToRead, timeToRead) &&
+            const DeepCollectionEquality()
+                .equals(other.allSentences, allSentences));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(allPages),
+      const DeepCollectionEquality().hash(timeToRead),
+      const DeepCollectionEquality().hash(allSentences));
+
+  @JsonKey(ignore: true)
+  @override
+  _$BookCreateStatisticsCopyWith<_BookCreateStatistics> get copyWith =>
+      __$BookCreateStatisticsCopyWithImpl<_BookCreateStatistics>(
+          this, _$identity);
+}
+
+abstract class _BookCreateStatistics extends BookCreateStatistics {
+  const factory _BookCreateStatistics(
+      {required final int allPages,
+      required final DateTime timeToRead,
+      required final int allSentences}) = _$_BookCreateStatistics;
+  const _BookCreateStatistics._() : super._();
+
+  @override
+  int get allPages => throw _privateConstructorUsedError;
+  @override
+  DateTime get timeToRead => throw _privateConstructorUsedError;
+  @override
+  int get allSentences => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$BookCreateStatisticsCopyWith<_BookCreateStatistics> get copyWith =>
+      throw _privateConstructorUsedError;
+}

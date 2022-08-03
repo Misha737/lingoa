@@ -14,3 +14,14 @@ abstract class BookContent implements _$BookContent {
     required Content languages,
   }) = _BookContent;
 }
+
+@freezed
+abstract class BookContentOrigin implements _$BookContentOrigin {
+  const BookContentOrigin._();
+
+  const factory BookContentOrigin({
+    required int pages,
+    // TODO: Тут зберігати дані про книгу
+    required List<Sentences> listLanguages,
+  }) = _BookContentOrigin;
+}
