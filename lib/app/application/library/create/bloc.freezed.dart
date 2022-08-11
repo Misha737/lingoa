@@ -1203,9 +1203,9 @@ abstract class _Save implements LibraryCreateEvent {
 /// @nodoc
 mixin _$LibraryCreateState {
   BookBody get body => throw _privateConstructorUsedError;
-  List<Sentences> get sentences => throw _privateConstructorUsedError;
+  String get content => throw _privateConstructorUsedError;
   List<Language> get languages => throw _privateConstructorUsedError;
-  List<int> get pages => throw _privateConstructorUsedError;
+  List<int> get numberPages => throw _privateConstructorUsedError;
   BookCreateStatistics get createStatistics =>
       throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
@@ -1224,9 +1224,9 @@ abstract class $LibraryCreateStateCopyWith<$Res> {
       _$LibraryCreateStateCopyWithImpl<$Res>;
   $Res call(
       {BookBody body,
-      List<Sentences> sentences,
+      String content,
       List<Language> languages,
-      List<int> pages,
+      List<int> numberPages,
       BookCreateStatistics createStatistics,
       bool isSubmitting,
       Option<Either<BookFailure, Unit>> failureOrSuccess});
@@ -1247,9 +1247,9 @@ class _$LibraryCreateStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? body = freezed,
-    Object? sentences = freezed,
+    Object? content = freezed,
     Object? languages = freezed,
-    Object? pages = freezed,
+    Object? numberPages = freezed,
     Object? createStatistics = freezed,
     Object? isSubmitting = freezed,
     Object? failureOrSuccess = freezed,
@@ -1259,17 +1259,17 @@ class _$LibraryCreateStateCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as BookBody,
-      sentences: sentences == freezed
-          ? _value.sentences
-          : sentences // ignore: cast_nullable_to_non_nullable
-              as List<Sentences>,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
       languages: languages == freezed
           ? _value.languages
           : languages // ignore: cast_nullable_to_non_nullable
               as List<Language>,
-      pages: pages == freezed
-          ? _value.pages
-          : pages // ignore: cast_nullable_to_non_nullable
+      numberPages: numberPages == freezed
+          ? _value.numberPages
+          : numberPages // ignore: cast_nullable_to_non_nullable
               as List<int>,
       createStatistics: createStatistics == freezed
           ? _value.createStatistics
@@ -1311,9 +1311,9 @@ abstract class _$LibraryCreateStateCopyWith<$Res>
   @override
   $Res call(
       {BookBody body,
-      List<Sentences> sentences,
+      String content,
       List<Language> languages,
-      List<int> pages,
+      List<int> numberPages,
       BookCreateStatistics createStatistics,
       bool isSubmitting,
       Option<Either<BookFailure, Unit>> failureOrSuccess});
@@ -1338,9 +1338,9 @@ class __$LibraryCreateStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? body = freezed,
-    Object? sentences = freezed,
+    Object? content = freezed,
     Object? languages = freezed,
-    Object? pages = freezed,
+    Object? numberPages = freezed,
     Object? createStatistics = freezed,
     Object? isSubmitting = freezed,
     Object? failureOrSuccess = freezed,
@@ -1350,17 +1350,17 @@ class __$LibraryCreateStateCopyWithImpl<$Res>
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as BookBody,
-      sentences: sentences == freezed
-          ? _value.sentences
-          : sentences // ignore: cast_nullable_to_non_nullable
-              as List<Sentences>,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
       languages: languages == freezed
           ? _value.languages
           : languages // ignore: cast_nullable_to_non_nullable
               as List<Language>,
-      pages: pages == freezed
-          ? _value.pages
-          : pages // ignore: cast_nullable_to_non_nullable
+      numberPages: numberPages == freezed
+          ? _value.numberPages
+          : numberPages // ignore: cast_nullable_to_non_nullable
               as List<int>,
       createStatistics: createStatistics == freezed
           ? _value.createStatistics
@@ -1383,25 +1383,19 @@ class __$LibraryCreateStateCopyWithImpl<$Res>
 class _$_LibraryCreateState implements _LibraryCreateState {
   const _$_LibraryCreateState(
       {required this.body,
-      required final List<Sentences> sentences,
+      required this.content,
       required final List<Language> languages,
-      required final List<int> pages,
+      required final List<int> numberPages,
       required this.createStatistics,
       required this.isSubmitting,
       required this.failureOrSuccess})
-      : _sentences = sentences,
-        _languages = languages,
-        _pages = pages;
+      : _languages = languages,
+        _numberPages = numberPages;
 
   @override
   final BookBody body;
-  final List<Sentences> _sentences;
   @override
-  List<Sentences> get sentences {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_sentences);
-  }
-
+  final String content;
   final List<Language> _languages;
   @override
   List<Language> get languages {
@@ -1409,11 +1403,11 @@ class _$_LibraryCreateState implements _LibraryCreateState {
     return EqualUnmodifiableListView(_languages);
   }
 
-  final List<int> _pages;
+  final List<int> _numberPages;
   @override
-  List<int> get pages {
+  List<int> get numberPages {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_pages);
+    return EqualUnmodifiableListView(_numberPages);
   }
 
   @override
@@ -1425,7 +1419,7 @@ class _$_LibraryCreateState implements _LibraryCreateState {
 
   @override
   String toString() {
-    return 'LibraryCreateState(body: $body, sentences: $sentences, languages: $languages, pages: $pages, createStatistics: $createStatistics, isSubmitting: $isSubmitting, failureOrSuccess: $failureOrSuccess)';
+    return 'LibraryCreateState(body: $body, content: $content, languages: $languages, numberPages: $numberPages, createStatistics: $createStatistics, isSubmitting: $isSubmitting, failureOrSuccess: $failureOrSuccess)';
   }
 
   @override
@@ -1434,9 +1428,10 @@ class _$_LibraryCreateState implements _LibraryCreateState {
         (other.runtimeType == runtimeType &&
             other is _LibraryCreateState &&
             const DeepCollectionEquality().equals(other.body, body) &&
-            const DeepCollectionEquality().equals(other.sentences, sentences) &&
+            const DeepCollectionEquality().equals(other.content, content) &&
             const DeepCollectionEquality().equals(other.languages, languages) &&
-            const DeepCollectionEquality().equals(other.pages, pages) &&
+            const DeepCollectionEquality()
+                .equals(other.numberPages, numberPages) &&
             const DeepCollectionEquality()
                 .equals(other.createStatistics, createStatistics) &&
             const DeepCollectionEquality()
@@ -1449,9 +1444,9 @@ class _$_LibraryCreateState implements _LibraryCreateState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(body),
-      const DeepCollectionEquality().hash(sentences),
+      const DeepCollectionEquality().hash(content),
       const DeepCollectionEquality().hash(languages),
-      const DeepCollectionEquality().hash(pages),
+      const DeepCollectionEquality().hash(numberPages),
       const DeepCollectionEquality().hash(createStatistics),
       const DeepCollectionEquality().hash(isSubmitting),
       const DeepCollectionEquality().hash(failureOrSuccess));
@@ -1465,9 +1460,9 @@ class _$_LibraryCreateState implements _LibraryCreateState {
 abstract class _LibraryCreateState implements LibraryCreateState {
   const factory _LibraryCreateState(
           {required final BookBody body,
-          required final List<Sentences> sentences,
+          required final String content,
           required final List<Language> languages,
-          required final List<int> pages,
+          required final List<int> numberPages,
           required final BookCreateStatistics createStatistics,
           required final bool isSubmitting,
           required final Option<Either<BookFailure, Unit>> failureOrSuccess}) =
@@ -1476,11 +1471,11 @@ abstract class _LibraryCreateState implements LibraryCreateState {
   @override
   BookBody get body => throw _privateConstructorUsedError;
   @override
-  List<Sentences> get sentences => throw _privateConstructorUsedError;
+  String get content => throw _privateConstructorUsedError;
   @override
   List<Language> get languages => throw _privateConstructorUsedError;
   @override
-  List<int> get pages => throw _privateConstructorUsedError;
+  List<int> get numberPages => throw _privateConstructorUsedError;
   @override
   BookCreateStatistics get createStatistics =>
       throw _privateConstructorUsedError;

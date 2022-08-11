@@ -4,9 +4,9 @@ part of 'bloc.dart';
 abstract class LibraryCreateState with _$LibraryCreateState {
   const factory LibraryCreateState({
     required BookBody body,
-    required List<Sentences> sentences,
+    required String content,
     required List<Language> languages,
-    required List<int> pages,
+    required List<int> numberPages,
     required BookCreateStatistics createStatistics,
     required bool isSubmitting,
     required Option<Either<BookFailure, Unit>> failureOrSuccess,
@@ -14,9 +14,9 @@ abstract class LibraryCreateState with _$LibraryCreateState {
 
   factory LibraryCreateState.initial() => LibraryCreateState(
         body: BookBody.empty(),
-        sentences: [],
+        content: '',
         languages: [],
-        pages: [],
+        numberPages: [],
         createStatistics: BookCreateStatistics.empty(),
         isSubmitting: false,
         failureOrSuccess: none(),

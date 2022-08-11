@@ -47,7 +47,7 @@ class LibraryCreateBloc extends Bloc<LibraryCreateEvent, LibraryCreateState> {
       (event, emit) {
         emit(
           state.copyWith(
-            pages: event.pages,
+            numberPages: event.pages,
             createStatistics: state.createStatistics.copyWith(
               allPages: event.pages.length,
               // allSentences: , // TODO: Щось придумати

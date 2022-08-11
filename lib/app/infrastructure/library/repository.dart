@@ -7,6 +7,7 @@ import 'package:lingoa/app/domain/book/value_objects.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/infrastructure/core/errors_code.dart';
 import 'package:lingoa/app/infrastructure/library/dtos/content/content.dart';
+import 'package:lingoa/app/infrastructure/library/services/translator/translator.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:lingoa/app/domain/book/failures.dart';
 import 'package:lingoa/app/domain/book/content.dart';
@@ -27,12 +28,45 @@ class BookRepositoryFirestore implements IBookRepository {
   @override
   Future<Either<BookFailure, Unit>> create({
     required BookBody body,
-    required List<Sentences> sentences,
+    required List<String> originTranslate,
     required List<Language> languages,
-    required List<int> pages,
-  }) {
+    required Language nativeLanguage,
+  }) async {
     // TODO: implement create
-    throw UnimplementedError();
+    // TODO: 12500 символів
+    // TODO: BookContentOrigin
+    // TODO: створити всю книгу
+    try {
+      final userDoc = await _firestore.userDocument();
+      final bookId = body.id.getOrCrash();
+
+      final bookDoc = await userDoc.libraryCollection
+          .add(BookBodyDto.fromDomain(body).toJson());
+
+      for (var i = 0; i < originTranslate.length; i++) {
+        final bookBody = await Translator(
+          languages: languages,
+          nativeLanguage: nativeLanguage,
+          originTranslate: originTranslate[i],
+        ).bookContent();
+
+        bookDoc.bookContentCollection.doc('$i').set(
+              BookContentDto.fromDomain(bookBody),
+            );
+      }
+
+      return right(unit);
+    } on FirebaseException catch (e) {
+      if (e.code.contains(ErrorsCodeFirebase.permissionDenied)) {
+        return left(const BookFailure.insufficientPermissions());
+      } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
+        return left(const BookFailure.unableToUpdate());
+      } else {
+        return left(const BookFailure.unexpected());
+      }
+    } catch (e) {
+      return left(const BookFailure.unexpected());
+    }
   }
 
   @override

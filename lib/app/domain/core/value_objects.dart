@@ -98,7 +98,7 @@ class Sentence extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory Sentence(String input) {
-    return Sentence._(right(input));
+    return Sentence._(right(input.trim()));
   }
 
   String get _withoutSymbols {
