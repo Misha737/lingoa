@@ -24,7 +24,7 @@ abstract class IBookRepository {
   Future<Either<BookFailure, BookContentOrigin>> getBookFromStorage();
   Future<Either<BookFailure, Unit>> create({
     required BookBody body,
-    required List<String> originTranslate,
+    required List<PartBook> parts,
     required List<Language> languages,
     required Language nativeLanguage,
   });

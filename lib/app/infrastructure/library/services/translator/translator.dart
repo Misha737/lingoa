@@ -1,37 +1,13 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-import 'package:lingoa/app/domain/book/content.dart';
-import 'package:lingoa/app/domain/book/value_objects.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
-import 'package:lingoa/app/infrastructure/library/services/translator/mapper.dart';
 import 'package:lingoa/app/infrastructure/library/services/translator/response.dart';
 
 class Translator {
   const Translator._({required this.responseLanguage});
 
   final Future<List<BookResponseContent>> responseLanguage;
-  // TODO: Перекладати по сторінці або по декілька сторінок
-  // TODO: final List<Content> content;
-
-  Future<BookContent> bookContent() async {
-    final responses = await responseLanguage;
-    return BookContent(
-      languages: Content(
-        Map.fromEntries(
-          responses.map(
-            (response) {
-              return MapEntry(
-                response.language,
-                response.response.getFromJson(),
-              );
-            },
-          ),
-        ),
-      ),
-    );
-  }
 
   factory Translator({
     required List<Language> languages,

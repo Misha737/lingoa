@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -7,6 +8,7 @@ import 'package:lingoa/app/domain/book/value_objects.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
 import 'package:lingoa/app/infrastructure/core/errors_code.dart';
 import 'package:lingoa/app/infrastructure/library/dtos/content/content.dart';
+import 'package:lingoa/app/infrastructure/library/services/translator/dto/dto.dart';
 import 'package:lingoa/app/infrastructure/library/services/translator/translator.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:lingoa/app/domain/book/failures.dart';
@@ -28,32 +30,49 @@ class BookRepositoryFirestore implements IBookRepository {
   @override
   Future<Either<BookFailure, Unit>> create({
     required BookBody body,
-    required List<String> originTranslate,
+    required List<PartBook> parts,
     required List<Language> languages,
     required Language nativeLanguage,
   }) async {
-    // TODO: implement create
     // TODO: 12500 символів
     // TODO: BookContentOrigin
-    // TODO: створити всю книгу
     try {
       final userDoc = await _firestore.userDocument();
-      final bookId = body.id.getOrCrash();
 
+      // ? Create
+      // * Body
       final bookDoc = await userDoc.libraryCollection
           .add(BookBodyDto.fromDomain(body).toJson());
 
-      for (var i = 0; i < originTranslate.length; i++) {
-        final bookBody = await Translator(
+      // * Content
+      for (var i = 0; i < parts.length; i++) {
+        final translator = Translator(
           languages: languages,
           nativeLanguage: nativeLanguage,
-          originTranslate: originTranslate[i],
-        ).bookContent();
+          originTranslate: parts[i].getOrCrash(),
+        );
 
-        bookDoc.bookContentCollection.doc('$i').set(
-              BookContentDto.fromDomain(bookBody),
+        final content =
+            await TranslatorDto.fromTranslator(translator).toBookContent();
+
+        await bookDoc.bookContentCollection.doc('$i').set(
+              BookContentDto.fromDomain(content),
             );
       }
+
+      // * Statistics
+      bookDoc
+          .collection(FirestoreDataName.common)
+          .doc(FirestoreDataName.statistics)
+          .set(
+            BookStatisticsDto.fromDomain(
+              BookStatistics.empty(
+                staticStatistics: BookStatisticsStatic(
+                  partsLength: parts.length,
+                ),
+              ),
+            ).toJson(),
+          );
 
       return right(unit);
     } on FirebaseException catch (e) {
@@ -64,6 +83,13 @@ class BookRepositoryFirestore implements IBookRepository {
       } else {
         return left(const BookFailure.unexpected());
       }
+    } on HttpException catch (e) {
+      return left(
+        BookFailure.translationNotDone(
+          message: e.message,
+          uri: optionOf(e.uri),
+        ),
+      );
     } catch (e) {
       return left(const BookFailure.unexpected());
     }

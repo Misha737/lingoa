@@ -24,7 +24,7 @@ mixin _$LibraryCreateEvent {
     required TResult Function(String name) nameChanged,
     required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
-    required TResult Function() save,
+    required TResult Function(DateTime saveTime) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,7 +35,7 @@ mixin _$LibraryCreateEvent {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,7 +46,7 @@ mixin _$LibraryCreateEvent {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -179,7 +179,7 @@ class _$_LanguageChanged implements _LanguageChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
-    required TResult Function() save,
+    required TResult Function(DateTime saveTime) save,
   }) {
     return languageChanged(languages);
   }
@@ -193,7 +193,7 @@ class _$_LanguageChanged implements _LanguageChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
   }) {
     return languageChanged?.call(languages);
   }
@@ -207,7 +207,7 @@ class _$_LanguageChanged implements _LanguageChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
     required TResult orElse(),
   }) {
     if (languageChanged != null) {
@@ -344,7 +344,7 @@ class _$_WayChanged implements _WayChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
-    required TResult Function() save,
+    required TResult Function(DateTime saveTime) save,
   }) {
     return wayChanged(way);
   }
@@ -358,7 +358,7 @@ class _$_WayChanged implements _WayChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
   }) {
     return wayChanged?.call(way);
   }
@@ -372,7 +372,7 @@ class _$_WayChanged implements _WayChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
     required TResult orElse(),
   }) {
     if (wayChanged != null) {
@@ -512,7 +512,7 @@ class _$_PagesChanged implements _PagesChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
-    required TResult Function() save,
+    required TResult Function(DateTime saveTime) save,
   }) {
     return pagesChanged(pages);
   }
@@ -526,7 +526,7 @@ class _$_PagesChanged implements _PagesChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
   }) {
     return pagesChanged?.call(pages);
   }
@@ -540,7 +540,7 @@ class _$_PagesChanged implements _PagesChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
     required TResult orElse(),
   }) {
     if (pagesChanged != null) {
@@ -676,7 +676,7 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
-    required TResult Function() save,
+    required TResult Function(DateTime saveTime) save,
   }) {
     return nameChanged(name);
   }
@@ -690,7 +690,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
   }) {
     return nameChanged?.call(name);
   }
@@ -704,7 +704,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
     required TResult orElse(),
   }) {
     if (nameChanged != null) {
@@ -840,7 +840,7 @@ class _$_AuthorChanged implements _AuthorChanged {
     required TResult Function(String name) nameChanged,
     required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
-    required TResult Function() save,
+    required TResult Function(DateTime saveTime) save,
   }) {
     return authorChanged(author);
   }
@@ -854,7 +854,7 @@ class _$_AuthorChanged implements _AuthorChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
   }) {
     return authorChanged?.call(author);
   }
@@ -868,7 +868,7 @@ class _$_AuthorChanged implements _AuthorChanged {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
     required TResult orElse(),
   }) {
     if (authorChanged != null) {
@@ -980,7 +980,7 @@ class _$_GetBookFromStorage implements _GetBookFromStorage {
     required TResult Function(String name) nameChanged,
     required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
-    required TResult Function() save,
+    required TResult Function(DateTime saveTime) save,
   }) {
     return getBookFromStorage();
   }
@@ -994,7 +994,7 @@ class _$_GetBookFromStorage implements _GetBookFromStorage {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
   }) {
     return getBookFromStorage?.call();
   }
@@ -1008,7 +1008,7 @@ class _$_GetBookFromStorage implements _GetBookFromStorage {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
     required TResult orElse(),
   }) {
     if (getBookFromStorage != null) {
@@ -1072,6 +1072,7 @@ abstract class _GetBookFromStorage implements LibraryCreateEvent {
 abstract class _$SaveCopyWith<$Res> {
   factory _$SaveCopyWith(_Save value, $Res Function(_Save) then) =
       __$SaveCopyWithImpl<$Res>;
+  $Res call({DateTime saveTime});
 }
 
 /// @nodoc
@@ -1082,26 +1083,49 @@ class __$SaveCopyWithImpl<$Res> extends _$LibraryCreateEventCopyWithImpl<$Res>
 
   @override
   _Save get _value => super._value as _Save;
+
+  @override
+  $Res call({
+    Object? saveTime = freezed,
+  }) {
+    return _then(_Save(
+      saveTime == freezed
+          ? _value.saveTime
+          : saveTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Save implements _Save {
-  const _$_Save();
+  const _$_Save(this.saveTime);
+
+  @override
+  final DateTime saveTime;
 
   @override
   String toString() {
-    return 'LibraryCreateEvent.save()';
+    return 'LibraryCreateEvent.save(saveTime: $saveTime)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Save);
+        (other.runtimeType == runtimeType &&
+            other is _Save &&
+            const DeepCollectionEquality().equals(other.saveTime, saveTime));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(saveTime));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SaveCopyWith<_Save> get copyWith =>
+      __$SaveCopyWithImpl<_Save>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1112,9 +1136,9 @@ class _$_Save implements _Save {
     required TResult Function(String name) nameChanged,
     required TResult Function(String author) authorChanged,
     required TResult Function() getBookFromStorage,
-    required TResult Function() save,
+    required TResult Function(DateTime saveTime) save,
   }) {
-    return save();
+    return save(saveTime);
   }
 
   @override
@@ -1126,9 +1150,9 @@ class _$_Save implements _Save {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
   }) {
-    return save?.call();
+    return save?.call(saveTime);
   }
 
   @override
@@ -1140,11 +1164,11 @@ class _$_Save implements _Save {
     TResult Function(String name)? nameChanged,
     TResult Function(String author)? authorChanged,
     TResult Function()? getBookFromStorage,
-    TResult Function()? save,
+    TResult Function(DateTime saveTime)? save,
     required TResult orElse(),
   }) {
     if (save != null) {
-      return save();
+      return save(saveTime);
     }
     return orElse();
   }
@@ -1197,7 +1221,11 @@ class _$_Save implements _Save {
 }
 
 abstract class _Save implements LibraryCreateEvent {
-  const factory _Save() = _$_Save;
+  const factory _Save(final DateTime saveTime) = _$_Save;
+
+  DateTime get saveTime => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SaveCopyWith<_Save> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

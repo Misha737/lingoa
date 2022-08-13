@@ -11,5 +11,5 @@ abstract class LibraryCreateEvent with _$LibraryCreateEvent {
   const factory LibraryCreateEvent.authorChanged(String author) =
       _AuthorChanged;
   const factory LibraryCreateEvent.getBookFromStorage() = _GetBookFromStorage;
-  const factory LibraryCreateEvent.save() = _Save;
+  const factory LibraryCreateEvent.save(DateTime saveTime) = _Save;
 }

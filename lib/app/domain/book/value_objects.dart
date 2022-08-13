@@ -1,6 +1,7 @@
 import 'package:lingoa/app/domain/core/failures.dart';
 
 import 'package:dartz/dartz.dart';
+import 'package:lingoa/app/domain/core/validators.dart';
 
 import '../core/value_objects.dart';
 
@@ -61,4 +62,24 @@ class Sentences extends ValueObject<List<Sentence>> {
   Sentence sentence(index) => value.getOrElse(() => []).elementAt(index);
 
   Sentences._(this.value);
+}
+
+class PartBook extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  static const maxLength = 12500;
+
+  // TODO: from origin page to part
+
+  factory PartBook(String input) {
+    return PartBook._(
+      ValueValidator.stringMaxLength(
+        input,
+        PartBook.maxLength,
+      ),
+    );
+  }
+
+  const PartBook._(this.value);
 }
