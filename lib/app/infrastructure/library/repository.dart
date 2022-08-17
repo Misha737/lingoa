@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lingoa/app/domain/book/value_objects.dart';
 import 'package:lingoa/app/domain/core/value_objects.dart';
@@ -81,7 +82,7 @@ class BookRepositoryFirestore implements IBookRepository {
       } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
-        return left(const BookFailure.unexpected());
+        return left(const BookFailure.serverException());
       }
     } on HttpException catch (e) {
       return left(
@@ -110,7 +111,7 @@ class BookRepositoryFirestore implements IBookRepository {
       } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
-        return left(const BookFailure.unexpected());
+        return left(const BookFailure.serverException());
       }
     } catch (e) {
       return left(const BookFailure.unexpected());
@@ -151,7 +152,7 @@ class BookRepositoryFirestore implements IBookRepository {
       } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
-        return left(const BookFailure.unexpected());
+        return left(const BookFailure.serverException());
       }
     } catch (e) {
       return left(const BookFailure.unexpected());
@@ -177,7 +178,7 @@ class BookRepositoryFirestore implements IBookRepository {
           error.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
-        return left(const BookFailure.unexpected());
+        return left(const BookFailure.serverException());
       }
     });
   }
@@ -208,7 +209,7 @@ class BookRepositoryFirestore implements IBookRepository {
       } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
-        return left(const BookFailure.unexpected());
+        return left(const BookFailure.serverException());
       }
     } catch (e) {
       return left(const BookFailure.unexpected());
@@ -230,7 +231,7 @@ class BookRepositoryFirestore implements IBookRepository {
       } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
-        return left(const BookFailure.unexpected());
+        return left(const BookFailure.serverException());
       }
     } catch (e) {
       return left(const BookFailure.unexpected());
@@ -270,7 +271,7 @@ class BookRepositoryFirestore implements IBookRepository {
       } else if (e.code.contains(ErrorsCodeFirebase.notFound)) {
         return left(const BookFailure.unableToUpdate());
       } else {
-        return left(const BookFailure.unexpected());
+        return left(const BookFailure.serverException());
       }
     } catch (e) {
       return left(const BookFailure.unexpected());
@@ -278,8 +279,29 @@ class BookRepositoryFirestore implements IBookRepository {
   }
 
   @override
-  Future<Either<BookFailure, BookContentOrigin>> getBookFromStorage() {
+  Future<Either<BookFailure, BookOriginBody>> getBookFromStorage() async {
+    // TODO: тут повертати інформацію про книгу
     // TODO: implement getBookFromStorage
-    throw UnimplementedError();
+    try {
+      final resultOption = optionOf(
+        await FilePicker.platform.pickFiles(
+          type: FileType.media,
+        ),
+      );
+
+      return resultOption.fold(
+        () => left(const BookFailure.empty()),
+        (result) {
+          final path = optionOf(result.paths.first);
+
+          return path.fold(
+            () => left(const BookFailure.empty()),
+            (path) => right(BookOriginBody(path: path)),
+          );
+        },
+      );
+    } catch (e) {
+      return left(const BookFailure.unexpected());
+    }
   }
 }

@@ -21,7 +21,7 @@ abstract class IBookRepository {
     BookStatistics statistics,
     BookBody book,
   );
-  Future<Either<BookFailure, BookContentOrigin>> getBookFromStorage();
+  Future<Either<BookFailure, BookOriginBody>> getBookFromStorage();
   Future<Either<BookFailure, Unit>> create({
     required BookBody body,
     required List<PartBook> parts,

@@ -14,4 +14,5 @@ abstract class BookFailure with _$BookFailure {
     required String message,
     required Option<Uri> uri,
   }) = _TranslationNotDone;
+  const factory BookFailure.empty() = _Empty;
 }

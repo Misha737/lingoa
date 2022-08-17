@@ -47,3 +47,12 @@ enum Way {
   //auditory, // premium
   independent,
 }
+
+@freezed
+abstract class BookOriginBody implements _$BookOriginBody {
+  const BookOriginBody._();
+
+  const factory BookOriginBody({
+    required String path,
+  }) = _BookOriginBody;
+}

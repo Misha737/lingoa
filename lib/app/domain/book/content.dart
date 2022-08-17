@@ -16,12 +16,12 @@ abstract class BookContent implements _$BookContent {
 }
 
 @freezed
-abstract class BookContentOrigin implements _$BookContentOrigin {
-  const BookContentOrigin._();
+abstract class BookOriginContent implements _$BookOriginContent {
+  const BookOriginContent._();
 
-  const factory BookContentOrigin({
+  const factory BookOriginContent({
     required int pages,
     // TODO: Тут зберігати дані про книгу
     required List<Sentences> listLanguages,
-  }) = _BookContentOrigin;
+  }) = _BookOriginContent;
 }

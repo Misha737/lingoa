@@ -300,3 +300,120 @@ abstract class _BookBody extends BookBody {
   _$BookBodyCopyWith<_BookBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$BookOriginBody {
+  String get path => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BookOriginBodyCopyWith<BookOriginBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BookOriginBodyCopyWith<$Res> {
+  factory $BookOriginBodyCopyWith(
+          BookOriginBody value, $Res Function(BookOriginBody) then) =
+      _$BookOriginBodyCopyWithImpl<$Res>;
+  $Res call({String path});
+}
+
+/// @nodoc
+class _$BookOriginBodyCopyWithImpl<$Res>
+    implements $BookOriginBodyCopyWith<$Res> {
+  _$BookOriginBodyCopyWithImpl(this._value, this._then);
+
+  final BookOriginBody _value;
+  // ignore: unused_field
+  final $Res Function(BookOriginBody) _then;
+
+  @override
+  $Res call({
+    Object? path = freezed,
+  }) {
+    return _then(_value.copyWith(
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$BookOriginBodyCopyWith<$Res>
+    implements $BookOriginBodyCopyWith<$Res> {
+  factory _$BookOriginBodyCopyWith(
+          _BookOriginBody value, $Res Function(_BookOriginBody) then) =
+      __$BookOriginBodyCopyWithImpl<$Res>;
+  @override
+  $Res call({String path});
+}
+
+/// @nodoc
+class __$BookOriginBodyCopyWithImpl<$Res>
+    extends _$BookOriginBodyCopyWithImpl<$Res>
+    implements _$BookOriginBodyCopyWith<$Res> {
+  __$BookOriginBodyCopyWithImpl(
+      _BookOriginBody _value, $Res Function(_BookOriginBody) _then)
+      : super(_value, (v) => _then(v as _BookOriginBody));
+
+  @override
+  _BookOriginBody get _value => super._value as _BookOriginBody;
+
+  @override
+  $Res call({
+    Object? path = freezed,
+  }) {
+    return _then(_BookOriginBody(
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_BookOriginBody extends _BookOriginBody {
+  const _$_BookOriginBody({required this.path}) : super._();
+
+  @override
+  final String path;
+
+  @override
+  String toString() {
+    return 'BookOriginBody(path: $path)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _BookOriginBody &&
+            const DeepCollectionEquality().equals(other.path, path));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(path));
+
+  @JsonKey(ignore: true)
+  @override
+  _$BookOriginBodyCopyWith<_BookOriginBody> get copyWith =>
+      __$BookOriginBodyCopyWithImpl<_BookOriginBody>(this, _$identity);
+}
+
+abstract class _BookOriginBody extends BookOriginBody {
+  const factory _BookOriginBody({required final String path}) =
+      _$_BookOriginBody;
+  const _BookOriginBody._() : super._();
+
+  @override
+  String get path => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$BookOriginBodyCopyWith<_BookOriginBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}

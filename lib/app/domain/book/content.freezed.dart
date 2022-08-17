@@ -138,32 +138,32 @@ abstract class _BookContent extends BookContent {
 }
 
 /// @nodoc
-mixin _$BookContentOrigin {
+mixin _$BookOriginContent {
   int get pages =>
       throw _privateConstructorUsedError; // TODO: Тут зберігати дані про книгу
   List<Sentences> get listLanguages => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BookContentOriginCopyWith<BookContentOrigin> get copyWith =>
+  $BookOriginContentCopyWith<BookOriginContent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BookContentOriginCopyWith<$Res> {
-  factory $BookContentOriginCopyWith(
-          BookContentOrigin value, $Res Function(BookContentOrigin) then) =
-      _$BookContentOriginCopyWithImpl<$Res>;
+abstract class $BookOriginContentCopyWith<$Res> {
+  factory $BookOriginContentCopyWith(
+          BookOriginContent value, $Res Function(BookOriginContent) then) =
+      _$BookOriginContentCopyWithImpl<$Res>;
   $Res call({int pages, List<Sentences> listLanguages});
 }
 
 /// @nodoc
-class _$BookContentOriginCopyWithImpl<$Res>
-    implements $BookContentOriginCopyWith<$Res> {
-  _$BookContentOriginCopyWithImpl(this._value, this._then);
+class _$BookOriginContentCopyWithImpl<$Res>
+    implements $BookOriginContentCopyWith<$Res> {
+  _$BookOriginContentCopyWithImpl(this._value, this._then);
 
-  final BookContentOrigin _value;
+  final BookOriginContent _value;
   // ignore: unused_field
-  final $Res Function(BookContentOrigin) _then;
+  final $Res Function(BookOriginContent) _then;
 
   @override
   $Res call({
@@ -184,32 +184,32 @@ class _$BookContentOriginCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$BookContentOriginCopyWith<$Res>
-    implements $BookContentOriginCopyWith<$Res> {
-  factory _$BookContentOriginCopyWith(
-          _BookContentOrigin value, $Res Function(_BookContentOrigin) then) =
-      __$BookContentOriginCopyWithImpl<$Res>;
+abstract class _$BookOriginContentCopyWith<$Res>
+    implements $BookOriginContentCopyWith<$Res> {
+  factory _$BookOriginContentCopyWith(
+          _BookOriginContent value, $Res Function(_BookOriginContent) then) =
+      __$BookOriginContentCopyWithImpl<$Res>;
   @override
   $Res call({int pages, List<Sentences> listLanguages});
 }
 
 /// @nodoc
-class __$BookContentOriginCopyWithImpl<$Res>
-    extends _$BookContentOriginCopyWithImpl<$Res>
-    implements _$BookContentOriginCopyWith<$Res> {
-  __$BookContentOriginCopyWithImpl(
-      _BookContentOrigin _value, $Res Function(_BookContentOrigin) _then)
-      : super(_value, (v) => _then(v as _BookContentOrigin));
+class __$BookOriginContentCopyWithImpl<$Res>
+    extends _$BookOriginContentCopyWithImpl<$Res>
+    implements _$BookOriginContentCopyWith<$Res> {
+  __$BookOriginContentCopyWithImpl(
+      _BookOriginContent _value, $Res Function(_BookOriginContent) _then)
+      : super(_value, (v) => _then(v as _BookOriginContent));
 
   @override
-  _BookContentOrigin get _value => super._value as _BookContentOrigin;
+  _BookOriginContent get _value => super._value as _BookOriginContent;
 
   @override
   $Res call({
     Object? pages = freezed,
     Object? listLanguages = freezed,
   }) {
-    return _then(_BookContentOrigin(
+    return _then(_BookOriginContent(
       pages: pages == freezed
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
@@ -224,8 +224,8 @@ class __$BookContentOriginCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BookContentOrigin extends _BookContentOrigin {
-  const _$_BookContentOrigin(
+class _$_BookOriginContent extends _BookOriginContent {
+  const _$_BookOriginContent(
       {required this.pages, required final List<Sentences> listLanguages})
       : _listLanguages = listLanguages,
         super._();
@@ -243,14 +243,14 @@ class _$_BookContentOrigin extends _BookContentOrigin {
 
   @override
   String toString() {
-    return 'BookContentOrigin(pages: $pages, listLanguages: $listLanguages)';
+    return 'BookOriginContent(pages: $pages, listLanguages: $listLanguages)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _BookContentOrigin &&
+            other is _BookOriginContent &&
             const DeepCollectionEquality().equals(other.pages, pages) &&
             const DeepCollectionEquality()
                 .equals(other.listLanguages, listLanguages));
@@ -264,15 +264,15 @@ class _$_BookContentOrigin extends _BookContentOrigin {
 
   @JsonKey(ignore: true)
   @override
-  _$BookContentOriginCopyWith<_BookContentOrigin> get copyWith =>
-      __$BookContentOriginCopyWithImpl<_BookContentOrigin>(this, _$identity);
+  _$BookOriginContentCopyWith<_BookOriginContent> get copyWith =>
+      __$BookOriginContentCopyWithImpl<_BookOriginContent>(this, _$identity);
 }
 
-abstract class _BookContentOrigin extends BookContentOrigin {
-  const factory _BookContentOrigin(
+abstract class _BookOriginContent extends BookOriginContent {
+  const factory _BookOriginContent(
       {required final int pages,
-      required final List<Sentences> listLanguages}) = _$_BookContentOrigin;
-  const _BookContentOrigin._() : super._();
+      required final List<Sentences> listLanguages}) = _$_BookOriginContent;
+  const _BookOriginContent._() : super._();
 
   @override
   int get pages => throw _privateConstructorUsedError;
@@ -280,6 +280,6 @@ abstract class _BookContentOrigin extends BookContentOrigin {
   List<Sentences> get listLanguages => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$BookContentOriginCopyWith<_BookContentOrigin> get copyWith =>
+  _$BookOriginContentCopyWith<_BookOriginContent> get copyWith =>
       throw _privateConstructorUsedError;
 }

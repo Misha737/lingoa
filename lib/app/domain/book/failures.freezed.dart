@@ -24,6 +24,7 @@ mixin _$BookFailure {
     required TResult Function() unableToUpdate,
     required TResult Function(String message, Option<Uri> uri)
         translationNotDone,
+    required TResult Function() empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +34,7 @@ mixin _$BookFailure {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +44,7 @@ mixin _$BookFailure {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +56,7 @@ mixin _$BookFailure {
         insufficientPermissions,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
     required TResult Function(_TranslationNotDone value) translationNotDone,
+    required TResult Function(_Empty value) empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +66,7 @@ mixin _$BookFailure {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +76,7 @@ mixin _$BookFailure {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -138,6 +144,7 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function() unableToUpdate,
     required TResult Function(String message, Option<Uri> uri)
         translationNotDone,
+    required TResult Function() empty,
   }) {
     return unexpected();
   }
@@ -150,6 +157,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
   }) {
     return unexpected?.call();
   }
@@ -162,6 +170,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -179,6 +188,7 @@ class _$_Unexpected implements _Unexpected {
         insufficientPermissions,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
     required TResult Function(_TranslationNotDone value) translationNotDone,
+    required TResult Function(_Empty value) empty,
   }) {
     return unexpected(this);
   }
@@ -191,6 +201,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
   }) {
     return unexpected?.call(this);
   }
@@ -203,6 +214,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -263,6 +275,7 @@ class _$_ServerException implements _ServerException {
     required TResult Function() unableToUpdate,
     required TResult Function(String message, Option<Uri> uri)
         translationNotDone,
+    required TResult Function() empty,
   }) {
     return serverException();
   }
@@ -275,6 +288,7 @@ class _$_ServerException implements _ServerException {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
   }) {
     return serverException?.call();
   }
@@ -287,6 +301,7 @@ class _$_ServerException implements _ServerException {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (serverException != null) {
@@ -304,6 +319,7 @@ class _$_ServerException implements _ServerException {
         insufficientPermissions,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
     required TResult Function(_TranslationNotDone value) translationNotDone,
+    required TResult Function(_Empty value) empty,
   }) {
     return serverException(this);
   }
@@ -316,6 +332,7 @@ class _$_ServerException implements _ServerException {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
   }) {
     return serverException?.call(this);
   }
@@ -328,6 +345,7 @@ class _$_ServerException implements _ServerException {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (serverException != null) {
@@ -389,6 +407,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     required TResult Function() unableToUpdate,
     required TResult Function(String message, Option<Uri> uri)
         translationNotDone,
+    required TResult Function() empty,
   }) {
     return insufficientPermissions();
   }
@@ -401,6 +420,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
   }) {
     return insufficientPermissions?.call();
   }
@@ -413,6 +433,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -430,6 +451,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
         insufficientPermissions,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
     required TResult Function(_TranslationNotDone value) translationNotDone,
+    required TResult Function(_Empty value) empty,
   }) {
     return insufficientPermissions(this);
   }
@@ -442,6 +464,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
   }) {
     return insufficientPermissions?.call(this);
   }
@@ -454,6 +477,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -514,6 +538,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     required TResult Function() unableToUpdate,
     required TResult Function(String message, Option<Uri> uri)
         translationNotDone,
+    required TResult Function() empty,
   }) {
     return unableToUpdate();
   }
@@ -526,6 +551,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
   }) {
     return unableToUpdate?.call();
   }
@@ -538,6 +564,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (unableToUpdate != null) {
@@ -555,6 +582,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
         insufficientPermissions,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
     required TResult Function(_TranslationNotDone value) translationNotDone,
+    required TResult Function(_Empty value) empty,
   }) {
     return unableToUpdate(this);
   }
@@ -567,6 +595,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
   }) {
     return unableToUpdate?.call(this);
   }
@@ -579,6 +608,7 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (unableToUpdate != null) {
@@ -673,6 +703,7 @@ class _$_TranslationNotDone implements _TranslationNotDone {
     required TResult Function() unableToUpdate,
     required TResult Function(String message, Option<Uri> uri)
         translationNotDone,
+    required TResult Function() empty,
   }) {
     return translationNotDone(message, uri);
   }
@@ -685,6 +716,7 @@ class _$_TranslationNotDone implements _TranslationNotDone {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
   }) {
     return translationNotDone?.call(message, uri);
   }
@@ -697,6 +729,7 @@ class _$_TranslationNotDone implements _TranslationNotDone {
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
     TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (translationNotDone != null) {
@@ -714,6 +747,7 @@ class _$_TranslationNotDone implements _TranslationNotDone {
         insufficientPermissions,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
     required TResult Function(_TranslationNotDone value) translationNotDone,
+    required TResult Function(_Empty value) empty,
   }) {
     return translationNotDone(this);
   }
@@ -726,6 +760,7 @@ class _$_TranslationNotDone implements _TranslationNotDone {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
   }) {
     return translationNotDone?.call(this);
   }
@@ -738,6 +773,7 @@ class _$_TranslationNotDone implements _TranslationNotDone {
     TResult Function(_InsufficientPermissions value)? insufficientPermissions,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
     TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (translationNotDone != null) {
@@ -757,4 +793,132 @@ abstract class _TranslationNotDone implements BookFailure {
   @JsonKey(ignore: true)
   _$TranslationNotDoneCopyWith<_TranslationNotDone> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$EmptyCopyWith<$Res> {
+  factory _$EmptyCopyWith(_Empty value, $Res Function(_Empty) then) =
+      __$EmptyCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$EmptyCopyWithImpl<$Res> extends _$BookFailureCopyWithImpl<$Res>
+    implements _$EmptyCopyWith<$Res> {
+  __$EmptyCopyWithImpl(_Empty _value, $Res Function(_Empty) _then)
+      : super(_value, (v) => _then(v as _Empty));
+
+  @override
+  _Empty get _value => super._value as _Empty;
+}
+
+/// @nodoc
+
+class _$_Empty implements _Empty {
+  const _$_Empty();
+
+  @override
+  String toString() {
+    return 'BookFailure.empty()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Empty);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() serverException,
+    required TResult Function() insufficientPermissions,
+    required TResult Function() unableToUpdate,
+    required TResult Function(String message, Option<Uri> uri)
+        translationNotDone,
+    required TResult Function() empty,
+  }) {
+    return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? serverException,
+    TResult Function()? insufficientPermissions,
+    TResult Function()? unableToUpdate,
+    TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
+  }) {
+    return empty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? serverException,
+    TResult Function()? insufficientPermissions,
+    TResult Function()? unableToUpdate,
+    TResult Function(String message, Option<Uri> uri)? translationNotDone,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_ServerException value) serverException,
+    required TResult Function(_InsufficientPermissions value)
+        insufficientPermissions,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_TranslationNotDone value) translationNotDone,
+    required TResult Function(_Empty value) empty,
+  }) {
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_ServerException value)? serverException,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
+  }) {
+    return empty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_ServerException value)? serverException,
+    TResult Function(_InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_TranslationNotDone value)? translationNotDone,
+    TResult Function(_Empty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Empty implements BookFailure {
+  const factory _Empty() = _$_Empty;
 }
